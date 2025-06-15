@@ -1,0 +1,106 @@
+---
+import Layout from '../components/Layout.astro';
+import TopNav from '../components/TopNav.astro';
+import LessonModal from '../components/LessonModal.jsx';
+import QuizCard from '../components/QuizCard.jsx';
+
+// Get all question files at build time
+const questionFiles = import.meta.glob('./../questions/*.mdx', { eager: true });
+
+// Extract just the IDs for all questions
+const questionIds = Object.values(questionFiles).map(file => {
+  const typedFile = file as { frontmatter: { id: string } };
+  return typedFile.frontmatter.id;
+});
+
+// Select a random question ID
+const randomIndex = Math.floor(Math.random() * questionIds.length);
+const selectedQuestionId = questionIds[randomIndex];
+
+// Load only the selected question
+const selectedQuestionFile = Object.values(questionFiles).find(file => {
+  const typedFile = file as { frontmatter: { id: string } };
+  return typedFile.frontmatter.id === selectedQuestionId;
+});
+
+// Extract question data
+const typedFile = selectedQuestionFile as { 
+  frontmatter: { id: string; question: string; answers: any[] }; 
+  Content: any 
+};
+const { id, question, answers } = typedFile.frontmatter;
+const Content = typedFile.Content;
+
+// For TopNav, we still need all questions
+const allQuestions = Object.values(questionFiles).map(file => {
+  const typedFile = file as { frontmatter: { id: string; question: string; answers: any[] }; Content: any };
+  return { 
+    id: typedFile.frontmatter.id, 
+    question: typedFile.frontmatter.question, 
+    answers: typedFile.frontmatter.answers 
+  };
+});
+---
+
+<Layout title="Quiz - Amateur Radio Exam Prep">
+  <TopNav questions={allQuestions} />
+
+  <div id="quizContainer" class="flex justify-center">
+    <div class="w-full max-w-2xl">
+      <QuizCard 
+        client:load
+        id={id}
+        question={question}
+        answers={answers}
+        onShowLesson={(questionId) => {
+          // This function will be called from the React component
+          // but we need to use client:only to make it work
+        }}
+      />
+    </div>
+  </div>
+
+  <!-- LessonModal component will be client-side hydrated -->
+  <LessonModal 
+    client:only="react"
+    isOpen={false}
+    onClose={() => {}}
+    content={null}
+  />
+
+  <!-- Hidden element to store lesson content for the current question -->
+  <div id={`lesson-${id}`} class="hidden">
+    <Content />
+  </div>
+</Layout>
+
+<script>
+  // Set up the interaction between QuizCard and LessonModal
+  document.addEventListener('DOMContentLoaded', () => {
+    // Listen for the custom event from the QuizCard component
+    document.addEventListener('showLesson', (event) => {
+      const detail = (event as CustomEvent<{ questionId: string }>).detail;
+      const questionId = detail.questionId;
+
+      // Find the lesson content for this question
+      const lessonElement = document.getElementById(`lesson-${questionId}`);
+
+      if (lessonElement) {
+        // Clone the lesson content to avoid removing it from its original location
+        const lessonContentClone = lessonElement.cloneNode(true) as HTMLElement;
+
+        // Show the cloned content (it was hidden in the original)
+        lessonContentClone.classList.remove('hidden');
+
+        // Dispatch a custom event to open the React modal with the content
+        document.dispatchEvent(new CustomEvent('react-open-lesson-modal', {
+          detail: {
+            content: lessonContentClone
+          }
+        }));
+      } else {
+        console.error(`Lesson content not found for question ${questionId}`);
+      }
+    });
+  });
+</script>

@@ -1,0 +1,135 @@
+---
+// SearchBar.astro - A component for searching questions using Pagefind
+---
+
+<div class="relative">
+  <div id="search" class="w-full">
+    <input 
+      id="searchInput" 
+      type="text" 
+      placeholder="Search questions..." 
+      class="w-full md:w-64 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+    />
+  </div>
+
+  <div id="searchResults" class="hidden absolute z-10 mt-2 w-full bg-white rounded-md shadow-lg max-h-60 overflow-y-auto">
+    <div class="p-2 text-sm text-gray-500" id="searchStatus">Type to search...</div>
+    <ul id="resultsList" class="py-1 text-sm text-gray-700">
+      <!-- Results will be populated here via JavaScript -->
+    </ul>
+  </div>
+</div>
+
+<script>
+  // Only load Pagefind in the browser, not during SSR
+  document.addEventListener('DOMContentLoaded', async () => {
+    const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+    const searchResults = document.getElementById('searchResults');
+    const searchStatus = document.getElementById('searchStatus');
+    const resultsList = document.getElementById('resultsList');
+
+    if (!searchInput || !searchResults || !searchStatus || !resultsList) return;
+
+    // Load Pagefind when the page is loaded
+    let pagefind;
+    try {
+      // Dynamic import of Pagefind
+      // In production, Pagefind is in the /pagefind directory at the root of the site
+      // In development, we need to handle the case where it doesn't exist yet
+      const isProd = import.meta.env.PROD;
+      const pagefindPath = isProd ? '/pagefind/pagefind.js' : null;
+
+      if (pagefindPath) {
+        pagefind = await import(/* @vite-ignore */ pagefindPath);
+      } else {
+        throw new Error('Pagefind is only available in production builds');
+      }
+    } catch (e) {
+      console.error('Failed to load Pagefind:', e);
+      searchStatus.textContent = 'Search not available in development mode. Run build and preview to use search.';
+      return;
+    }
+
+    // Show search results when the search input is focused
+    searchInput.addEventListener('focus', () => {
+      searchResults.classList.remove('hidden');
+    });
+
+    // Hide search results when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!searchInput.contains(event.target as Node) && 
+          !searchResults.contains(event.target as Node)) {
+        searchResults.classList.add('hidden');
+      }
+    });
+
+    // Debounce function to limit how often the search is performed
+    const debounce = (func, delay) => {
+      let timeoutId;
+      return function(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func.apply(this, args), delay);
+      };
+    };
+
+    // Perform search when the user types
+    const performSearch = debounce(async () => {
+      const query = searchInput.value.trim();
+
+      if (!query) {
+        searchStatus.textContent = 'Type to search...';
+        resultsList.innerHTML = '';
+        return;
+      }
+
+      searchStatus.textContent = 'Searching...';
+      resultsList.innerHTML = '';
+
+      try {
+        const search = await pagefind.search(query);
+        const results = await search.results;
+
+        if (results.length === 0) {
+          searchStatus.textContent = 'No results found';
+          return;
+        }
+
+        searchStatus.textContent = `Found ${results.length} result${results.length === 1 ? '' : 's'}`;
+
+        // Process and display results
+        for (const result of results) {
+          const data = await result.data();
+          const li = document.createElement('li');
+          li.className = 'px-4 py-2 hover:bg-gray-100 cursor-pointer';
+
+          // Create a link to the page
+          const a = document.createElement('a');
+          a.href = data.url;
+          a.className = 'block';
+
+          // Add the title
+          const title = document.createElement('div');
+          title.className = 'font-medium';
+          title.textContent = data.meta.title || 'Untitled';
+          a.appendChild(title);
+
+          // Add the excerpt if available
+          if (data.excerpt) {
+            const excerpt = document.createElement('div');
+            excerpt.className = 'text-xs text-gray-500 mt-1';
+            excerpt.textContent = data.excerpt;
+            a.appendChild(excerpt);
+          }
+
+          li.appendChild(a);
+          resultsList.appendChild(li);
+        }
+      } catch (e) {
+        console.error('Search error:', e);
+        searchStatus.textContent = 'Search error. Please try again.';
+      }
+    }, 300);
+
+    searchInput.addEventListener('input', performSearch);
+  });
+</script>

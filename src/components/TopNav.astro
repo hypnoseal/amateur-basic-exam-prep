@@ -1,0 +1,130 @@
+---
+import SearchBar from './SearchBar.astro';
+
+interface Props {
+  questions?: Record<string, any>[];
+}
+
+// We're not using the questions prop in this component
+const { } = Astro.props;
+---
+
+<nav class="bg-white shadow-md mb-6">
+  <div class="max-w-4xl mx-auto px-4 py-3">
+    <div class="flex flex-col md:flex-row md:items-center justify-between">
+      <!-- Logo/Title -->
+      <div class="flex items-center justify-between">
+        <a href="/" class="text-xl font-bold text-indigo-600">Amateur Radio Exam Prep</a>
+
+        <!-- Mobile menu button -->
+        <button id="menuToggle" class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigation items - hidden on mobile unless toggled -->
+      <div id="mobileMenu" class="hidden md:flex flex-col md:flex-row md:items-center mt-4 md:mt-0 space-y-4 md:space-y-0 md:space-x-6">
+        <!-- Search Bar -->
+        <div class="relative">
+          <SearchBar />
+        </div>
+
+        <!-- Question Selector Dropdown -->
+        <div class="relative">
+          <button id="questionDropdownButton" class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none">
+            <span>Select Question</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </button>
+
+          <div id="questionDropdown" class="hidden absolute z-10 mt-2 w-full bg-white rounded-md shadow-lg max-h-60 overflow-y-auto">
+            <ul id="questionList" class="py-1 text-sm text-gray-700">
+              <!-- Questions will be populated here via JavaScript -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- User Status -->
+        <div class="bg-gray-100 px-4 py-2 rounded-md text-sm">
+          <span id="questionsAttempted">0</span> attempted / 
+          <span id="questionsCorrect">0</span> correct
+          <button id="resetProgress" class="ml-2 text-xs text-indigo-600 hover:text-indigo-800">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Client-side JavaScript for interactivity
+  document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+
+    // Question dropdown toggle
+    const questionDropdownButton = document.getElementById('questionDropdownButton');
+    const questionDropdown = document.getElementById('questionDropdown');
+
+    questionDropdownButton?.addEventListener('click', () => {
+      questionDropdown?.classList.toggle('hidden');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!questionDropdownButton?.contains(event.target as Node) && 
+          !questionDropdown?.contains(event.target as Node)) {
+        questionDropdown?.classList.add('hidden');
+      }
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+    const questionList = document.getElementById('questionList');
+
+    searchInput?.addEventListener('input', () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      const questionItems = questionList?.querySelectorAll('li');
+
+      questionItems?.forEach(item => {
+        const text = item.textContent?.toLowerCase() || '';
+        if (text.includes(searchTerm)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+
+    // Load user progress from localStorage
+    const questionsAttempted = document.getElementById('questionsAttempted');
+    const questionsCorrect = document.getElementById('questionsCorrect');
+    const resetProgress = document.getElementById('resetProgress');
+
+    const updateProgressDisplay = () => {
+      if (questionsAttempted) {
+        questionsAttempted.textContent = localStorage.getItem('questionsAttempted') || '0';
+      }
+      if (questionsCorrect) {
+        questionsCorrect.textContent = localStorage.getItem('questionsCorrect') || '0';
+      }
+    };
+
+    // Initialize progress display
+    updateProgressDisplay();
+
+    // Reset progress button
+    resetProgress?.addEventListener('click', () => {
+      localStorage.setItem('questionsAttempted', '0');
+      localStorage.setItem('questionsCorrect', '0');
+      updateProgressDisplay();
+    });
+  });
+</script>

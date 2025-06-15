@@ -1,0 +1,118 @@
+---
+import AnswerButton from './AnswerButton.astro';
+
+interface Answer {
+  text: string;
+  correct: boolean;
+  explanation: string;
+}
+
+interface Props {
+  id: string;
+  question: string;
+  answers: Answer[];
+  lessonContent: string;
+}
+
+const { id, question, answers, lessonContent } = Astro.props;
+---
+
+<div class="quiz-card bg-white rounded-lg shadow-md p-6 mb-6" data-lesson={lessonContent}>
+  <div class="mb-2 text-sm text-gray-500">Question ID: {id}</div>
+  <h2 class="text-xl font-semibold mb-6">{question}</h2>
+
+  <div class="answers-container">
+    {answers.map((answer, index) => (
+      <AnswerButton 
+        text={answer.text}
+        isCorrect={answer.correct}
+        explanation={answer.explanation}
+        index={index}
+      />
+    ))}
+  </div>
+
+  <div class="mt-6 flex justify-between items-center">
+    <button id="nextQuestion" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+      Next Question
+    </button>
+
+    <button id="showLesson" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+      Learn Topic
+    </button>
+  </div>
+</div>
+
+<script>
+  // Client-side JavaScript for interactivity
+  document.addEventListener('DOMContentLoaded', () => {
+    const answerButtons = document.querySelectorAll('.answer-button');
+    const nextQuestionButton = document.getElementById('nextQuestion');
+    const showLessonButton = document.getElementById('showLesson');
+    let hasAnswered = false;
+
+    // Handle answer selection
+    answerButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        if (hasAnswered) return; // Prevent multiple selections
+
+        hasAnswered = true;
+        const isCorrect = button.getAttribute('data-correct') === 'true';
+        const explanation = button.nextElementSibling;
+
+        // Update localStorage counters
+        const attempted = parseInt(localStorage.getItem('questionsAttempted') || '0') + 1;
+        let correct = parseInt(localStorage.getItem('questionsCorrect') || '0');
+
+        if (isCorrect) {
+          correct += 1;
+          button.classList.add('selected-correct');
+        } else {
+          button.classList.add('selected-incorrect');
+          // Show the correct answer
+          answerButtons.forEach(btn => {
+            if (btn.getAttribute('data-correct') === 'true') {
+              btn.classList.add('correct-answer');
+              btn.nextElementSibling?.classList.remove('hidden');
+            }
+          });
+        }
+
+        // Update localStorage
+        localStorage.setItem('questionsAttempted', attempted.toString());
+        localStorage.setItem('questionsCorrect', correct.toString());
+
+        // Show explanation
+        explanation?.classList.remove('hidden');
+
+        // Update the display in the TopNav
+        const questionsAttemptedEl = document.getElementById('questionsAttempted');
+        const questionsCorrectEl = document.getElementById('questionsCorrect');
+
+        if (questionsAttemptedEl) {
+          questionsAttemptedEl.textContent = attempted.toString();
+        }
+
+        if (questionsCorrectEl) {
+          questionsCorrectEl.textContent = correct.toString();
+        }
+      });
+    });
+
+    // Next question button
+    nextQuestionButton?.addEventListener('click', () => {
+      // Reload the page to get a new random question
+      window.location.reload();
+    });
+
+    // Show lesson button
+    showLessonButton?.addEventListener('click', () => {
+      // Dispatch custom event to open the modal
+      const quizCard = document.querySelector('.quiz-card');
+      const event = new CustomEvent('openLessonModal', {
+        detail: { lessonContent: quizCard?.getAttribute('data-lesson') || '' }
+      });
+      document.dispatchEvent(event);
+    });
+  });
+</script>
