@@ -1,0 +1,551 @@
+
+[
+  {
+    "code": "001",
+    "title": "Regulations and Policies",
+    "subcategories": [
+      {
+        "code": "001",
+        "title": "Radio Licences",
+        "description": "Radio licences, applicability, eligibility of licence holder"
+      },
+      {
+        "code": "002",
+        "title": "Licence Requirements",
+        "description": "Licence fee, term, posting requirements, change of address"
+      },
+      {
+        "code": "003",
+        "title": "Licence Enforcement",
+        "description": "Licence suspension or revocation, powers of radio inspectors, offences and punishments"
+      },
+      {
+        "code": "004",
+        "title": "Operator Certificates",
+        "description": "Operator certificates, applicability, eligibility, equivalents, reciprocal recognition"
+      },
+      {
+        "code": "005",
+        "title": "Operation by Others",
+        "description": "Operation, repair and maintenance of radio apparatus on behalf of other persons"
+      },
+      {
+        "code": "006",
+        "title": "Radio Apparatus Operation",
+        "description": "Operation of radio apparatus, terms of licence, applicable standards, exempt apparatus"
+      },
+      {
+        "code": "007",
+        "title": "Content Restrictions",
+        "description": "Content restrictions - non-superfluous, profanity, secret code, music, non-commercial"
+      },
+      {
+        "code": "008",
+        "title": "Installation Restrictions",
+        "description": "Installation and operating restrictions - number of stations, repeaters, home-built, club stations"
+      },
+      {
+        "code": "009",
+        "title": "Visitor Operation",
+        "description": "Participation in communications by visitors, use of station by others"
+      },
+      {
+        "code": "010",
+        "title": "Interference",
+        "description": "Interference, determination, protection from interference"
+      },
+      {
+        "code": "011",
+        "title": "Emergency Communications",
+        "description": "Emergency communications (real or simulated), communication with non-amateur stations"
+      },
+      {
+        "code": "012",
+        "title": "Communications Rules",
+        "description": "Non-remuneration, privacy of communications"
+      },
+      {
+        "code": "013",
+        "title": "Station Identification",
+        "description": "Station identification, call signs, prefixes"
+      },
+      {
+        "code": "014",
+        "title": "Foreign Operations",
+        "description": "Foreign amateur operation in Canada, banned countries, third-party messages"
+      },
+      {
+        "code": "015",
+        "title": "Frequency Bands",
+        "description": "Frequency bands and qualification requirements"
+      },
+      {
+        "code": "016",
+        "title": "Bandwidth",
+        "description": "Maximum bandwidth by frequency bands"
+      },
+      {
+        "code": "017",
+        "title": "Power Restrictions",
+        "description": "Restrictions on capacity and power output by qualifications"
+      },
+      {
+        "code": "018",
+        "title": "Carrier Rules",
+        "description": "Unmodulated carriers, retransmission"
+      },
+      {
+        "code": "019",
+        "title": "Signal Modulation",
+        "description": "Amplitude modulation, frequency stability, measurements"
+      },
+      {
+        "code": "020",
+        "title": "ITU Regulations",
+        "description": "International Telecommunication Union (ITU) Radio Regulations, applicability"
+      },
+      {
+        "code": "021",
+        "title": "International Operations",
+        "description": "Operation outside Canada, ITU regions, reciprocal privileges, international licences"
+      },
+      {
+        "code": "022",
+        "title": "Examinations",
+        "description": "Examinations - delegated examinations, disabled accommodation"
+      },
+      {
+        "code": "023",
+        "title": "Antenna Structures",
+        "description": "Antenna structure approval, neighbour and land-use authority consultation"
+      },
+      {
+        "code": "024",
+        "title": "RF Field Limits",
+        "description": "Radio frequency electromagnetic field limits"
+      },
+      {
+        "code": "025",
+        "title": "RF Interference Resolution",
+        "description": "Criteria for resolution of radio frequency interference complaints"
+      }
+    ]
+  },
+  {
+    "code": "002",
+    "title": "Operating and Procedures",
+    "subcategories": [
+      {
+        "code": "001",
+        "title": "Voice Operating",
+        "description": "Voice operating procedures - channelized VHF/UHF repeater"
+      },
+      {
+        "code": "002",
+        "title": "Phonetic Alphabet",
+        "description": "Phonetic alphabet"
+      },
+      {
+        "code": "003",
+        "title": "Simplex Operations",
+        "description": "Voice operating procedures - simplex VHF/UHF and HF"
+      },
+      {
+        "code": "004",
+        "title": "Testing Procedures",
+        "description": "Tuneups and testing, use of dummy load, courteous operation"
+      },
+      {
+        "code": "005",
+        "title": "Morse Operations",
+        "description": "Morse (CW) operating procedures, procedural signs"
+      },
+      {
+        "code": "006",
+        "title": "Signal Reporting",
+        "description": "RST system of signal reporting, use of S meter"
+      },
+      {
+        "code": "007",
+        "title": "Q Signals",
+        "description": "Q signals"
+      },
+      {
+        "code": "008",
+        "title": "Emergency Procedures",
+        "description": "Emergency operating procedures"
+      },
+      {
+        "code": "009",
+        "title": "Record Keeping",
+        "description": "Record keeping, confirmation practices, maps/charts, antenna orientation"
+      }
+    ]
+  },
+  {
+    "code": "003",
+    "title": "Station Assembly, Practice and Safety",
+    "subcategories": [
+      {
+        "code": "001",
+        "title": "HF Station Layout",
+        "description": "Functional layout of HF stations"
+      },
+      {
+        "code": "002",
+        "title": "FM Transmitters",
+        "description": "Functional layout of FM transmitters"
+      },
+      {
+        "code": "003",
+        "title": "FM Receivers",
+        "description": "Functional layout of FM receivers"
+      },
+      {
+        "code": "004",
+        "title": "CW Transmitters",
+        "description": "Functional layout of CW transmitters"
+      },
+      {
+        "code": "005",
+        "title": "SSB/CW Receivers",
+        "description": "Functional layout of SSB/CW receivers"
+      },
+      {
+        "code": "006",
+        "title": "SSB Transmitters",
+        "description": "Functional layout of SSB transmitters"
+      },
+      {
+        "code": "007",
+        "title": "Digital Systems",
+        "description": "Functional layout of digital systems"
+      },
+      {
+        "code": "008",
+        "title": "Power Supplies",
+        "description": "Functional layout of regulated power supplies"
+      },
+      {
+        "code": "009",
+        "title": "Yagi-Uda Antennas",
+        "description": "Functional layout of Yagi-Uda antennas"
+      },
+      {
+        "code": "010",
+        "title": "Receiver Fundamentals",
+        "description": "Receiver fundamentals"
+      },
+      {
+        "code": "011",
+        "title": "Transmitter Fundamentals",
+        "description": "Transmitter, carrier, keying, and amplitude modulation fundamentals"
+      },
+      {
+        "code": "012",
+        "title": "SSB Fundamentals",
+        "description": "Carrier suppression, SSB fundamentals"
+      },
+      {
+        "code": "013",
+        "title": "FM Fundamentals",
+        "description": "Frequency and phase modulation fundamentals"
+      },
+      {
+        "code": "014",
+        "title": "Station Accessories",
+        "description": "Station accessories for telegraphy, radiotelephony, digital modes"
+      },
+      {
+        "code": "015",
+        "title": "Digital Modes",
+        "description": "Digital mode fundamentals RTTY, ASCII, AMTOR, packet"
+      },
+      {
+        "code": "016",
+        "title": "Batteries",
+        "description": "Cells and batteries, types, ratings, charging"
+      },
+      {
+        "code": "017",
+        "title": "Power Supply Basics",
+        "description": "Power supply fundamentals"
+      },
+      {
+        "code": "018",
+        "title": "Electrical Hazards",
+        "description": "Electrical hazards, electrical safety, security"
+      },
+      {
+        "code": "019",
+        "title": "Electrical Safety",
+        "description": "Electrical safety ground, capacitor discharge, fuse replacement"
+      },
+      {
+        "code": "020",
+        "title": "Antenna Safety",
+        "description": "Antenna and tower safety, lightning protection"
+      },
+      {
+        "code": "021",
+        "title": "RF Exposure",
+        "description": "Exposure of human body to RF, safety precautions"
+      }
+    ]
+  },
+  {
+    "code": "004",
+    "title": "Circuit Components",
+    "subcategories": [
+      {
+        "code": "001",
+        "title": "Amplifiers",
+        "description": "Amplifier fundamentals"
+      },
+      {
+        "code": "002",
+        "title": "Diodes",
+        "description": "Diode fundamentals"
+      },
+      {
+        "code": "003",
+        "title": "Bipolar Transistors",
+        "description": "Bipolar transistor fundamentals"
+      },
+      {
+        "code": "004",
+        "title": "Field-Effect Transistors",
+        "description": "Field-effect transistor fundamentals"
+      },
+      {
+        "code": "005",
+        "title": "Vacuum Tubes",
+        "description": "Triode vacuum tube fundamentals"
+      },
+      {
+        "code": "006",
+        "title": "Resistor Codes",
+        "description": "Resistor colour codes, tolerances, temperature coefficient"
+      }
+    ]
+  },
+  {
+    "code": "005",
+    "title": "Basic Electronics and Theory",
+    "subcategories": [
+      {
+        "code": "001",
+        "title": "Metric Prefixes",
+        "description": "Metric prefixes - pico, micro, milli, centi, kilo, mega, giga"
+      },
+      {
+        "code": "002",
+        "title": "Electrical Concepts",
+        "description": "Concepts of current, voltage, conductor, insulator, resistance"
+      },
+      {
+        "code": "003",
+        "title": "Energy and Power",
+        "description": "Concepts of energy and power, open and short circuits"
+      },
+      {
+        "code": "004",
+        "title": "Ohm's Law - Basic",
+        "description": "Ohm's law - single resistors"
+      },
+      {
+        "code": "005",
+        "title": "Resistor Circuits",
+        "description": "Series and parallel resistors"
+      },
+      {
+        "code": "006",
+        "title": "Power Law",
+        "description": "Power law, resistor power dissipation"
+      },
+      {
+        "code": "007",
+        "title": "AC Fundamentals",
+        "description": "AC, sinewave, frequency, frequency units"
+      },
+      {
+        "code": "008",
+        "title": "Logarithms and Decibels",
+        "description": "Ratios, logarithms, decibels"
+      },
+      {
+        "code": "009",
+        "title": "Inductance and Capacitance",
+        "description": "Introduction to inductance, capacitance"
+      },
+      {
+        "code": "010",
+        "title": "Reactance and Impedance",
+        "description": "Introduction to reactance, impedance"
+      },
+      {
+        "code": "011",
+        "title": "Magnetics",
+        "description": "Introduction to magnetics, transformers"
+      },
+      {
+        "code": "012",
+        "title": "Resonance",
+        "description": "Introduction to resonance, tuned circuits"
+      },
+      {
+        "code": "013",
+        "title": "Measurement",
+        "description": "Introduction to meters and measurements"
+      }
+    ]
+  },
+  {
+    "code": "006",
+    "title": "Feedlines and Antenna Systems",
+    "subcategories": [
+      {
+        "code": "001",
+        "title": "Feedline Characteristics",
+        "description": "Feed line characteristics, characteristic impedance"
+      },
+      {
+        "code": "002",
+        "title": "Balanced and Unbalanced",
+        "description": "Balanced and unbalanced feed lines, baluns"
+      },
+      {
+        "code": "003",
+        "title": "Connectors",
+        "description": "Popular antenna feed line and coaxial connector types"
+      },
+      {
+        "code": "004",
+        "title": "Line Losses",
+        "description": "Line losses by line type, length and frequency"
+      },
+      {
+        "code": "005",
+        "title": "Standing Waves",
+        "description": "Standing waves, standing wave ratio (SWR) meter"
+      },
+      {
+        "code": "006",
+        "title": "Impedance Matching",
+        "description": "Concept of impedance matching"
+      },
+      {
+        "code": "007",
+        "title": "Antenna Polarization",
+        "description": "Isotropic source, polarization via element orientation"
+      },
+      {
+        "code": "008",
+        "title": "Antenna Length",
+        "description": "Wavelength vs physical length"
+      },
+      {
+        "code": "009",
+        "title": "Antenna Properties",
+        "description": "Gain, directivity, radiation pattern, antenna bandwidth"
+      },
+      {
+        "code": "010",
+        "title": "Vertical Antennas",
+        "description": "Vertical antennas - types, dimensions, characteristics"
+      },
+      {
+        "code": "011",
+        "title": "Yagi Antennas",
+        "description": "Yagi antennas - types, dimensions, characteristics"
+      },
+      {
+        "code": "012",
+        "title": "Wire Antennas",
+        "description": "Wire antennas - types, dimensions, characteristics"
+      },
+      {
+        "code": "013",
+        "title": "Quad/Loop Antennas",
+        "description": "Quad/loop antennas - types, dimensions, characteristics"
+      }
+    ]
+  },
+  {
+    "code": "007",
+    "title": "Radio Wave Propagation",
+    "subcategories": [
+      {
+        "code": "001",
+        "title": "Wave Propagation Types",
+        "description": "Line of sight, ground wave, ionospheric wave (sky wave)"
+      },
+      {
+        "code": "002",
+        "title": "Ionosphere",
+        "description": "Ionosphere, ionospheric regions (layers)"
+      },
+      {
+        "code": "003",
+        "title": "Skip Phenomena",
+        "description": "Propagation hops, skip zone, skip distance"
+      },
+      {
+        "code": "004",
+        "title": "Ionospheric Effects",
+        "description": "Ionospheric absorption, causes and variation, fading, phase shift, Faraday rotation"
+      },
+      {
+        "code": "005",
+        "title": "Solar Activity",
+        "description": "Solar activity, sunspots, sunspot cycle"
+      },
+      {
+        "code": "006",
+        "title": "MF and HF Propagation",
+        "description": "MF and HF, critical and maximum useable frequencies, solar flux"
+      },
+      {
+        "code": "007",
+        "title": "VHF and UHF Propagation",
+        "description": "VHF and UHF, sporadic-E, aurora, ducting"
+      },
+      {
+        "code": "008",
+        "title": "Scatter Propagation",
+        "description": "Scatter - HF, VHF, UHF"
+      }
+    ]
+  },
+  {
+    "code": "008",
+    "title": "Interference and Suppression",
+    "subcategories": [
+      {
+        "code": "001",
+        "title": "Front-end Issues",
+        "description": "Front-end overload, cross-modulation"
+      },
+      {
+        "code": "002",
+        "title": "Audio Rectification",
+        "description": "Audio rectification, bypass capacitors, ferrites"
+      },
+      {
+        "code": "003",
+        "title": "Intermodulation",
+        "description": "Intermodulation, spurious, key-clicks"
+      },
+      {
+        "code": "004",
+        "title": "Harmonic Interference",
+        "description": "Harmonics, splatter, transmitter adjustments"
+      },
+      {
+        "code": "005",
+        "title": "Filtering",
+        "description": "Use of filters: low-pass, high-pass, band-pass, band-reject"
+      }
+    ]
+  }
+]

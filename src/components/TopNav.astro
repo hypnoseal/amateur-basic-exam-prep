@@ -1,5 +1,9 @@
 ---
 import SearchBar from './SearchBar.astro';
+import { getAllQuestions } from '../utils/questions';
+import { parseQuestionId, createCategoryMenu, groupQuestionsByCategory } from '../utils/questionIdParser';
+import type { Category } from '../types/categories';
+import categoriesData from '../data/categories.json';
 
 interface Props {
   questions?: Record<string, any>[];
@@ -7,6 +11,12 @@ interface Props {
 
 // Get the questions from props
 const { questions = [] } = Astro.props;
+
+// Get all questions and organize them by category
+const allQuestions = getAllQuestions();
+const categories = categoriesData as Category[];
+const questionGroups = groupQuestionsByCategory(allQuestions, categories);
+const categoryMenu = createCategoryMenu(categories, questionGroups);
 ---
 
 <nav class="bg-white shadow-md mb-6">
@@ -40,12 +50,35 @@ const { questions = [] } = Astro.props;
             </svg>
           </button>
 
-          <div id="questionDropdown" class="hidden absolute z-10 mt-2 w-full bg-white rounded-md shadow-lg max-h-60 overflow-y-auto">
-            <ul id="questionList" class="py-1 text-sm text-gray-700">
-              <!-- Questions will be populated here via JavaScript -->
-              {questions.map(q => (
-                <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer question-item" data-id={q.id}>
-                  Question {q.id}
+          <div id="questionDropdown" class="hidden absolute z-10 mt-2 w-80 bg-white rounded-md shadow-lg max-h-96 overflow-y-auto">
+            <ul id="categoryList" class="py-1 text-sm text-gray-700">
+              {categoryMenu.map((category) => (
+                <li class="category-item">
+                  <div class="px-4 py-2 font-medium bg-gray-50 hover:bg-gray-100 cursor-pointer flex justify-between items-center" data-category={category.code}>
+                    <span>{category.title}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 category-icon" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <ul class="subcategory-list hidden pl-2">
+                    {category.subcategories.map((subcategory) => (
+                      <li class="subcategory-item">
+                        <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center" data-category={category.code} data-subcategory={subcategory.code}>
+                          <span>{subcategory.title}</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 subcategory-icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                          </svg>
+                        </div>
+                        <ul class="question-list hidden pl-4">
+                          {subcategory.questions.map((questionId) => (
+                            <li class="px-4 py-1 hover:bg-gray-100 cursor-pointer question-item" data-id={questionId}>
+                              {questionId}
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
+                  </ul>
                 </li>
               ))}
             </ul>
@@ -90,6 +123,46 @@ const { questions = [] } = Astro.props;
           !questionDropdown?.contains(event.target as Node)) {
         questionDropdown?.classList.add('hidden');
       }
+    });
+
+    // Handle category toggle
+    const categoryItems = document.querySelectorAll('.category-item > div');
+    categoryItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const categoryItem = item.closest('.category-item');
+        const subcategoryList = categoryItem?.querySelector('.subcategory-list');
+        const categoryIcon = item.querySelector('.category-icon');
+
+        // Toggle the subcategory list
+        subcategoryList?.classList.toggle('hidden');
+
+        // Rotate the icon when expanded
+        if (categoryIcon) {
+          categoryIcon.classList.toggle('transform');
+          categoryIcon.classList.toggle('rotate-180');
+        }
+      });
+    });
+
+    // Handle subcategory toggle
+    const subcategoryItems = document.querySelectorAll('.subcategory-item > div');
+    subcategoryItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const subcategoryItem = item.closest('.subcategory-item');
+        const questionList = subcategoryItem?.querySelector('.question-list');
+        const subcategoryIcon = item.querySelector('.subcategory-icon');
+
+        // Toggle the question list
+        questionList?.classList.toggle('hidden');
+
+        // Rotate the icon when expanded
+        if (subcategoryIcon) {
+          subcategoryIcon.classList.toggle('transform');
+          subcategoryIcon.classList.toggle('rotate-180');
+        }
+      });
     });
 
     // Handle question selection
