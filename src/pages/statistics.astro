@@ -1,0 +1,223 @@
+---
+import Layout from '../components/Layout.astro';
+import TopNav from '../components/TopNav.astro';
+import { getAllQuestions } from '../utils/questions';
+import { parseQuestionId, findCategoryByCode, findSubcategoryByCode } from '../utils/questionIdParser';
+import categories from '../data/categories.json';
+
+// For TopNav, we need all questions
+const allQuestions = getAllQuestions();
+---
+
+<Layout title="Statistics Dashboard - Amateur Radio Exam Prep">
+	<TopNav questions={allQuestions} />
+
+	<div class="max-w-6xl mx-auto px-4 py-8">
+		<h1 class="text-3xl font-bold text-gray-800 mb-6">Your Performance Statistics</h1>
+		
+		<div class="bg-white rounded-lg shadow-md p-6 mb-8">
+			<h2 class="text-xl font-semibold text-gray-700 mb-4">Overall Progress</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<div class="bg-indigo-50 rounded-lg p-4 text-center">
+					<p class="text-sm text-indigo-600 font-medium">Questions Attempted</p>
+					<p class="text-3xl font-bold text-indigo-800" id="totalAttempted">0</p>
+					<p class="text-sm text-gray-500" id="totalAttemptedPercent">0%</p>
+				</div>
+				<div class="bg-green-50 rounded-lg p-4 text-center">
+					<p class="text-sm text-green-600 font-medium">Correctly Answered</p>
+					<p class="text-3xl font-bold text-green-800" id="totalCorrect">0</p>
+					<p class="text-sm text-gray-500" id="totalCorrectPercent">0%</p>
+				</div>
+				<div class="bg-blue-50 rounded-lg p-4 text-center">
+					<p class="text-sm text-blue-600 font-medium">Success Rate</p>
+					<p class="text-3xl font-bold text-blue-800" id="successRate">0%</p>
+					<div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+						<div class="bg-blue-600 h-2.5 rounded-full" id="successRateBar" style="width: 0%"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bg-white rounded-lg shadow-md p-6 mb-8">
+			<h2 class="text-xl font-semibold text-gray-700 mb-4">Performance by Category</h2>
+			<div class="overflow-x-auto">
+				<table class="min-w-full divide-y divide-gray-200">
+					<thead class="bg-gray-50">
+						<tr>
+							<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+							<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Attempted</th>
+							<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Correct</th>
+							<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Success Rate</th>
+							<th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Progress</th>
+						</tr>
+					</thead>
+					<tbody class="bg-white divide-y divide-gray-200" id="categoryStats">
+						<!-- Category stats will be populated by JavaScript -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="bg-white rounded-lg shadow-md p-6">
+			<h2 class="text-xl font-semibold text-gray-700 mb-4">Areas for Improvement</h2>
+			<div id="improvementAreas" class="space-y-4">
+				<!-- Areas for improvement will be populated by JavaScript -->
+				<p class="text-gray-500 italic">Complete more questions to see areas that need improvement.</p>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<script>
+	import useQuizStore from '../stores/quizStore';
+	import { parseQuestionId } from '../utils/questionIdParser';
+	import categories from '../data/categories.json';
+	import { getAllQuestions } from '../utils/questions';
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const allQuestions = getAllQuestions();
+		const totalQuestions = allQuestions.length;
+		
+		// Get data from the store
+		const { attemptedQuestions, correctlyAnsweredQuestions } = useQuizStore.getState();
+		
+		// Update overall stats
+		const totalAttempted = attemptedQuestions.length;
+		const totalCorrect = correctlyAnsweredQuestions.length;
+		const successRateValue = totalAttempted > 0 ? Math.round((totalCorrect / totalAttempted) * 100) : 0;
+		
+		document.getElementById('totalAttempted').textContent = totalAttempted.toString();
+		document.getElementById('totalAttemptedPercent').textContent = 
+			`${Math.round((totalAttempted / totalQuestions) * 100)}% of all questions`;
+		
+		document.getElementById('totalCorrect').textContent = totalCorrect.toString();
+		document.getElementById('totalCorrectPercent').textContent = 
+			`${Math.round((totalCorrect / totalQuestions) * 100)}% of all questions`;
+		
+		document.getElementById('successRate').textContent = `${successRateValue}%`;
+		document.getElementById('successRateBar').style.width = `${successRateValue}%`;
+		
+		// Calculate stats by category
+		const categoryStats = {};
+		const categoryQuestionCounts = {};
+		
+		// Initialize category stats
+		categories.forEach(category => {
+			categoryStats[category.code] = {
+				title: category.title,
+				attempted: 0,
+				correct: 0,
+				total: 0
+			};
+			
+			// Count questions per category
+			category.subcategories.forEach(subcategory => {
+				// Count questions that match this category and subcategory
+				const matchingQuestions = allQuestions.filter(q => {
+					const parsed = parseQuestionId(q.id);
+					return parsed && parsed.categoryCode === category.code && parsed.subcategoryCode === subcategory.code;
+				});
+				
+				categoryStats[category.code].total += matchingQuestions.length;
+			});
+		});
+		
+		// Process attempted and correct questions
+		attemptedQuestions.forEach(questionId => {
+			const parsed = parseQuestionId(questionId);
+			if (parsed) {
+				const { categoryCode } = parsed;
+				if (categoryStats[categoryCode]) {
+					categoryStats[categoryCode].attempted++;
+				}
+			}
+		});
+		
+		correctlyAnsweredQuestions.forEach(questionId => {
+			const parsed = parseQuestionId(questionId);
+			if (parsed) {
+				const { categoryCode } = parsed;
+				if (categoryStats[categoryCode]) {
+					categoryStats[categoryCode].correct++;
+				}
+			}
+		});
+		
+		// Populate category stats table
+		const categoryStatsElement = document.getElementById('categoryStats');
+		if (categoryStatsElement) {
+			categoryStatsElement.innerHTML = '';
+			
+			Object.entries(categoryStats).forEach(([code, stats]) => {
+				const successRate = stats.attempted > 0 ? Math.round((stats.correct / stats.attempted) * 100) : 0;
+				const progressPercent = Math.round((stats.attempted / stats.total) * 100);
+				
+				const row = document.createElement('tr');
+				row.innerHTML = `
+					<td class="px-6 py-4 whitespace-nowrap">
+						<div class="text-sm font-medium text-gray-900">${stats.title}</div>
+						<div class="text-sm text-gray-500">Code: ${code}</div>
+					</td>
+					<td class="px-6 py-4 whitespace-nowrap">
+						<div class="text-sm text-gray-900">${stats.attempted} / ${stats.total}</div>
+						<div class="text-sm text-gray-500">${progressPercent}%</div>
+					</td>
+					<td class="px-6 py-4 whitespace-nowrap">
+						<div class="text-sm text-gray-900">${stats.correct} / ${stats.total}</div>
+						<div class="text-sm text-gray-500">${Math.round((stats.correct / stats.total) * 100)}%</div>
+					</td>
+					<td class="px-6 py-4 whitespace-nowrap">
+						<div class="text-sm text-gray-900">${successRate}%</div>
+					</td>
+					<td class="px-6 py-4 whitespace-nowrap">
+						<div class="w-full bg-gray-200 rounded-full h-2.5">
+							<div class="bg-indigo-600 h-2.5 rounded-full" style="width: ${progressPercent}%"></div>
+						</div>
+					</td>
+				`;
+				
+				categoryStatsElement.appendChild(row);
+			});
+		}
+		
+		// Identify areas for improvement
+		const improvementAreas = document.getElementById('improvementAreas');
+		if (improvementAreas && totalAttempted > 0) {
+			// Clear default message
+			improvementAreas.innerHTML = '';
+			
+			// Find categories with below-average success rates
+			const averageSuccessRate = successRateValue;
+			const weakCategories = Object.entries(categoryStats)
+				.filter(([_, stats]) => stats.attempted > 0 && (stats.correct / stats.attempted) * 100 < averageSuccessRate)
+				.sort((a, b) => (a[1].correct / a[1].attempted) - (b[1].correct / b[1].attempted));
+			
+			if (weakCategories.length > 0) {
+				weakCategories.slice(0, 3).forEach(([code, stats]) => {
+					const categorySuccessRate = stats.attempted > 0 ? Math.round((stats.correct / stats.attempted) * 100) : 0;
+					
+					const category = categories.find(c => c.code === code);
+					if (category) {
+						const div = document.createElement('div');
+						div.className = 'bg-red-50 rounded-lg p-4';
+						div.innerHTML = `
+							<h3 class="font-medium text-red-800">${category.title}</h3>
+							<p class="text-sm text-gray-600 mt-1">Success rate: ${categorySuccessRate}% (${stats.correct}/${stats.attempted})</p>
+							<p class="text-sm text-gray-600 mt-1">Focus on improving your knowledge in this area.</p>
+							<a href="/quiz" class="inline-block mt-2 text-sm text-indigo-600 hover:text-indigo-800">Practice questions in this category</a>
+						`;
+						improvementAreas.appendChild(div);
+					}
+				});
+			} else {
+				const div = document.createElement('div');
+				div.className = 'bg-green-50 rounded-lg p-4';
+				div.innerHTML = `
+					<h3 class="font-medium text-green-800">Great job!</h3>
+					<p class="text-sm text-gray-600 mt-1">You're performing well across all categories. Keep practicing to maintain your knowledge.</p>
+				`;
+				improvementAreas.appendChild(div);
+			}
+		}
+	});
+</script>

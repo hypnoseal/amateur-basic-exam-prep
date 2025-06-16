@@ -2,7 +2,7 @@
 
 # Amateur Radio Exam Prep
 
-This project is an exam preparation tool for amateur radio licensing exams.
+This project is an exam preparation tool for Canadian ISED basic amateur radio licensing exams.
 
 ## Getting Started
 
@@ -39,7 +39,7 @@ npm run dev
 
 A new feature has been added to allow users to directly access specific questions in two ways:
 
-1. **URL-based access**: Users can now enter a question ID in the URL to go directly to that question:
+1. **URL-based access**: Users can enter a question ID in the URL to go directly to that question:
    - For quiz mode: `/quiz/[question-id]` (e.g., `/quiz/B-005-001-005`)
    - For study mode: `/question/[question-id]` (e.g., `/question/B-005-001-005`)
 
@@ -75,12 +75,12 @@ Note: The search index is built during the build process, so new content will on
 
 ### Markdown Rendering in Lesson Modal
 
-The LessonModal component now properly renders markdown content using Tailwind's Typography plugin. This ensures that lesson content with markdown formatting (headers, lists, etc.) is displayed correctly.
+The LessonModal component renders markdown content using Tailwind's Typography plugin. This ensures that lesson content with markdown formatting (headers, lists, etc.) displays correctly.
 
 To see these changes in action:
 1. Open a quiz question
 2. Click on the "Show Lesson" button
-3. The lesson content should now display with proper markdown formatting
+3. The lesson content displays with markdown formatting
 
 ## Dependencies
 
@@ -89,3 +89,51 @@ To see these changes in action:
 - Tailwind CSS
 - @tailwindcss/typography (for markdown styling)
 - Pagefind (for static site search)
+
+## Contributing
+
+We welcome contributions from the community, especially from radio experts and amateur radio enthusiasts who can help improve the quality and accuracy of our lesson content.
+
+### Who Can Contribute
+
+- **Radio Experts**: If you have professional experience in radio communications, your technical expertise is invaluable for reviewing and enhancing our lesson content.
+- **Amateur Radio Enthusiasts**: Licensed ham radio operators can provide practical insights and real-world applications.
+- **Educators**: Those with experience in teaching technical subjects can help improve the clarity and educational value of our content.
+- **Developers**: Frontend developers can contribute to the codebase, improve UI/UX, and add new features.
+
+### Areas Where We Need Help
+
+1. **Lesson Content Review**: Review existing lessons for technical accuracy, clarity, and completeness.
+2. **Content Creation**: Create new lessons for questions that don't have detailed explanations yet.
+3. **Content Enhancement**: Add diagrams, examples, and practical applications to existing lessons.
+4. **Technical Improvements**: Enhance the application's functionality and user experience.
+
+### How to Contribute
+
+1. **Fork the Repository**: Create your own copy of the project.
+2. **Set Up Locally**: Follow the installation instructions above to set up the project on your machine.
+3. **Make Changes**:
+   - For content contributions: Edit or create MDX files in the `src/questions` directory.
+   - For code contributions: Make your changes to the relevant files.
+4. **Test Your Changes**: Run the development server and ensure everything works as expected.
+5. **Submit a Pull Request**: Push your changes to your fork and submit a pull request to the main repository.
+
+### Guidelines for Content Contributors
+
+- **Question Files**: Each question is stored as an MDX file in the `src/questions` directory, named with the question ID (e.g., `B-001-020-002.mdx`).
+- **File Structure**:
+  - Frontmatter: Contains question ID, question text, and multiple-choice answers with explanations.
+  - Lesson Content: Structured with headings, learning objectives, explanations, examples, and key takeaways.
+- **Content Quality**:
+  - Ensure technical accuracy and adherence to amateur radio regulations.
+  - Use clear, concise language suitable for learners.
+  - Include practical examples and applications where possible.
+  - Add diagrams or illustrations for complex concepts (images can be placed in the `public` directory).
+
+### Code of Conduct
+
+- Be respectful and constructive in your contributions and communications.
+- Focus on improving the educational value and accuracy of the content.
+- Acknowledge the work of others and collaborate effectively.
+
+We appreciate your interest in contributing to this project and helping the amateur radio community!

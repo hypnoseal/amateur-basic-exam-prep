@@ -1,5 +1,6 @@
 ---
 import SearchBar from './SearchBar.astro';
+import ResetConfirmationModal from './ResetConfirmationModal.astro';
 import { getAllQuestions } from '../utils/questions';
 import { parseQuestionId, createCategoryMenu, groupQuestionsByCategory } from '../utils/questionIdParser';
 import type { Category } from '../types/categories';
@@ -19,82 +20,113 @@ const questionGroups = groupQuestionsByCategory(allQuestions, categories);
 const categoryMenu = createCategoryMenu(categories, questionGroups);
 ---
 
-<nav class="bg-white shadow-md mb-6">
-  <div class="max-w-4xl mx-auto px-4 py-3">
-    <div class="flex flex-col md:flex-row md:items-center justify-between">
-      <!-- Logo/Title -->
-      <div class="flex items-center justify-between">
-        <a href="/" class="text-xl font-bold text-red-600">Amateur Radio Exam Prep</a>
+<nav class="bg-white shadow-md mb-4">
+  <div class="max-w-4xl mx-auto px-4 py-2">
+    <!-- Centered Title -->
+    <div class="text-center mb-2">
+      <a href="/" class="text-xl font-bold text-red-600 inline-block">Amateur Radio Exam Prep</a>
+    </div>
 
-        <!-- Mobile menu button -->
-        <button id="menuToggle" class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+    <!-- Mobile menu button -->
+    <div class="flex justify-end md:hidden mb-2">
+      <button id="menuToggle" class="p-1 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation items - hidden on mobile unless toggled -->
+    <div id="mobileMenu" class="hidden md:flex md:flex-row md:justify-between md:items-center md:space-x-4">
+      <!-- Search Bar -->
+      <div class="relative md:w-1/3">
+        <SearchBar />
       </div>
 
-      <!-- Navigation items - hidden on mobile unless toggled -->
-      <div id="mobileMenu" class="hidden md:flex flex-col md:flex-row md:items-center mt-4 md:mt-0 space-y-4 md:space-y-0 md:space-x-6">
-        <!-- Search Bar -->
-        <div class="relative">
-          <SearchBar />
-        </div>
+      <!-- Question Selector Dropdown -->
+      <div class="relative md:w-auto">
+        <button id="questionDropdownButton" class="w-full md:w-auto flex items-center justify-center px-3 py-1.5 text-sm text-gray-700 bg-gray-100 rounded hover:bg-gray-200 focus:outline-none transition-colors">
+          <span>Select Question</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </button>
 
-        <!-- Question Selector Dropdown -->
-        <div class="relative">
-          <button id="questionDropdownButton" class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none">
-            <span>Select Question</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+        <div id="questionDropdown" class="hidden absolute z-10 mt-1 w-64 bg-white rounded shadow-lg max-h-80 overflow-y-auto border border-gray-200">
+          <ul id="categoryList" class="py-1 text-xs text-gray-700">
+            {categoryMenu.map((category) => (
+              <li class="category-item">
+                <div class="px-3 py-1.5 font-medium bg-gray-50 hover:bg-gray-100 cursor-pointer flex justify-between items-center" data-category={category.code}>
+                  <span>{category.title}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 category-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <ul class="subcategory-list hidden pl-2">
+                  {category.subcategories.map((subcategory) => (
+                    <li class="subcategory-item">
+                      <div class="px-3 py-1.5 hover:bg-gray-100 cursor-pointer flex justify-between items-center" data-category={category.code} data-subcategory={subcategory.code}>
+                        <span>{subcategory.title}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 subcategory-icon" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                      </div>
+                      <ul class="question-list hidden pl-3">
+                        {subcategory.questions.map((questionId) => (
+                          <li class="px-3 py-1 hover:bg-gray-100 cursor-pointer question-item text-xs" data-id={questionId}>
+                            {questionId}
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stats Container -->
+      <div class="md:w-auto">
+        <!-- Combined User Status and Statistics -->
+        <div class="bg-white px-2 py-1.5 rounded text-xs flex items-center space-x-3">
+          <div class="flex items-center bg-blue-50 px-2 py-1 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-blue-500 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+              <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
             </svg>
-          </button>
-
-          <div id="questionDropdown" class="hidden absolute z-10 mt-2 w-80 bg-white rounded-md shadow-lg max-h-96 overflow-y-auto">
-            <ul id="categoryList" class="py-1 text-sm text-gray-700">
-              {categoryMenu.map((category) => (
-                <li class="category-item">
-                  <div class="px-4 py-2 font-medium bg-gray-50 hover:bg-gray-100 cursor-pointer flex justify-between items-center" data-category={category.code}>
-                    <span>{category.title}</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 category-icon" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                  </div>
-                  <ul class="subcategory-list hidden pl-2">
-                    {category.subcategories.map((subcategory) => (
-                      <li class="subcategory-item">
-                        <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center" data-category={category.code} data-subcategory={subcategory.code}>
-                          <span>{subcategory.title}</span>
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 subcategory-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                          </svg>
-                        </div>
-                        <ul class="question-list hidden pl-4">
-                          {subcategory.questions.map((questionId) => (
-                            <li class="px-4 py-1 hover:bg-gray-100 cursor-pointer question-item" data-id={questionId}>
-                              {questionId}
-                            </li>
-                          ))}
-                        </ul>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
+            <span class="font-medium mr-1 text-blue-700">Attempted:</span>
+            <span id="questionsAttempted" class="font-bold text-blue-600">0</span>
           </div>
-        </div>
-
-        <!-- User Status -->
-        <div class="bg-gray-100 px-4 py-2 rounded-md text-sm">
-          <span id="questionsAttempted">0</span> attempted / 
-          <span id="questionsCorrect">0</span> correct
-          <button id="resetProgress" class="ml-2 text-xs text-indigo-600 hover:text-indigo-800">Reset</button>
+          <div class="flex items-center bg-green-50 px-2 py-1 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-green-500 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span class="font-medium mr-1 text-green-700">Correct:</span>
+            <span id="questionsCorrect" class="font-bold text-green-600">0</span>
+          </div>
+          <div class="flex space-x-1">
+            <a href="/statistics" class="flex items-center px-2 py-1 text-xs text-white bg-blue-500 hover:bg-blue-600 rounded transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+              </svg>
+              Stats
+            </a>
+            <button id="resetProgress" class="flex items-center px-2 py-1 text-xs text-white bg-red-500 hover:bg-red-600 rounded transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              Reset
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </nav>
+
+<ResetConfirmationModal />
 
 <script>
   import useQuizStore from '../stores/quizStore';
@@ -203,11 +235,14 @@ const categoryMenu = createCategoryMenu(categories, questionGroups);
     const updateProgressDisplay = () => {
       const { attemptedQuestions, correctlyAnsweredQuestions } = useQuizStore.getState();
 
+      const attemptedCount = attemptedQuestions.length;
+      const correctCount = correctlyAnsweredQuestions.length;
+
       if (questionsAttempted) {
-        questionsAttempted.textContent = attemptedQuestions.length.toString();
+        questionsAttempted.textContent = attemptedCount.toString();
       }
       if (questionsCorrect) {
-        questionsCorrect.textContent = correctlyAnsweredQuestions.length.toString();
+        questionsCorrect.textContent = correctCount.toString();
       }
     };
 
@@ -216,6 +251,14 @@ const categoryMenu = createCategoryMenu(categories, questionGroups);
 
     // Reset progress button
     resetProgress?.addEventListener('click', () => {
+      // Show the reset confirmation modal
+      const resetConfirmationModal = document.getElementById('resetConfirmationModal');
+      resetConfirmationModal?.classList.remove('hidden');
+    });
+
+    // Confirm reset button in the modal
+    const confirmReset = document.getElementById('confirmReset');
+    confirmReset?.addEventListener('click', () => {
       // Use the resetProgress action from the quiz store
       const { resetProgress } = useQuizStore.getState();
       resetProgress();
@@ -225,6 +268,10 @@ const categoryMenu = createCategoryMenu(categories, questionGroups);
       localStorage.setItem('questionsCorrect', '0');
 
       updateProgressDisplay();
+
+      // Hide the modal after resetting
+      const resetConfirmationModal = document.getElementById('resetConfirmationModal');
+      resetConfirmationModal?.classList.add('hidden');
     });
 
     // Subscribe to store changes to update the display
