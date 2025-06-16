@@ -35,6 +35,25 @@ npm run dev
 
 ## Recent Changes
 
+### Direct Question Access
+
+A new feature has been added to allow users to directly access specific questions in two ways:
+
+1. **URL-based access**: Users can now enter a question ID in the URL to go directly to that question:
+   - For quiz mode: `/quiz/[question-id]` (e.g., `/quiz/B-005-001-005`)
+   - For study mode: `/question/[question-id]` (e.g., `/question/B-005-001-005`)
+
+2. **Dropdown selection**: A dropdown menu in the top navigation bar allows users to select and navigate to specific questions:
+   - Click on "Select Question" in the top navigation
+   - Choose a question from the dropdown list
+   - The page will navigate to the selected question in quiz mode
+
+This makes it easier to:
+- Share links to specific questions
+- Return to questions you want to review
+- Create custom study paths through the material
+- Implement features like bookmarking or question lists
+
 ### Search Functionality
 
 A new search feature has been added to the top navigation bar, allowing users to search for questions by ID or content. The search is powered by Pagefind, which creates a search index at build time, making it work even when the site is hosted as a static site.

@@ -1,8 +1,8 @@
 ---
 import Layout from '../../components/Layout.astro';
 import TopNav from '../../components/TopNav.astro';
-import QuizCard from '../../components/QuizCard.jsx';
 import LessonContent from '../../components/LessonContent.jsx';
+import QuizCard from '../../components/QuizCard.jsx';
 import { questionFiles, getAllQuestions, getQuestionById } from '../../utils/questions';
 
 // Generate paths for all questions
@@ -21,7 +21,7 @@ const { questionId } = Astro.props;
 const questionData = getQuestionById(questionId);
 
 if (!questionData) {
-  return Astro.redirect('/');
+  return Astro.redirect('/quiz');
 }
 
 const { id, question, answers, Content } = questionData;
@@ -30,38 +30,29 @@ const { id, question, answers, Content } = questionData;
 const allQuestions = getAllQuestions();
 ---
 
-<Layout title={`Question ${id} - Amateur Radio Exam Prep`}>
+<Layout title="Quiz - Amateur Radio Exam Prep">
   <TopNav questions={allQuestions} />
 
-  <div class="max-w-4xl mx-auto px-4 py-8">
-    <div class="mb-8">
-      <h1 class="text-2xl font-bold text-gray-800 mb-4">Question {id}</h1>
-      <div class="bg-white shadow-md rounded-lg p-6">
-        <QuizCard 
-          client:load
-          id={id}
-          question={question}
-          answers={answers}
-          onShowLesson={(questionId) => {
-            // This function will be called from the React component
-          }}
-        />
+  <div id="quizContainer" class="flex justify-center">
+    <div class="w-full max-w-2xl">
+      <QuizCard 
+        client:load
+        id={id}
+        question={question}
+        answers={answers}
+        onShowLesson={(questionId) => {
+          // This function will be called from the React component
+          // but we need to use client:only to make it work
+        }}
+      />
 
-        <!-- LessonContent component will be client-side hydrated -->
-        <LessonContent 
-          client:only="react"
-          isOpen={false}
-          onClose={() => {}}
-          content={null}
-        />
-      </div>
-    </div>
-
-    <div class="mt-8">
-      <h2 class="text-xl font-bold text-gray-800 mb-4">Lesson</h2>
-      <div class="bg-white shadow-md rounded-lg p-6 prose max-w-none">
-        <Content />
-      </div>
+      <!-- LessonContent component will be client-side hydrated -->
+      <LessonContent 
+        client:only="react"
+        isOpen={false}
+        onClose={() => {}}
+        content={null}
+      />
     </div>
   </div>
 

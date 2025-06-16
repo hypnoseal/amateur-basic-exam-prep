@@ -5,8 +5,8 @@ interface Props {
   questions?: Record<string, any>[];
 }
 
-// We're not using the questions prop in this component
-const { } = Astro.props;
+// Get the questions from props
+const { questions = [] } = Astro.props;
 ---
 
 <nav class="bg-white shadow-md mb-6">
@@ -14,7 +14,7 @@ const { } = Astro.props;
     <div class="flex flex-col md:flex-row md:items-center justify-between">
       <!-- Logo/Title -->
       <div class="flex items-center justify-between">
-        <a href="/" class="text-xl font-bold text-indigo-600">Amateur Radio Exam Prep</a>
+        <a href="/" class="text-xl font-bold text-red-600">Amateur Radio Exam Prep</a>
 
         <!-- Mobile menu button -->
         <button id="menuToggle" class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none">
@@ -43,6 +43,11 @@ const { } = Astro.props;
           <div id="questionDropdown" class="hidden absolute z-10 mt-2 w-full bg-white rounded-md shadow-lg max-h-60 overflow-y-auto">
             <ul id="questionList" class="py-1 text-sm text-gray-700">
               <!-- Questions will be populated here via JavaScript -->
+              {questions.map(q => (
+                <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer question-item" data-id={q.id}>
+                  Question {q.id}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -85,6 +90,18 @@ const { } = Astro.props;
       }
     });
 
+    // Handle question selection
+    const questionItems = document.querySelectorAll('.question-item');
+    questionItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const questionId = item.getAttribute('data-id');
+        if (questionId) {
+          // Navigate to the selected question
+          window.location.href = `/quiz/${questionId}`;
+        }
+      });
+    });
+
     // Search functionality
     const searchInput = document.getElementById('searchInput') as HTMLInputElement;
     const questionList = document.getElementById('questionList');
@@ -110,10 +127,14 @@ const { } = Astro.props;
 
     const updateProgressDisplay = () => {
       if (questionsAttempted) {
-        questionsAttempted.textContent = localStorage.getItem('questionsAttempted') || '0';
+        // Get the array of attempted questions and use its length
+        const attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '[]');
+        questionsAttempted.textContent = attemptedQuestions.length.toString();
       }
       if (questionsCorrect) {
-        questionsCorrect.textContent = localStorage.getItem('questionsCorrect') || '0';
+        // Get the array of correctly answered questions and use its length
+        const correctlyAnsweredQuestions = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions') || '[]');
+        questionsCorrect.textContent = correctlyAnsweredQuestions.length.toString();
       }
     };
 
@@ -122,8 +143,13 @@ const { } = Astro.props;
 
     // Reset progress button
     resetProgress?.addEventListener('click', () => {
+      // Reset questionsAttempted for backward compatibility, but it's no longer the primary source of truth
       localStorage.setItem('questionsAttempted', '0');
+      // Reset questionsCorrect for backward compatibility, but it's no longer the primary source of truth
       localStorage.setItem('questionsCorrect', '0');
+      // These are now the primary sources of truth for tracking progress
+      localStorage.setItem('attemptedQuestions', '[]');
+      localStorage.setItem('correctlyAnsweredQuestions', '[]');
       updateProgressDisplay();
     });
   });

@@ -29,35 +29,46 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
     setSelectedAnswerIndex(index);
     const isCorrect = randomizedAnswers[index].correct;
 
-    // Update localStorage counters
-    const attempted = parseInt(localStorage.getItem('questionsAttempted') || '0') + 1;
-    let correct = parseInt(localStorage.getItem('questionsCorrect') || '0');
+    // Get the array of attempted questions
+    let attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '[]');
 
-    if (isCorrect) {
-      correct += 1;
+    // Only add the ID if it's not already in the array
+    if (!attemptedQuestions.includes(id)) {
+      attemptedQuestions.push(id);
+      localStorage.setItem('attemptedQuestions', JSON.stringify(attemptedQuestions));
     }
 
-    // Update localStorage
-    localStorage.setItem('questionsAttempted', attempted.toString());
-    localStorage.setItem('questionsCorrect', correct.toString());
+    // Get the array of correctly answered questions
+    let correctlyAnsweredQuestions = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions') || '[]');
+
+    if (isCorrect) {
+      // Only add the ID if it's not already in the array
+      if (!correctlyAnsweredQuestions.includes(id)) {
+        correctlyAnsweredQuestions.push(id);
+        localStorage.setItem('correctlyAnsweredQuestions', JSON.stringify(correctlyAnsweredQuestions));
+      }
+    }
+
+    // Update localStorage for backward compatibility
+    localStorage.setItem('questionsAttempted', attemptedQuestions.length.toString());
 
     // Update the display in the TopNav
     const questionsAttemptedEl = document.getElementById('questionsAttempted');
     const questionsCorrectEl = document.getElementById('questionsCorrect');
 
     if (questionsAttemptedEl) {
-      questionsAttemptedEl.textContent = attempted.toString();
+      questionsAttemptedEl.textContent = attemptedQuestions.length.toString();
     }
 
     if (questionsCorrectEl) {
-      questionsCorrectEl.textContent = correct.toString();
+      questionsCorrectEl.textContent = correctlyAnsweredQuestions.length.toString();
     }
   };
 
   // Handle next question button click
   const handleNextQuestion = () => {
-    // Reload the page to get a new random question
-    window.location.reload();
+    // Navigate to the quiz route to get a new random question
+    window.location.href = '/quiz';
   };
 
   // Handle show lesson button click
@@ -71,6 +82,13 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
     if (onShowLesson) {
       onShowLesson(id);
     }
+  };
+
+  // Handle retry button click
+  const handleRetry = () => {
+    // Reset the question state
+    setHasAnswered(false);
+    setSelectedAnswerIndex(null);
   };
 
   return (
@@ -110,15 +128,30 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
       </div>
 
       <div className="mt-6 flex justify-between items-center">
-        <button 
-          className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-          onClick={handleNextQuestion}
-        >
-          Next Question
-        </button>
+        <div>
+          <button 
+            className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 mr-2"
+            onClick={handleNextQuestion}
+          >
+            Next Question
+          </button>
+
+          {hasAnswered && (
+            <button 
+              className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
+              onClick={handleRetry}
+            >
+              Retry
+            </button>
+          )}
+        </div>
 
         <button 
-          className="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+          className={`px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+            hasAnswered && selectedAnswerIndex !== null && !randomizedAnswers[selectedAnswerIndex].correct
+              ? 'bg-green-500 text-white hover:bg-green-600 focus:ring-green-500 font-medium shadow-md transform animate-pulse-twice'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-500'
+          }`}
           onClick={handleShowLesson}
         >
           Learn Topic

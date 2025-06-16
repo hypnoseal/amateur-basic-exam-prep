@@ -41,7 +41,7 @@ export default function LessonContent({ isOpen: initialIsOpen = false, onClose: 
   if (!isOpen) return null;
 
   return (
-    <div className="lesson-content mt-4">
+    <div className="lesson-content mt-12">
       <div className="prose prose-sm md:prose lg:prose-lg max-w-none" ref={contentRef}>
         {content && typeof content === 'object' && content.nodeType ? null : content}
       </div>
@@ -50,7 +50,7 @@ export default function LessonContent({ isOpen: initialIsOpen = false, onClose: 
           className="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
           onClick={onClose}
         >
-          Hide Content
+          Hide Lesson Content
         </button>
       </div>
     </div>

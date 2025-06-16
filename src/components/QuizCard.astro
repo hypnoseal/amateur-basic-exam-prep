@@ -60,41 +60,62 @@ const { id, question, answers, lessonContent } = Astro.props;
         const isCorrect = button.getAttribute('data-correct') === 'true';
         const explanation = button.nextElementSibling;
 
-        // Update localStorage counters
-        const attempted = parseInt(localStorage.getItem('questionsAttempted') || '0') + 1;
-        let correct = parseInt(localStorage.getItem('questionsCorrect') || '0');
+        // Get the question ID
+        const questionId = document.querySelector('.quiz-card')?.querySelector('.text-sm.text-gray-500')?.textContent?.replace('Question ID: ', '').trim();
 
-        if (isCorrect) {
-          correct += 1;
-          button.classList.add('selected-correct');
-        } else {
-          button.classList.add('selected-incorrect');
-          // Show the correct answer
-          answerButtons.forEach(btn => {
-            if (btn.getAttribute('data-correct') === 'true') {
-              btn.classList.add('correct-answer');
-              btn.nextElementSibling?.classList.remove('hidden');
+        if (questionId) {
+          // Get the array of attempted questions
+          let attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '[]');
+
+          // Only add the ID if it's not already in the array
+          if (!attemptedQuestions.includes(questionId)) {
+            attemptedQuestions.push(questionId);
+            localStorage.setItem('attemptedQuestions', JSON.stringify(attemptedQuestions));
+          }
+
+          // Get the array of correctly answered questions
+          let correctlyAnsweredQuestions = [];
+
+          if (isCorrect) {
+            button.classList.add('selected-correct');
+
+            // Store correctly answered question ID in localStorage
+            correctlyAnsweredQuestions = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions') || '[]');
+
+            // Only add the ID if it's not already in the array
+            if (!correctlyAnsweredQuestions.includes(questionId)) {
+              correctlyAnsweredQuestions.push(questionId);
+              localStorage.setItem('correctlyAnsweredQuestions', JSON.stringify(correctlyAnsweredQuestions));
             }
-          });
-        }
+          } else {
+            button.classList.add('selected-incorrect');
+            // Show the correct answer
+            answerButtons.forEach(btn => {
+              if (btn.getAttribute('data-correct') === 'true') {
+                btn.classList.add('correct-answer');
+                btn.nextElementSibling?.classList.remove('hidden');
+              }
+            });
+          }
 
-        // Update localStorage
-        localStorage.setItem('questionsAttempted', attempted.toString());
-        localStorage.setItem('questionsCorrect', correct.toString());
+          // Update localStorage for backward compatibility
+          localStorage.setItem('questionsAttempted', attemptedQuestions.length.toString());
 
-        // Show explanation
-        explanation?.classList.remove('hidden');
+          // Show explanation
+          explanation?.classList.remove('hidden');
 
-        // Update the display in the TopNav
-        const questionsAttemptedEl = document.getElementById('questionsAttempted');
-        const questionsCorrectEl = document.getElementById('questionsCorrect');
+          // Update the display in the TopNav
+          const questionsAttemptedEl = document.getElementById('questionsAttempted');
+          const questionsCorrectEl = document.getElementById('questionsCorrect');
 
-        if (questionsAttemptedEl) {
-          questionsAttemptedEl.textContent = attempted.toString();
-        }
+          if (questionsAttemptedEl) {
+            questionsAttemptedEl.textContent = attemptedQuestions.length.toString();
+          }
 
-        if (questionsCorrectEl) {
-          questionsCorrectEl.textContent = correct.toString();
+          if (questionsCorrectEl) {
+            // Use the length of correctlyAnsweredQuestions array
+            questionsCorrectEl.textContent = correctlyAnsweredQuestions.length.toString();
+          }
         }
       });
     });
