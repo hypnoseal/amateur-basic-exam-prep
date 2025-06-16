@@ -2,22 +2,95 @@
 id: "B-004-004-007"
 question: "What is the control electrode in a field-effect transistor?"
 answers:
-  - text: "Gate"
-    correct: true
-    explanation: "[TODO: Draft explanation why answer is correct.]"
-  - text: "Source"
-    correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
-  - text: "Drain"
-    correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
-  - text: "Base"
-    correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+- text: "Gate"
+  correct: true
+  explanation: "The gate electrode in a field-effect transistor (FET) is the primary control electrode that regulates the flow of current between the source and drain. By applying a voltage to the gate, the transistor can modulate the channel conductivity, effectively acting like a voltage-controlled current switch. This unique characteristic makes the gate the most critical electrode for controlling the transistor's behavior."
+- text: "Source"
+  correct: false
+  explanation: "The source is the electrode from which charge carriers originate in a field-effect transistor. While it's a key component of the transistor's structure, it does not control the current flow. The source is more like an entry point for current, with the gate determining whether and how much current can pass through."
+- text: "Drain"
+  correct: false
+  explanation: "The drain is the electrode where charge carriers exit the transistor after flowing through the channel. It's the destination for current flow, but it does not control the current's magnitude or existence. The drain's current is entirely dependent on the voltage applied to the gate and the voltage between the source and drain."
+- text: "Base"
+  correct: false
+  explanation: "Base is a term used in bipolar junction transistors (BJTs), not field-effect transistors (FETs). In BJTs, the base controls current flow, but FETs use a different mechanism with the gate as the control electrode. Confusing these terms indicates a misunderstanding of transistor types and their fundamental operating principles."
 ---
 
-[TODO: This section will explain the concept behind the question in detail. Once drafted the reader will understand all necessary concepts to answer the question confidently and correctly. The lesson will follow pedagogy best-practices and assume the reader is starting with no previous knowledge.]
+# Field-Effect Transistors: Understanding the Gate's Critical Role
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The fundamental structure of field-effect transistors (FETs)
+- The unique role of the gate electrode in controlling current flow
+- How FETs differ from other transistor types
+- The importance of the gate in electronic circuit design
+
+---
+
+## The Concept: Field-Effect Transistor Architecture
+
+A field-effect transistor (FET) is a voltage-controlled semiconductor device that uses an electric field to control the flow of current. Unlike bipolar junction transistors that use current to control current, FETs modulate current flow by changing the conductivity of a semiconductor channel through an applied voltage.
+
+The gate electrode is the critical control mechanism in this process. Think of it like a water valve in a pipe system: just as a valve can restrict or allow water flow by changing its opening, the gate can restrict or allow electrical current by changing the channel's conductivity through the applied electric field.
+
+### Types of FET Electrodes
+
+A typical FET has three primary electrodes:
+- **Gate**: The control electrode that regulates current flow
+- **Source**: The origin point of charge carriers
+- **Drain**: The destination for charge carriers
+
+The gate's voltage creates an electric field that either widens or narrows the conductive channel between the source and drain, effectively acting as a voltage-controlled switch.
+
+---
+
+## Real-World Examples
+
+### ✅ Gate Control Mechanisms:
+- **Analog Volume Control**: Using a FET to smoothly adjust audio signal strength
+- **Digital Switching**: Using gate voltage to turn circuits on and off rapidly
+- **Sensor Interfaces**: Translating small voltage changes into measurable current variations
+
+### ❌ Incorrect Electrode Assumptions:
+- **Treating Source as Control**: Attempting to control current by manipulating the source voltage
+- **Ignoring Gate's Importance**: Assuming all transistor electrodes function identically
+- **Confusing Transistor Types**: Applying bipolar transistor logic to field-effect transistors
+
+---
+
+## Practical Applications
+
+### For Electronic Design:
+1. **Amplifier Circuits**: Using gate voltage to control signal amplification
+2. **Low-Noise Amplification**: Leveraging FET characteristics for minimal signal distortion
+3. **High-Frequency Performance**: Utilizing FETs in RF and microwave circuits
+
+### For Amateur Radio Equipment:
+1. **Receiver Front-End Design**: Using FETs for low-noise signal conditioning
+2. **Transmitter Modulation**: Controlling signal characteristics through precise gate voltage
+3. **Antenna Switching**: Implementing solid-state switching mechanisms
+
+### Memory Aid:
+"**G**ate **G**overns **G**oing" - The Gate Governs the current Going through the transistor.
+
+---
+
+## Key Takeaways
+
+- The gate is the control electrode in a field-effect transistor, responsible for regulating current flow
+- FETs use voltage to control current, unlike bipolar transistors that use current to control current
+- Understanding the gate's role is crucial for designing and analyzing electronic circuits
+- Different transistor types have different control mechanisms, so it's important to recognize their unique characteristics
+- The gate's voltage creates an electric field that modifies the semiconductor channel's conductivity
+
+---
+
+## Related Concepts to Explore:
+- **MOSFET vs. JFET**: Different field-effect transistor architectures
+- **Transistor Biasing Techniques**: Methods of setting optimal gate voltages
+- **Semiconductor Physics**: The underlying principles of charge carrier movement
 
 ### Recommended Reading
-
-- [TODO: Relevant Links and YouTube Videos]
+- ARRL Handbook - Semiconductor Device Chapters
+- "The Art of Electronics" by Horowitz and Hill
+- YouTube: "Field Effect Transistor Explained" by Engineering Mindset

@@ -4,20 +4,88 @@ question: "In what values are RF transmission line losses expressed?"
 answers:
   - text: "Decibel per unit length"
     correct: true
-    explanation: "[TODO: Draft explanation why answer is correct.]"
+    explanation: "RF transmission line losses are expressed in decibels per unit length (typically decibels per 100 meters) because decibels provide a logarithmic representation of power reduction along a transmission line. This measurement allows engineers and amateur radio operators to compare different transmission line types and understand signal attenuation across varying frequencies and line lengths."
   - text: "Ohms per MHz"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "Ohms per MHz is not a valid measurement for transmission line losses. Ohms are used to measure impedance, which describes the characteristic resistance of a transmission line, but do not represent power loss or signal attenuation over distance."
   - text: "Decibel per MHz"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "This is an incorrect way to express transmission line losses. Decibel per MHz would imply loss changes with frequency, whereas actual transmission line loss is expressed per unit length, independent of frequency measurement."
   - text: "Ohms per metre"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "Ohms per metre describes the transmission line's characteristic impedance (resistance per unit length), not its power loss or signal attenuation. This measurement tells you about the line's electrical properties but does not indicate how much signal strength will be reduced over distance."
 ---
 
-[TODO: This section will explain the concept behind the question in detail. Once drafted the reader will understand all necessary concepts to answer the question confidently and correctly. The lesson will follow pedagogy best-practices and assume the reader is starting with no previous knowledge.]
+# Understanding RF Transmission Line Losses: The Decibel Perspective
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What transmission line losses represent in amateur radio
+- Why decibels are used to measure signal attenuation
+- How transmission line losses affect signal propagation
+- The relationship between line length, frequency, and signal degradation
+
+---
+
+## The Concept: Transmission Line Loss Measurement
+
+In amateur radio, **transmission line losses** represent the reduction in signal power that occurs as radio frequency (RF) energy travels along a cable or transmission line. These losses are inevitable and occur due to several factors, including conductor resistance, dielectric absorption, and electromagnetic radiation.
+
+Decibels (dB) are used to express these losses because they provide a logarithmic scale that accurately represents power reduction. Unlike linear measurements, decibels allow easy comparison between different transmission line types and frequencies, making them an ideal metric for quantifying signal attenuation.
+
+### The Logarithmic Advantage
+
+Imagine signal loss like walking down a gradually sloping hill. A linear measurement would show small changes, while a logarithmic scale (decibels) reveals the cumulative effect more clearly. For transmission lines, this means you can quickly understand how much signal strength decreases per unit length.
+
+---
+
+## Real-World Examples
+
+### ✅ Proper Loss Measurement:
+- **RG-8U Coaxial Cable**: Might have losses of 2.5 dB per 100 meters at 146 MHz
+- **Heliax Hardline**: Could have much lower losses, around 0.5 dB per 100 meters
+- **Thin Coax**: Might experience higher losses, perhaps 4-5 dB per 100 meters
+
+### ❌ Incorrect Loss Representations:
+- **Ohms per MHz**: Describes impedance, not power loss
+- **Raw Power Reduction**: Doesn't account for logarithmic signal behavior
+- **Frequency-Independent Measurements**: Fails to recognize frequency's impact on attenuation
+
+---
+
+## Practical Applications
+
+### For Antenna System Design:
+1. **Cable Selection**: Choose transmission lines with lowest loss for your frequency and distance
+2. **Length Considerations**: Understand how cable length impacts signal strength
+3. **Frequency-Specific Planning**: Recognize that losses vary with operating frequency
+
+### For Field Day and Portable Operations:
+1. **Minimize Cable Runs**: Use shortest possible transmission lines
+2. **Select Low-Loss Cables**: Prioritize cable types with minimal decibel loss per unit length
+3. **Understand Trade-offs**: Balance cable thickness, flexibility, and loss characteristics
+
+### Memory Aid:
+"**D**ecibels **D**escribe **D**egradation" - Use decibels per unit length to understand transmission line performance.
+
+---
+
+## Key Takeaways
+
+- RF transmission line losses are expressed in decibels per unit length
+- Decibels provide a logarithmic representation of signal power reduction
+- Losses vary with frequency, cable type, and length
+- Lower decibel values indicate better transmission line performance
+- Understanding loss characteristics helps optimize amateur radio station design
+
+---
+
+## Related Concepts to Explore:
+- **Transmission Line Impedance**: How cable characteristics impact signal propagation
+- **Frequency-Dependent Losses**: Mechanisms causing signal attenuation
+- **Cable Selection Strategies**: Choosing optimal transmission lines for different amateur radio applications
 
 ### Recommended Reading
-
-- [TODO: Relevant Links and YouTube Videos]
+- ARRL Handbook: Transmission Line Theory Chapter
+- "Practical Antenna Handbook" by Joseph Carr
+- W2VU Transmission Line Loss Calculators Online Resource

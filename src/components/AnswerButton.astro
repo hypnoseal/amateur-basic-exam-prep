@@ -23,22 +23,8 @@ const letters = ['A', 'B', 'C', 'D'];
       <span>{text}</span>
     </div>
   </button>
-  
+
   <div class="explanation mt-2 ml-9 text-sm text-gray-600 hidden">
     {explanation || (isCorrect ? "This is the correct answer." : "This is not the correct answer.")}
   </div>
 </div>
-
-<style>
-  .answer-button.selected-correct {
-    @apply bg-green-100 border-green-500;
-  }
-  
-  .answer-button.selected-incorrect {
-    @apply bg-red-100 border-red-500;
-  }
-  
-  .answer-button.correct-answer {
-    @apply bg-green-50 border-green-300;
-  }
-</style>

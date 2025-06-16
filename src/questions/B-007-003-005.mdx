@@ -4,20 +4,89 @@ question: "The distance to Europe from your location is approximately 5000 km. W
 answers:
   - text: "Multi-hop"
     correct: true
-    explanation: "[TODO: Draft explanation why answer is correct.]"
+    explanation: "Multi-hop propagation occurs when radio waves are reflected multiple times between the Earth's surface and the ionosphere, allowing signals to travel much farther than line-of-sight communications. At a distance of 5000 km, multiple ionospheric reflections (hops) are required to complete the transmission path, making this the most probable propagation method for long-distance HF communication between continents."
   - text: "Sporadic \"E\""
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "Sporadic E propagation is a short-lived ionospheric phenomenon typically supporting communications over distances of 1000-2000 km. It occurs when unusually dense patches of ionization form in the E layer of the ionosphere, which is too short to support a 5000 km communication path. This mode is unpredictable and primarily affects VHF frequencies, not reliable for consistent long-distance HF communication."
   - text: "Back scatter"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "Back scatter is a propagation mode where radio waves are reflected from rough surfaces or ionospheric irregularities back towards the transmitter, typically resulting in very short communication ranges. It's not suitable for long-distance communication like a 5000 km path and provides weak, intermittent signals that are not reliable for consistent international communication."
   - text: "Tropospheric scatter"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "Tropospheric scatter involves radio waves being scattered by atmospheric conditions in the lowest layer of the atmosphere (troposphere). This propagation mode is most effective for distances of 300-500 km and requires specialized high-power equipment. At 5000 km, tropospheric scatter would be completely ineffective for establishing radio communication."
 ---
 
-[TODO: This section will explain the concept behind the question in detail. Once drafted the reader will understand all necessary concepts to answer the question confidently and correctly. The lesson will follow pedagogy best-practices and assume the reader is starting with no previous knowledge.]
+# Long-Distance HF Propagation: Understanding Multi-Hop Communication
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How radio waves travel across long distances using ionospheric reflection
+- The mechanics of multi-hop propagation
+- Factors that influence long-distance HF communication
+- Why some propagation methods work better at different distances
+
+---
+
+## The Concept: Ionospheric Propagation and Multi-Hop Communication
+
+Radio waves in the High Frequency (HF) band have a remarkable ability to travel far beyond the horizon by bouncing between the Earth's surface and the ionosphere—a layer of charged particles in the upper atmosphere. This phenomenon, known as ionospheric propagation, allows amateur radio operators to communicate across continents and oceans using relatively low power.
+
+**Multi-hop propagation** occurs when a radio signal is reflected multiple times between the Earth's surface and the ionospheric layers. Each reflection is called a "hop," and the number of hops required depends on the total distance to be covered. For a 5000 km journey, multiple hops are essential—typically 3-4 reflections are needed to complete such a long path.
+
+### The Ionospheric Layers
+
+The ionosphere isn't a uniform layer but a complex, dynamic region with multiple sub-layers (D, E, F1, F2) that change based on time of day, solar activity, and season. The F2 layer is particularly important for long-distance HF communication because it can reflect signals at the highest frequencies and support the longest communication paths.
+
+---
+
+## Real-World Examples
+
+### ✅ Successful Multi-Hop Scenarios:
+- **North American to European Communication**: Typical 5000 km path requiring 3-4 ionospheric hops
+- **Trans-Pacific Contacts**: Connecting West Coast USA with Japan or Australia
+- **Polar Path Communications**: Using ionospheric reflections to bridge extreme distances near polar regions
+
+### ❌ Propagation Methods That Fail at Long Distances:
+- **Sporadic E**: Limited to ~1500 km, unreliable for consistent communication
+- **Tropospheric Scatter**: Effective only for regional communications
+- **Line of Sight**: Impossible beyond the horizon for HF frequencies
+
+---
+
+## Practical Applications
+
+### For HF Communication Planning:
+1. **Time of Day Considerations**: Different ionospheric layers are more active during different times
+2. **Solar Cycle Impact**: Higher solar activity increases ionization and improves multi-hop propagation
+3. **Frequency Selection**: Choose frequencies that can be effectively reflected by the ionosphere
+
+### For Long-Distance Contacts:
+1. **Listen Before Transmitting**: Understand current propagation conditions
+2. **Use Appropriate Antenna Configurations**: Directional antennas improve long-distance performance
+3. **Be Patient**: Multi-hop propagation can be variable and unpredictable
+
+### Memory Aid:
+"**H**igh **F**requency **H**ops High" - Multi-hop propagation is the key to long-distance HF communication.
+
+---
+
+## Key Takeaways
+
+- Multi-hop propagation is the primary method for communicating over distances of 5000 km using HF frequencies
+- Radio waves bounce between the Earth and ionospheric layers, with 3-4 hops typically required for such distances
+- Propagation effectiveness depends on ionospheric conditions, time of day, solar activity, and chosen frequency
+- Different propagation methods have specific range limitations
+- Understanding these principles helps amateur radio operators plan and execute long-distance communications
+
+---
+
+## Related Concepts to Explore:
+- **Solar Cycle and Propagation**: How solar activity affects ionospheric layers
+- **Antenna Design for Long-Distance Communication**: Optimizing antenna performance for multi-hop paths
+- **Propagation Prediction Tools**: Software and techniques for forecasting communication possibilities
 
 ### Recommended Reading
-
-- [TODO: Relevant Links and YouTube Videos]
+- ARRL Handbook: HF Propagation Chapter
+- "The New Shortwave Propagation Handbook" by George Jacobs
+- DXLab Suite - Propagation prediction software
+- YouTube: "HF Propagation Explained" by HamRadio2.0

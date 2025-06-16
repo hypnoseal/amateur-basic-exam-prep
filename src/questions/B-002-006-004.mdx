@@ -4,20 +4,105 @@ question: "What is the meaning of: \"Your signal report is 3 3\"?"
 answers:
   - text: "Your signal is readable with considerable difficulty and weak in strength"
     correct: true
-    explanation: "[TODO: Draft explanation why answer is correct.]"
+    explanation: "This answer correctly interprets the RST (Readability, Strength, Tone) signal reporting system used in amateur radio. The first number '3' indicates readability with considerable difficulty, while the second number '3' signifies a weak signal strength. This standardized system allows operators to quickly communicate the quality of a received transmission."
   - text: "Your signal is unreadable, very weak in strength"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "This interpretation is too extreme. A '3' in readability means the signal can be understood with considerable difficulty, not that it's completely unreadable. The difference is subtle but important - the communication is challenging but still possible."
   - text: "The station is located at latitude 33 degrees"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "This is a complete misunderstanding of the RST signal reporting system. Signal reports are about the quality of radio transmission, not geographical coordinates. Latitude information would be communicated separately if relevant to the contact."
   - text: "The contact is serial number 33"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "This misinterprets the signal report as a contact log number. In amateur radio contacts, signal reports use the RST system to describe signal quality, not to assign sequential contact numbers."
 ---
 
-[TODO: This section will explain the concept behind the question in detail. Once drafted the reader will understand all necessary concepts to answer the question confidently and correctly. The lesson will follow pedagogy best-practices and assume the reader is starting with no previous knowledge.]
+# Understanding RST Signal Reports: Communicating Signal Quality in Amateur Radio
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The meaning and purpose of RST signal reporting
+- How to interpret readability, strength, and tone components
+- The importance of standardized communication in amateur radio
+- How signal reports help operators assess radio propagation and equipment performance
+
+---
+
+## The Concept: RST Signal Reporting System
+
+The RST (Readability, Strength, Tone) system is a standardized method used by amateur radio operators to quickly and objectively communicate the quality of a received radio signal. It provides a concise way to describe how well a transmission can be understood and the signal's characteristics.
+
+Each component of the RST report uses a numeric scale:
+- **Readability (R)**: How easy the signal is to understand
+- **Strength (S)**: The signal's power or intensity
+- **Tone (T)**: The audio quality (mainly for CW/Morse code transmissions)
+
+For voice communications, typically only Readability and Strength are used. The scale ranges from 1-5 for both categories, with higher numbers indicating better signal quality.
+
+### Readability Scale
+- **1**: Impossible to understand
+- **2**: Barely readable, occasional words distinguishable
+- **3**: Readable with considerable difficulty
+- **4**: Readable with practically no difficulty
+- **5**: Perfectly readable
+
+### Strength Scale
+- **1**: Faint signal, barely perceptible
+- **2**: Very weak signal
+- **3**: Weak signal
+- **4**: Fair signal
+- **5**: Good signal
+- **6-9**: Progressively stronger signals
+
+---
+
+## Real-World Examples
+
+### ✅ Typical Signal Report Scenarios:
+- **"59"**: Perfect readability, very strong signal
+- **"33"**: Readable with difficulty, weak signal
+- **"22"**: Barely readable, very weak signal
+- **"45"**: Mostly clear signal with moderate strength
+
+### ❌ Incorrect Signal Report Usage:
+- **Using geographic coordinates instead of signal quality**
+- **Confusing signal reports with contact numbers**
+- **Providing overly subjective descriptions**
+
+---
+
+## Practical Applications
+
+### For Field Communications:
+1. **Propagation Assessment**: Signal reports help understand how radio waves are traveling
+2. **Equipment Evaluation**: Compare performance of different antennas and radios
+3. **Emergency Communications**: Quickly communicate signal reliability during critical situations
+
+### For Contest and DX Operators:
+1. **Standardized Logging**: Consistent method of recording contact quality
+2. **Performance Tracking**: Analyze signal characteristics across different bands and conditions
+3. **Equipment Optimization**: Identify areas for improving station performance
+
+### Memory Aid:
+"**R**eadability **S**trength **T**alk: How **C**lear and **L**oud?"
+
+---
+
+## Key Takeaways
+
+- RST is a standardized system for reporting radio signal quality
+- "3 3" means the signal is readable with considerable difficulty and is weak
+- The first number represents readability, the second represents signal strength
+- This system provides a quick, objective way to communicate signal characteristics
+- Understanding RST helps improve communication and technical skills in amateur radio
+
+---
+
+## Related Concepts to Explore:
+- **Propagation Principles**: How radio signals travel and vary in different conditions
+- **Antenna Performance**: How antenna design affects signal strength and readability
+- **Digital Mode Signal Reporting**: Alternative reporting methods for digital communications
 
 ### Recommended Reading
-
-- [TODO: Relevant Links and YouTube Videos]
+- ARRL Handbook: Communication Practices Section
+- "The Complete DXer" by Bob Locher - In-depth explanation of signal reporting
+- YouTube: W1AW Signal Reporting Tutorial Series

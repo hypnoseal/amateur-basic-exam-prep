@@ -4,20 +4,92 @@ question: "When considering the material between source and drain, what are two 
 answers:
   - text: "N channel and P channel"
     correct: true
-    explanation: "[TODO: Draft explanation why answer is correct.]"
+    explanation: "N-channel and P-channel FETs are distinguished by the type of semiconductor material (either N-type or P-type) that forms the channel between the source and drain. In an N-channel FET, the channel is made of N-type semiconductor material with negative charge carriers (electrons), while in a P-channel FET, the channel is made of P-type semiconductor material with positive charge carriers (holes). This fundamental difference determines how the transistor conducts electrical current under different gate voltage conditions."
   - text: "NPN and PNP"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "NPN and PNP are types of bipolar junction transistors (BJTs), not field-effect transistors (FETs). These are different transistor technologies with distinct operating principles. BJTs use current flow through junction regions, while FETs control current flow through a semiconductor channel using an electric field, making them fundamentally different types of transistors."
   - text: "Silicon and germanium"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "Silicon and germanium are semiconductor materials used in transistor construction, not types of field-effect transistors. While these materials can be used to create FETs, they describe the substrate of the transistor, not the channel configuration that defines FET types."
   - text: "Gallium and arsenide"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "Gallium arsenide is a semiconductor compound used in some specialized electronic components, but it is not a type of field-effect transistor. This answer confuses material composition with transistor classification and does not describe the channel types of FETs."
 ---
 
-[TODO: This section will explain the concept behind the question in detail. Once drafted the reader will understand all necessary concepts to answer the question confidently and correctly. The lesson will follow pedagogy best-practices and assume the reader is starting with no previous knowledge.]
+# Field-Effect Transistors: Understanding N-Channel and P-Channel Configurations
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The fundamental differences between N-channel and P-channel FETs
+- How semiconductor material determines transistor behavior
+- The role of charge carriers in electronic components
+- The basic principles of field-effect transistor operation
+
+---
+
+## The Concept: Field-Effect Transistor Channel Types
+
+Field-effect transistors (FETs) are voltage-controlled electronic devices that use an electric field to control current flow through a semiconductor channel. The two basic types of FETs are distinguished by the type of charge carriers and semiconductor material that form the channel between the source and drain terminals.
+
+In an **N-channel FET**, the channel is composed of N-type semiconductor material, characterized by negative charge carriers (electrons). When a positive voltage is applied to the gate, these electrons are attracted, creating a conductive path between the source and drain. Conversely, a **P-channel FET** uses P-type semiconductor material with positive charge carriers (holes), and operates with opposite voltage polarities.
+
+### Semiconductor Physics Fundamentals
+
+Semiconductors can be doped to create two primary types of material:
+- **N-type**: Contains extra free electrons (negative charge carriers)
+- **P-type**: Contains extra "holes" (positive charge carriers)
+
+The interaction between these materials and applied electric fields creates the basis for transistor operation, allowing precise control of electrical current.
+
+---
+
+## Real-World Examples
+
+### ✅ Practical N-Channel and P-Channel Applications:
+- **N-Channel FET**: Commonly used in low-side switching circuits, computer processors, and power amplifiers
+- **P-Channel FET**: Often employed in high-side switching, battery management systems, and complementary circuit designs
+- **Complementary Designs**: Many electronic circuits use both N-channel and P-channel FETs to create more efficient and versatile switching networks
+
+### ❌ Incorrect Transistor Type Identifications:
+- **Confusing BJTs with FETs**: NPN and PNP are bipolar junction transistors, fundamentally different from FETs
+- **Misidentifying Material as Type**: Silicon and germanium are materials, not transistor classifications
+- **Oversimplifying Semiconductor Physics**: Treating all transistors as identical without understanding their specific characteristics
+
+---
+
+## Practical Applications
+
+### For Electronic Design:
+1. **Circuit Design**: Choose N-channel or P-channel FETs based on specific circuit requirements
+2. **Power Management**: Understand how channel type affects switching efficiency
+3. **Signal Processing**: Utilize FET characteristics for amplification and modulation
+
+### For Amateur Radio Construction:
+1. **Receiver Front-Ends**: Use low-noise FETs for sensitive signal detection
+2. **Transmitter Stages**: Select appropriate FET types for power amplification
+3. **Switching Circuits**: Implement N-channel and P-channel FETs in complex radio control systems
+
+### Memory Aid:
+"**N**egative goes **N**-type, **P**ositive goes **P**-type" - Remember the basic voltage interactions with different FET channel configurations.
+
+---
+
+## Key Takeaways
+
+- N-channel and P-channel are the two basic types of field-effect transistors
+- Channel type is determined by the semiconductor material's charge carrier properties
+- N-channel FETs use electron conduction, P-channel FETs use hole conduction
+- Understanding FET types is crucial for electronic circuit design and amateur radio construction
+- Transistor classification goes beyond simple material composition
+
+---
+
+## Related Concepts to Explore:
+- **Transistor Amplification Principles**
+- **Semiconductor Doping Techniques**
+- **Advanced FET Architectures**
 
 ### Recommended Reading
-
-- [TODO: Relevant Links and YouTube Videos]
+- ARRL Handbook: Semiconductor Devices Chapter
+- "The Art of Electronics" by Horowitz and Hill
+- Online Course: Semiconductor Physics Fundamentals

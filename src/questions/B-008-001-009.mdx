@@ -4,20 +4,88 @@ question: "Two mobile stations are communicating through a repeater. As they arr
 answers:
   - text: "Transmitter signals are desensitizing the receivers"
     correct: true
-    explanation: "[TODO: Draft explanation why answer is correct.]"
+    explanation: "When two mobile stations are very close to each other, their powerful transmitters can overwhelm (desensitize) the receiver's front-end circuitry. This phenomenon, known as receiver desensitization or 'receiver blocking', occurs when the strong RF signals from nearby transmitters reduce the receiver's ability to detect weaker incoming signals. The receiver's front-end amplifier becomes saturated, effectively preventing it from picking up the repeater's input signal."
   - text: "CTCSS tones are activating the receivers' squelch circuits"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "CTCSS (Continuous Tone-Coded Squelch System) tones are designed to prevent receiver activation from unintended signals, not cause communication difficulties. In this scenario, CTCSS would actually help manage interference, not create it. The proximity of the stations would not typically trigger unexpected CTCSS squelch behavior."
   - text: "They have entered a null area of their antenna patterns"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "Antenna pattern nulls typically cause signal reduction at greater distances, not when stations are in close proximity. This explanation doesn't match the scenario of two mobile stations near each other experiencing communication difficulties through a repeater. Null areas are more relevant to directional antenna performance at longer ranges."
   - text: "Transmitter signals are mixing with the repeater signal to cause intermodulation"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "While intermodulation can occur when multiple strong signals are present, this is not the most likely cause of communication difficulties when mobile stations are in close proximity. Intermodulation typically requires specific signal strength and frequency relationships that are not automatically created by nearby transmitters."
 ---
 
-[TODO: This section will explain the concept behind the question in detail. Once drafted the reader will understand all necessary concepts to answer the question confidently and correctly. The lesson will follow pedagogy best-practices and assume the reader is starting with no previous knowledge.]
+# Receiver Desensitization: When Proximity Disrupts Radio Communication
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What receiver desensitization means in amateur radio
+- How transmitter signals can interfere with receiver performance
+- The technical mechanisms behind signal blocking
+- Practical strategies to mitigate desensitization issues
+
+---
+
+## The Concept: Receiver Desensitization in Mobile Communications
+
+Receiver desensitization occurs when a strong radio frequency (RF) signal overwhelms a receiver's front-end circuitry, effectively reducing its ability to detect weaker signals. In amateur radio, this phenomenon is particularly common in mobile and repeater environments where multiple transmitters operate in close proximity.
+
+Think of a receiver like a microphone at a quiet conference. If someone suddenly starts shouting right next to the microphone, it becomes impossible to hear the original speaker. Similarly, when powerful transmitters are very close to each other, they can "drown out" the receiver's ability to detect incoming signals.
+
+### The Technical Mechanism
+
+A radio receiver's front-end amplifier is designed to boost weak incoming signals. However, when extremely strong signals are present nearby, the amplifier can become saturated or "compressed". This means it loses its ability to linearly amplify the desired signal, effectively blocking or severely attenuating incoming communications.
+
+---
+
+## Real-World Examples
+
+### ✅ Scenarios Demonstrating Receiver Desensitization:
+- **Urban Mobile Repeater**: Two vehicles with high-power mobile radios operating very close to each other
+- **Field Day Operations**: Multiple stations transmitting simultaneously in a compact area
+- **Emergency Communications**: Crowded communication environments with many active transmitters
+
+### ❌ Situations Not Causing Desensitization:
+- **Distant Stations**: Transmitters separated by significant distances
+- **Low-Power Handheld Radios**: Devices with minimal transmit power
+- **Stations Using Different Frequency Bands**: No RF signal overlap
+
+---
+
+## Practical Applications
+
+### For Mobile Radio Users:
+1. **Maintain Antenna Separation**: Position vehicle antennas as far apart as possible
+2. **Use Lower Transmit Power**: Reduce output power when in close proximity
+3. **Employ Receiver Preselection**: Use filters to minimize front-end signal overload
+
+### For Repeater Operators:
+1. **Implement Receiver Filtering**: Advanced receiver designs with better front-end filtering
+2. **Monitor Desensitization Patterns**: Track areas prone to signal interference
+3. **Coordinate Local Repeater Usage**: Establish protocols for managing close-proximity communications
+
+### Memory Aid:
+"**P**roximity **P**revents **P**erformance" - Close transmitters can paralyze receiver performance!
+
+---
+
+## Key Takeaways
+
+- Receiver desensitization occurs when strong nearby transmitters overwhelm a receiver's front-end circuitry
+- Mobile stations in close proximity are particularly susceptible to this phenomenon
+- The issue is more about signal strength and proximity than specific technical configurations
+- Proper antenna placement, power management, and receiver design can mitigate desensitization
+- Understanding this concept helps amateur radio operators maintain effective communications in challenging environments
+
+---
+
+## Related Concepts to Explore:
+- **Intermodulation Distortion**: Another RF interference mechanism
+- **Receiver Dynamic Range**: How receivers handle strong and weak signals
+- **Front-End Filtering Techniques**: Methods to improve receiver performance
 
 ### Recommended Reading
-
-- [TODO: Relevant Links and YouTube Videos]
+- ARRL Handbook: Receiver Design and Performance
+- "Technical Topics in Amateur Radio" by W1FB
+- Online tutorials on RF signal propagation and interference

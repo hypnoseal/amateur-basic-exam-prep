@@ -2,7 +2,7 @@
 import Layout from '../../components/Layout.astro';
 import TopNav from '../../components/TopNav.astro';
 import QuizCard from '../../components/QuizCard.jsx';
-import LessonModal from '../../components/LessonModal.jsx';
+import LessonContent from '../../components/LessonContent.jsx';
 
 // Get all question files at build time
 const questionFiles = import.meta.glob('./../../questions/*.mdx', { eager: true });
@@ -54,6 +54,14 @@ const allQuestions = Object.values(questionFiles).map(file => {
             // This function will be called from the React component
           }}
         />
+
+        <!-- LessonContent component will be client-side hydrated -->
+        <LessonContent 
+          client:only="react"
+          isOpen={false}
+          onClose={() => {}}
+          content={null}
+        />
       </div>
     </div>
 
@@ -64,14 +72,6 @@ const allQuestions = Object.values(questionFiles).map(file => {
       </div>
     </div>
   </div>
-
-  <!-- LessonModal component will be client-side hydrated -->
-  <LessonModal 
-    client:only="react"
-    isOpen={false}
-    onClose={() => {}}
-    content={null}
-  />
 
   <!-- Hidden element to store lesson content for the current question -->
   <div id={`lesson-${id}`} class="hidden">
@@ -97,8 +97,8 @@ const allQuestions = Object.values(questionFiles).map(file => {
         // Show the cloned content (it was hidden in the original)
         lessonContentClone.classList.remove('hidden');
 
-        // Dispatch a custom event to open the React modal with the content
-        document.dispatchEvent(new CustomEvent('react-open-lesson-modal', {
+        // Dispatch a custom event to display the lesson content
+        document.dispatchEvent(new CustomEvent('react-open-lesson-content', {
           detail: {
             content: lessonContentClone
           }

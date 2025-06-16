@@ -4,20 +4,88 @@ question: "If a neighbour reports television interference whenever you transmit,
 answers:
   - text: "Receiver overload"
     correct: true
-    explanation: "[TODO: Draft explanation why answer is correct.]"
+    explanation: "Receiver overload occurs when the television's front-end electronics are overwhelmed by the strong radio frequency signals from the amateur radio transmitter. This happens when the RF signal is so powerful that it saturates the TV receiver's amplification stages, causing distortion across multiple frequencies regardless of the amateur radio band being used. Unlike other interference mechanisms, receiver overload affects the TV's ability to process signals uniformly, creating broad-spectrum interference."
   - text: "Incorrect antenna length"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "Antenna length issues typically cause selective interference on specific frequencies or bands, not consistent interference across all transmissions. An incorrectly sized antenna would create resonance problems at particular frequencies, but would not explain uniform interference across all amateur radio bands. The problem described requires a more pervasive interference mechanism that affects the TV receiver's fundamental electronics."
   - text: "Spurious emissions"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "While spurious emissions can cause interference, they are typically frequency-specific and would not generate consistent interference across all transmission bands. Spurious emissions are unwanted signals generated at frequencies other than the fundamental transmission frequency, but they would be more likely to affect specific frequency ranges rather than causing uniform interference on every band."
   - text: "Deficient harmonic suppression"
     correct: false
-    explanation: "[TODO: Draft explanation why answer is incorrect.]"
+    explanation: "Harmonic suppression issues would typically create interference at specific harmonic frequencies—multiples of the fundamental transmission frequency. While harmonics can cause TV interference, they would not explain interference that occurs uniformly across all amateur radio bands. Deficient harmonic suppression would create predictable, frequency-related interference patterns."
 ---
 
-[TODO: This section will explain the concept behind the question in detail. Once drafted the reader will understand all necessary concepts to answer the question confidently and correctly. The lesson will follow pedagogy best-practices and assume the reader is starting with no previous knowledge.]
+# Television Interference: Understanding Receiver Overload in Amateur Radio
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What receiver overload means in radio communications
+- How strong RF signals can disrupt television reception
+- The difference between various types of radio frequency interference
+- Practical strategies for preventing receiver overload
+
+---
+
+## The Concept: Receiver Overload Mechanics
+
+Receiver overload is a phenomenon where an electronic device's input circuitry becomes saturated by strong radio frequency signals, causing widespread signal distortion. In amateur radio, this occurs when your transmitter generates such powerful signals that they overwhelm the sensitive front-end electronics of nearby television receivers.
+
+Modern television receivers use sophisticated amplification circuits to process weak broadcast signals. These circuits have a specific dynamic range—a range of signal strengths they can process without distortion. When an amateur radio transmitter generates signals significantly stronger than this range, the TV's amplification stages become "saturated" or overloaded, causing uniform interference across all frequencies.
+
+### The Electronic Breakdown
+
+Imagine your TV's receiver as a sophisticated audio system with a volume control. Receiver overload is like suddenly blasting an extremely loud sound that causes the entire sound system to distort, regardless of the music's pitch or frequency. In radio terms, strong RF signals essentially "blow out" the receiver's ability to process signals cleanly.
+
+---
+
+## Real-World Examples
+
+### ✅ Classic Receiver Overload Scenarios:
+- **High-Power HF Transmissions**: Powerful amateur radio stations transmitting near residential areas
+- **Close Proximity Installations**: Amateur radio antennas mounted very close to home entertainment systems
+- **Inadequate RF Filtering**: Stations without proper front-end filtering and protection circuits
+
+### ❌ Interference Mechanisms That Don't Cause Uniform Interference:
+- **Harmonic Radiation**: Creates predictable, frequency-specific interference
+- **Antenna Resonance Issues**: Causes selective frequency problems
+- **Intermittent Signal Coupling**: Generates inconsistent interference patterns
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Operators:
+1. **Use RF Filters**: Install low-pass and band-pass filters to reduce out-of-band emissions
+2. **Minimize Transmitter Power**: Use only the necessary power for communication
+3. **Implement Physical Separation**: Keep transmitting antennas as far from home electronics as possible
+
+### For Interference Mitigation:
+1. **Install Ferrite Chokes**: Reduce unwanted RF signals on power and audio cables
+2. **Use RF Chokes on Transmission Lines**: Prevent RF from coupling into home wiring
+3. **Collaborate with Neighbors**: Work together to identify and resolve interference issues
+
+### Memory Aid:
+"**O**ver-**P**ower **E**liminates **N**ormal reception" - OPEN: The key to understanding receiver overload!
+
+---
+
+## Key Takeaways
+
+- Receiver overload occurs when strong RF signals saturate a television's front-end electronics
+- This interference happens uniformly across all frequencies, regardless of the amateur radio band used
+- Proper filtering, power management, and antenna placement can significantly reduce receiver overload risks
+- Amateur radio operators have a responsibility to minimize interference to neighboring electronic devices
+- Understanding the technical mechanisms of interference helps develop more effective mitigation strategies
+
+---
+
+## Related Concepts to Explore:
+- **RF Filtering Techniques**: Methods to reduce unwanted signal radiation
+- **Electromagnetic Compatibility (EMC)**: Principles of managing electronic device interactions
+- **Amateur Radio Good Neighbor Practices**: Maintaining positive relationships while pursuing the hobby
 
 ### Recommended Reading
-
-- [TODO: Relevant Links and YouTube Videos]
+- ARRL RFI Book: Comprehensive guide to radio frequency interference
+- IARU Region 2 Interference Guidelines
+- YouTube: "Managing RF Interference in Amateur Radio" by leading amateur radio educators
