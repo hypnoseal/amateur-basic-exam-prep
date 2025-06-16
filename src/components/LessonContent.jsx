@@ -10,6 +10,8 @@ export default function LessonContent({ isOpen: initialIsOpen = false, onClose: 
   // Function to close the content - memoized to prevent unnecessary re-renders
   const onClose = useCallback(() => {
     setIsOpen(false);
+    // Dispatch a custom event to notify other components that the lesson is closed
+    document.dispatchEvent(new CustomEvent('lesson-content-closed'));
   }, []);
 
   // Listen for custom events to control the content display
@@ -20,10 +22,16 @@ export default function LessonContent({ isOpen: initialIsOpen = false, onClose: 
       setIsOpen(true);
     };
 
+    const handleCloseLesson = () => {
+      setIsOpen(false);
+    };
+
     document.addEventListener('react-open-lesson-content', handleOpenLesson);
+    document.addEventListener('react-close-lesson-content', handleCloseLesson);
 
     return () => {
       document.removeEventListener('react-open-lesson-content', handleOpenLesson);
+      document.removeEventListener('react-close-lesson-content', handleCloseLesson);
     };
   }, []);
 
