@@ -63,9 +63,11 @@ const allQuestions = getAllQuestions();
 </Layout>
 
 <script>
+  import useLessonStore from '../../stores/lessonStore';
+
   // Set up the interaction between QuizCard and LessonModal
   document.addEventListener('DOMContentLoaded', () => {
-    // Listen for the custom event from the QuizCard component
+    // Listen for the custom event from the QuizCard component for backward compatibility
     document.addEventListener('showLesson', (event) => {
       const detail = (event as CustomEvent<{ questionId: string }>).detail;
       const questionId = detail.questionId;
@@ -80,7 +82,11 @@ const allQuestions = getAllQuestions();
         // Show the cloned content (it was hidden in the original)
         lessonContentClone.classList.remove('hidden');
 
-        // Dispatch a custom event to display the lesson content
+        // Use the Zustand store to show the lesson
+        const { showLesson } = useLessonStore.getState();
+        showLesson(questionId, lessonContentClone);
+
+        // For backward compatibility, also dispatch the custom event
         document.dispatchEvent(new CustomEvent('react-open-lesson-content', {
           detail: {
             content: lessonContentClone

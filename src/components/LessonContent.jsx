@@ -1,39 +1,39 @@
-import React, { useEffect, useState, useCallback, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import useLessonStore from '../stores/lessonStore';
 
 // A client-side component for displaying lesson content below the quiz card
 export default function LessonContent({ isOpen: initialIsOpen = false, onClose: initialOnClose = () => {}, content: initialContent = null }) {
-  // Use state to manage props that might be updated from outside
-  const [isOpen, setIsOpen] = useState(initialIsOpen);
-  const [content, setContent] = useState(initialContent);
+  // Get state and actions from lesson store
+  const { isVisible: isOpen, content, hideLesson, setContent } = useLessonStore();
   const contentRef = useRef(null);
 
-  // Function to close the content - memoized to prevent unnecessary re-renders
-  const onClose = useCallback(() => {
-    setIsOpen(false);
-    // Dispatch a custom event to notify other components that the lesson is closed
+  // Function to close the content
+  const onClose = () => {
+    hideLesson();
+    // Dispatch a custom event for backward compatibility
     document.dispatchEvent(new CustomEvent('lesson-content-closed'));
-  }, []);
+  };
 
-  // Listen for custom events to control the content display
+  // Initialize content if provided as prop
+  useEffect(() => {
+    if (initialContent && !content) {
+      setContent(initialContent);
+    }
+  }, [initialContent, content, setContent]);
+
+  // Listen for custom events for backward compatibility
   useEffect(() => {
     const handleOpenLesson = (event) => {
       const { content: newContent } = event.detail || {};
       setContent(newContent);
-      setIsOpen(true);
-    };
-
-    const handleCloseLesson = () => {
-      setIsOpen(false);
     };
 
     document.addEventListener('react-open-lesson-content', handleOpenLesson);
-    document.addEventListener('react-close-lesson-content', handleCloseLesson);
 
     return () => {
       document.removeEventListener('react-open-lesson-content', handleOpenLesson);
-      document.removeEventListener('react-close-lesson-content', handleCloseLesson);
     };
-  }, []);
+  }, [setContent]);
 
   // Handle DOM node content
   useEffect(() => {

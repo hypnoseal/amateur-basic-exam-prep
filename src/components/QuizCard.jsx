@@ -1,46 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import useQuizStore from '../stores/quizStore';
+import useLessonStore from '../stores/lessonStore';
 
 // A client-side component for displaying a quiz question
 export default function QuizCard({ id, question, answers, onShowLesson }) {
-  const [hasAnswered, setHasAnswered] = useState(false);
-  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
-  const [randomizedAnswers, setRandomizedAnswers] = useState([]);
-  const [isAttempted, setIsAttempted] = useState(false);
-  const [isCorrect, setIsCorrect] = useState(false);
-  const [isLessonVisible, setIsLessonVisible] = useState(false);
+  // Get state and actions from quiz store
+  const { 
+    hasAnswered, 
+    selectedAnswerIndex, 
+    randomizedAnswers,
+    isCurrentQuestionAttempted: isAttempted,
+    isCurrentQuestionCorrect: isCorrect,
+    setCurrentQuestion,
+    selectAnswer,
+    resetQuestion
+  } = useQuizStore();
+
+  // Get state and actions from lesson store
+  const { isVisible: isLessonVisible, showLesson, hideLesson } = useLessonStore();
+
   const letters = ['A', 'B', 'C', 'D'];
 
-  // Randomize answers when component mounts or when answers change
+  // Set current question when component mounts or when question/answers change
   useEffect(() => {
-    // Create a copy of the answers array to avoid mutating the original
-    const answersCopy = [...answers];
-
-    // Fisher-Yates shuffle algorithm
-    for (let i = answersCopy.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [answersCopy[i], answersCopy[j]] = [answersCopy[j], answersCopy[i]];
+    if (id && answers) {
+      setCurrentQuestion(id, answers);
     }
-
-    setRandomizedAnswers(answersCopy);
-  }, [answers]);
-
-  // Check if the current question is in the attempted or correctly answered questions arrays
-  useEffect(() => {
-    if (id) {
-      // Get the arrays from localStorage
-      const attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '[]');
-      const correctlyAnsweredQuestions = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions') || '[]');
-
-      // Update state based on whether the current question ID is in the arrays
-      setIsAttempted(attemptedQuestions.includes(id));
-      setIsCorrect(correctlyAnsweredQuestions.includes(id));
-    }
-  }, [id]);
+  }, [id, answers, setCurrentQuestion]);
 
   // Listen for the lesson-content-closed event
   useEffect(() => {
     const handleLessonClosed = () => {
-      setIsLessonVisible(false);
+      hideLesson();
     };
 
     document.addEventListener('lesson-content-closed', handleLessonClosed);
@@ -48,44 +39,16 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
     return () => {
       document.removeEventListener('lesson-content-closed', handleLessonClosed);
     };
-  }, []);
+  }, [hideLesson]);
 
   // Handle answer selection
   const handleAnswerClick = (index) => {
-    if (hasAnswered) return; // Prevent multiple selections
+    // Use the selectAnswer action from the quiz store
+    selectAnswer(index);
 
-    setHasAnswered(true);
-    setSelectedAnswerIndex(index);
-    const isCorrect = randomizedAnswers[index].correct;
-
-    // Get the array of attempted questions
-    let attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '[]');
-
-    // Only add the ID if it's not already in the array
-    if (!attemptedQuestions.includes(id)) {
-      attemptedQuestions.push(id);
-      localStorage.setItem('attemptedQuestions', JSON.stringify(attemptedQuestions));
-    }
-
-    // Update isAttempted state
-    setIsAttempted(true);
-
-    // Get the array of correctly answered questions
-    let correctlyAnsweredQuestions = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions') || '[]');
-
-    if (randomizedAnswers[index].correct) {
-      // Only add the ID if it's not already in the array
-      if (!correctlyAnsweredQuestions.includes(id)) {
-        correctlyAnsweredQuestions.push(id);
-        localStorage.setItem('correctlyAnsweredQuestions', JSON.stringify(correctlyAnsweredQuestions));
-      }
-
-      // Update isCorrect state
-      setIsCorrect(true);
-    }
-
-    // Update localStorage for backward compatibility
-    localStorage.setItem('questionsAttempted', attemptedQuestions.length.toString());
+    // For backward compatibility with the DOM-based progress display
+    // This can be removed once TopNav is refactored to use Zustand
+    const { attemptedQuestions, correctlyAnsweredQuestions } = useQuizStore.getState();
 
     // Update the display in the TopNav
     const questionsAttemptedEl = document.getElementById('questionsAttempted');
@@ -114,7 +77,8 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
       return;
     }
 
-    // Dispatch a custom event to show the lesson
+    // For backward compatibility, dispatch the custom event
+    // This can be removed once [id].astro is refactored to use Zustand
     document.dispatchEvent(new CustomEvent('showLesson', {
       detail: { questionId: id }
     }));
@@ -124,8 +88,8 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
       onShowLesson(id);
     }
 
-    // Set the lesson as visible
-    setIsLessonVisible(true);
+    // Note: We don't call showLesson here because it's handled by the event listener in [id].astro
+    // which will set the content properly
 
     // Add a small delay to ensure the LessonContent component is rendered
     setTimeout(() => {
@@ -169,18 +133,18 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
 
   // Handle hide lesson button click
   const handleHideLesson = () => {
-    // Dispatch a custom event to hide the lesson
+    // For backward compatibility, dispatch the custom event
+    // This can be removed once LessonContent.jsx is refactored to use Zustand
     document.dispatchEvent(new CustomEvent('react-close-lesson-content'));
 
-    // Set the lesson as not visible
-    setIsLessonVisible(false);
+    // Use the hideLesson action from the lesson store
+    hideLesson();
   };
 
   // Handle retry button click
   const handleRetry = () => {
-    // Reset the question state
-    setHasAnswered(false);
-    setSelectedAnswerIndex(null);
+    // Use the resetQuestion action from the quiz store
+    resetQuestion();
   };
 
   return (

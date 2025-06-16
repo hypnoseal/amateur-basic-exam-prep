@@ -64,6 +64,8 @@ const { questions = [] } = Astro.props;
 </nav>
 
 <script>
+  import useQuizStore from '../stores/quizStore';
+
   // Client-side JavaScript for interactivity
   document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle
@@ -120,20 +122,18 @@ const { questions = [] } = Astro.props;
       });
     });
 
-    // Load user progress from localStorage
+    // Load user progress from Zustand store
     const questionsAttempted = document.getElementById('questionsAttempted');
     const questionsCorrect = document.getElementById('questionsCorrect');
     const resetProgress = document.getElementById('resetProgress');
 
     const updateProgressDisplay = () => {
+      const { attemptedQuestions, correctlyAnsweredQuestions } = useQuizStore.getState();
+
       if (questionsAttempted) {
-        // Get the array of attempted questions and use its length
-        const attemptedQuestions = JSON.parse(localStorage.getItem('attemptedQuestions') || '[]');
         questionsAttempted.textContent = attemptedQuestions.length.toString();
       }
       if (questionsCorrect) {
-        // Get the array of correctly answered questions and use its length
-        const correctlyAnsweredQuestions = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions') || '[]');
         questionsCorrect.textContent = correctlyAnsweredQuestions.length.toString();
       }
     };
@@ -143,14 +143,28 @@ const { questions = [] } = Astro.props;
 
     // Reset progress button
     resetProgress?.addEventListener('click', () => {
-      // Reset questionsAttempted for backward compatibility, but it's no longer the primary source of truth
+      // Use the resetProgress action from the quiz store
+      const { resetProgress } = useQuizStore.getState();
+      resetProgress();
+
+      // For backward compatibility
       localStorage.setItem('questionsAttempted', '0');
-      // Reset questionsCorrect for backward compatibility, but it's no longer the primary source of truth
       localStorage.setItem('questionsCorrect', '0');
-      // These are now the primary sources of truth for tracking progress
-      localStorage.setItem('attemptedQuestions', '[]');
-      localStorage.setItem('correctlyAnsweredQuestions', '[]');
+
       updateProgressDisplay();
+    });
+
+    // Subscribe to store changes to update the display
+    const unsubscribe = useQuizStore.subscribe(
+      (state) => [state.attemptedQuestions.length, state.correctlyAnsweredQuestions.length],
+      () => {
+        updateProgressDisplay();
+      }
+    );
+
+    // Clean up subscription when the component is unmounted
+    window.addEventListener('beforeunload', () => {
+      unsubscribe();
     });
   });
 </script>
