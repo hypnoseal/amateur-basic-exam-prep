@@ -1,0 +1,92 @@
+---
+id: "B-008-005-007"
+question: "A strong interfering signal is very close to your receive frequency. Which type of filter can effectively suppress it?"
+answers:
+  - text: "Notch"
+    correct: true
+    explanation: "A notch filter is specifically designed to remove a very narrow range of frequencies with extreme precision, making it ideal for suppressing a single strong interfering signal that is close to the desired receive frequency. Unlike broader filters, the notch filter can surgically remove the problematic signal without significantly affecting the surrounding desired frequencies."
+  - text: "High-pass"
+    correct: false
+    explanation: "High-pass filters allow frequencies above a certain point to pass through while blocking lower frequencies. This type of filter would not effectively address an interfering signal located near the receive frequency, as it removes signals below a specific threshold rather than targeting a precise narrow frequency."
+  - text: "Low-pass"
+    correct: false
+    explanation: "Low-pass filters allow frequencies below a certain point to pass through while blocking higher frequencies. This type of filter is not appropriate for removing a specific interfering signal near the receive frequency, as it operates by cutting off signals above a broad threshold rather than targeting a precise narrow frequency."
+  - text: "Band-reject"
+    correct: false
+    explanation: "While band-reject filters (also called band-stop filters) can remove a range of frequencies, they are typically broader and less precise than a notch filter. For a very close interfering signal requiring surgical removal, a notch filter provides more targeted and effective interference suppression."
+---
+
+# Precision Signal Filtering: The Notch Filter in Amateur Radio
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What a notch filter is and how it works
+- How notch filters differ from other types of filters
+- When and why to use a notch filter in amateur radio communications
+- The importance of precise frequency management in radio reception
+
+---
+
+## The Concept: Surgical Signal Removal
+
+A **notch filter** is the precision instrument of the radio filtering world - imagine it as a tiny, extremely sharp "hole" cut precisely into the frequency spectrum. Unlike broader filters that remove large ranges of frequencies, a notch filter can remove an extremely narrow band of frequencies with minimal impact on surrounding signals.
+
+In amateur radio, interference can come from many sources: nearby transmitters, harmonic signals, power line noise, or even unintentional emissions from electronic devices. When an interfering signal is very close to your desired receive frequency, broader filters like low-pass or high-pass would remove too much useful information. The notch filter allows you to surgically remove just the problematic signal.
+
+### How Notch Filters Work
+
+Think of a notch filter like a very precise audio equalizer. Just as you might reduce a specific frequency on a sound system, a notch filter reduces a specific radio frequency with minimal disruption to the surrounding spectrum. It creates a deep "null" or "notch" at exactly the frequency causing interference, allowing the signals just above and below to pass through virtually unchanged.
+
+---
+
+## Real-World Examples
+
+### ✅ Effective Notch Filter Applications:
+- **Nearby Repeater Interference**: Removing a strong signal from an adjacent repeater
+- **Broadcast Station Bleedover**: Eliminating interference from a powerful nearby broadcast transmitter
+- **Harmonic Interference**: Suppressing a specific harmonic that's causing reception problems
+
+### ❌ Situations Where Notch Filters Are Inappropriate:
+- **Broad Spectrum Noise**: When interference covers a wide range of frequencies
+- **Complete Signal Removal**: When you need to block entire frequency ranges
+- **Signals Far from Desired Frequency**: When interference is not close to the primary receive frequency
+
+---
+
+## Practical Applications
+
+### For HF and VHF Operations:
+1. **Precise Interference Management**: Use notch filters to remove specific interfering signals without losing nearby desired signals
+2. **Contest Operating**: Maintain clear reception when multiple strong signals are present
+3. **Digital Mode Communications**: Preserve weak signal integrity by removing precise interference sources
+
+### Deployment Strategies:
+1. **Receiver-Based Notch**: Many modern transceivers have built-in digital notch filters
+2. **External Notch Filters**: Standalone units for more complex interference scenarios
+3. **Software-Defined Radio (SDR) Notch**: Digital signal processing allows extremely precise frequency removal
+
+### Memory Aid:
+"**N**arrow **N**oise **N**eutralizer" - Notch filters neutralize narrow noise precisely!
+
+---
+
+## Key Takeaways
+
+- Notch filters provide surgical precision in removing very specific interfering signals
+- They are most effective when the interfering signal is very close to the desired receive frequency
+- Unlike broader filters, notch filters remove an extremely narrow range of frequencies
+- Modern transceivers often include built-in digital notch filter capabilities
+- Proper notch filter use requires understanding the exact frequency of interference
+
+---
+
+## Related Concepts to Explore:
+- **Digital Signal Processing (DSP) Filtering**
+- **Receiver Front-End Design**
+- **Interference Mitigation Techniques**
+- **Advanced Receiver Architecture**
+
+### Recommended Reading
+- ARRL Handbook: Receiver Design and Interference Suppression Techniques
+- "Understanding Radio Wave Propagation" by Ian Poole
+- Online SDR tutorials demonstrating digital filtering techniques

@@ -1,0 +1,96 @@
+---
+id: "B-005-008-004"
+question: "If a signal transmitted with a power of 200 watts is received with an S-meter reading of \"10 dB over S9,\" what would be the new reading if power was reduced to 20 watts?"
+answers:
+  - text: "S9"
+    correct: true
+    explanation: "Reducing power from 200 watts to 20 watts represents a 10 dB reduction (10 * log10(200/20) = 10 dB). Since the original signal was 10 dB over S9, reducing power by 10 dB will bring the signal exactly to S9. This demonstrates the logarithmic nature of signal strength measurements and power relationships."
+  - text: "S9 plus 3 dB"
+    correct: false
+    explanation: "This answer incorrectly suggests a 3 dB change, which would represent a power reduction by half. The actual power reduction is 10 dB, which is a factor of 10 in power, not a factor of 2."
+  - text: "S9 minus 10 dB"
+    correct: false
+    explanation: "This answer would suggest the signal drops below the S9 reference, which is not correct. The original signal was 10 dB over S9, so reducing power by 10 dB brings it precisely to S9."
+  - text: "S9 plus 5 dB"
+    correct: false
+    explanation: "This answer does not correctly represent the power reduction. A 5 dB change would not match the 10 dB power reduction from 200 watts to 20 watts."
+---
+
+# Understanding Signal Strength and Power Relationships in Amateur Radio
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How decibel (dB) measurements relate to power changes
+- The logarithmic nature of S-meter readings
+- How power reductions affect received signal strength
+- The mathematical relationship between watts and signal reporting
+
+---
+
+## The Concept: Decibels, Power, and Signal Reporting
+
+The S-meter is a logarithmic scale used in radio communications to report signal strength. Each increment represents a significant change in received signal power, with S9 serving as a standard reference point. The decibel (dB) scale allows us to describe large power changes using relatively small numbers.
+
+In amateur radio, a change of 10 dB represents a power ratio of 10:1. This means reducing power from 200 watts to 20 watts is exactly a 10 dB reduction. The logarithmic nature of this scale means that halving or doubling power doesn't create as dramatic a change as you might intuitively expect.
+
+### The Mathematics of Signal Strength
+
+The formula for power ratio in decibels is: 
+dB = 10 * log10(P2/P1)
+
+Where:
+- P1 is the original power (200 watts)
+- P2 is the new power (20 watts)
+- The result directly correlates to signal strength changes
+
+---
+
+## Real-World Examples
+
+### ✅ Power Reduction Scenarios:
+- **200W to 20W**: Exactly 10 dB reduction
+- **100W to 10W**: Also a 10 dB reduction
+- **50W to 5W**: Another 10 dB reduction
+
+### ❌ Common Misunderstandings:
+- Believing that halving power (3 dB reduction) is the same as a 10 dB reduction
+- Thinking linear power changes translate directly to linear signal strength changes
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Operators:
+1. **Power Control**: Understanding how power changes affect signal strength
+2. **QRP Operations**: Recognizing signal behavior at low power levels
+3. **Contest and DX Communication**: Predicting signal reports with power changes
+
+### Signal Strength Measurement:
+1. **S9 Reference**: Typically represents a signal strength of 50-100 microvolts
+2. **S-meter Calibration**: Not always standardized across different radio manufacturers
+3. **Additional Factors**: Antenna efficiency, propagation conditions also affect signal strength
+
+### Memory Aid:
+"**10 DOWN, DROP ONE**" - A 10 dB power reduction drops your signal one S-unit
+
+---
+
+## Key Takeaways
+
+- A 10 dB power reduction moves a signal exactly one S-unit
+- S-meter readings are logarithmic, not linear
+- Reducing 200 watts to 20 watts brings a signal from "10 dB over S9" to exactly S9
+- Power changes don't create equal changes in perceived signal strength
+- Understanding these relationships helps in precise signal reporting and power management
+
+---
+
+## Related Concepts to Explore:
+- **Logarithmic Scales in Radio**: Decibel measurements in various contexts
+- **Antenna Efficiency**: How antenna design affects effective radiated power
+- **Propagation Effects**: How signal strength varies beyond simple power calculations
+
+### Recommended Reading
+- ARRL Handbook: Chapters on Signal Propagation and Measurement
+- "Understanding Your S-Meter" by ON4UN
+- YouTube: DX Engineering signal strength tutorials

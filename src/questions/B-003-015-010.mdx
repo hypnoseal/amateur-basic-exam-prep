@@ -1,0 +1,95 @@
+---
+id: "B-003-015-010"
+question: "A digital protocol implements automatic repeat request (ARQ). What does it permit?"
+answers:
+  - text: "Error correction"
+    correct: true
+    explanation: "ARQ is a communication protocol strategy that enables the receiving station to request retransmission of data packets that were received with errors. By detecting transmission errors and automatically requesting retransmission of corrupted data, ARQ provides a robust mechanism for error correction and ensuring data integrity in digital communication systems."
+  - text: "Unattended operation"
+    correct: false
+    explanation: "While ARQ can improve communication reliability, it doesn't inherently enable unattended operation. Unattended operation typically requires additional protocols and system configurations beyond error correction mechanisms."
+  - text: "Error detection"
+    correct: false
+    explanation: "Error detection is a prerequisite for ARQ, but ARQ goes beyond mere detection by implementing an active correction mechanism through retransmission requests. Error detection identifies that a problem exists, while ARQ takes the additional step of requesting a fix."
+  - text: "Automatic link establishment"
+    correct: false
+    explanation: "Automatic link establishment is a separate protocol function focused on initiating and maintaining communication connections. ARQ is specifically about error correction during active data transmission, not initial connection setup."
+---
+
+# Automatic Repeat Request (ARQ): Ensuring Digital Communication Reliability
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What Automatic Repeat Request (ARQ) is and how it works
+- The difference between error detection and error correction
+- How digital communication protocols maintain data integrity
+- The role of ARQ in amateur radio digital modes
+
+---
+
+## The Concept: Digital Error Correction Strategies
+
+Automatic Repeat Request (ARQ) is a sophisticated communication protocol strategy designed to ensure the reliable transmission of digital data. In an ARQ system, the receiving station doesn't just passively accept incoming data—it actively monitors the integrity of each data packet and requests retransmission of any packets that are received with errors.
+
+Imagine ARQ like a meticulous mail sorting system. Instead of accepting every package without inspection, the system carefully checks each package. If a package arrives damaged or incomplete, the system immediately sends a request back to the sender to resend that specific package. This ensures that the final received data is complete and accurate.
+
+### How ARQ Works in Digital Communication
+
+When a digital transmission occurs, the protocol typically follows these steps:
+1. **Transmission**: Data is sent from the transmitting station
+2. **Error Checking**: The receiving station uses checksums or other verification methods to detect errors
+3. **Acknowledgment**: The receiver sends a signal indicating whether the data was received correctly
+4. **Retransmission**: If errors are detected, the receiver requests a repeat of the problematic data packets
+
+---
+
+## Real-World Examples
+
+### ✅ Effective ARQ Applications:
+- **Packet Radio**: Digital communication modes like PACTOR and WINMOR use ARQ to ensure message integrity
+- **Satellite Communications**: Space communications rely on ARQ to maintain data accuracy over long distances
+- **Amateur Radio Digital Networks**: Ensuring reliable data transfer during emergency communications
+
+### ❌ Scenarios Where ARQ Might Not Help:
+- **Continuous Signal Modes**: Modes like CW or SSB where continuous transmission is more important than perfect packet integrity
+- **Real-Time Audio Streaming**: Where slight data loss is preferable to transmission delays
+- **Situations with Extreme Signal Interference**: Where constant retransmission might be more disruptive than accepting partial data
+
+---
+
+## Practical Applications
+
+### For Digital Mode Operators:
+1. **Protocol Selection**: Choose digital modes with robust ARQ implementations for critical communications
+2. **Signal-to-Noise Ratio Awareness**: Understanding how signal quality affects ARQ performance
+3. **Troubleshooting**: Recognize when ARQ is working to maintain your communication link
+
+### For Different Communication Scenarios:
+1. **Emergency Communications**: Ensure critical message content is transmitted accurately
+2. **Long-Distance Contacts**: Maintain data integrity over challenging propagation conditions
+3. **Weak Signal Environments**: Provide a mechanism for reliable communication despite poor conditions
+
+### Memory Aid:
+"**A**sk, **R**equest, **Q**uickly" - ARQ is about quickly asking for a retransmission when something goes wrong.
+
+---
+
+## Key Takeaways
+
+- ARQ is a digital communication protocol that permits error correction through automatic retransmission requests
+- It goes beyond simple error detection by actively requesting and resending corrupted data packets
+- ARQ ensures higher data integrity in digital communication systems
+- Different digital modes implement ARQ with varying levels of sophistication
+- Understanding ARQ helps amateur radio operators choose and use digital communication modes more effectively
+
+---
+
+## Related Concepts to Explore:
+- **Error Detection Techniques**: Checksums, parity bits, and other verification methods
+- **Digital Communication Protocols**: Different strategies for maintaining communication reliability
+- **Signal Processing in Digital Modes**: How modern digital communication handles challenging propagation conditions
+
+### Recommended Reading
+- ARRL Digital Communications Handbook
+- "Packet Radio: What It Is and How to Use It" by Buck Rogers, K4ABT
+- Online tutorials on digital mode protocols by various amateur radio organizations

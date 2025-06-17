@@ -1,0 +1,91 @@
+---
+id: "B-006-010-008"
+question: "Which of the following transmission lines will give the best match to the base of a quarter-wave ground-plane antenna?"
+answers:
+  - text: "50-ohm coaxial cable"
+    correct: true
+    explanation: "A 50-ohm coaxial cable provides an optimal impedance match to the base of a quarter-wave ground-plane antenna because the antenna's feed point impedance is typically very close to 50 ohms. This creates a nearly perfect electrical interface, minimizing signal reflection and maximizing power transfer from the transmission line to the antenna. The low impedance mismatch means minimal standing wave ratio (SWR) and maximum RF energy radiation."
+  - text: "300-ohm balanced transmission line"
+    correct: false
+    explanation: "A 300-ohm balanced transmission line is significantly mismatched to a quarter-wave ground-plane antenna's feed point impedance. This high impedance would create substantial signal reflection, high SWR, and inefficient power transfer. Balanced lines are more commonly used with dipole antennas or other symmetrical antenna designs, not ground-plane antennas."
+  - text: "75-ohm balanced transmission line"
+    correct: false
+    explanation: "A 75-ohm balanced transmission line presents a substantial impedance mismatch to a quarter-wave ground-plane antenna. The significant difference between the antenna's feed point impedance and the transmission line would cause high signal reflection, increased SWR, and reduced antenna performance. This line would not provide an optimal electrical connection."
+  - text: "75-ohm coaxial cable"
+    correct: false
+    explanation: "A 75-ohm coaxial cable introduces an impedance mismatch at the ground-plane antenna's feed point. While closer to the ideal 50 ohms than some other options, this mismatch would still cause signal reflections, increased SWR, and less efficient power transfer compared to a 50-ohm coaxial cable."
+---
+
+# Transmission Line Impedance: Matching Ground-Plane Antennas for Maximum Performance
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The critical relationship between transmission line impedance and antenna feed point
+- Why 50-ohm coaxial cable is the preferred transmission line for ground-plane antennas
+- How impedance mismatches affect radio signal transmission
+- The principles of impedance matching in amateur radio antenna systems
+
+---
+
+## The Concept: Impedance Matching in Antenna Systems
+
+Impedance matching is a fundamental principle in radio frequency (RF) energy transfer. Just like water flowing through pipes of different diameters, electrical signals experience reflection and power loss when moving between transmission lines with mismatched impedances.
+
+A **quarter-wave ground-plane antenna** is a vertically polarized omnidirectional antenna where the radiating element is a quarter-wavelength long, supported by four or more ground radials. At its feed point, this antenna typically presents an impedance very close to 50 ohms, making 50-ohm coaxial cable the ideal transmission line.
+
+### The Physics of Impedance
+
+Impedance represents the total opposition to alternating current flow, combining resistance and reactance. When the impedance of a transmission line matches the antenna's feed point impedance, maximum power transfer occurs with minimal signal reflection.
+
+---
+
+## Real-World Examples
+
+### ✅ Optimal Impedance Matching:
+- **50-ohm Coax with Ground-Plane**: Near-perfect power transfer with minimal signal loss
+- **Minimal SWR**: Low standing wave ratio indicates efficient energy transmission
+- **Broadband Performance**: Good matching across a wide range of frequencies
+
+### ❌ Poor Impedance Matching:
+- **300-ohm Line on Ground-Plane**: Significant signal reflection and power loss
+- **High SWR**: Potential damage to transmitter due to reflected power
+- **Reduced Radiation Efficiency**: Less energy reaches the antenna
+
+---
+
+## Practical Applications
+
+### For Antenna Installation:
+1. **Always Measure SWR**: Use an antenna analyzer to verify impedance matching
+2. **Choose Correct Cable**: Select 50-ohm coaxial cable for most VHF/UHF ground-plane antennas
+3. **Consider Adapter Quality**: Use high-quality impedance-matching adapters if necessary
+
+### For Different Frequency Bands:
+1. **HF Bands**: Ground-plane antennas often maintain close to 50-ohm impedance
+2. **VHF/UHF**: Precise impedance becomes even more critical due to shorter wavelengths
+3. **Multiband Operation**: Consider design variations to maintain consistent impedance
+
+### Memory Aid:
+"**F**ifty **O**hms **R**ules" (FOR) - 50-ohm transmission lines are the gold standard for most amateur radio antennas.
+
+---
+
+## Key Takeaways
+
+- 50-ohm coaxial cable provides the best match to a quarter-wave ground-plane antenna's feed point
+- Impedance mismatches cause signal reflection, increased SWR, and reduced transmission efficiency
+- Proper transmission line selection is crucial for maximizing antenna performance
+- Amateur radio operators should understand and apply impedance matching principles
+- Measurement tools like SWR meters help verify and optimize antenna system performance
+
+---
+
+## Related Concepts to Explore:
+- **Impedance Transformation**: Techniques for matching different transmission line impedances
+- **Antenna Tuners**: How they help manage impedance mismatches
+- **Reflection Coefficient**: Mathematical principles behind signal reflection
+
+### Recommended Reading
+- ARRL Antenna Book - Comprehensive coverage of antenna impedance principles
+- "Low Band DXing" by John Devoldere - Detailed impedance matching techniques
+- Online Tutorial: W8JI's Transmission Line and Antenna Impedance Resources

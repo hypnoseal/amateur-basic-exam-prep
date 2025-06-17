@@ -1,0 +1,95 @@
+---
+id: "B-002-001-011"
+question: "FM repeater operation on the 2-metre band uses one frequency for transmission and one for reception. What is the standard difference between the transmit and receive frequencies (known as \"offset\")?"
+answers:
+  - text: "600 kHz"
+    correct: true
+    explanation: "600 kHz is the standard offset for 2-metre FM repeaters in most of North America. This means that when you transmit on a repeater, your transmission frequency is 600 kHz above or below the repeater's receive frequency, depending on whether you're in the upper or lower portion of the 2-metre band. This offset allows multiple repeaters to operate in the same geographic area without interference."
+  - text: "800 kHz"
+    correct: false
+    explanation: "800 kHz is not the standard offset for 2-metre repeaters. This frequency difference would be unnecessarily large and could cause potential interference with adjacent repeater channels. The standard 600 kHz offset provides sufficient separation between transmit and receive frequencies while maintaining efficient spectrum usage."
+  - text: "1000 kHz"
+    correct: false
+    explanation: "1000 kHz (1 MHz) is too large an offset for 2-metre repeater operations. Such a wide frequency separation would waste valuable spectrum resources and create unnecessary complexity in repeater coordination. The 600 kHz standard offset is the accepted practice for maintaining efficient and organized repeater communications."
+  - text: "400 kHz"
+    correct: false
+    explanation: "400 kHz is not the standard offset for 2-metre FM repeaters. While this frequency difference might seem close to the correct value, it does not provide the optimal channel separation required for reliable repeater operation. The 600 kHz offset is the established standard that ensures proper repeater performance."
+---
+
+# 2-Metre FM Repeater Frequency Offset: Understanding Dual-Frequency Operations
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The concept of frequency offset in amateur radio repeaters
+- Why 600 kHz is the standard offset for 2-metre band repeaters
+- How frequency offsets enable multiple repeaters to coexist
+- The practical implications of repeater frequency management
+
+---
+
+## The Concept: Repeater Frequency Offset
+
+A **repeater offset** is the deliberate frequency difference between a radio's transmission frequency and its reception frequency. In FM repeater operations, this allows a single repeater to simultaneously receive signals on one frequency while retransmitting them on another, effectively extending the communication range of mobile and handheld radios.
+
+For the 2-metre band (roughly 144-148 MHz), the standard offset is 600 kHz. This means when you transmit to a repeater, your transmission will be either 600 kHz above or below the repeater's receive frequency, depending on which portion of the band you're operating in.
+
+### Offset Direction Matters
+
+In the 2-metre band, the offset direction is determined by your position in the frequency range:
+- **Lower Portion (144-145 MHz)**: Negative offset (transmit 600 kHz below the receive frequency)
+- **Upper Portion (145-148 MHz)**: Positive offset (transmit 600 kHz above the receive frequency)
+
+This systematic approach ensures organized and interference-free repeater operations across different geographic regions.
+
+---
+
+## Real-World Examples
+
+### ✅ Proper Repeater Offset Scenarios:
+- **Lower Band Repeater**: Receive frequency 146.520 MHz, transmit frequency 146.520 - 0.600 = 145.920 MHz
+- **Upper Band Repeater**: Receive frequency 147.060 MHz, transmit frequency 147.060 + 0.600 = 147.660 MHz
+- **Mobile Station Coordination**: Automatically adjusting transmit frequency based on repeater location
+
+### ❌ Incorrect Offset Applications:
+- **Mismatched Offsets**: Transmitting on a frequency that doesn't match the repeater's expected input
+- **Using Wrong Offset Direction**: Transmitting above when you should transmit below the receive frequency
+- **Ignoring Local Repeater Specifics**: Assuming all repeaters use the same offset without verification
+
+---
+
+## Practical Applications
+
+### For Repeater Users:
+1. **Frequency Programming**: Configure your radio to match the specific repeater's receive and transmit frequencies
+2. **Verify Local Variations**: Some regions might have slight variations, so always confirm local repeater specifications
+3. **Cross-Band Compatibility**: Understanding offset principles helps when operating in different geographic areas
+
+### For Repeater Coordination:
+1. **Spectrum Efficiency**: 600 kHz offset allows multiple repeaters in close proximity without interference
+2. **Technical Planning**: Systematic offset rules simplify repeater network design
+3. **Emergency Communications**: Consistent offset standards ensure reliable communication during critical situations
+
+### Memory Aid:
+"**S**ix **H**undred **H**ertz **H**elps" - 600 kHz (actually 600 MHz) is the standard repeater offset that helps maintain clear communications.
+
+---
+
+## Key Takeaways
+
+- 600 kHz is the standard offset for 2-metre band FM repeaters in North America
+- Offset direction depends on your position in the 2-metre frequency range
+- Proper offset management ensures efficient and interference-free repeater operations
+- Always verify local repeater specifications, as there can be regional variations
+- Understanding offset principles is crucial for effective amateur radio communication
+
+---
+
+## Related Concepts to Explore:
+- **Repeater Tone Systems**: CTCSS and DCS signaling for repeater access
+- **Frequency Coordination**: How local amateur radio clubs manage repeater frequencies
+- **Digital Repeater Technologies**: Emerging digital modes and their frequency management
+
+### Recommended Reading
+- ARRL Repeater Directory
+- Local Amateur Radio Club Repeater Guidelines
+- IARU Region 2 Bandplan Documentation

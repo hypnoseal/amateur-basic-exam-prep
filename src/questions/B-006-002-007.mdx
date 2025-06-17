@@ -1,0 +1,101 @@
+---
+id: "B-006-002-007"
+question: "What device can be installed to feed a balanced antenna with an unbalanced transmission line?"
+answers:
+  - text: "A balun"
+    correct: true
+    explanation: "A balun (derived from 'balanced-unbalanced') is a specialized transformer that converts signals between balanced and unbalanced transmission lines while maintaining impedance matching and minimizing electromagnetic interference. It ensures that balanced antennas (like dipoles) can be properly connected to unbalanced coaxial transmission lines without creating common-mode currents that can distort radiation patterns and reduce antenna efficiency."
+  - text: "A triaxial transformer"
+    correct: false
+    explanation: "A triaxial transformer is not a standard solution for connecting balanced and unbalanced transmission lines. While it involves multiple conductors, it's not specifically designed to convert between balanced and unbalanced systems. Triaxial cables are more commonly used for specialized shielding and low-noise signal transmission, but they don't solve the fundamental impedance and current balance issues of antenna feed systems."
+  - text: "A wave trap"
+    correct: false
+    explanation: "A wave trap is a filter designed to block specific frequencies or unwanted signals, not to convert between balanced and unbalanced transmission lines. It's typically used to reduce interference or isolate specific portions of a radio frequency system, but it does not address the impedance and current balance challenges of connecting different types of transmission lines to antennas."
+  - text: "A loading coil"
+    correct: false
+    explanation: "A loading coil is used to modify the electrical length of an antenna or transmission line, typically to improve performance on lower frequencies. However, it is not designed to convert between balanced and unbalanced transmission systems. Loading coils change the impedance and resonance characteristics of an antenna, but they do not solve the fundamental impedance matching and current balance issues created by mismatched transmission line types."
+---
+
+# Baluns: Bridging Balanced and Unbalanced Transmission Systems
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What a balun is and how it functions
+- The difference between balanced and unbalanced transmission lines
+- Why impedance matching is critical in antenna systems
+- Practical applications of baluns in amateur radio
+
+---
+
+## The Concept: Baluns and Transmission Line Compatibility
+
+A **balun** (balance-unbalanced transformer) is a critical component in radio frequency transmission systems that solves a fundamental challenge: connecting antenna systems with different electrical characteristics. In amateur radio, antennas like dipoles are inherently balanced, meaning they have equal and opposite currents on two symmetric conductors. However, most modern coaxial transmission lines are unbalanced, with a central conductor surrounded by a single ground shield.
+
+Without a balun, connecting a balanced antenna directly to an unbalanced transmission line creates significant problems. Unequal currents can flow on the outside of the coaxial cable's shield, causing:
+- Distorted antenna radiation patterns
+- Increased electromagnetic interference
+- Reduced antenna efficiency
+- Potential RF feedback into station equipment
+
+### The Physics of Signal Transformation
+
+Baluns work by using transformer principles to:
+- Convert between different impedance levels
+- Maintain signal integrity
+- Prevent common-mode currents
+- Provide electrical isolation between transmission line sections
+
+Think of a balun like a translator ensuring two different "languages" of electrical signals can communicate smoothly and efficiently.
+
+---
+
+## Real-World Examples
+
+### ✅ Effective Balun Applications:
+- **Dipole Antennas**: Converting coaxial cable feed to symmetrical antenna elements
+- **Yagi Antennas**: Matching feed point impedance while maintaining balanced current distribution
+- **Multiband HF Antennas**: Providing consistent performance across different frequency ranges
+
+### ❌ Consequences of Improper Balun Use:
+- **RF Interference**: Uncontrolled common-mode currents radiating from transmission line
+- **Pattern Distortion**: Asymmetric antenna radiation reducing signal effectiveness
+- **Increased Noise**: External interference coupling into the antenna system
+
+---
+
+## Practical Applications
+
+### For Antenna Installation:
+1. **Matching Impedances**: Choose baluns that match your specific antenna and transmission line impedances (typically 50Ω or 75Ω)
+2. **Frequency Range**: Select baluns rated for your operating frequencies
+3. **Power Handling**: Ensure balun can handle your station's transmitter power output
+
+### For Different Antenna Types:
+1. **Dipole Antennas**: 1:1 baluns maintain symmetrical current distribution
+2. **Multiband Antennas**: Voltage baluns or autotransformer designs for impedance transformation
+3. **Receive-Only Systems**: Simple current baluns can improve noise rejection
+
+### Memory Aid:
+"**B**alance **A**ntenna **L**ines **U**niformly **N**eatly" - How baluns work!
+
+---
+
+## Key Takeaways
+
+- A balun converts signals between balanced and unbalanced transmission systems
+- Proper balun selection is critical for maintaining antenna system performance
+- Baluns prevent unwanted common-mode currents and interference
+- Different balun types exist for various impedance and frequency requirements
+- Understanding balun function helps create more effective amateur radio antenna installations
+
+---
+
+## Related Concepts to Explore:
+- **Impedance Matching**: Principles of transmission line theory
+- **Antenna Feed Systems**: Design considerations for different antenna types
+- **RF Interference Mitigation**: Techniques for reducing unwanted signal coupling
+
+### Recommended Reading
+- ARRL Antenna Book - Comprehensive balun and transmission line theory
+- "Baluns and Ununs" by Jerry Sevick, W2FMI - Definitive technical reference
+- YouTube: DX Engineering Balun Tutorial Series

@@ -1,0 +1,95 @@
+---
+id: "B-005-006-011"
+question: "Resistor wattage ratings are:"
+answers:
+  - text: "determined by heat dissipation qualities"
+    correct: true
+    explanation: "Wattage ratings for resistors directly relate to their ability to safely dissipate heat generated when electrical current passes through them. A resistor's wattage rating indicates the maximum amount of power it can convert to heat without being damaged or failing. Higher wattage ratings mean the resistor can handle more heat without burning out or changing its electrical characteristics."
+  - text: "calculated according to physical size and tolerance rating"
+    correct: false
+    explanation: "While physical size can hint at a resistor's power handling capacity, wattage rating is specifically about heat dissipation, not size or tolerance. Tolerance describes how closely a resistor matches its nominal resistance value, but doesn't determine its power handling capabilities. Some small resistors can handle high power, while larger resistors might have lower wattage ratings depending on their design."
+  - text: "expressed in joules"
+    correct: false
+    explanation: "Joules measure total energy, while watts measure power (energy per unit time). Resistor ratings are expressed in watts, not joules. Watts represent the rate of energy conversion or heat generation, which directly relates to how much electrical power a resistor can safely handle without overheating or failing."
+  - text: "variable in steps of one hundred"
+    correct: false
+    explanation: "Resistor wattage ratings do not increase in fixed steps of one hundred. Common wattage ratings include 1/8W, 1/4W, 1/2W, 1W, 2W, 5W, and 10W, following a more incremental progression based on their heat dissipation capabilities."
+---
+
+# Understanding Resistor Wattage Ratings: Heat Dissipation in Electronic Circuits
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What resistor wattage ratings represent
+- How heat affects resistor performance
+- The relationship between electrical power and heat generation
+- Practical considerations for selecting resistors in electronic circuits
+
+---
+
+## The Concept: Power Dissipation in Resistors
+
+A resistor is an electronic component that converts electrical energy into heat when current flows through it. The **wattage rating** indicates how much power a resistor can safely convert to heat without becoming damaged. This rating is fundamentally about the resistor's heat dissipation qualities - its ability to transform electrical energy without burning up or changing its electrical characteristics.
+
+When electrical current passes through a resistor, it encounters resistance, which causes the component to generate heat. The amount of heat generated depends on the current flowing through the resistor and the resistance value. The fundamental relationship is described by the power equation: P = I²R or P = V²/R, where P is power in watts, I is current, V is voltage, and R is resistance.
+
+### Why Heat Matters in Electronic Circuits
+
+Every resistor has a maximum power rating beyond which it will:
+- Change its resistance value
+- Become permanently damaged
+- Potentially burn or cause nearby components to fail
+- Create a fire hazard in extreme cases
+
+---
+
+## Real-World Examples
+
+### ✅ Proper Resistor Power Handling:
+- **LED Circuit**: Using a 1/4W resistor to limit current in a small LED circuit
+- **Audio Amplifier**: Selecting high-wattage resistors in power supply voltage dividers
+- **Power Supply Design**: Choosing resistors that can handle continuous current without overheating
+
+### ❌ Resistor Power Handling Mistakes:
+- **Undersized Resistors**: Using a 1/8W resistor in a high-current circuit
+- **Ignoring Heat Dissipation**: Placing heat-generating resistors near temperature-sensitive components
+- **Exceeding Maximum Ratings**: Applying voltages that cause power dissipation beyond the resistor's rating
+
+---
+
+## Practical Applications
+
+### For Circuit Design:
+1. **Always Calculate Power**: Determine the expected power dissipation before selecting a resistor
+2. **Include Safety Margin**: Choose a resistor rated for at least 2-3 times the expected power
+3. **Consider Thermal Environment**: Account for ambient temperature and cooling when selecting resistors
+
+### For Different Circuit Types:
+1. **Low-Power Circuits**: 1/4W or 1/8W resistors are typically sufficient
+2. **High-Power Applications**: May require 5W, 10W, or even higher-rated resistors
+3. **Precision Circuits**: Use resistors with low temperature coefficient for stable performance
+
+### Memory Aid:
+"**W**atts = **W**armth" - Resistor wattage ratings directly relate to how much heat they can handle.
+
+---
+
+## Key Takeaways
+
+- Resistor wattage ratings are fundamentally about heat dissipation qualities
+- Power rating determines how much electrical energy a resistor can safely convert to heat
+- Calculating power dissipation is crucial for selecting the right resistor
+- Exceeding a resistor's power rating can cause component failure
+- Wattage is not determined by physical size, tolerance, or expressed in joules
+
+---
+
+## Related Concepts to Explore:
+- **Thermal Management in Electronics**: How heat affects component performance
+- **Power Supply Design**: Selecting components for different power levels
+- **Resistor Types**: How different resistor technologies handle power differently
+
+### Recommended Reading
+- ARRL Handbook: Chapter on Electronic Components
+- "Practical Electronics for Inventors" by Scherz and Monk
+- YouTube: Dave Jones EEVblog Electronics Design Tutorials

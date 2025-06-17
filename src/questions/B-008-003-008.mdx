@@ -1,0 +1,91 @@
+---
+id: "B-008-003-008"
+question: "What should you do if you learn your transmitter is producing key clicks?"
+answers:
+- text: "Check the keying filter and the functioning of later stages"
+  correct: true
+  explanation: "Key clicks are sharp, undesired transient signals that occur when a transmitter is keyed on and off, typically caused by abrupt voltage or current changes in the transmitter's keying circuit. By checking the keying filter and examining the functioning of later transmission stages, an operator can identify and correct the root cause of these unwanted interference-generating signals, ensuring clean, professional transmission."
+- text: "Adjust your key"
+  correct: false
+  explanation: "Simply adjusting the physical key (paddle or straight key) will not resolve key click problems, which are fundamentally an electronic circuit issue related to how the transmitter transitions between transmission and receive states. The problem lies in the transmitter's electronic switching characteristics, not the mechanical key itself."
+- text: "Regulate the oscillator supply voltage"
+  correct: false
+  explanation: "Oscillator supply voltage regulation does not directly address key click generation. While stable voltage is important for frequency stability, key clicks are primarily a result of abrupt switching transitions in the transmitter's keying and power amplifier stages, not oscillator voltage fluctuations."
+- text: "Use a choke in the RF power output"
+  correct: false
+  explanation: "While RF chokes can be useful in some circuit designs, placing a choke in the RF power output stage will not resolve key click issues. Key clicks are generated during the keying process, before the signal reaches the power output stage, and require filtering and smoothing in the keying and early amplification circuits."
+---
+
+# Understanding and Eliminating Key Clicks: Clean Signal Transmission in Amateur Radio
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What key clicks are and why they cause interference
+- The electronic principles behind key click generation
+- How to diagnose and correct key click problems
+- The importance of clean signal transmission in amateur radio
+
+---
+
+## The Concept: Key Clicks and Signal Integrity
+
+**Key clicks** are unwanted, brief, sharp-edged signals that occur when a transmitter transitions between transmit and receive states. These transient signals can spread across multiple frequencies, causing interference to other amateur radio operators and communication services.
+
+In electronic terms, key clicks result from sudden, non-linear voltage or current changes during transmission keying. When a transmitter is switched on or off too abruptly, the rapid edge transitions create harmonic-rich, spurious signals that can extend far beyond the intended operating frequency.
+
+### The Physics of Abrupt Transitions
+
+Think of key clicks like a light switch: when you flip a switch quickly, the lights don't just turn on or off smoothly. Instead, there's a momentary surge or flicker. In radio transmission, these "flickers" translate to unwanted interference across the radio spectrum.
+
+---
+
+## Real-World Examples
+
+### ✅ Proper Key Click Mitigation:
+- **Keying Filter Installation**: Adding low-pass or rise-time filters to smooth transmission transitions
+- **Circuit Stage Analysis**: Systematically examining each amplification stage for switching irregularities
+- **Rise Time Optimization**: Implementing circuits that create gradual, not abrupt, signal transitions
+
+### ❌ Ineffective Key Click Solutions:
+- **Mechanical Key Adjustment**: Changing key physical characteristics won't fix electronic switching issues
+- **Ignoring the Problem**: Continuing to transmit with key clicks disrupts other operators' communications
+- **Random Component Replacement**: Replacing components without understanding the underlying cause
+
+---
+
+## Practical Applications
+
+### For CW and Digital Mode Operators:
+1. **Systematic Troubleshooting**: Methodically check keying filter and amplification stages
+2. **Test Equipment Use**: Employ spectrum analyzers to visualize key click characteristics
+3. **Circuit Modification**: Implement soft-start or rise-time circuits in transmitter design
+
+### For Different Transmission Types:
+1. **CW Transmission**: Most susceptible to key click generation due to direct on/off keying
+2. **Digital Modes**: Require precise, clean transitions to maintain signal integrity
+3. **SSB and FM**: Less prone to key clicks but still benefit from smooth signal transitions
+
+### Memory Aid:
+"**S**mooth **S**witching **S**tops Spurious **S**ignals" - Clean transitions prevent key click interference.
+
+---
+
+## Key Takeaways
+
+- Key clicks are unwanted, sharp-edged signals generated during transmission state transitions
+- Checking the keying filter and subsequent transmission stages is the most effective diagnostic approach
+- Mechanical key adjustments do not resolve electronic key click issues
+- Clean signal transmission is a professional responsibility in amateur radio
+- Understanding and mitigating key clicks demonstrates technical competence and consideration for other operators
+
+---
+
+## Related Concepts to Explore:
+- **Rise Time and Switching Characteristics**: Electronic principles of signal transitions
+- **Harmonic Generation**: How abrupt signals create unwanted frequency components
+- **Interference Mitigation**: Techniques for maintaining clean radio communications
+
+### Recommended Reading
+- ARRL Handbook: Sections on Transmission Line Theory and Interference
+- "The Art and Skill of Radio-Telegraphy" by William Pierpont N0HFF
+- ARRL Technical Advisor publications on signal purity and interference reduction

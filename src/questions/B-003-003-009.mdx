@@ -1,0 +1,97 @@
+---
+id: "B-003-003-009"
+question: "In a receiver, which stage is controlled by the volume control?"
+answers:
+  - text: "AF amplifier"
+    correct: true
+    explanation: "The audio frequency (AF) amplifier is controlled by the volume control, which adjusts the gain of the final audio stage before the signal reaches the speaker or headphones. This allows the user to regulate the loudness of the received signal by increasing or decreasing the amplification of the already-demodulated audio signal."
+  - text: "Limiter"
+    correct: false
+    explanation: "The limiter is an intermediate stage in the receiver that prevents overmodulation and helps maintain signal quality by clipping excessive signal peaks. It operates before the demodulation process and does not directly respond to the volume control setting."
+  - text: "Discriminator"
+    correct: false
+    explanation: "The discriminator is a circuit that converts frequency variations in FM signals to amplitude variations, converting the received radio frequency signal to an audio signal. It is part of the signal detection process and is not controlled by the volume control."
+  - text: "IF amplifier"
+    correct: false
+    explanation: "The intermediate frequency (IF) amplifier is an early stage in the receiver that amplifies the signal before demodulation. It operates at a fixed frequency and is part of the signal processing chain before audio recovery, so it is not controlled by the volume control."
+---
+
+# Understanding the Audio Amplifier: Controlling Receiver Volume
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The role of the audio frequency (AF) amplifier in a radio receiver
+- How volume control works in electronic circuits
+- The difference between various stages in a receiver's signal path
+- The importance of audio gain management in radio communication
+
+---
+
+## The Concept: Audio Amplification and Volume Control
+
+A radio receiver processes signals through multiple stages, transforming weak radio frequency (RF) signals into audible sound. The volume control is strategically placed in the audio frequency (AF) amplifier stage, which is the final amplification point before the signal reaches the speaker or headphones.
+
+The AF amplifier takes the demodulated audio signal and increases its power to a level suitable for listening. By varying the gain of this stage, the volume control allows the operator to adjust the loudness without changing the fundamental characteristics of the received signal. This is similar to adjusting the volume on a stereo system - you're controlling the final audio amplification stage.
+
+### Signal Path in a Typical Receiver
+
+The signal travels through several critical stages:
+1. RF Reception
+2. Frequency Conversion
+3. Intermediate Frequency (IF) Amplification
+4. Demodulation
+5. **Audio Frequency (AF) Amplification** ← Volume Control Acts Here
+6. Speaker/Headphone Output
+
+---
+
+## Real-World Examples
+
+### ✅ Correct Volume Control Applications:
+- **Adjusting Receiver Loudness**: Turning the volume knob changes the gain of the AF amplifier
+- **Preventing Audio Distortion**: Properly set volume prevents overdriving the audio stage
+- **Comfortable Listening**: Allows adaptation to different signal strengths and ambient noise levels
+
+### ❌ Incorrect Volume Control Misconceptions:
+- **Changing RF Sensitivity**: Volume control does not affect the receiver's ability to pick up weak signals
+- **Modifying Signal Content**: Volume control only changes audio loudness, not signal quality
+- **Affecting Earlier Stages**: Volume control does not impact IF or RF amplification stages
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Operators:
+1. **Emergency Communications**: Ability to quickly adjust audio levels in varying noise environments
+2. **Weak Signal Work**: Fine-tuning volume to hear subtle signals without distortion
+3. **Contest Operating**: Managing audio levels during high-activity periods
+
+### Technical Details:
+1. **Logarithmic Volume Control**: Most modern receivers use logarithmic potentiometers for more natural-feeling volume adjustment
+2. **Automatic Gain Control (AGC)**: Complements manual volume control by maintaining consistent audio levels
+3. **Digital Volume Control**: Modern SDR (Software Defined Radio) systems use digital signal processing for volume management
+
+### Memory Aid:
+"**A**fter **F**requency, **A**djust Volume" - The AF (Audio Frequency) amplifier is where volume gets adjusted.
+
+---
+
+## Key Takeaways
+
+- The volume control operates in the audio frequency (AF) amplifier stage
+- Volume control adjusts the gain of the final audio amplification before sound output
+- This control does not modify the received signal's fundamental characteristics
+- Proper volume management is crucial for clear, comfortable communication
+- Understanding the signal path helps operators use their receivers more effectively
+
+---
+
+## Related Concepts to Explore:
+- **Audio Signal Processing**: How analog and digital circuits manage audio gain
+- **Receiver Sensitivity**: The relationship between RF stages and audio output
+- **AGC (Automatic Gain Control)**: Complementary automatic volume management techniques
+
+### Recommended Reading
+- ARRL Handbook: Receiver Design and Audio Stages
+- "Understanding Your Receiver" by Joel Hallas
+- Online Tutorial: Basic Radio Receiver Architecture

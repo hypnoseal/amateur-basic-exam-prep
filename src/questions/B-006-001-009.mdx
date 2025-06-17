@@ -1,0 +1,94 @@
+---
+id: "B-006-001-009"
+question: "A transmission line is terminated by an impedance that differs significantly from the characteristic impedance of the line. What impedance will be measured at the input of the line?"
+answers:
+  - text: "A value of impedance influenced by line length"
+    correct: true
+    explanation: "When a transmission line is terminated with an impedance different from its characteristic impedance, the input impedance becomes a complex function of both the termination impedance and the physical length of the transmission line. This phenomenon occurs due to standing waves created by impedance mismatches, causing reflected waves that interact with the incident waves along the line's length."
+  - text: "An infinite impedance"
+    correct: false
+    explanation: "An infinite impedance would only occur in a completely open-circuited line with no termination, which is not the scenario described in the question. In a line with a mismatched termination, the input impedance will be a finite value that varies with line length and termination characteristics."
+  - text: "A zero impedance"
+    correct: false
+    explanation: "A zero impedance would only occur in a perfectly short-circuited transmission line, which is not the case here. With a mismatched termination, the input impedance will be a non-zero value that depends on the line's length and the difference between the termination and characteristic impedances."
+  - text: "An impedance nearly equal to the characteristic impedance"
+    correct: false
+    explanation: "When the termination impedance significantly differs from the characteristic impedance, the input impedance will not remain close to the line's characteristic impedance. Instead, it will vary based on the length of the line and the specific impedance mismatch."
+---
+
+# Transmission Line Impedance Transformation: Understanding Input Impedance
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How transmission line termination affects input impedance
+- The relationship between line length and impedance measurement
+- The physics of wave reflection in mismatched transmission lines
+- Practical implications of impedance mismatches in radio systems
+
+---
+
+## The Concept: Transmission Line Impedance Dynamics
+
+A transmission line is more than just a simple wire—it's a complex electromagnetic system where the input impedance can dramatically change based on termination conditions and physical length. When the termination impedance differs from the line's characteristic impedance, a fascinating phenomenon occurs: **impedance transformation**.
+
+Imagine a transmission line like a highway for electromagnetic waves. When these waves encounter an unexpected "road condition" (impedance mismatch), they don't simply disappear. Instead, they reflect, creating standing waves that interact with incoming waves. The result is an input impedance that becomes a dynamic function of both the line's length and the termination characteristics.
+
+### The Physics of Impedance Transformation
+
+Key principles driving this phenomenon include:
+- **Reflection Coefficient**: The ratio of reflected to incident wave amplitudes
+- **Standing Wave Ratio (SWR)**: A measure of impedance mismatch
+- **Wave Interference**: How reflected and incident waves interact along the line
+
+---
+
+## Real-World Examples
+
+### ✅ Impedance Transformation Scenarios:
+- **Antenna Feedlines**: Mismatched antenna systems create complex input impedances
+- **RF Test Equipment**: Calibration requires understanding transmission line behaviors
+- **Matching Networks**: Design techniques that leverage impedance transformation
+
+### ❌ Misconceptions About Transmission Lines:
+- **Assuming Constant Impedance**: Transmission lines are not simple, uniform conductors
+- **Ignoring Line Length**: Physical length critically affects wave interactions
+- **Oversimplifying Reflections**: Reflections are complex, not binary events
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Operators:
+1. **Antenna Tuning**: Understanding how line length affects impedance matching
+2. **Coaxial Cable Performance**: Predicting signal loss and reflection characteristics
+3. **Impedance Matching Networks**: Designing circuits that optimize power transfer
+
+### Measurement Techniques:
+1. **Vector Network Analyzers (VNAs)**: Precisely measure transmission line characteristics
+2. **SWR Meters**: Provide quick indication of impedance mismatches
+3. **Time-Domain Reflectometry (TDR)**: Locate and characterize line discontinuities
+
+### Memory Aid:
+"**L**ength **I**nfluences **N**on-uniform **E**lectrical behavior" - LINE helps remember transmission line complexity.
+
+---
+
+## Key Takeaways
+
+- Input impedance of a transmission line depends critically on termination impedance and line length
+- Impedance mismatches create reflected waves that interact with incident waves
+- The input impedance is not constant but varies based on specific line characteristics
+- Understanding these dynamics is crucial for efficient RF system design
+- Amateur radio operators must consider transmission line behaviors in antenna and feedline systems
+
+---
+
+## Related Concepts to Explore:
+- **Smith Chart Analysis**: Graphical representation of transmission line impedances
+- **Impedance Matching Techniques**: Methods to minimize reflection losses
+- **Wave Propagation Principles**: Fundamental electromagnetic wave behaviors
+
+### Recommended Reading
+- ARRL Antenna Handbook - Transmission line theory chapter
+- "Reflections" by M. Walter Maxwell - Deep dive into transmission line physics
+- YouTube: W2AEW Transmission Line Impedance Transformation Tutorials

@@ -1,0 +1,95 @@
+---
+id: "B-005-005-002"
+question: "You connect four 100-ohm resistors in parallel across a 12-volt battery. How many milliamperes of current are drawn from the battery?"
+answers:
+  - text: "480 mA"
+    correct: true
+    explanation: "When resistors are connected in parallel, the total current is the sum of the individual branch currents. Using Ohm's Law (I = V/R), each 100-ohm resistor will draw 12V/100Ω = 0.12A or 120 mA. With four identical parallel resistors, the total current will be 4 × 120 mA = 480 mA drawn from the battery."
+  - text: "48 mA"
+    correct: false
+    explanation: "This calculation incorrectly assumes the current is divided by the number of resistors, which is not how parallel circuits work. In a parallel circuit, each resistor receives the full circuit voltage and draws current independently."
+  - text: "120 mA"
+    correct: false
+    explanation: "This represents the current through a single resistor, not the total current drawn from the battery when four resistors are connected in parallel. The total current is the sum of all branch currents."
+  - text: "240 mA"
+    correct: false
+    explanation: "This is half the correct total current. The calculation fails to account for the full current contribution of all four parallel resistors."
+---
+
+# Parallel Resistor Circuits: Calculating Total Current Draw
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How current behaves in parallel resistor circuits
+- Application of Ohm's Law to parallel circuits
+- Calculation of total current in multiple-branch circuits
+- The difference between series and parallel current distribution
+
+---
+
+## The Concept: Parallel Resistance and Current Flow
+
+In a parallel circuit, each resistor receives the full voltage of the source while drawing its own individual current. Unlike series circuits where current remains constant, parallel circuits allow each branch to draw current independently. The total current drawn from the source is the sum of the individual branch currents.
+
+Ohm's Law (I = V/R) is the key to understanding parallel current flow. In this scenario, each 100-ohm resistor will experience the full 12 volts, allowing us to calculate the current through each branch separately before summing them.
+
+### Parallel Circuit Principles
+
+The fundamental rules of parallel circuits include:
+- All components share the same voltage
+- Total current equals the sum of individual branch currents
+- Each resistor draws current proportional to its resistance
+- Adding parallel resistors reduces the total circuit resistance
+
+---
+
+## Real-World Examples
+
+### ✅ Correct Parallel Current Calculations:
+- **Four 100Ω Resistors**: 12V ÷ 100Ω = 0.12A per branch, totaling 0.48A (480 mA)
+- **Two 50Ω Resistors**: 12V ÷ 50Ω = 0.24A per branch, totaling 0.48A (480 mA)
+- **Mixed Resistance Branches**: Each branch calculated individually, then summed
+
+### ❌ Common Parallel Circuit Misconceptions:
+- **Dividing Voltage**: Incorrectly assuming voltage is divided among branches
+- **Constant Current**: Thinking current remains the same in all branches
+- **Simple Averaging**: Attempting to calculate total current by averaging branch currents
+
+---
+
+## Practical Applications
+
+### For Electronic Circuit Design:
+1. **Current Sharing**: Understand how multiple components draw power in parallel
+2. **Power Supply Calculations**: Determine total current requirements
+3. **Load Distribution**: Design circuits that can handle multiple independent loads
+
+### For Amateur Radio Equipment:
+1. **Parallel Power Distribution**: Design robust power supply connections
+2. **Redundant Circuit Paths**: Create failsafe electrical systems
+3. **Current Measurement**: Accurately predict power consumption
+
+### Memory Aid:
+"**P**arallel **P**aths **P**ool Power" - In parallel, each path contributes its full current.
+
+---
+
+## Key Takeaways
+
+- In parallel circuits, each resistor receives full source voltage
+- Total current is the sum of individual branch currents
+- Use Ohm's Law (I = V/R) to calculate current for each branch
+- Four 100-ohm resistors in parallel will draw 480 mA from a 12V source
+- Parallel circuits allow independent current flow through each component
+
+---
+
+## Related Concepts to Explore:
+- **Series vs. Parallel Circuits**: Comparative circuit design principles
+- **Power Calculations in Parallel Circuits**: Determining total power consumption
+- **Voltage and Current Relationships**: Advanced Ohm's Law applications
+
+### Recommended Reading
+- ARRL Handbook: Chapter on Basic Electronics
+- "Practical Electronics for Inventors" by Paul Scherz
+- Khan Academy: Electrical Engineering Fundamentals Course

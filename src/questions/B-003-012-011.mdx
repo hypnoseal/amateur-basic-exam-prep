@@ -1,0 +1,92 @@
+---
+id: "B-003-012-011"
+question: "The automatic level control (ALC) in an SSB transmitter:"
+answers:
+  - text: "limits the input audio peaks so that the transmitter is not overdriven"
+    correct: true
+    explanation: "ALC prevents audio input from exceeding the amplifier's linear operating range by automatically reducing gain when input signals approach distortion levels. This ensures that the transmitter's power amplifier stages remain operating in their most efficient and least distorted region, maintaining signal quality and preventing unwanted harmonic generation."
+  - text: "reduces transmitter audio feedback"
+    correct: false
+    explanation: "Audio feedback is a separate phenomenon involving sound loops between microphones and speakers. ALC is an internal signal management mechanism within the transmitter that controls signal amplitude, not a mechanism for preventing acoustic feedback. Feedback reduction requires different techniques like microphone placement and gain management."
+  - text: "increases the occupied bandwidth"
+    correct: false
+    explanation: "ALC actually helps maintain consistent bandwidth by preventing signal overdriving that could cause non-linear distortion. Increasing occupied bandwidth would involve deliberately introducing additional signal components, which ALC specifically works to prevent by maintaining linear amplification."
+  - text: "reduces system noise"
+    correct: false
+    explanation: "While ALC helps maintain signal quality, its primary function is amplitude control, not noise reduction. Noise reduction requires separate techniques like filtering, using low-noise amplifiers, and proper signal routing. ALC focuses on preventing signal distortion, not minimizing background noise levels."
+---
+
+# Automatic Level Control: The Signal Guardian of SSB Transmitters
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What Automatic Level Control (ALC) does in SSB transmitters
+- How ALC prevents signal distortion
+- The difference between ALC and other signal management techniques
+- Why maintaining linear amplification is crucial in amateur radio communication
+
+---
+
+## The Concept: Signal Amplitude Management
+
+Automatic Level Control (ALC) is an essential electronic circuit in Single Sideband (SSB) transmitters that acts like a vigilant guardian, protecting your transmitter's power amplifier from overdrive and potential damage. It operates similarly to a smart volume control that automatically adjusts gain to prevent distortion.
+
+In SSB communication, maintaining signal linearity is critical. When audio input exceeds an amplifier's linear operating range, the signal becomes distorted, creating unwanted harmonics and spreading the signal's bandwidth. ALC prevents this by dynamically reducing gain when input signals approach the amplifier's maximum linear capacity.
+
+### The Physics of Signal Management
+
+Think of ALC like a pressure regulator in a water system. Just as a pressure regulator prevents pipes from bursting by controlling water flow, ALC prevents electronic "bursting" by controlling signal amplitude. It continuously monitors the input signal and provides feedback to earlier stages of the transmitter, reducing gain before distortion can occur.
+
+---
+
+## Real-World Examples
+
+### ✅ Effective ALC Operation:
+- **Microphone Speech Peaks**: Automatically reducing gain during loud vocal bursts
+- **Different Microphone Sensitivity**: Compensating for variations in microphone output levels
+- **Maintaining Consistent Transmitter Performance**: Keeping power output uniform across different audio input levels
+
+### ❌ What ALC Doesn't Do:
+- **Eliminate Background Noise**: ALC manages signal amplitude, not noise levels
+- **Create Audio Compression**: While it reduces peaks, it's not a dedicated audio compressor
+- **Prevent All Possible Distortion**: It manages, but doesn't completely eliminate, potential signal degradation
+
+---
+
+## Practical Applications
+
+### For SSB Transmitter Operation:
+1. **Monitor ALC Meters**: Most modern transceivers have ALC indicator meters
+2. **Adjust Microphone Gain**: Set microphone gain to keep ALC in its optimal range
+3. **Understand Your Transmitter's Limits**: Learn how ALC responds in your specific radio
+
+### For Different Operating Scenarios:
+1. **Voice Communications**: Prevents loud speech from causing splatter
+2. **Digital Modes**: Helps maintain linearity for precise signal transmission
+3. **Contesting**: Ensures consistent signal quality during high-stress operating conditions
+
+### Memory Aid:
+"**A**mplitude **L**imits **C**ontrolled" - That's what ALC does!
+
+---
+
+## Key Takeaways
+
+- ALC limits input audio peaks to prevent transmitter overdrive
+- It maintains signal linearity by dynamically controlling gain
+- ALC protects power amplifier stages from potential damage
+- Proper ALC operation is crucial for clean, efficient SSB communication
+- It is not a noise reduction technique or feedback prevention mechanism
+
+---
+
+## Related Concepts to Explore:
+- **Audio Compression in Amateur Radio**
+- **SSB Signal Generation**
+- **Power Amplifier Linearity**
+- **Transmitter Distortion Mechanisms**
+
+### Recommended Reading
+- ARRL Handbook: Chapter on SSB Transmitter Design
+- Online Tutorial: "Understanding Transmitter Linearity"
+- YouTube: W2AEW's Technical Videos on RF Amplification

@@ -1,0 +1,95 @@
+---
+id: "B-008-003-006"
+question: "Key clicks, heard from a Morse code transmitter at a distant receiver, are the result of:"
+answers:
+  - text: "too sharp rise and decay times of the keyed carrier"
+    correct: true
+    explanation: "Key clicks occur when the radio frequency carrier is switched on and off too abruptly, creating rapid voltage transitions that generate harmonic-rich spurious emissions. These sharp transitions produce unwanted frequency components that sound like sharp 'clicks' in a receiver, spreading the signal beyond its intended bandwidth and potentially causing interference to nearby stations."
+  - text: "power supply hum modulating the carrier"
+    correct: false
+    explanation: "Power supply hum typically produces a low-frequency noise or buzz, not sharp key clicks. While power supply issues can cause audio distortion, they do not directly create the sharp, high-frequency transients associated with key clicks in Morse code transmission."
+  - text: "sparks emitting RF from the key contacts"
+    correct: false
+    explanation: "While mechanical key contacts can generate small sparks, modern solid-state keying circuits prevent this. Key clicks are an electronic phenomenon related to signal switching characteristics, not physical sparking at the key contacts."
+  - text: "changes in oscillator frequency on keying"
+    correct: false
+    explanation: "Frequency changes during keying can cause frequency modulation, but they do not directly produce the sharp, broadband interference characteristic of key clicks. Key clicks are primarily a result of amplitude switching characteristics, not frequency variations."
+---
+
+# Understanding Key Clicks: The Physics of Morse Code Signal Switching
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What key clicks are in radio transmission
+- How signal rise and decay times create unwanted emissions
+- The electromagnetic principles behind signal transitions
+- How to prevent key clicks in Morse code transmission
+
+---
+
+## The Concept: Signal Transitions and Harmonic Generation
+
+In Morse code transmission, **key clicks** are unwanted, sharp audio artifacts heard at distant receivers when a radio signal is switched on and off too abruptly. These clicks result from rapid voltage transitions that create harmonic-rich spurious emissions, effectively spreading the signal's energy across a broader frequency spectrum than intended.
+
+Think of signal switching like turning a light on and off. A smooth, gradual transition (like a dimmer switch) creates minimal electromagnetic disturbance. In contrast, an instantaneous on/off creates a sharp "pop" of energy—in radio terms, this translates to harmonic emissions that can interfere with nearby communications.
+
+### The Physics of Sharp Transitions
+
+When a radio frequency carrier is switched too quickly, the sudden voltage change creates high-frequency harmonic components. These harmonics can:
+- Spread beyond the allocated amateur radio band
+- Cause interference to nearby stations
+- Violate spectral purity regulations
+- Reduce overall communication effectiveness
+
+---
+
+## Real-World Examples
+
+### ✅ Clean Signal Switching Methods:
+- **Soft Keying**: Using electronic circuits that gradually ramp signal amplitude
+- **Rise Time Management**: Controlling signal transition speed to minimize harmonics
+- **Low-Pass Filtering**: Implementing additional filtering to smooth signal edges
+
+### ❌ Poor Keying Practices:
+- **Direct On/Off Switching**: Creates sharp, click-producing transitions
+- **Unfiltered Mechanical Keys**: Can generate additional spurious emissions
+- **High-Speed Keying Without Proper Circuitry**: Increases harmonic generation
+
+---
+
+## Practical Applications
+
+### For CW Operators:
+1. **Use Keyers with Rise Time Control**: Modern electronic keyers can shape signal transitions
+2. **Implement Low-Pass Filtering**: Additional filtering at the transmitter output reduces harmonics
+3. **Monitor Signal Quality**: Use spectrum analyzers or receiver reports to check signal purity
+
+### Technical Mitigation Strategies:
+1. **Exponential Rise/Decay Curves**: Shape the signal transition to minimize sharp edges
+2. **Series Resistance Keying**: Add resistance to smooth key transitions
+3. **RF Switching Techniques**: Use techniques that minimize instantaneous voltage changes
+
+### Memory Aid:
+"**S**mooth **S**witching **S**tops **S**purious" - Gradual signal transitions prevent key clicks.
+
+---
+
+## Key Takeaways
+
+- Key clicks result from too-sharp rise and decay times in carrier switching
+- Rapid signal transitions create harmonic-rich spurious emissions
+- Modern transmission techniques focus on smooth, controlled signal switching
+- Proper keying techniques maintain spectral purity and minimize interference
+- Amateur radio operators have a responsibility to minimize their signal's impact on shared spectrum
+
+---
+
+## Related Concepts to Explore:
+- **Fourier Analysis**: How signal transitions create harmonic components
+- **Spectral Purity**: Techniques for maintaining clean radio emissions
+- **Electronic Keying Circuits**: Advanced methods for smooth signal generation
+
+### Recommended Reading
+- ARRL Handbook: Chapters on CW Transmission and Signal Generation
+- "The Art and Skill of Radio-Telegraphy" by William Pierpont, N0HFF
+- YouTube: DX Engineering Webinars on CW Transmission Techniques

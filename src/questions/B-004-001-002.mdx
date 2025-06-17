@@ -1,0 +1,91 @@
+---
+id: "B-004-001-002"
+question: "If an amplifier becomes non-linear, the output signal would:"
+answers:
+  - text: "become distorted"
+    correct: true
+    explanation: "In a non-linear amplifier, the output signal no longer maintains a proportional relationship with the input signal. This means the amplification process introduces additional frequencies and changes the waveform shape, creating harmonic distortion. The fundamental input signal is modified, producing additional unwanted frequency components that alter the original signal's pure sinusoidal or complex waveform."
+  - text: "be reduced to zero"
+    correct: false
+    explanation: "Non-linearity does not necessarily mean the signal becomes zero. Instead, it means the amplifier's response is not consistently proportional across all input signal levels. The output will still exist, but it will be distorted and contain additional unintended frequency components that were not present in the original input signal."
+  - text: "cause oscillations"
+    correct: false
+    explanation: "While non-linear behavior can potentially contribute to instability in some circuits, oscillation is a separate phenomenon from signal distortion. Non-linearity specifically refers to uneven amplification, whereas oscillation involves a circuit generating its own periodic signal without an external input."
+  - text: "overload the power supply"
+    correct: false
+    explanation: "Non-linearity is a characteristic of the amplification process itself, not a direct cause of power supply overload. While severe non-linear behavior might draw more current, the primary effect is signal distortion, not power supply stress. Power supply issues are a separate concern from the amplifier's linearity characteristics."
+---
+
+# Understanding Amplifier Linearity: The Science of Signal Reproduction
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What linearity means in electronic amplification
+- How non-linear amplification affects signal integrity
+- The differences between linear and non-linear signal processing
+- Practical implications of signal distortion in amateur radio communications
+
+---
+
+## The Concept: Amplifier Linearity and Signal Fidelity
+
+An **ideal linear amplifier** reproduces an input signal with perfect proportionality - meaning the output is an exact, scaled version of the input. Imagine stretching a rubber band: if you pull it twice as far, it provides twice the resistance. In a perfectly linear amplifier, doubling the input voltage would precisely double the output voltage, maintaining the original signal's shape.
+
+**Non-linear amplification** occurs when this proportional relationship breaks down. Instead of producing a faithful, scaled reproduction of the input signal, the amplifier introduces additional frequency components, changes the signal's shape, and creates harmonic distortions. This is similar to a musical instrument producing unwanted overtones when played too loudly or aggressively.
+
+### The Physics of Signal Distortion
+
+When an amplifier becomes non-linear, it essentially "breaks" the smooth mathematical relationship between input and output. This happens when the amplifying components (like transistors or vacuum tubes) are pushed beyond their designed operating range. The result is a signal that looks more like a badly drawn approximation of the original waveform, with additional "bumps" and "harmonics" that were not in the original signal.
+
+---
+
+## Real-World Examples
+
+### ✅ Linear Amplification Scenarios:
+- **Clean Audio Reproduction**: A high-quality stereo amplifier maintaining precise sound fidelity
+- **Precise RF Signal Amplification**: A well-designed amateur radio linear amplifier maintaining signal integrity
+- **Scientific Measurement Equipment**: Instrumentation amplifiers with minimal distortion
+
+### ❌ Non-Linear Amplification Effects:
+- **Overdriven Guitar Amplifier**: Producing intentional harmonic distortion for musical effect
+- **Weak Battery Radio**: Audio becoming progressively more distorted as battery voltage drops
+- **Saturated RF Amplifier**: Creating spurious signals and harmonics that interfere with other frequencies
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Operators:
+1. **SSB Voice Transmission**: Maintaining clear, undistorted voice communication
+2. **Digital Mode Operations**: Ensuring precise signal reproduction for modes like PSK31 or RTTY
+3. **Weak Signal Work**: Preserving signal integrity during low-power communications
+
+### For RF Amplifier Design:
+1. **Bias Point Selection**: Choosing optimal operating points to maximize linearity
+2. **Feedback Techniques**: Using negative feedback to improve amplifier linearity
+3. **Thermal Management**: Preventing component heating that can cause non-linear behavior
+
+### Memory Aid:
+"**L**inearity **M**eans **S**mooth **S**ignals" - Linear amplifiers produce smooth, undistorted signal reproduction.
+
+---
+
+## Key Takeaways
+
+- Non-linear amplification causes signal distortion by introducing unintended frequency components
+- Distortion occurs when amplifying components are operated outside their designed linear range
+- The output signal's shape changes, creating harmonics not present in the original input
+- Maintaining linearity is critical for clear communication in amateur radio
+- Different types of amplifiers have varying levels of inherent linearity
+
+---
+
+## Related Concepts to Explore:
+- **Intermodulation Distortion**: How multiple signals interact in non-linear systems
+- **Amplifier Classes**: Different amplifier designs and their linearity characteristics
+- **Feedback Techniques**: Methods for improving amplifier linearity
+
+### Recommended Reading
+- ARRL Handbook: Chapters on Solid-State Electronics and Amplifier Design
+- "Complete RF Design Techniques" by Wes Hayward
+- YouTube Series: "Understanding RF Amplifier Linearity" by RF Design Experts

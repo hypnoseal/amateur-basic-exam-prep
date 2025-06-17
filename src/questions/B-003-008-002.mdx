@@ -1,0 +1,98 @@
+---
+id: "B-003-008-002"
+question: "What is the purpose of the transformer in a linear power supply?"
+answers:
+  - text: "Convert the AC mains voltage up or down as required and provide isolation"
+    correct: true
+    explanation: "Transformers are fundamental components in linear power supplies that serve two critical functions: voltage transformation and electrical isolation. By using electromagnetic induction between primary and secondary windings, transformers can step voltage up or down to the required level for electronic equipment while providing galvanic isolation that prevents direct electrical connection between input and output circuits, which enhances safety and reduces noise."
+  - text: "Convert alternating current into direct current"
+    correct: false
+    explanation: "This function is actually performed by the rectifier (typically diodes) in a linear power supply, not the transformer. The transformer handles voltage transformation and isolation before the rectification stage, whereas the rectifier converts the alternating current from the transformer's secondary winding into pulsating direct current."
+  - text: "Smooth out the pulsating direct current"
+    correct: false
+    explanation: "Smoothing of pulsating direct current is the job of the filter capacitor in a linear power supply, not the transformer. After rectification, the capacitor reduces voltage ripple and provides a more stable DC output. The transformer's role is strictly voltage transformation and isolation prior to rectification and filtering."
+  - text: "Ensure that the voltage stays constant when a heavy demand is placed on the supply"
+    correct: false
+    explanation: "Voltage regulation is typically handled by voltage regulator circuits (like linear regulators or switching regulators), not the transformer. While the transformer provides the initial voltage conversion, maintaining constant output voltage under varying load conditions requires additional electronic components designed specifically for voltage regulation."
+---
+
+# Transformers in Linear Power Supplies: Voltage Conversion and Electrical Isolation
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The fundamental roles of transformers in electronic power supplies
+- How transformers use electromagnetic induction to transform voltage
+- The importance of electrical isolation in power supply design
+- The relationship between transformers and other power supply components
+
+---
+
+## The Concept: Transformer Fundamentals in Power Supplies
+
+A transformer is an electromagnetic device that transfers electrical energy between two circuits using magnetic coupling. In a linear power supply, the transformer serves two primary purposes: **voltage transformation** and **electrical isolation**.
+
+### Voltage Transformation
+
+Transformers can increase (step up) or decrease (step down) alternating current voltage based on the ratio of primary to secondary windings. This allows power supplies to convert standard mains voltage (typically 120V or 240V AC) to the specific lower voltage required by electronic circuits.
+
+### Electrical Isolation
+
+Beyond voltage transformation, transformers provide critical electrical isolation. By using magnetic coupling instead of direct electrical connection, transformers prevent direct current flow between input and output circuits. This isolation offers several key benefits:
+- Enhanced electrical safety
+- Reduced electromagnetic interference
+- Protection of sensitive electronic components
+- Compliance with electrical safety standards
+
+---
+
+## Real-World Examples
+
+### ✅ Transformer Voltage Transformation:
+- **Amateur Radio Power Supply**: Converting 120V AC to 13.8V DC for powering transceivers
+- **Laptop Charger**: Stepping down wall voltage to low-voltage DC for charging
+- **Test Equipment**: Providing precisely controlled voltages for measurement and calibration
+
+### ❌ Misconceptions About Transformer Functions:
+- **Not a Rectifier**: Transformers don't convert AC to DC
+- **Not a Voltage Regulator**: Transformers don't maintain constant voltage under varying loads
+- **Not a Filter**: Transformers don't smooth out pulsating DC
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Equipment:
+1. **Transceiver Power**: Providing stable, isolated low-voltage DC for radio operation
+2. **Noise Reduction**: Minimizing electrical noise through galvanic isolation
+3. **Safety**: Preventing direct electrical contact between mains and low-voltage circuits
+
+### For Power Supply Design:
+1. **Selecting Transformer Ratings**: Match transformer specifications to equipment power requirements
+2. **Understanding Winding Ratios**: Calculate required primary-to-secondary turns for desired voltage
+3. **Thermal Management**: Consider transformer efficiency and heat dissipation
+
+### Memory Aid:
+"**T**ransformers **T**urn and **T**otally **I**solate" - Transform voltage and provide total electrical isolation.
+
+---
+
+## Key Takeaways
+
+- Transformers in linear power supplies convert AC mains voltage up or down and provide electrical isolation
+- Voltage transformation occurs through electromagnetic induction between primary and secondary windings
+- Electrical isolation prevents direct current flow, enhancing safety and reducing interference
+- Transformers work in conjunction with rectifiers, filters, and regulators to create stable DC power
+- Understanding transformer function is crucial for designing and maintaining electronic power systems
+
+---
+
+## Related Concepts to Explore:
+- **Electromagnetic Induction**: Principles behind transformer operation
+- **Power Supply Topology**: Different linear and switching power supply designs
+- **Electrical Safety**: Role of isolation in protecting electronic equipment
+
+### Recommended Reading
+
+- ARRL Handbook - Chapter on Power Supplies and Electrical Safety
+- "Practical Electronics for Inventors" by Paul Scherz - Detailed transformer and power supply theory
+- YouTube: "Transformer Basics" series by Engineering Mindset - Visual explanation of transformer principles

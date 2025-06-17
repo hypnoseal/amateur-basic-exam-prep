@@ -3,10 +3,11 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
+import questionListIntegration from './integrations/question-list.js';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), mdx()],
+  integrations: [tailwind(), react(), mdx(), questionListIntegration()],
   // Add metadata for better SEO and search indexing
   site: 'https://amateur-radio-exam-prep.com', // Replace with your actual site URL
   markdown: {

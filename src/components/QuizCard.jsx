@@ -41,6 +41,9 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
     };
   }, [hideLesson]);
 
+  // Store a reference to getState to use in event handlers
+  const getQuizState = useQuizStore.getState;
+
   // Handle answer selection
   const handleAnswerClick = (index) => {
     // Use the selectAnswer action from the quiz store
@@ -48,7 +51,7 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
 
     // For backward compatibility with the DOM-based progress display
     // This can be removed once TopNav is refactored to use Zustand
-    const { attemptedQuestions, correctlyAnsweredQuestions } = useQuizStore.getState();
+    const { attemptedQuestions, correctlyAnsweredQuestions } = getQuizState();
 
     // Update the display in the TopNav
     const questionsAttemptedEl = document.getElementById('questionsAttempted');
@@ -64,9 +67,55 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
   };
 
   // Handle next question button click
-  const handleNextQuestion = () => {
-    // Navigate to the quiz route to get a new random question
-    window.location.href = '/quiz';
+  const handleNextQuestion = async () => {
+    try {
+      // Try to get question IDs from localStorage first (if available and not expired)
+      const cachedData = localStorage.getItem('questionIds');
+      const cacheTimestamp = localStorage.getItem('questionIdsTimestamp');
+      const cacheExpiration = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
+      let questionIds = [];
+
+      // Check if we have valid cached data
+      if (cachedData && cacheTimestamp && 
+          (Date.now() - parseInt(cacheTimestamp)) < cacheExpiration) {
+        questionIds = JSON.parse(cachedData);
+        console.log('Using cached question IDs');
+      } else {
+        // Fetch the question IDs from the generated JSON file
+        const response = await fetch('/data/question-ids.json');
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch question IDs: ${response.status}`);
+        }
+
+        questionIds = await response.json();
+
+        // Cache the question IDs in localStorage
+        localStorage.setItem('questionIds', JSON.stringify(questionIds));
+        localStorage.setItem('questionIdsTimestamp', Date.now().toString());
+        console.log('Fetched and cached question IDs');
+      }
+
+      if (questionIds.length === 0) {
+        throw new Error('No question IDs found');
+      }
+
+      // Select a random question ID
+      const randomIndex = Math.floor(Math.random() * questionIds.length);
+      const selectedQuestionId = questionIds[randomIndex];
+
+      // Navigate to the selected question
+      window.location.href = `/quiz/${selectedQuestionId}`;
+    } catch (error) {
+      console.error('Error navigating to random question:', error);
+
+      // Fallback: If we can't get the question IDs, use the old method
+      window.location.href = '/quiz';
+
+      // Show an error message
+      alert('Sorry, we encountered an error loading the next question. Trying alternative method.');
+    }
   };
 
   // Handle show lesson button click

@@ -1,0 +1,95 @@
+---
+id: "B-003-019-009"
+question: "What is a safe method to discharge power supply filter capacitors?"
+answers:
+  - text: "Use an insulated shorting stick with an inline resistor"
+    correct: true
+    explanation: "This method provides the safest approach to discharging high-voltage capacitors by controlling the discharge rate and preventing potential arc flash or sudden energy release. The inline resistor limits the current flow, preventing potential damage to the capacitor or creating a dangerous electrical spike. The insulated stick ensures personal safety by preventing direct contact with high-voltage components."
+  - text: "Use a long screwdriver with an insulated handle"
+    correct: false
+    explanation: "Using a screwdriver is extremely dangerous and can lead to catastrophic injury. An uncontrolled discharge can create a massive arc, potentially welding the screwdriver to the capacitor terminals, causing burns, or creating explosive metal spray. The metal shaft could conduct full discharge current, bypassing the insulated handle and creating a serious shock hazard."
+  - text: "Use an insulated wire with alligator clips on each end"
+    correct: false
+    explanation: "While the wire is insulated, this method lacks the crucial current-limiting resistor. A direct short with alligator clips can create an uncontrolled, high-current discharge that can damage equipment, cause arcing, and potentially create a dangerous electrical explosion. The sudden current surge can destroy the capacitor and create significant personal safety risks."
+  - text: "Allow time for bleeder resistors to discharge the capacitors"
+    correct: false
+    explanation: "While bleeder resistors help gradually discharge capacitors during normal operation, they cannot be relied upon as a primary discharge method, especially after equipment has been powered off. Bleeder resistors have limited current capacity and may take an extended time to fully discharge large capacitance or high-voltage power supply capacitors, leaving residual dangerous voltage."
+---
+
+# Safe Capacitor Discharge: Protecting Yourself and Your Equipment
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The electrical hazards associated with power supply capacitor discharge
+- Why controlled discharge methods are critical for personal safety
+- The physics of electrical energy storage in capacitors
+- Proper techniques for safely handling high-voltage electronic components
+
+---
+
+## The Concept: Capacitor Energy Storage and Discharge Dynamics
+
+Capacitors are energy storage devices that can hold electrical charge even after power is disconnected. In amateur radio power supplies, large electrolytic filter capacitors can store significant energy at potentially lethal voltages—sometimes hundreds of volts—even minutes after the power is turned off.
+
+The fundamental challenge in capacitor discharge is managing the rapid release of stored electrical energy. A capacitor doesn't discharge linearly like a battery; it releases energy in a sudden, potentially explosive manner if not properly controlled. The total energy stored is calculated by the formula E = ½CV², where C is capacitance and V is voltage.
+
+### Why Controlled Discharge Matters
+
+Uncontrolled capacitor discharge can result in:
+- Electrical arcing
+- Potential equipment damage
+- Severe personal injury or electrocution
+- Component destruction through massive current spikes
+
+---
+
+## Real-World Examples
+
+### ✅ Safe Discharge Techniques:
+- **Insulated Shorting Stick with Resistor**: Controlled, safe discharge method with current limitation
+- **Professional Discharge Tools**: Specialized electronics maintenance equipment designed for controlled energy release
+- **Manufacturer-Recommended Procedures**: Following specific equipment discharge protocols
+
+### ❌ Dangerous Discharge Attempts:
+- **Screwdriver Shorting**: Risking arc flash and personal injury
+- **Bare Wire Shorting**: Creating uncontrolled current paths
+- **Ignoring Stored Energy**: Assuming capacitors are automatically discharged
+
+---
+
+## Practical Applications
+
+### For Power Supply Maintenance:
+1. **Always Disconnect Power First**: Ensure equipment is completely unplugged before discharge
+2. **Use Proper Safety Equipment**: Insulated gloves, safety glasses
+3. **Discharge Methodically**: Connect discharge tool systematically, avoiding rapid movements
+
+### For Different Equipment Types:
+1. **High-Power Amplifiers**: Require extremely careful discharge procedures
+2. **Vintage Electronics**: Often have larger, more dangerous capacitors
+3. **Portable Equipment**: Still require careful discharge even with lower voltages
+
+### Memory Aid:
+"**S**low and **S**afe **S**horts Save Souls" - Always use a controlled discharge method with resistance.
+
+---
+
+## Key Takeaways
+
+- An insulated shorting stick with an inline resistor provides the safest capacitor discharge method
+- Capacitors can store lethal amounts of energy even after power is removed
+- Uncontrolled discharge methods risk personal injury and equipment damage
+- Always follow manufacturer-recommended discharge procedures
+- Personal safety requires understanding electrical energy storage principles
+
+---
+
+## Related Concepts to Explore:
+- **Electrical Safety Protocols**: Comprehensive amateur radio equipment handling
+- **Capacitor Physics**: Energy storage and discharge mechanisms
+- **Power Supply Design**: Capacitor function in electronic circuits
+
+### Recommended Reading
+- ARRL Handbook: Equipment Maintenance and Safety Sections
+- "Practical Electronics for Inventors" by Horowitz and Hill
+- YouTube: Dave Jones EEVblog electronics safety tutorials

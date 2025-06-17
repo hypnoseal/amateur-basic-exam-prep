@@ -1,0 +1,102 @@
+---
+id: "B-005-010-008"
+question: "What property allows a bypass capacitor in an audio circuit to divert an interfering RF signal?"
+answers:
+  - text: "Low reactance at radio frequencies"
+    correct: true
+    explanation: "A bypass capacitor provides a low-impedance path for radio frequency signals, effectively 'shorting' them to ground. At radio frequencies, the capacitor's reactance becomes very low, allowing RF signals to be diverted away from the sensitive audio circuit instead of causing interference. This low reactance creates an easy path of least resistance for unwanted high-frequency signals."
+  - text: "High reactance at radio frequencies"
+    correct: false
+    explanation: "High reactance would block RF signals, preventing them from being diverted to ground. The opposite of the correct approach is desired here - a bypass capacitor needs to provide a low-impedance path to effectively remove interfering RF signals from the circuit."
+  - text: "Low reactance at audio frequencies"
+    correct: false
+    explanation: "While low reactance is important, this specifically refers to audio frequencies, not radio frequencies. RF interference requires a different approach, and a capacitor's behavior at audio frequencies would not effectively address radio frequency interference."
+  - text: "High reactance at audio frequencies"
+    correct: false
+    explanation: "High reactance at audio frequencies would actually impede signal flow in the audio circuit itself. This approach would not provide any solution for removing RF interference and would potentially degrade the audio signal's quality."
+---
+
+# Bypass Capacitors: The RF Interference Shield in Electronic Circuits
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How bypass capacitors work to remove radio frequency interference
+- The concept of electrical reactance and its frequency-dependent nature
+- Why low reactance is crucial for RF signal diversion
+- Practical applications of bypass capacitors in electronic circuits
+
+---
+
+## The Concept: Reactance and Signal Diversion
+
+A **bypass capacitor** is an electronic component designed to provide a low-impedance path for unwanted signals, effectively "shorting" them to ground. The key to its effectiveness lies in its **reactance** - a measure of how much a component opposes alternating current at different frequencies.
+
+Reactance changes with frequency: as frequency increases, a capacitor's reactance decreases. This means that at radio frequencies, a bypass capacitor becomes an extremely low-resistance path, allowing interfering RF signals to be quickly diverted away from sensitive circuit components.
+
+Imagine a bypass capacitor like a special drainage channel. At radio frequencies, this channel becomes wide open, allowing unwanted signal "water" to flow away from the main audio "river", keeping the audio signal clean and undisturbed.
+
+### The Physics of Signal Diversion
+
+The mathematical relationship between capacitance, frequency, and reactance is described by the formula:
+
+**Xc = 1 / (2πfC)**
+
+Where:
+- Xc is capacitive reactance
+- f is frequency
+- C is capacitance
+
+As frequency increases, reactance dramatically decreases, creating that low-impedance path for RF signals.
+
+---
+
+## Real-World Examples
+
+### ✅ Effective Bypass Capacitor Applications:
+- **Audio Amplifier Design**: Preventing RF pickup in microphone and line-level circuits
+- **Computer Motherboards**: Removing high-frequency noise from power supply lines
+- **Amateur Radio Receiver Front-Ends**: Protecting sensitive audio stages from RF interference
+
+### ❌ Incorrect Bypass Capacitor Implementations:
+- **Using Wrong Capacitance Values**: Capacitors that don't provide low enough reactance at target frequencies
+- **Improper Grounding**: Bypass capacitors that aren't connected to a proper ground plane
+- **Neglecting Circuit Layout**: Poor physical placement that reduces the capacitor's effectiveness
+
+---
+
+## Practical Applications
+
+### For Electronic Circuit Design:
+1. **Choose Appropriate Capacitance**: Select capacitor values that provide low reactance at expected interference frequencies
+2. **Minimize Lead Length**: Short connections reduce parasitic inductance
+3. **Use Multiple Bypass Capacitors**: Different values can address a broader range of interference frequencies
+
+### For Amateur Radio Equipment:
+1. **Receiver Front-End Protection**: Use bypass capacitors to prevent RF from entering audio stages
+2. **Transmitter Audio Circuits**: Ensure clean audio by removing potential RF contamination
+3. **Test and Verify**: Use spectrum analyzers to confirm interference rejection
+
+### Memory Aid:
+"**L**ow **F**requency = **H**igh Resistance, **H**igh **F**requency = **L**ow Resistance"
+
+---
+
+## Key Takeaways
+
+- Bypass capacitors work by providing a low-reactance path for radio frequency signals
+- Reactance decreases as frequency increases, creating an effective signal diversion mechanism
+- Proper selection and placement of bypass capacitors is crucial for maintaining signal integrity
+- The goal is to provide an easy path to ground for unwanted high-frequency signals
+- Understanding reactance helps in designing more robust electronic circuits
+
+---
+
+## Related Concepts to Explore:
+- **RF Filtering Techniques**: Advanced methods of removing interference
+- **Impedance Matching**: How circuit components interact at different frequencies
+- **Signal Integrity in Electronic Design**: Protecting sensitive circuits from unwanted signals
+
+### Recommended Reading
+- ARRL Handbook: Circuit Design and Interference Mitigation
+- "Electromagnetic Compatibility Handbook" by Kenneth Kaiser
+- YouTube: "RF Bypass Capacitor Fundamentals" by W2AEW

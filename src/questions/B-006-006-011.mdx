@@ -1,0 +1,95 @@
+---
+id: "B-006-006-011"
+question: "If a transmission line with a characteristic impedance of 50 ohms feeds a folded dipole with a feed point impedance close to 300 ohms, what impedance transformation ratio is needed to match the two?"
+answers:
+  - text: "6:1"
+    correct: true
+    explanation: "A 6:1 impedance transformation is required to match the 50-ohm transmission line to the 300-ohm folded dipole feed point. This can be calculated by dividing the higher impedance (300 ohms) by the lower impedance (50 ohms), which results in a 6:1 impedance ratio. The matching transformer or balun will convert the high impedance of the folded dipole to the lower impedance of the coaxial transmission line, ensuring maximum power transfer and minimal signal reflection."
+  - text: "2:1"
+    correct: false
+    explanation: "A 2:1 impedance transformation is insufficient to match a 50-ohm transmission line to a 300-ohm feed point. This ratio would only reduce the impedance by half, leaving a significant mismatch that would cause high standing wave ratio (SWR) and reduce antenna system efficiency."
+  - text: "4:1"
+    correct: false
+    explanation: "A 4:1 impedance transformation would not fully bridge the gap between the 50-ohm transmission line and the 300-ohm folded dipole feed point. This ratio would only partially address the impedance mismatch, still resulting in significant signal reflection and power loss."
+  - text: "9:1"
+    correct: false
+    explanation: "A 9:1 impedance transformation would over-compensate for the impedance difference, creating an excessive and unnecessary impedance conversion that would introduce additional signal loss and potential impedance matching problems."
+---
+
+# Impedance Matching: Understanding Transmission Line and Antenna Feed Point Compatibility
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The concept of impedance in antenna and transmission line systems
+- How impedance mismatches affect radio signal transmission
+- Methods for calculating impedance transformation ratios
+- The practical importance of proper impedance matching in amateur radio
+
+---
+
+## The Concept: Impedance Matching in Radio Systems
+
+Impedance is a measure of how much a circuit resists the flow of alternating current (AC), combining resistance and reactance. In amateur radio, impedance matching is crucial for maximizing power transfer between different components of a radio system, such as transmission lines and antennas.
+
+A **transmission line** (like coaxial cable) typically has a characteristic impedance of 50 ohms, which is a standard in amateur radio and many communication systems. Antennas, however, can have widely varying feed point impedances depending on their design, frequency, and configuration.
+
+The goal of impedance matching is to minimize **standing wave ratio (SWR)**, which represents the amount of signal reflection caused by impedance mismatches. A perfect match would result in an SWR of 1:1, where all transmitted power is absorbed by the antenna.
+
+### Impedance Transformation Principles
+
+When the transmission line and antenna feed point have different impedances, a matching transformer or balun can be used to convert between them. The transformation ratio is calculated by dividing the higher impedance by the lower impedance.
+
+In this case, 300 ohms ÷ 50 ohms = 6:1, indicating that a 6:1 impedance transformer is required to create an optimal match between the transmission line and the folded dipole.
+
+---
+
+## Real-World Examples
+
+### ✅ Successful Impedance Matching:
+- **Folded Dipole with 6:1 Balun**: Perfectly matches 300-ohm feed point to 50-ohm coaxial cable
+- **Broadband Antenna Designs**: Use multiple impedance transformation techniques to work across multiple frequency bands
+- **Commercial Antenna Systems**: Incorporate built-in impedance matching networks
+
+### ❌ Poor Impedance Matching:
+- **Mismatched Baluns**: Using incorrect transformation ratios leading to high SWR
+- **Homemade Matching Networks**: Improperly constructed transformers causing signal loss
+- **Ignoring Antenna Feed Point Impedance**: Directly connecting mismatched transmission lines without proper transformation
+
+---
+
+## Practical Applications
+
+### For Antenna System Design:
+1. **Measure Feed Point Impedance**: Use antenna modeling software or network analyzer to determine antenna impedance
+2. **Select Appropriate Balun**: Choose a balun with the correct impedance transformation ratio
+3. **Verify SWR**: Use an SWR meter to confirm effective matching
+
+### For Different Antenna Types:
+1. **Folded Dipoles**: Often require 4:1 or 6:1 impedance transformers
+2. **Yagi Antennas**: May need different matching techniques depending on design
+3. **Multiband Antennas**: Require more complex matching strategies
+
+### Memory Aid:
+"**S**ix **S**olves the **S**train" - A 6:1 transformation resolves impedance mismatch between 50-ohm and 300-ohm systems.
+
+---
+
+## Key Takeaways
+
+- Impedance matching is critical for maximizing power transfer in radio systems
+- The 6:1 impedance transformation perfectly matches a 300-ohm folded dipole to a 50-ohm transmission line
+- Incorrect impedance matching leads to signal reflection, high SWR, and reduced antenna efficiency
+- Calculating transformation ratio involves dividing the higher impedance by the lower impedance
+- Proper matching ensures optimal performance of amateur radio antenna systems
+
+---
+
+## Related Concepts to Explore:
+- **Balun Design**: Different types of impedance matching transformers
+- **Antenna Modeling**: Techniques for predicting antenna performance
+- **SWR Measurement**: Tools and methods for assessing impedance matching
+
+### Recommended Reading
+- ARRL Antenna Book - Comprehensive guide to antenna impedance and matching
+- "Reflections" by M. Walter Maxwell - In-depth analysis of transmission line theory
+- Online Resources: DX Engineering Impedance Matching Tutorials

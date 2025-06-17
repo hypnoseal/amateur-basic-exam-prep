@@ -1,0 +1,91 @@
+---
+id: "B-003-019-010"
+question: "On mains-operated power supplies, the ground wire of the AC line is connected to the power supply chassis. What protection does this provide if a fault occurs in the power supply?"
+answers:
+  - text: "Ensures the chassis does not become energized"
+    correct: true
+    explanation: "The ground wire provides a safe path for fault current to dissipate into the earth ground, preventing electrical charge from building up on the metal chassis. This creates a protective mechanism that prevents users from receiving an electrical shock if an internal component fails and creates an unintended electrical connection with the metal chassis."
+  - text: "Protects connected equipment from over voltage"
+    correct: false
+    explanation: "While grounding contributes to overall electrical safety, it does not directly protect connected equipment from voltage spikes or overvoltage conditions. Voltage protection typically requires separate mechanisms like surge protectors or voltage regulation circuits."
+  - text: "Prevents damage to the AC supply circuit breaker"
+    correct: false
+    explanation: "Grounding is a safety mechanism for preventing electrical shock, not a method for protecting circuit breakers. Circuit breakers have their own protective mechanisms based on current load and are designed to interrupt power when excessive current flows."
+  - text: "Prevents the equipment fuse from blowing unnecessarily"
+    correct: false
+    explanation: "Grounding does not prevent fuses from blowing. In fact, a properly functioning ground can help a fuse detect and interrupt dangerous fault currents more quickly, potentially preventing more serious electrical hazards."
+---
+
+# Electrical Grounding in Amateur Radio: Protecting Against Chassis Energization
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The fundamental purpose of electrical grounding in power supplies
+- How ground wires prevent electrical shock
+- The role of chassis grounding in electrical safety
+- The difference between ground, neutral, and protective earth connections
+
+---
+
+## The Concept: Electrical Grounding and Safety
+
+Electrical grounding is a critical safety mechanism that provides a low-resistance path for fault currents to safely dissipate into the earth, preventing dangerous electrical buildup. In the context of amateur radio power supplies, the ground wire serves as a critical protective barrier between the user and potential electrical hazards.
+
+When an internal fault occurs in a power supply—such as a short circuit or insulation breakdown—the ground wire provides a deliberate path for fault current to flow. This prevents electrical charge from accumulating on the metal chassis, which could otherwise become "energized" and pose a severe shock risk to anyone touching the equipment.
+
+### The Physics of Grounding
+
+Think of the ground wire like a safety valve in a pressurized system. If something goes wrong internally, the ground provides a controlled, safe escape route for electrical energy. This prevents the energy from building up in unintended places where it could cause harm to users or damage equipment.
+
+---
+
+## Real-World Examples
+
+### ✅ Proper Grounding Scenarios:
+- **Faulty Transformer**: If a power supply transformer develops an internal short, the ground wire provides a path for fault current to safely dissipate
+- **Damaged Insulation**: When internal wire insulation breaks down, the ground prevents chassis energization
+- **Power Supply Failure**: Ground connections help circuit breakers and fuses quickly detect and interrupt dangerous fault conditions
+
+### ❌ Dangerous Grounding Failures:
+- **Floating Chassis**: Without a proper ground, a fault could make the entire metal chassis electrically "live"
+- **Ungrounded Equipment**: Power supplies without proper ground connections pose significant shock risks
+- **Corroded Ground Connections**: Degraded ground paths can fail to provide adequate protection during a fault
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Station Safety:
+1. **Always Use Three-Prong Plugs**: Ensure your power supplies have proper three-wire grounding
+2. **Inspect Ground Connections**: Regularly check ground wire integrity and connections
+3. **Use Ground Fault Circuit Interrupters (GFCIs)**: Provide additional protection in areas with potential moisture
+
+### For Power Supply Installation:
+1. **Proper Chassis Bonding**: Connect ground wire directly to the metal chassis
+2. **Use Appropriate Wire Gauge**: Ensure ground wire can handle potential fault currents
+3. **Minimize Ground Path Length**: Create the most direct ground connection possible
+
+### Memory Aid:
+"**G**round **R**emoves **A**ll **B**ad **S**hocks" - GRABS technique for understanding ground wire protection
+
+---
+
+## Key Takeaways
+
+- Ground wires provide a safe path for fault currents to dissipate, preventing chassis energization
+- Proper grounding is essential for preventing electrical shock in amateur radio equipment
+- Ground connections protect users by providing a low-resistance path for potential fault currents
+- Simply having a ground wire is not enough—the connection must be clean, direct, and properly maintained
+- Grounding is a critical safety mechanism, not a solution for voltage protection or circuit breaker management
+
+---
+
+## Related Concepts to Explore:
+- **Electrical Safety in Amateur Radio Stations**: Comprehensive grounding techniques
+- **Power Supply Design**: How internal circuits interact with ground connections
+- **RF Grounding vs. Safety Grounding**: The differences in grounding approaches
+
+### Recommended Reading
+- ARRL Handbook: Electrical Safety and Grounding Techniques
+- NFPA 70 (National Electrical Code): Grounding and Bonding Requirements
+- YouTube: "Electrical Grounding Explained" by Electrical Engineering Portal

@@ -1,0 +1,98 @@
+---
+id: "B-003-017-011"
+question: "You have a very loud low-frequency hum appearing on your transmission. In what part of the transmitter would you first look for the trouble?"
+answers:
+  - text: "The power supply"
+    correct: true
+    explanation: "Low-frequency hum is most commonly caused by power supply issues, particularly inadequate filtering or rectification problems. In most transmitters, the power supply provides DC voltage to all stages of the radio, and any ripple or noise in this fundamental power source will be amplified and transmitted across all circuit stages. Poor power supply design, aging electrolytic capacitors, or ground loop issues can introduce 60 Hz (or 120 Hz) hum directly into the transmitted signal."
+  - text: "The variable-frequency oscillator"
+    correct: false
+    explanation: "While the VFO is a critical component of signal generation, it typically produces high-frequency signals and is less likely to be the direct source of a low-frequency hum. Hum in the VFO would more likely manifest as frequency instability or phase noise rather than an audible low-frequency humming sound on the transmission."
+  - text: "The driver circuit"
+    correct: false
+    explanation: "The driver circuit amplifies the signal between the oscillator and power amplifier stages but doesn't generate low-frequency noise on its own. While it can potentially amplify existing noise, it's not the primary source of a persistent low-frequency hum in a transmitter."
+  - text: "The power amplifier circuit"
+    correct: false
+    explanation: "The power amplifier is designed to boost RF signals and would typically not generate low-frequency hum. While it can amplify noise present in earlier stages, it is not the originating source of a persistent low-frequency humming sound in the transmission."
+---
+
+# Troubleshooting Transmitter Hum: Power Supply Fundamentals in Amateur Radio
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The common sources of low-frequency hum in radio transmitters
+- How power supply design affects signal quality
+- Basic troubleshooting techniques for audio and RF interference
+- The importance of clean power in amateur radio communications
+
+---
+
+## The Concept: Power Supply Noise and Radio Transmission
+
+A power supply is the critical foundation of any electronic device, converting AC mains power into the steady DC voltages required by electronic circuits. In amateur radio transmitters, the power supply must not only provide stable voltage but also minimize electrical noise that could contaminate the transmitted signal.
+
+Low-frequency hum typically originates from imperfect conversion of alternating current (AC) to direct current (DC). In countries with 60 Hz power systems like Canada, this hum often appears as a 60 Hz or 120 Hz (second harmonic) noise that can be heard as a persistent, low-pitched buzzing sound in the transmitted audio.
+
+### The Physics of Power Supply Noise
+
+When AC is converted to DC using rectifiers and transformers, small variations in voltage can occur. These variations create electrical "ripple" that can be amplified through the transmitter's circuits. Key factors contributing to hum include:
+- Insufficient filtering capacitors
+- Aging electrolytic capacitors with reduced capacity
+- Poor grounding techniques
+- Inadequate voltage regulation
+
+---
+
+## Real-World Examples
+
+### ✅ Proper Power Supply Design:
+- **Regulated Power Supplies**: Use multiple filtering stages to minimize ripple
+- **Large Capacitance**: Employ high-capacitance electrolytic capacitors
+- **Voltage Regulation**: Implement solid-state voltage regulation circuits
+- **Proper Grounding**: Use star-point grounding to minimize ground loops
+
+### ❌ Common Power Supply Problems:
+- **Old Capacitors**: Electrolytic capacitors that have dried out and lost filtering capability
+- **Cheap Power Supplies**: Unregulated supplies with minimal filtering
+- **Ground Loop Issues**: Multiple ground paths creating noise
+- **Inadequate Transformer Design**: Poor magnetic shielding causing electromagnetic interference
+
+---
+
+## Practical Applications
+
+### For Transmitter Maintenance:
+1. **Regular Capacitor Replacement**: Electrolytic capacitors have limited lifespans and should be periodically checked
+2. **Use High-Quality Power Supplies**: Invest in well-designed, regulated power supplies
+3. **Implement Proper Grounding**: Use single-point grounding techniques
+
+### For Noise Diagnosis:
+1. **Listen Carefully**: Identify the characteristics of the hum (60 Hz, 120 Hz, or other frequencies)
+2. **Isolate the Source**: Use systematic troubleshooting to narrow down the noise origin
+3. **Measure Ripple**: Use an oscilloscope to measure power supply voltage ripple
+
+### Memory Aid:
+"**P**ower **S**upplies **S**peak Softly" - A clean power supply should be virtually silent in your transmission.
+
+---
+
+## Key Takeaways
+
+- Low-frequency hum in transmissions most commonly originates in the power supply
+- Proper power supply design is critical for clean, interference-free radio communications
+- Regular maintenance and high-quality components help prevent noise issues
+- Systematic troubleshooting can help identify and resolve power supply-related problems
+- Amateur radio operators must understand both the technical and practical aspects of power supply design
+
+---
+
+## Related Concepts to Explore:
+- **Electromagnetic Interference (EMI)**: How power supply noise can create broader interference
+- **Voltage Regulation**: Techniques for maintaining stable DC voltages
+- **Grounding Techniques**: Minimizing noise through proper electrical grounding
+
+### Recommended Reading
+
+- ARRL Handbook: Chapters on Power Supplies and Interference
+- "Understanding Electronic Power Supplies" by Ian Sinclair
+- YouTube: Dave Kelley's Amateur Radio Power Supply Tutorials

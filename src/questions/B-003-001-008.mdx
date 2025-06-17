@@ -1,0 +1,100 @@
+---
+id: "B-003-001-008"
+question: "In an HF station, right after which component is the SWR meter inserted?"
+answers:
+  - text: "The low-pass filter"
+    correct: true
+    explanation: "Placing the SWR meter immediately after the low-pass filter ensures that measurements are taken after harmonic suppression but before final transmission. This positioning allows accurate Standing Wave Ratio (SWR) measurement of the fundamental frequency while protecting subsequent components from potential mismatched load conditions. The low-pass filter location provides a clean, filtered signal for precise SWR analysis."
+  - text: "The last stage of RF amplification"
+    correct: false
+    explanation: "Inserting an SWR meter after the final RF amplification stage would risk damaging the meter and amplifier if a significant impedance mismatch exists. Additionally, this placement would not provide an accurate representation of the antenna system's performance, as any reflections would already have passed through the amplification stage, potentially causing inefficient power transfer or component stress."
+  - text: "The antenna tuner"
+    correct: false
+    explanation: "Placing the SWR meter after the antenna tuner would measure the system's characteristics after impedance matching has already occurred. This location prevents you from accurately assessing the raw antenna system performance and could mask underlying impedance problems that the antenna tuner is compensating for."
+  - text: "The antenna switch"
+    correct: false
+    explanation: "An antenna switch is a routing component that simply selects between different antennas. Placing the SWR meter here would not provide meaningful measurements about the transmission line or antenna system performance. This location fails to capture the critical impedance characteristics needed for accurate system evaluation."
+---
+
+# Standing Wave Ratio (SWR) Measurement: Strategic Placement in the HF Station Signal Chain
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The purpose and importance of SWR measurement in amateur radio
+- The optimal signal path for accurate SWR measurement
+- How different station components affect SWR readings
+- The relationship between filtering and SWR measurement
+
+---
+
+## The Concept: SWR Measurement and Signal Path Management
+
+Standing Wave Ratio (SWR) is a critical metric in amateur radio that indicates how efficiently radio frequency energy is transferred from the transmitter through the transmission line to the antenna. An SWR meter measures the ratio of forward power to reflected power, providing insight into the impedance matching of your entire radio system.
+
+The strategic placement of the SWR meter is crucial for obtaining accurate, meaningful measurements. Ideally, you want to measure the system's performance after harmonic filtering but before final transmission, which is why the low-pass filter represents the optimal insertion point.
+
+### The Signal Path Hierarchy
+
+In a typical HF station, the signal path follows a precise sequence:
+1. Transceiver output
+2. Low-pass filter (removes harmonics)
+3. SWR meter
+4. Antenna tuner
+5. Antenna switch
+6. Transmission line
+7. Antenna
+
+Each component in this chain plays a specific role in signal conditioning and performance measurement.
+
+---
+
+## Real-World Examples
+
+### ✅ Correct SWR Meter Placement:
+- **Post-Filter Measurement**: Ensures clean, fundamental frequency measurement
+- **Pre-Tuner Assessment**: Allows evaluation of raw antenna system performance
+- **Harmonic Suppression**: Protects meter from potential harmonic-induced errors
+
+### ❌ Problematic SWR Meter Locations:
+- **After Final Amplifier**: Risk of component damage
+- **Before Low-Pass Filter**: Inaccurate measurements with harmonic content
+- **After Antenna Switch**: No meaningful system performance insight
+
+---
+
+## Practical Applications
+
+### For HF Station Setup:
+1. **Signal Conditioning**: Place SWR meter after low-pass filter to ensure clean measurement
+2. **Measurement Reliability**: Use meter placement to get true antenna system performance
+3. **Protective Positioning**: Prevent meter damage by strategic component sequencing
+
+### For Different Operating Scenarios:
+1. **Multi-Band Operations**: Consistent meter placement helps compare different band performances
+2. **Contest and DX Operations**: Quick, accurate SWR assessment is critical
+3. **Emergency Communications**: Reliable system performance measurement
+
+### Memory Aid:
+"**F**ilter **F**irst, **M**easure **M**idway" - Place your SWR meter after the low-pass filter for optimal results.
+
+---
+
+## Key Takeaways
+
+- SWR meter placement after the low-pass filter provides the most accurate and reliable measurements
+- Filtering ensures only the fundamental frequency is measured
+- Strategic placement protects station components and provides meaningful performance data
+- Understanding signal path helps optimize station design and performance
+- Accurate SWR measurement is crucial for efficient amateur radio operation
+
+---
+
+## Related Concepts to Explore:
+- **Impedance Matching**: How antenna tuners optimize system performance
+- **Transmission Line Theory**: Understanding reflection coefficients and power transfer
+- **Harmonic Suppression Techniques**: Advanced filtering strategies for clean signal transmission
+
+### Recommended Reading
+- ARRL Handbook: Transmission Lines and SWR Measurement
+- "Low Band DXing" by John Devoldere - Advanced antenna system techniques
+- YouTube: W2AEW Channel - Technical SWR and Transmission Line Tutorials

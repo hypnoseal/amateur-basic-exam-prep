@@ -1,0 +1,92 @@
+---
+id: "B-004-003-010"
+question: "When a bipolar transistor is used as a switch, which electrode controls its state?"
+answers:
+  - text: "Base"
+    correct: true
+    explanation: "The base controls the switching state of a bipolar transistor by determining whether the transistor is conducting (ON) or non-conducting (OFF). By applying or removing a small base current, the transistor can be driven between its saturation (fully ON) and cutoff (fully OFF) regions, making it function effectively as an electronic switch."
+  - text: "Emitter"
+    correct: false
+    explanation: "The emitter is responsible for emitting charge carriers and provides a reference point for the transistor's operation, but it does not control the switching state. The emitter's current and voltage are influenced by the base-emitter junction, not the other way around."
+  - text: "Collector"
+    correct: false
+    explanation: "The collector receives the majority of charge carriers and is the output terminal of the transistor, but it does not control the switching state. The collector's current is determined by the base current, not vice versa."
+  - text: "Gate"
+    correct: false
+    explanation: "Gate is a term used for field-effect transistors (FETs), not bipolar junction transistors (BJTs). In this context, the question specifically refers to bipolar transistors, where the base controls the switching behavior, not the gate."
+---
+
+# Bipolar Transistors as Electronic Switches: Understanding Base Control
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How bipolar transistors function as electronic switches
+- The critical role of the base electrode in transistor switching
+- The difference between analog and switching transistor applications
+- Basic principles of semiconductor device control
+
+---
+
+## The Concept: Transistor Switching Fundamentals
+
+A bipolar junction transistor (BJT) is a three-terminal semiconductor device that can amplify signals or act as an electronic switch. When used as a switch, the transistor operates in two primary states: fully ON (saturation) and fully OFF (cutoff). The base electrode is the control terminal that determines which state the transistor will occupy.
+
+In the switching mode, the base acts like a gate, controlling the flow of current between the collector and emitter. By applying a small base current, you can effectively "turn on" or "turn off" a much larger current flow between the collector and emitter. This property makes bipolar transistors fundamental components in digital electronics, control circuits, and signal processing applications.
+
+### The Base-Controlled Switching Mechanism
+
+When no base current is applied, the transistor remains in the OFF state, preventing current flow between the collector and emitter. By applying a sufficient base current, the transistor transitions to the ON state, allowing substantial current to flow. The small base current acts as a control signal that can switch much larger currents, making transistors incredibly versatile electronic components.
+
+---
+
+## Real-World Examples
+
+### ✅ Effective Base Control Applications:
+- **LED Control Circuits**: Using a small microcontroller signal to switch a transistor controlling a high-power LED
+- **Relay Driving**: Activating electromechanical relays with low-power control signals
+- **Digital Logic Gates**: Creating basic computer memory and processing circuits
+
+### ❌ Incorrect Control Approaches:
+- **Trying to Switch via Collector**: Attempting to control transistor state by manipulating collector voltage
+- **Relying on Emitter Current**: Expecting emitter current to determine switching behavior
+- **Confusing Transistor Types**: Applying FET switching principles to bipolar transistors
+
+---
+
+## Practical Applications
+
+### For Electronic Circuit Design:
+1. **Base Current Calculation**: Determine the minimum base current required to fully saturate the transistor
+2. **Switching Speed Considerations**: Understand how base current affects transistor switching speed
+3. **Current Gain Management**: Utilize the transistor's current gain (beta) to optimize switching performance
+
+### For Amateur Radio Circuits:
+1. **Transmitter Keying Circuits**: Using transistors to switch transmission stages
+2. **RF Signal Switching**: Creating low-power switching networks
+3. **Sensor Interface Designs**: Converting sensor signals into switchable control outputs
+
+### Memory Aid:
+"**B**ase **B**reaks or **B**ridges the Circuit" - Remember that the base controls whether current can flow.
+
+---
+
+## Key Takeaways
+
+- The base electrode controls the switching state of a bipolar transistor
+- Small base currents can control much larger collector-emitter currents
+- Transistors operate in two primary switching states: ON (saturation) and OFF (cutoff)
+- Understanding base control is crucial for designing electronic switches and control circuits
+- Proper base current management ensures reliable and efficient transistor switching
+
+---
+
+## Related Concepts to Explore:
+- **Transistor Biasing Techniques**: Methods of setting transistor operating points
+- **Switching vs. Amplification Modes**: Different transistor application scenarios
+- **Semiconductor Physics**: Underlying principles of charge carrier movement
+
+### Recommended Reading
+- ARRL Handbook: Semiconductor Devices Chapter
+- "The Art of Electronics" by Horowitz and Hill
+- YouTube: "Transistors as Switches" by Ben Eater
+- All About Circuits Online Textbook - Transistor Fundamentals

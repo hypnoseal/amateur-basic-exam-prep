@@ -1,0 +1,91 @@
+---
+id: "B-004-002-009"
+question: "Which property of a semiconductor diode permits its use for reverse-polarity protection?"
+answers:
+  - text: "It conducts in one direction only"
+    correct: true
+    explanation: "A diode's unidirectional conductivity means it allows current to flow in only one direction (forward bias), while blocking current in the opposite direction (reverse bias). This fundamental characteristic makes diodes ideal for protecting electronic circuits from reverse polarity connection by preventing current from flowing when voltage is applied in the wrong direction."
+  - text: "It has a high response speed"
+    correct: false
+    explanation: "Response speed refers to how quickly a diode can switch between conducting and non-conducting states, which is important for high-frequency applications. While this is a valuable diode characteristic, it doesn't directly relate to reverse-polarity protection. The key protection mechanism is the diode's unidirectional current flow."
+  - text: "Its peak inverse voltage is below 1 volt"
+    correct: false
+    explanation: "Peak inverse voltage (PIV) is the maximum voltage a diode can withstand in its reverse-biased state before breaking down. A PIV below 1 volt would actually make a diode a poor choice for reverse-polarity protection, as it would be easily damaged by even small reverse voltages."
+  - text: "It has high forward resistance"
+    correct: false
+    explanation: "High forward resistance would actually prevent a diode from effectively conducting current in its forward-biased state. Effective reverse-polarity protection requires a diode with low forward resistance to minimize voltage drop and power loss when conducting in the correct direction."
+---
+
+# Semiconductor Diodes: The Guardians of Circuit Polarity
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How diodes provide reverse-polarity protection
+- The fundamental electrical characteristics of semiconductor diodes
+- The difference between forward and reverse bias
+- Practical applications of diode-based circuit protection
+
+---
+
+## The Concept: Unidirectional Current Flow
+
+A semiconductor diode is an electronic component with a remarkable property: it conducts electrical current efficiently in one direction while blocking current in the opposite direction. This characteristic is fundamentally different from a simple wire or resistor, which typically allows current to flow equally in both directions.
+
+At the atomic level, a diode is constructed from a semiconductor material (typically silicon) with two regions: a P-type region with excess positive charge carriers and an N-type region with excess negative charge carriers. When voltage is applied in the forward direction, these charge carriers can easily move, creating current flow. When voltage is reversed, the charge carriers are pushed away from the junction, creating a high-resistance barrier that prevents current flow.
+
+### The Diode's One-Way Street
+
+Imagine a diode like a one-way valve in a water pipe. When water (or electricity) tries to flow in the "correct" direction, it passes through easily. When it attempts to flow in the reverse direction, the valve closes completely, preventing any flow. This simple mechanism provides an elegant solution for protecting electronic circuits from incorrect power connections.
+
+---
+
+## Real-World Examples
+
+### ✅ Successful Diode Protection Scenarios:
+- **Automotive Electronics**: Preventing battery damage if jumper cables are connected incorrectly
+- **Portable Electronics**: Protecting sensitive circuits from accidental battery reversal
+- **Amateur Radio Power Supplies**: Preventing damage from incorrect power connection to transceivers
+
+### ❌ Potential Failure Modes:
+- **Incorrect Diode Selection**: Using a diode with insufficient voltage rating
+- **Overlooking Power Dissipation**: Diodes generate heat when conducting, which must be managed
+- **Relying Solely on Diode Protection**: Additional protection methods may be needed for complex circuits
+
+---
+
+## Practical Applications
+
+### For Electronic Circuit Design:
+1. **Series Diode Protection**: Insert a diode in series with power input to block reverse current
+2. **Selecting Appropriate Diodes**: Choose diodes with correct voltage and current ratings
+3. **Thermal Management**: Ensure diodes can dissipate heat generated during conduction
+
+### For Amateur Radio Equipment:
+1. **Power Supply Connections**: Protect sensitive radio equipment from accidental power reversal
+2. **Battery-Powered Devices**: Prevent damage from incorrect battery insertion
+3. **Portable Operation**: Add reliable, simple protection to portable radio circuits
+
+### Memory Aid:
+"**D**iodes **D**irect, Never **R**everse" - Diodes Direct current in one direction, Never Reverse.
+
+---
+
+## Key Takeaways
+
+- Diodes conduct current in only one direction, making them ideal for reverse-polarity protection
+- This unidirectional conductivity creates a simple, effective circuit protection mechanism
+- Proper diode selection requires understanding voltage, current, and power dissipation requirements
+- Diode protection is a fundamental technique in electronic circuit design
+- Amateur radio operators can use diodes to protect sensitive electronic equipment from incorrect power connections
+
+---
+
+## Related Concepts to Explore:
+- **Semiconductor Physics**: How P-N junctions create diode behavior
+- **Advanced Protection Circuits**: Combining diodes with other protection components
+- **Specialized Diode Types**: Schottky, Zener, and other variant diode technologies
+
+### Recommended Reading
+- ARRL Handbook: Circuit Protection Techniques
+- "Practical Electronics for Inventors" by Scherz and Monk
+- YouTube: "Diode Basics for Electronics Beginners" series

@@ -1,0 +1,98 @@
+---
+id: "B-006-002-005"
+question: "Where would you install a balun to feed a dipole antenna with 50-ohm coaxial cable?"
+answers:
+  - text: "Between the coaxial cable and the antenna"
+    correct: true
+    explanation: "A balun (balanced-unbalanced) transformer is used to transition between an unbalanced transmission line (coaxial cable) and a balanced antenna system (like a dipole). Placing the balun at the junction between the coaxial cable and the antenna ensures proper impedance matching, minimizes common-mode current on the coaxial shield, and helps maintain the antenna's designed radiation pattern. This positioning prevents RF current from flowing on the outside of the coaxial cable shield, which can cause interference and reduce antenna efficiency."
+  - text: "Between the transmitter and the coaxial cable"
+    correct: false
+    explanation: "This location is incorrect because the balun's primary purpose is to match the unbalanced coaxial cable to the balanced dipole antenna. Placing it between the transmitter and the coaxial cable would not solve the impedance and current-balancing issues at the antenna feed point. The transmitter output is already designed to work with 50-ohm coaxial cable, so a balun is not needed at this point in the signal path."
+  - text: "Between the antenna and the ground"
+    correct: false
+    explanation: "Placing a balun between the antenna and ground would not solve the impedance matching or current-balancing problems. The balun needs to be at the feed point where the coaxial cable connects to the antenna elements to properly transition between the unbalanced and balanced systems. Placing it near the ground would be ineffective and could potentially introduce additional signal loss or interference."
+  - text: "Between the coaxial cable and the ground"
+    correct: false
+    explanation: "This placement is incorrect and would not provide the necessary impedance matching or current balancing. A balun's primary function is to connect the unbalanced coaxial cable to the balanced dipole antenna, ensuring proper signal transfer and minimizing unwanted RF currents. Connecting it to ground instead of the antenna would disrupt the antenna's designed radiation pattern and electrical characteristics."
+---
+
+# Baluns in Dipole Antennas: Bridging Transmission Line Technologies
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The purpose and function of baluns in amateur radio antenna systems
+- How baluns solve impedance matching and current-balancing challenges
+- The correct placement of baluns when feeding dipole antennas
+- The electromagnetic principles behind balanced and unbalanced transmission lines
+
+---
+
+## The Concept: Baluns and Antenna Feed Systems
+
+A **balun** (balanced-unbalanced transformer) is a critical component in amateur radio antenna systems that serves two primary functions: impedance transformation and current balancing. In a typical dipole antenna setup, the balun bridges the gap between an unbalanced coaxial cable (which has an outer shield and a center conductor) and a balanced antenna (which has two symmetrical elements).
+
+Coaxial cables are inherently unbalanced transmission lines, meaning the current flows on the center conductor and the outer shield. In contrast, dipole antennas are balanced systems where equal and opposite currents flow on two symmetrical elements. Without a balun, unwanted common-mode currents can flow on the outside of the coaxial cable shield, causing:
+- Antenna pattern distortion
+- Increased RF interference
+- Reduced antenna efficiency
+- Potential RFI to nearby electronic devices
+
+### The Physics of Impedance Matching
+
+Think of a balun like a translator between two different languages of electrical communication. Just as a translator helps two people with different native languages understand each other, a balun helps your coaxial cable and dipole antenna "communicate" effectively by:
+- Matching impedances (typically 50 ohms for coax to the dipole's natural impedance)
+- Preventing unwanted current flow on the coaxial cable shield
+- Maintaining the antenna's designed radiation characteristics
+
+---
+
+## Real-World Examples
+
+### ✅ Correct Balun Installation:
+- **Center-Fed Dipole**: Balun installed exactly where coaxial cable meets antenna elements
+- **Multi-Band Dipole**: Balun helps maintain consistent performance across different frequencies
+- **Portable Antenna**: Compact balun ensures efficient operation in field conditions
+
+### ❌ Incorrect Balun Placement:
+- **Ground-Mounted Balun**: Fails to address feed point impedance issues
+- **Transmitter-Side Balun**: Doesn't solve antenna-specific matching problems
+- **Random Cable Insertion**: Introduces more signal loss and interference
+
+---
+
+## Practical Applications
+
+### For Dipole Antenna Construction:
+1. **Choose Appropriate Balun Type**: 1:1 baluns for direct impedance matching, 4:1 for wider bandwidth
+2. **Weatherproof Installation**: Use quality connectors and seal balun connections
+3. **Mechanical Support**: Ensure balun is mechanically supported to prevent stress on antenna elements
+
+### For Different Antenna Configurations:
+1. **Multi-Band Dipoles**: Baluns help maintain consistent performance across different frequencies
+2. **Portable Operations**: Compact, lightweight baluns enable quick antenna deployments
+3. **Home Station Setups**: Reduce RF noise and improve signal clarity
+
+### Memory Aid:
+"**B**alance at the **B**reak" - Install the balun where the unbalanced coax meets the balanced antenna elements.
+
+---
+
+## Key Takeaways
+
+- Baluns are installed between the coaxial cable and the antenna to match impedances and balance currents
+- Proper balun placement prevents unwanted common-mode currents on the coaxial cable shield
+- Baluns solve impedance mismatch and help maintain the antenna's designed radiation pattern
+- Incorrect balun placement can lead to reduced antenna efficiency and increased interference
+- Understanding balun function is crucial for effective amateur radio antenna design
+
+---
+
+## Related Concepts to Explore:
+- **Impedance Matching Techniques**: Different balun designs and their applications
+- **Antenna Radiation Patterns**: How baluns influence antenna performance
+- **RFI Mitigation**: Using baluns to reduce electromagnetic interference
+
+### Recommended Reading
+- ARRL Antenna Book - Comprehensive balun and antenna feed system design
+- "Reflections" by Walt Maxwell - Advanced transmission line theory
+- W2DU Balun design papers - Technical details of balun construction

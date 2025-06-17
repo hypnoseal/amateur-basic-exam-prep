@@ -1,0 +1,91 @@
+---
+id: "B-006-004-001"
+question: "What is the major adverse consequence of using RG-58 coaxial cable for a transmission line operating on the 70 cm band?"
+answers:
+  - text: "Excess RF loss in the transmission line"
+    correct: true
+    explanation: "RG-58 coaxial cable has significantly higher signal attenuation (loss) at higher frequencies like the 70 cm band (430-450 MHz). Its physical construction and dielectric properties make it poorly suited for UHF frequencies, causing substantial signal degradation. At 70 cm, RG-58 can lose up to 3-4 dB per meter, which means a significant portion of your transmitted power is converted to heat instead of being radiated by the antenna."
+  - text: "Excess reflections at the antenna feed point"
+    correct: false
+    explanation: "While impedance mismatches can cause reflections, this is not the primary issue with RG-58 on 70 cm. Impedance matching depends more on cable impedance (typically 50 ohms) and antenna characteristics, not inherent cable losses. Reflections are a separate issue from the excessive signal attenuation that characterizes RG-58 at UHF frequencies."
+  - text: "Excess RF radiation from the transmission line"
+    correct: false
+    explanation: "RG-58 does not cause excess RF radiation. In fact, its shielding properties help prevent unwanted radiation. The primary problem is internal signal loss, not external radiation. A well-constructed coaxial cable is designed to contain the RF signal within its transmission line."
+  - text: "Excess transmission line heating"
+    correct: false
+    explanation: "While signal loss does generate some heat, excess heating is a secondary consequence of the primary problem - signal attenuation. The main issue is the significant power loss, not the resulting heat generation. Transmission line heating becomes problematic only when extremely high power levels are used."
+---
+
+# Transmission Line Selection: Understanding Coaxial Cable Performance at UHF Frequencies
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How cable characteristics affect signal transmission at different frequencies
+- Why RG-58 is unsuitable for 70 cm band operations
+- The relationship between cable design and signal attenuation
+- How to select appropriate transmission lines for different amateur radio bands
+
+---
+
+## The Concept: Frequency-Dependent Signal Transmission
+
+Coaxial cables are not created equal across all frequency ranges. Each cable type has specific characteristics that make it more or less suitable for different frequency bands. The performance of a transmission line depends on several critical factors: conductor size, dielectric material, insulation, and physical construction.
+
+RG-58 is a versatile coaxial cable originally designed for lower frequency applications. Its construction features a relatively thin center conductor and a basic dielectric material that becomes increasingly inefficient at higher frequencies. As frequency increases, the cable's internal losses become more pronounced, causing significant signal attenuation.
+
+### The Physics of Signal Loss
+
+At higher frequencies like 70 cm (430-450 MHz), electromagnetic waves interact differently with transmission line materials. The skin effect becomes more pronounced, where electrical current tends to flow along the surface of conductors rather than through their entire cross-section. This phenomenon, combined with increased dielectric losses, dramatically increases signal attenuation.
+
+---
+
+## Real-World Examples
+
+### ✅ Appropriate Cable Selections:
+- **RG-213**: Excellent for HF and lower VHF bands
+- **LMR-400**: Outstanding performance on UHF and microwave frequencies
+- **RG-8X**: Good compromise for mobile and portable operations
+
+### ❌ Poor Cable Choices for 70 cm:
+- **RG-58**: Excessive signal loss
+- **Thin, old, or damaged coaxial cables**: Compounds already poor frequency performance
+- **Cables with worn or corroded shielding**: Increases signal loss and potential interference
+
+---
+
+## Practical Applications
+
+### For 70 cm Band Operations:
+1. **Select Low-Loss Cables**: Use LMR-400 or similar low-loss UHF-rated cables
+2. **Minimize Cable Length**: Shorter runs reduce cumulative signal loss
+3. **Use High-Quality Connectors**: Maintain low-loss connections at all interfaces
+
+### Comparing Cable Performance:
+1. **RG-58 at 70 cm**: Approximately 3-4 dB loss per meter
+2. **LMR-400 at 70 cm**: Approximately 0.5-0.7 dB loss per meter
+3. **Practical Impact**: A 10-meter RG-58 run could lose over 30-40% of your transmitted signal!
+
+### Memory Aid:
+"**U**HF needs **H**eavy **F**eeders" - Use thick, low-loss cables for UHF frequencies.
+
+---
+
+## Key Takeaways
+
+- RG-58 causes excessive RF loss when used on the 70 cm band
+- Signal attenuation increases dramatically with frequency
+- Cable selection is critical for maintaining transmitted signal strength
+- Thicker, higher-quality cables designed for UHF are essential for effective communication
+- The primary concern is signal loss, not secondary effects like heating or radiation
+
+---
+
+## Related Concepts to Explore:
+- **Transmission Line Theory**: How cable characteristics affect signal propagation
+- **Impedance Matching**: Ensuring optimal power transfer between transmitter and antenna
+- **Skin Effect**: Electromagnetic current distribution in conductors at high frequencies
+
+### Recommended Reading
+- ARRL Antenna Book - Comprehensive transmission line performance analysis
+- "Practical Antenna Handbook" by Joseph Carr - Detailed cable selection guidelines
+- YouTube: W2AEW's transmission line and coaxial cable analysis tutorials

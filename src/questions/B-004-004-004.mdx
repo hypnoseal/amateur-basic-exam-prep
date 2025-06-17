@@ -1,0 +1,92 @@
+---
+id: "B-004-004-004"
+question: "In a field-effect transistor, from which electrode do charge carriers enter the channel?"
+answers:
+  - text: "Source"
+    correct: true
+    explanation: "In a field-effect transistor (FET), the source electrode is where charge carriers originate and enter the semiconductor channel. The source serves as the primary entry point for majority charge carriers (electrons in N-channel FETs, or holes in P-channel FETs) that will then flow through the channel toward the drain under the influence of the gate's electric field. This fundamental characteristic is key to the transistor's operation as a voltage-controlled current source."
+  - text: "Gate"
+    correct: false
+    explanation: "The gate is actually the control electrode in a FET, responsible for modulating the channel's conductivity by creating an electric field. It does not serve as a source of charge carriers. Instead, the gate's voltage determines the width and conductance of the channel, controlling how easily charge carriers can flow from source to drain."
+  - text: "Drain"
+    correct: false
+    explanation: "The drain is the destination electrode where charge carriers exit the channel, not the point of entry. Charge carriers flow from source to drain under the influence of both the gate's electric field and an applied voltage between source and drain. The drain collects carriers after they've traversed the channel, rather than being their point of origin."
+  - text: "Emitter"
+    correct: false
+    explanation: "The term 'emitter' is specific to bipolar junction transistors (BJTs), not field-effect transistors. In a FET, the electrodes are called source, gate, and drain, not emitter, base, and collector as in a BJT. This answer demonstrates a misunderstanding of transistor terminology and structure."
+---
+
+# Field-Effect Transistors: Understanding Charge Carrier Flow and Electrode Functions
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The basic structure and operation of field-effect transistors (FETs)
+- The specific roles of source, gate, and drain electrodes
+- How charge carriers move through a semiconductor channel
+- The difference between FET and bipolar junction transistor (BJT) architectures
+
+---
+
+## The Concept: Field-Effect Transistor Fundamentals
+
+A Field-Effect Transistor (FET) is a voltage-controlled semiconductor device that uses an electric field to control the flow of electrical current. Unlike bipolar junction transistors that rely on current flow between different semiconductor types, FETs modulate current through a single semiconductor channel by applying a controlling voltage to the gate electrode.
+
+The FET's primary electrodes—source, gate, and drain—each play a critical role in the device's operation. The source is the origin point for charge carriers, the gate controls the channel's conductivity, and the drain is the destination where carriers exit. Think of it like a water canal where the source is the water's entry point, the gate is a controllable sluice that determines how much water can flow, and the drain is where the water exits.
+
+### Charge Carrier Dynamics
+
+In an N-channel FET, electrons are the majority charge carriers, while in a P-channel FET, holes serve this function. Regardless of the type, these carriers always originate from the source electrode. The gate's electric field creates a channel that allows these carriers to flow from source to drain, with the channel's width and conductivity dynamically controlled by the gate voltage.
+
+---
+
+## Real-World Examples
+
+### ✅ Correct FET Charge Carrier Behavior:
+- **N-Channel MOSFET**: Electrons enter from the source, flow through the channel, exit at the drain
+- **P-Channel JFET**: Holes originate at the source, traverse the channel, collect at the drain
+- **Enhancement-Mode Transistors**: Gate voltage "creates" the conductive channel by attracting carriers from the source
+
+### ❌ Incorrect Charge Carrier Misconceptions:
+- **Believing Gate Generates Carriers**: The gate controls flow, but doesn't generate charge carriers
+- **Thinking Drain Starts Carrier Movement**: Drain is the destination, not the origin point
+- **Confusing FET with BJT Electrode Functions**: Different transistor types have distinct electrode roles
+
+---
+
+## Practical Applications
+
+### For Electronic Circuit Design:
+1. **Amplifier Stages**: Understanding source-to-drain carrier flow helps design precise analog amplification circuits
+2. **Switching Circuits**: Gate voltage control enables rapid electronic switching in digital and mixed-signal applications
+3. **Low-Power Design**: FETs' voltage-controlled nature allows for energy-efficient electronic systems
+
+### For Signal Processing:
+1. **Voltage-Controlled Resistors**: FETs can act like variable resistors controlled by gate voltage
+2. **Programmable Gain Amplifiers**: Gate voltage dynamically adjusts signal amplification
+3. **RF Signal Modulation**: High-frequency FETs enable complex signal processing techniques
+
+### Memory Aid:
+"**S**ource **S**tarts the **S**tream" - In a FET, charge carriers always begin their journey from the source electrode.
+
+---
+
+## Key Takeaways
+
+- In a field-effect transistor, charge carriers enter the channel from the source electrode
+- The gate controls channel conductivity but does not generate charge carriers
+- Charge carrier flow is fundamental to understanding transistor operation
+- Different transistor types (FET vs. BJT) have distinct electrode functions and carrier dynamics
+- Understanding these principles is crucial for electronic circuit design and amateur radio technology
+
+---
+
+## Related Concepts to Explore:
+- **Transistor Types**: Comparing FET, MOSFET, and BJT architectures
+- **Semiconductor Physics**: Carrier generation and movement in different semiconductor materials
+- **RF Amplifier Design**: Applying FET principles in high-frequency electronic circuits
+
+### Recommended Reading
+- ARRL Handbook: Semiconductor Devices Chapter
+- "The Art of Electronics" by Horowitz and Hill
+- YouTube: "Transistor Basics" series by w2aew
+- Khan Academy: Semiconductor Physics Modules

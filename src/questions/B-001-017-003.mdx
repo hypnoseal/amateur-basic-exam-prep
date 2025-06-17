@@ -1,0 +1,97 @@
+---
+id: "B-001-017-003"
+question: "You have determined the maximum transmitter power that meets RF exposure and radiated power limits. Where do you verify this power is NOT exceeded?"
+answers:
+- text: "At the output of the transmitter or external amplifier"
+  correct: true
+  explanation: "Measuring power at the transmitter or external amplifier output allows you to directly verify the output power before any signal modifications occur. This point provides the most accurate measurement of actual transmitter power, ensuring you remain within RF exposure and radiated power limits. Subsequent components like antenna tuners or transmission lines can reduce power but cannot increase it, making the transmitter output the definitive point for power verification."
+- text: "At the antenna feed point"
+  correct: false
+  explanation: "Measuring at the antenna feed point is too late in the signal chain to verify maximum power. Transmission line losses, antenna tuner inefficiencies, and other factors may have already reduced the power from its original output level. Additionally, measuring here doesn't confirm the original transmitter power output that determines RF exposure limits."
+- text: "At the power supply terminals"
+  correct: false
+  explanation: "Power supply terminals measure input power to the transmitter, not the actual RF output power. Input power can differ significantly from RF output due to transmitter efficiency, modulation techniques, and other factors. This measurement provides no reliable indication of the actual transmitted RF power that determines exposure limits."
+- text: "At the antenna tuner output"
+  correct: false
+  explanation: "The antenna tuner output is an inappropriate location for power verification. Antenna tuners match impedance but do not necessarily indicate the original transmitter power. Power can be reduced by tuner losses, and this point does not provide a definitive measurement of the transmitter's actual output power that determines RF exposure compliance."
+---
+
+# RF Power Measurement: Ensuring Safe and Compliant Amateur Radio Transmissions
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The critical importance of accurate power measurement in amateur radio
+- Where and how to verify transmitter power output
+- The relationship between transmitter power and RF exposure limits
+- Why precise power measurement matters for regulatory compliance
+
+---
+
+## The Concept: Power Verification in Amateur Radio Transmission
+
+Radio frequency (RF) power measurement is a fundamental aspect of responsible amateur radio operation. Unlike simply setting a power level on your transmitter, verifying actual output power requires understanding the entire signal path and the points where accurate measurement can occur.
+
+RF exposure limits are scientifically determined thresholds designed to protect operators and nearby individuals from potential electromagnetic radiation risks. These limits are based on the actual power output of your transmitter, not theoretical or intended power levels. This means you must have a reliable method of confirming that your actual transmitted power stays within prescribed boundaries.
+
+### The Signal Path and Power Transformation
+
+As a radio signal travels from your transmitter to the antenna, it can undergo various power transformations:
+- Transmitter circuitry converts electrical power to RF signals
+- Amplifier stages may increase or modify power output
+- Antenna tuners adjust impedance, potentially causing slight power losses
+- Transmission lines introduce additional signal attenuation
+
+Each of these stages represents a potential point of power variation, making the transmitter or external amplifier output the most reliable verification point.
+
+---
+
+## Real-World Examples
+
+### ✅ Correct Power Verification Methods:
+- **Calibrated Power Meter**: Directly connected to transmitter output
+- **Built-in Transmitter Power Monitoring**: Using manufacturer-provided power measurement circuits
+- **External Wattmeter**: Placed immediately after the transmitter output
+
+### ❌ Incorrect or Unreliable Verification Points:
+- **Antenna Feed Point**: Too late in signal chain, affected by multiple loss factors
+- **Power Supply Terminals**: Measure input, not RF output
+- **Antenna Tuner Output**: Provides no definitive power measurement
+
+---
+
+## Practical Applications
+
+### For Safe Station Operation:
+1. **Use Calibrated Measurement Tools**: Invest in accurate RF power meters
+2. **Regular Calibration**: Periodically check your power measurement devices
+3. **Understand Your Equipment**: Know the power output characteristics of your specific transmitter
+
+### For Different Transmission Scenarios:
+1. **Fixed Station**: Permanent power measurement setup
+2. **Portable Operations**: Lightweight, accurate power measurement tools
+3. **Emergency Communications**: Critical to maintain precise power control
+
+### Memory Aid:
+"**V**erify **P**ower **A**t **T**ransmitter" (VPAT) - Always check power at the transmitter output.
+
+---
+
+## Key Takeaways
+
+- Verify transmitter power at the output of the transmitter or external amplifier
+- Power measurement is critical for maintaining RF exposure safety
+- Subsequent components like antenna tuners can reduce but not increase power
+- Accurate power verification requires understanding your entire transmission system
+- Regulatory compliance depends on precise, verifiable power measurements
+
+---
+
+## Related Concepts to Explore:
+- **RF Exposure Calculation Techniques**
+- **Transmitter Power Measurement Tools**
+- **Antenna Efficiency and Power Transfer**
+
+### Recommended Reading
+- ARRL Handbook: RF Power Measurement Techniques
+- Industry Canada RBR-4: Amateur Radio Regulatory Guidelines
+- ARRL Publication: "RF Exposure and You"
