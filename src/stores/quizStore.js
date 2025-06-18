@@ -110,6 +110,26 @@ const useQuizStore = create(
         attemptedQuestions: state.attemptedQuestions,
         correctlyAnsweredQuestions: state.correctlyAnsweredQuestions,
       }),
+      onRehydrateStorage: () => {
+        // When the store is rehydrated from localStorage, recalculate derived state
+        return (rehydratedState, error) => {
+          if (error) {
+            console.error('Error rehydrating quiz store:', error);
+            return;
+          }
+
+          if (rehydratedState) {
+            // We need to use the store after it's been fully initialized
+            // So we schedule this update for the next tick
+            setTimeout(() => {
+              useQuizStore.setState({
+                questionsAttemptedCount: rehydratedState.attemptedQuestions.length,
+                questionsCorrectCount: rehydratedState.correctlyAnsweredQuestions.length
+              });
+            }, 0);
+          }
+        };
+      }
     }
   )
 );
