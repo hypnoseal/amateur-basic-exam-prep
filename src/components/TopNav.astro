@@ -117,11 +117,6 @@ const categoryMenu = createCategoryMenu(categories, questionGroups);
 
     <!-- Desktop Navigation Row -->
     <div class="flex flex-row justify-between items-center space-x-4">
-      <!-- Search Bar -->
-      <div class="relative w-1/3">
-        <SearchBar />
-      </div>
-
       <!-- Question Selector Dropdown -->
       <div class="relative w-auto">
         <button id="desktopQuestionDropdownButton" class="w-auto flex items-center justify-center px-4 py-2 text-sm text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
@@ -164,6 +159,11 @@ const categoryMenu = createCategoryMenu(categories, questionGroups);
             ))}
           </ul>
         </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="relative w-1/3">
+        <SearchBar />
       </div>
     </div>
   </div>
