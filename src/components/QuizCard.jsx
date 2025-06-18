@@ -2,7 +2,22 @@ import React, { useEffect } from 'react';
 import useQuizStore from '../stores/quizStore';
 import useLessonStore from '../stores/lessonStore';
 
-// A client-side component for displaying a quiz question
+/**
+ * @typedef {Object} Answer
+ * @property {string} text - The text of the answer
+ * @property {boolean} correct - Whether the answer is correct
+ * @property {string} [explanation] - Optional explanation for the answer
+ */
+
+/**
+ * A client-side component for displaying a quiz question
+ * @param {Object} props - Component props
+ * @param {string} props.id - The question ID
+ * @param {string} props.question - The question text
+ * @param {Answer[]} props.answers - Array of possible answers
+ * @param {Function} [props.onShowLesson] - Optional callback when showing lesson
+ * @returns {React.ReactElement} The rendered component
+ */
 export default function QuizCard({ id, question, answers, onShowLesson }) {
   // Get state and actions from quiz store
   const { 
@@ -17,7 +32,7 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
   } = useQuizStore();
 
   // Get state and actions from lesson store
-  const { isVisible: isLessonVisible, showLesson, hideLesson } = useLessonStore();
+  const { isVisible: isLessonVisible, hideLesson } = useLessonStore();
 
   const letters = ['A', 'B', 'C', 'D'];
 
@@ -44,7 +59,10 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
   // Store a reference to getState to use in event handlers
   const getQuizState = useQuizStore.getState;
 
-  // Handle answer selection
+  /**
+   * Handle answer selection
+   * @param {number} index - The index of the selected answer
+   */
   const handleAnswerClick = (index) => {
     // Use the selectAnswer action from the quiz store
     selectAnswer(index);
@@ -66,39 +84,55 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
     }
   };
 
+  /**
+   * Get question IDs from cache or fetch them from the server
+   * @returns {Promise<string[]>} Array of question IDs
+   */
+  const getQuestionIds = async () => {
+    // Try to get question IDs from localStorage first (if available and not expired)
+    const cachedData = localStorage.getItem('questionIds');
+    const cacheTimestamp = localStorage.getItem('questionIdsTimestamp');
+    const cacheExpiration = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
+    // Check if we have valid cached data
+    if (cachedData && cacheTimestamp && 
+        (Date.now() - parseInt(cacheTimestamp)) < cacheExpiration) {
+      console.log('Using cached question IDs');
+      return JSON.parse(cachedData);
+    }
+
+    // Fetch the question IDs from the generated JSON file
+    try {
+      const response = await fetch('/data/question-ids.json');
+
+      if (!response.ok) {
+        console.error(`Failed to fetch question IDs: ${response.status}`);
+        return [];
+      }
+
+      const questionIds = await response.json();
+
+      // Cache the question IDs in localStorage
+      localStorage.setItem('questionIds', JSON.stringify(questionIds));
+      localStorage.setItem('questionIdsTimestamp', Date.now().toString());
+      console.log('Fetched and cached question IDs');
+
+      return questionIds;
+    } catch (error) {
+      console.error('Error fetching question IDs:', error);
+      return [];
+    }
+  };
+
   // Handle next question button click
   const handleNextQuestion = async () => {
     try {
-      // Try to get question IDs from localStorage first (if available and not expired)
-      const cachedData = localStorage.getItem('questionIds');
-      const cacheTimestamp = localStorage.getItem('questionIdsTimestamp');
-      const cacheExpiration = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-
-      let questionIds = [];
-
-      // Check if we have valid cached data
-      if (cachedData && cacheTimestamp && 
-          (Date.now() - parseInt(cacheTimestamp)) < cacheExpiration) {
-        questionIds = JSON.parse(cachedData);
-        console.log('Using cached question IDs');
-      } else {
-        // Fetch the question IDs from the generated JSON file
-        const response = await fetch('/data/question-ids.json');
-
-        if (!response.ok) {
-          throw new Error(`Failed to fetch question IDs: ${response.status}`);
-        }
-
-        questionIds = await response.json();
-
-        // Cache the question IDs in localStorage
-        localStorage.setItem('questionIds', JSON.stringify(questionIds));
-        localStorage.setItem('questionIdsTimestamp', Date.now().toString());
-        console.log('Fetched and cached question IDs');
-      }
+      const questionIds = await getQuestionIds();
 
       if (questionIds.length === 0) {
-        throw new Error('No question IDs found');
+        console.error('No question IDs found');
+        // Skip to the catch block
+        return;
       }
 
       // Select a random question ID
@@ -143,16 +177,24 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
     // Add a small delay to ensure the LessonContent component is rendered
     setTimeout(() => {
       // Find the lesson-content element and scroll to it smoothly
-      const lessonContent = document.querySelector('.lesson-content');
+      const lessonContent = /** @type {HTMLElement} */ (document.querySelector('.lesson-content'));
       if (lessonContent) {
-        // Custom smooth scroll function with slower animation
+        /**
+         * Custom smooth scroll function with slower animation
+         * @param {HTMLElement} element - The element to scroll to
+         */
         const scrollToElement = (element) => {
           const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
           const startPosition = window.pageYOffset;
           const distance = elementPosition - startPosition;
           const duration = 1000; // Longer duration for slower animation (in ms)
+          /** @type {number|null} */
           let startTime = null;
 
+          /**
+           * Animation frame callback
+           * @param {number} currentTime - Current timestamp
+           */
           const animation = (currentTime) => {
             if (startTime === null) startTime = currentTime;
             const timeElapsed = currentTime - startTime;
@@ -164,7 +206,14 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
             }
           };
 
-          // Easing function for smoother animation
+          /**
+           * Easing function for smoother animation
+           * @param {number} t - Current time
+           * @param {number} b - Start value
+           * @param {number} c - Change in value
+           * @param {number} d - Duration
+           * @returns {number} The calculated value
+           */
           const easeInOutCubic = (t, b, c, d) => {
             t /= d / 2;
             if (t < 1) return c / 2 * t * t * t + b;
@@ -217,7 +266,13 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
       <h2 className="text-xl font-semibold mb-6">{question}</h2>
 
       <div className="answers-container">
-        {randomizedAnswers.length > 0 && randomizedAnswers.map((answer, index) => (
+        {randomizedAnswers.length > 0 && randomizedAnswers.map(/**
+         * Render an answer option
+         * @param {Answer} answer - The answer object
+         * @param {number} index - The index of the answer in the array
+         * @returns {React.ReactElement} The rendered answer component
+         */
+        (answer, index) => (
           <div key={index} className="answer-container mb-3">
             <button 
               className={`answer-button w-full text-left p-4 border rounded-md bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors ${
@@ -250,10 +305,16 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
       <div className="mt-6 flex justify-between items-center">
         <div>
           <button 
-            className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 mr-2"
-            onClick={handleNextQuestion}
+            className={`px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 mr-2 ${
+              isLessonVisible
+                ? 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-500'
+                : hasAnswered && selectedAnswerIndex !== null && !randomizedAnswers[selectedAnswerIndex].correct
+                  ? 'bg-green-500 text-white hover:bg-green-600 focus:ring-green-500 font-medium shadow-md transform animate-pulse-twice'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-500'
+            }`}
+            onClick={handleShowLesson}
           >
-            Next Question
+            {isLessonVisible ? 'Hide Lesson' : 'Learn Topic'}
           </button>
 
           {hasAnswered && (
@@ -267,16 +328,10 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
         </div>
 
         <button 
-          className={`px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-            isLessonVisible
-              ? 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-500'
-              : hasAnswered && selectedAnswerIndex !== null && !randomizedAnswers[selectedAnswerIndex].correct
-                ? 'bg-green-500 text-white hover:bg-green-600 focus:ring-green-500 font-medium shadow-md transform animate-pulse-twice'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-500'
-          }`}
-          onClick={handleShowLesson}
+          className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          onClick={handleNextQuestion}
         >
-          {isLessonVisible ? 'Hide Lesson' : 'Learn Topic'}
+          Next Question
         </button>
       </div>
     </div>
