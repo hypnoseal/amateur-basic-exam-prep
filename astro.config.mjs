@@ -9,7 +9,7 @@ import questionListIntegration from './integrations/question-list.js';
 export default defineConfig({
   integrations: [tailwind(), react(), mdx(), questionListIntegration()],
   // Add metadata for better SEO and search indexing
-  site: 'https://amateur-radio-exam-prep.com', // Replace with your actual site URL
+  site: 'https://radio.frasernolet.com',
   markdown: {
     shikiConfig: {
       // Choose the theme for syntax highlighting
