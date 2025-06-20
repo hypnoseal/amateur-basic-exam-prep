@@ -13,8 +13,13 @@ const allQuestions = getAllQuestions();
 	<TopNav questions={allQuestions} />
 
 	<div class="max-w-6xl mx-auto px-4 py-8">
-		<h1 class="text-3xl font-bold text-gray-800 mb-6">Your Performance Statistics</h1>
-		
+		<div class="flex justify-between items-center mb-6">
+			<h1 class="text-3xl font-bold text-gray-800">Your Performance Statistics</h1>
+			<button id="backButton" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+				Go Back to Question
+			</button>
+		</div>
+
 		<div class="bg-white rounded-lg shadow-md p-6 mb-8">
 			<h2 class="text-xl font-semibold text-gray-700 mb-4">Overall Progress</h2>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -58,12 +63,18 @@ const allQuestions = getAllQuestions();
 			</div>
 		</div>
 
-		<div class="bg-white rounded-lg shadow-md p-6">
+		<div class="bg-white rounded-lg shadow-md p-6 mb-8">
 			<h2 class="text-xl font-semibold text-gray-700 mb-4">Areas for Improvement</h2>
 			<div id="improvementAreas" class="space-y-4">
 				<!-- Areas for improvement will be populated by JavaScript -->
 				<p class="text-gray-500 italic">Complete more questions to see areas that need improvement.</p>
 			</div>
+		</div>
+
+		<div class="flex justify-center mt-8">
+			<button id="backButtonBottom" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+				Go Back to Question
+			</button>
 		</div>
 	</div>
 </Layout>
@@ -75,32 +86,49 @@ const allQuestions = getAllQuestions();
 	import { getAllQuestions } from '../utils/questions';
 
 	document.addEventListener('DOMContentLoaded', () => {
+		// Set up back button functionality
+		const backButton = document.getElementById('backButton');
+		const backButtonBottom = document.getElementById('backButtonBottom');
+
+		// Add click event listeners to both buttons
+		if (backButton) {
+			backButton.addEventListener('click', () => {
+				window.history.back();
+			});
+		}
+
+		if (backButtonBottom) {
+			backButtonBottom.addEventListener('click', () => {
+				window.history.back();
+			});
+		}
+
 		const allQuestions = getAllQuestions();
 		const totalQuestions = allQuestions.length;
-		
+
 		// Get data from the store
 		const { attemptedQuestions, correctlyAnsweredQuestions } = useQuizStore.getState();
-		
+
 		// Update overall stats
 		const totalAttempted = attemptedQuestions.length;
 		const totalCorrect = correctlyAnsweredQuestions.length;
 		const successRateValue = totalAttempted > 0 ? Math.round((totalCorrect / totalAttempted) * 100) : 0;
-		
+
 		document.getElementById('totalAttempted').textContent = totalAttempted.toString();
 		document.getElementById('totalAttemptedPercent').textContent = 
 			`${Math.round((totalAttempted / totalQuestions) * 100)}% of all questions`;
-		
+
 		document.getElementById('totalCorrect').textContent = totalCorrect.toString();
 		document.getElementById('totalCorrectPercent').textContent = 
 			`${Math.round((totalCorrect / totalQuestions) * 100)}% of all questions`;
-		
+
 		document.getElementById('successRate').textContent = `${successRateValue}%`;
 		document.getElementById('successRateBar').style.width = `${successRateValue}%`;
-		
+
 		// Calculate stats by category
 		const categoryStats = {};
 		const categoryQuestionCounts = {};
-		
+
 		// Initialize category stats
 		categories.forEach(category => {
 			categoryStats[category.code] = {
@@ -109,7 +137,7 @@ const allQuestions = getAllQuestions();
 				correct: 0,
 				total: 0
 			};
-			
+
 			// Count questions per category
 			category.subcategories.forEach(subcategory => {
 				// Count questions that match this category and subcategory
@@ -117,11 +145,11 @@ const allQuestions = getAllQuestions();
 					const parsed = parseQuestionId(q.id);
 					return parsed && parsed.categoryCode === category.code && parsed.subcategoryCode === subcategory.code;
 				});
-				
+
 				categoryStats[category.code].total += matchingQuestions.length;
 			});
 		});
-		
+
 		// Process attempted and correct questions
 		attemptedQuestions.forEach(questionId => {
 			const parsed = parseQuestionId(questionId);
@@ -132,7 +160,7 @@ const allQuestions = getAllQuestions();
 				}
 			}
 		});
-		
+
 		correctlyAnsweredQuestions.forEach(questionId => {
 			const parsed = parseQuestionId(questionId);
 			if (parsed) {
@@ -142,16 +170,16 @@ const allQuestions = getAllQuestions();
 				}
 			}
 		});
-		
+
 		// Populate category stats table
 		const categoryStatsElement = document.getElementById('categoryStats');
 		if (categoryStatsElement) {
 			categoryStatsElement.innerHTML = '';
-			
+
 			Object.entries(categoryStats).forEach(([code, stats]) => {
 				const successRate = stats.attempted > 0 ? Math.round((stats.correct / stats.attempted) * 100) : 0;
 				const progressPercent = Math.round((stats.attempted / stats.total) * 100);
-				
+
 				const row = document.createElement('tr');
 				row.innerHTML = `
 					<td class="px-6 py-4 whitespace-nowrap">
@@ -175,27 +203,27 @@ const allQuestions = getAllQuestions();
 						</div>
 					</td>
 				`;
-				
+
 				categoryStatsElement.appendChild(row);
 			});
 		}
-		
+
 		// Identify areas for improvement
 		const improvementAreas = document.getElementById('improvementAreas');
 		if (improvementAreas && totalAttempted > 0) {
 			// Clear default message
 			improvementAreas.innerHTML = '';
-			
+
 			// Find categories with below-average success rates
 			const averageSuccessRate = successRateValue;
 			const weakCategories = Object.entries(categoryStats)
 				.filter(([_, stats]) => stats.attempted > 0 && (stats.correct / stats.attempted) * 100 < averageSuccessRate)
 				.sort((a, b) => (a[1].correct / a[1].attempted) - (b[1].correct / b[1].attempted));
-			
+
 			if (weakCategories.length > 0) {
 				weakCategories.slice(0, 3).forEach(([code, stats]) => {
 					const categorySuccessRate = stats.attempted > 0 ? Math.round((stats.correct / stats.attempted) * 100) : 0;
-					
+
 					const category = categories.find(c => c.code === code);
 					if (category) {
 						const div = document.createElement('div');
