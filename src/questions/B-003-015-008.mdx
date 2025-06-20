@@ -1,0 +1,91 @@
+---
+id: "B-003-015-008"
+question: "When using a digital mode based on a computer sound card, how can you verify that the transmit audio level is NOT excessive?"
+answers:
+  - text: "Ask a local station to confirm your signal is free of splatter"
+    correct: true
+    explanation: "By requesting another amateur radio operator to listen and confirm that your signal is clean and free of splatter (excessive bandwidth or distortion), you're obtaining direct, real-world verification of your transmission quality. This human-based check provides immediate feedback about whether your audio levels are properly adjusted, which is critical in digital modes where signal fidelity directly impacts communication success."
+  - text: "Ensure your transmitter's audio compression is set to maximum"
+    correct: false
+    explanation: "Setting audio compression to maximum actually increases the likelihood of signal distortion and splatter. Excessive compression can introduce harmonic distortion, widen your signal's bandwidth, and create interference with adjacent frequencies. Good digital mode operation requires carefully managed, moderate audio levels, not maximum compression."
+  - text: "Verify that the automatic level control (ALC) is actively limiting every transmission"
+    correct: false
+    explanation: "While ALC can help prevent overmodulation, an ALC that is constantly limiting indicates your input levels are too high. Consistent ALC activation suggests you're driving your transmitter beyond its linear region, which will cause signal distortion. The goal is to set levels so that ALC activation is minimal or unnecessary."
+  - text: "Ask a local station to confirm your signal can be successfully decoded"
+    correct: false
+    explanation: "Signal decodability is not the same as signal quality. A signal might be decodable even when it contains significant distortion or splatter. Simply confirming successful decoding doesn't verify that your audio levels are appropriate or that you're not causing interference to nearby frequencies."
+---
+
+# Digital Mode Audio Management: Preventing Signal Splatter in Amateur Radio
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The importance of proper audio levels in digital mode communications
+- How signal splatter can disrupt amateur radio communications
+- Methods for verifying and managing transmit audio quality
+- The role of human feedback in maintaining spectral cleanliness
+
+---
+
+## The Concept: Digital Mode Signal Integrity
+
+Digital modes in amateur radio, such as PSK31, RTTY, and FT8, rely on precise audio signal generation through computer sound cards. Unlike voice modes, these digital transmissions require extremely careful audio level management to maintain signal clarity and spectral efficiency.
+
+**Signal splatter** occurs when audio levels are too high, causing your transmission to occupy a wider frequency bandwidth than intended. This can create interference with nearby stations, violate band plan guidelines, and reduce overall communication effectiveness. In digital modes, where signals are typically narrow and precisely defined, maintaining clean transmission is crucial.
+
+### The Sound Card's Critical Role
+
+Modern amateur radio digital modes use computer sound card interfaces to generate complex digital signals. These interfaces convert digital data into audio tones that are then transmitted by the radio. However, sound cards can easily introduce distortion if not carefully configured, making precise level management essential.
+
+---
+
+## Real-World Examples
+
+### ✅ Proper Digital Mode Signal Management:
+- **Gradual Level Adjustment**: Slowly increasing audio levels while getting feedback from local stations
+- **Using Software Constellation Displays**: Visual tools that show signal quality and potential distortion
+- **Collaborative Station Checking**: Asking nearby operators to assess signal cleanliness
+
+### ❌ Common Digital Mode Transmission Mistakes:
+- **Cranking Audio to Maximum**: Assuming higher levels mean better signal strength
+- **Ignoring Station Feedback**: Transmitting without confirming signal quality
+- **Relying Solely on Automatic Controls**: Believing ALC will solve all audio level problems
+
+---
+
+## Practical Applications
+
+### For Digital Mode Operators:
+1. **Initial Setup**: Start with very low audio input levels and gradually increase
+2. **Peer Verification**: Use local ham radio club members or repeater users to check signal quality
+3. **Software Monitoring**: Use digital mode software with constellation and spectrum displays
+
+### For Different Digital Modes:
+1. **PSK31**: Requires extremely precise audio level management due to narrow bandwidth
+2. **FT8**: Uses specific audio level protocols built into the mode's design
+3. **RTTY**: More tolerant of level variations but still requires careful management
+
+### Memory Aid:
+"**L**isten, **A**djust, **C**onfirm" (LAC) - The three steps to perfect digital mode transmission levels.
+
+---
+
+## Key Takeaways
+
+- Asking a local station to confirm your signal is free of splatter is the most reliable method of verifying audio levels
+- Digital modes require precise audio management to prevent interference and maintain signal quality
+- Maximum compression and constant ALC activation are signs of improper audio level setup
+- Human feedback remains a critical tool in assessing transmission quality
+- Signal decodability doesn't necessarily mean signal cleanliness
+
+---
+
+## Related Concepts to Explore:
+- **Digital Mode Software Configuration**
+- **Sound Card Interface Techniques**
+- **Spectral Bandwidth Management**
+
+### Recommended Reading
+- ARRL Digital Modes Handbook
+- QEX Magazine: Digital Communications Articles
+- YouTube: OH2LQA Digital Modes Tutorials

@@ -1,0 +1,94 @@
+---
+id: "B-005-009-008"
+question: "If you wire two 12-millihenry chokes in series, what is the inductance of the combination?"
+answers:
+  - text: "24 millihenries"
+    correct: true
+    explanation: "When inductors are connected in series, their individual inductance values are added together. Since both chokes are 12 millihenries, connecting them in series results in a total inductance of 24 millihenries. This is analogous to connecting batteries in series, where voltage increases, or resistors in series, where resistance increases."
+  - text: "6 millihenries"
+    correct: false
+    explanation: "This would be the result if the inductors were connected in parallel, not series. In a parallel connection, the total inductance would be less than the individual inductor values, following a reciprocal calculation."
+  - text: "48 millihenries"
+    correct: false
+    explanation: "This value would result from quadrupling the original inductor value, which does not occur in series connections. Series inductors simply add their individual values, not multiply them."
+  - text: "3 millihenries"
+    correct: false
+    explanation: "This is not the correct calculation for series inductors. Dividing the inductor values would occur in a parallel configuration, not a series configuration."
+---
+
+# Understanding Inductors in Series: When Chokes Add Up
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How inductance changes when inductors are connected in series
+- The mathematical relationship between individual inductors in a series circuit
+- Practical applications of series inductor connections in amateur radio
+- The difference between series and parallel inductor configurations
+
+---
+
+## The Concept: Series Inductor Connections
+
+Inductors, like chokes, are electrical components that resist changes in current flow and store energy in a magnetic field. When multiple inductors are connected in series, their total inductance is calculated by simply adding their individual inductance values.
+
+This is fundamentally different from how resistance or capacitance behave in series circuits. With inductors, the total inductance increases linearly - each additional inductor contributes its full value to the total circuit inductance.
+
+### The Mathematical Principle
+
+If you have multiple inductors L1, L2, L3, etc., connected in series, the total inductance (LT) is calculated as:
+LT = L1 + L2 + L3 + ...
+
+In this specific example, two 12-millihenry chokes connected in series result in a total inductance of 24 millihenries (12 mH + 12 mH).
+
+---
+
+## Real-World Examples
+
+### ✅ Successful Series Inductor Applications:
+- **RF Choke Circuits**: Creating high-impedance paths to block unwanted radio frequencies
+- **Filter Design**: Building complex electromagnetic filters for noise suppression
+- **Impedance Matching**: Adjusting overall circuit inductance for specific radio frequency applications
+
+### ❌ Incorrect Series Inductor Assumptions:
+- **Assuming Parallel Behavior**: Mistakenly dividing inductor values when they're in series
+- **Ignoring Inductor Ratings**: Not considering individual inductor current and power handling capabilities
+- **Overlooking Magnetic Coupling**: Failing to account for potential magnetic interactions between closely spaced inductors
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Operators:
+1. **RF Filtering**: Creating complex RF choke circuits to suppress unwanted signals
+2. **Antenna Impedance Matching**: Using series inductors to adjust antenna system characteristics
+3. **Noise Reduction**: Designing circuits that block electromagnetic interference
+
+### Technical Considerations:
+1. **Inductor Quality**: Real-world inductors have additional characteristics like series resistance and self-resonance
+2. **Frequency Dependence**: Inductor behavior changes with frequency, affecting circuit performance
+3. **Magnetic Interactions**: Physically spacing inductors can minimize unintended magnetic coupling
+
+### Memory Aid:
+"**S**eries **I**nductors **A**dd" (SIA) - Remember that series inductors always add their full values.
+
+---
+
+## Key Takeaways
+
+- When inductors are connected in series, their total inductance is the sum of their individual values
+- Two 12-millihenry chokes in series create a 24-millihenry total inductance
+- Series inductor connections increase the circuit's total inductance linearly
+- Understanding inductor behavior is crucial for designing filters, matching networks, and managing radio frequency circuits
+- Always verify inductor ratings and potential magnetic interactions in practical applications
+
+---
+
+## Related Concepts to Explore:
+- **Parallel Inductor Calculations**: How inductor values change when connected in parallel
+- **Magnetic Coupling Effects**: How nearby inductors can interact magnetically
+- **RF Choke Design**: Practical applications of series and parallel inductor configurations
+
+### Recommended Reading
+- ARRL Handbook: Chapter on Circuit Components and Design
+- "Practical Antenna Handbook" by Joseph Carr
+- Online Tutorial: "Understanding Inductors in RF Circuits"

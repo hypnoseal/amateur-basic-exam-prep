@@ -1,0 +1,95 @@
+---
+id: "B-003-003-010"
+question: "In an FM receiver, which stage includes a squelch circuit?"
+answers:
+  - text: "AF amplifier"
+    correct: true
+    explanation: "The audio frequency (AF) amplifier stage includes the squelch circuit because this is the point where receiver sensitivity is determined and unwanted low-level noise can be suppressed before final audio amplification. By placing the squelch circuit in the AF stage, the receiver can effectively mute the audio output when no meaningful signal is present, preventing background noise from being heard through the speaker or headphones."
+  - text: "Limiter"
+    correct: false
+    explanation: "The limiter stage in an FM receiver is responsible for removing amplitude variations and maintaining a constant signal level before demodulation. While critical for FM signal processing, it does not perform the noise-suppression function of a squelch circuit and is located earlier in the receiver's signal chain."
+  - text: "IF amplifier"
+    correct: false
+    explanation: "The intermediate frequency (IF) amplifier stage amplifies and filters the received signal before demodulation, but it does not include the squelch mechanism. Squelch circuits require audio-level signal evaluation, which occurs after demodulation in the audio frequency stage."
+  - text: "Product detector"
+    correct: false
+    explanation: "The product detector is typically used in SSB and CW reception to demodulate signals, not in FM reception. It operates at the signal's intermediate frequency and does not have a role in implementing the squelch function, which requires audio-level signal analysis."
+---
+
+# Understanding Squelch Circuits: Silencing Receiver Noise in Amateur Radio
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The purpose and function of squelch circuits in radio receivers
+- Where squelch circuits are located in a typical receiver's signal chain
+- How squelch improves the listening experience for amateur radio operators
+- The difference between squelch and other receiver signal processing stages
+
+---
+
+## The Concept: Noise Suppression in Radio Communication
+
+A **squelch circuit** is an electronic mechanism designed to automatically mute a radio receiver's audio output when no meaningful signal is present. Think of it like a noise gate that prevents background static, interference, and electrical noise from being heard through the speaker when no active transmission is occurring.
+
+In amateur radio, squelch serves multiple crucial functions:
+- Reduces listener fatigue during extended monitoring periods
+- Prevents constant background noise when monitoring repeaters or frequencies
+- Allows more comfortable group communications by eliminating constant static
+
+### How Squelch Actually Works
+
+The squelch circuit operates by measuring the signal strength at the audio frequency (AF) stage. When the incoming signal falls below a predetermined threshold, the circuit automatically mutes the audio output. This happens after the signal has been fully demodulated, which is why the AF amplifier stage is the most appropriate location for implementing squelch.
+
+---
+
+## Real-World Examples
+
+### ✅ Effective Squelch Applications:
+- **Repeater Monitoring**: Prevents constant background noise when no stations are transmitting
+- **VHF/UHF Simplex Conversations**: Keeps speaker silent between transmissions
+- **Emergency Communications**: Reduces listener fatigue during long monitoring sessions
+
+### ❌ Inappropriate Squelch Placement:
+- **IF Stage Squelch**: Would interrupt signal processing before complete demodulation
+- **Limiter Stage Interference**: Would disrupt critical signal normalization processes
+- **Product Detector Insertion**: Would interfere with signal demodulation mechanisms
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Operators:
+1. **Adjustable Threshold**: Most modern receivers allow manual squelch level adjustment
+2. **Carrier vs. Tone Squelch**: Understand differences between simple carrier-activated and CTCSS tone-based squelch methods
+3. **Digital Mode Considerations**: Some digital modes require special squelch handling
+
+### Squelch Configuration Tips:
+1. Set squelch just above background noise level
+2. Periodically check and readjust for changing environmental conditions
+3. Use tone squelch in noisy or crowded radio environments
+
+### Memory Aid:
+"**A**udio **F**irst, **S**ilence **A**fterwards" - AF (Audio Frequency) stage handles squelch
+
+---
+
+## Key Takeaways
+
+- Squelch circuits are located in the audio frequency (AF) amplifier stage
+- They automatically mute receiver audio when no meaningful signal is present
+- Proper squelch implementation reduces listener fatigue and improves communication clarity
+- Amateur radio operators should understand squelch as a critical receiver management tool
+- Squelch operates after complete signal demodulation, making the AF stage the ideal location
+
+---
+
+## Related Concepts to Explore:
+- **CTCSS (Continuous Tone-Coded Squelch System)**: Advanced squelch techniques
+- **Digital Squelch Methods**: How modern digital radios handle noise suppression
+- **Receiver Sensitivity and Noise Floor**: Theoretical foundations of squelch circuit design
+
+### Recommended Reading
+
+- ARRL Handbook: Receiver Design and Audio Processing Chapters
+- "Understanding Your Transceiver" by Joel Hallas, W1ZR
+- YouTube: W2AEW's Technical Radio Receiver Explanation Series

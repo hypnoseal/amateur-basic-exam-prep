@@ -1,0 +1,95 @@
+---
+id: "B-008-003-005"
+question: "In Morse code transmission, local RF interference (key clicks) is produced by:"
+answers:
+  - text: "the making and breaking of the circuit at the Morse key"
+    correct: true
+    explanation: "Key clicks occur when the Morse key rapidly opens and closes the transmitter circuit, creating abrupt voltage and current transitions. These sudden electrical changes generate instantaneous frequency shifts and harmonic emissions that appear as 'clicks' or 'pops' on nearby receivers. The sharp, instantaneous switching creates broad-spectrum interference that can disrupt other communications."
+  - text: "frequency shifting caused by poor voltage regulation"
+    correct: false
+    explanation: "While poor voltage regulation can cause signal instability, it doesn't directly produce the characteristic sharp key clicks associated with Morse code transmission. Voltage regulation issues typically result in frequency drift or signal distortion, not the instantaneous, sharp-edged interference produced by key switching."
+  - text: "high frequency parasitic oscillations"
+    correct: false
+    explanation: "Parasitic oscillations are unwanted oscillations in radio circuits that occur at frequencies different from the intended transmission. While they can cause interference, they are not the primary source of key clicks. Key clicks result from the rapid circuit switching, not from additional oscillations in the transmitter circuit."
+  - text: "poor wave-shaping caused by a defective filter capacitor"
+    correct: false
+    explanation: "A defective filter capacitor can cause signal distortion, but it doesn't directly create the sharp key clicks associated with Morse code transmission. While poor filtering can contribute to signal quality issues, the primary cause of key clicks is the rapid making and breaking of the circuit during keying."
+---
+
+# Morse Code Transmission: Understanding Key Clicks and Circuit Switching
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The electromagnetic principles behind key clicks in Morse code transmission
+- How rapid circuit switching creates radio frequency interference
+- The importance of proper keying techniques in amateur radio
+- The technical mechanisms that generate unwanted radio emissions
+
+---
+
+## The Concept: Circuit Switching and Radio Frequency Interference
+
+Morse code transmission involves rapidly switching a radio transmitter's circuit on and off to create the distinctive dots and dashes. When the Morse key closes and opens the circuit, it doesn't happen instantaneously in an ideal manner—there are microscopic transitions that generate brief, broadband electromagnetic emissions known as "key clicks".
+
+Think of these key clicks like a light switch being flipped extremely quickly. Instead of a smooth, gradual transition, there's an instantaneous change that creates a momentary burst of electrical energy. In radio terms, this rapid switching produces abrupt voltage and current changes that generate harmonic emissions and interference across multiple frequencies.
+
+### The Physics of Circuit Switching
+
+When a Morse key closes or opens a circuit, it doesn't create a perfectly smooth transition. The instantaneous voltage and current changes generate:
+- Sharp electromagnetic pulses
+- Broadband frequency emissions
+- Momentary harmonic radiation
+- Interference detectable on nearby receivers
+
+---
+
+## Real-World Examples
+
+### ✅ Proper Keying Techniques:
+- **Smooth Rise Time**: Using circuit designs that create gradual voltage transitions
+- **Low-Pass Filtering**: Implementing filters to eliminate sharp switching artifacts
+- **Rise-Time Shaping Circuits**: Electronic designs that soften the key switching edges
+
+### ❌ Key Click Generation Scenarios:
+- **Direct Mechanical Keying**: Simple on/off switching without wave-shaping
+- **Poorly Designed Transmitter Circuits**: Transmitters without proper key click suppression
+- **Unfiltered Solid-State Switching**: Rapid semiconductor switching without interference mitigation
+
+---
+
+## Practical Applications
+
+### For CW Operators:
+1. **Use Rise-Time Shaping**: Implement circuit techniques that soften key transitions
+2. **Apply Low-Pass Filtering**: Reduce harmonic and click emissions
+3. **Check Transmitter Performance**: Use receiver or spectrum analyzer to verify clean keying
+
+### For Transmitter Design:
+1. **Gradual Voltage Transitions**: Design circuits with smooth switching characteristics
+2. **Keying Circuit Isolation**: Separate keying circuits from high-power RF stages
+3. **Capacitive and Inductive Smoothing**: Use electronic components to round switching edges
+
+### Memory Aid:
+"**S**mooth **S**witching **S**tops **S**pread" - Soft circuit transitions prevent interference spread.
+
+---
+
+## Key Takeaways
+
+- Key clicks are produced by the rapid making and breaking of the circuit at the Morse key
+- Instantaneous circuit switching creates broadband electromagnetic emissions
+- Proper transmitter design involves smoothing circuit switching transitions
+- Key clicks can interfere with nearby radio communications
+- Amateur radio operators must understand and mitigate interference-generating mechanisms
+
+---
+
+## Related Concepts to Explore:
+- **Electromagnetic Emission Principles**: How rapid circuit switching generates radio frequency interference
+- **Transmitter Keying Techniques**: Advanced methods for clean Morse code transmission
+- **Harmonic Suppression**: Strategies for reducing unwanted radio emissions
+
+### Recommended Reading
+- ARRL Handbook: CW Transmission Techniques
+- "The Art and Skill of Radio-Telegraphy" by William Pierpont, N0HFF
+- YouTube: "Morse Code Transmission Techniques" by DX Engineering

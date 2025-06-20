@@ -1,0 +1,91 @@
+---
+id: "B-003-010-002"
+question: "The figure in a receiver's specifications which indicates its sensitivity is the:"
+answers:
+  - text: "RF input signal needed to achieve a given signal-to-noise ratio"
+    correct: true
+    explanation: "This describes receiver sensitivity precisely. It quantifies the minimum input signal strength required to produce a usable output signal with a specified signal-to-noise ratio. Lower values indicate better receiver performance, meaning the receiver can effectively process weaker signals while maintaining acceptable audio quality and readability."
+  - text: "audio output in watts"
+    correct: false
+    explanation: "Audio output power measures how loud the receiver can produce sound, not how well it can detect weak signals. While important for understanding speaker or headphone performance, watts do not indicate the receiver's ability to pull out faint radio signals from background noise."
+  - text: "bandwidth of the IF in kilohertz"
+    correct: false
+    explanation: "Intermediate frequency (IF) bandwidth determines the receiver's selectivity and ability to separate adjacent signals, but does not directly measure its sensitivity to weak signals. Bandwidth affects signal resolution and interference rejection, not the minimum detectable signal strength."
+  - text: "number of RF amplifiers"
+    correct: false
+    explanation: "The quantity of RF amplifier stages contributes to receiver performance but is not a direct measurement of sensitivity. While more amplification stages can potentially improve signal processing, sensitivity is ultimately determined by the signal-to-noise ratio achievable at the receiver's input."
+---
+
+# Receiver Sensitivity: Understanding Signal Detection in Amateur Radio
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What receiver sensitivity means in radio communications
+- How sensitivity is measured and why it matters
+- The relationship between signal strength and noise in radio reception
+- How to interpret receiver sensitivity specifications
+
+---
+
+## The Concept: Radio Signal Detection and Noise
+
+Receiver sensitivity represents the minimum RF input signal strength required to produce a usable output signal with a specified signal-to-noise ratio (SNR). Think of it like trying to hear a whisper in a noisy room - sensitivity determines how faint a sound you can distinguish from background noise.
+
+In amateur radio, sensitivity is critical because operators often communicate over long distances with weak signals. A highly sensitive receiver can pull meaningful information from signals that would be completely unreadable on a less capable radio. Technically, sensitivity is usually expressed in microvolts (μV) or decibels per milliwatt (dBm) at a specific signal-to-noise ratio, typically 10 or 12 dB.
+
+### The Signal-to-Noise Ratio (SNR) Connection
+
+Signal-to-noise ratio compares the level of desired signal to the level of background noise. A higher SNR means clearer, more intelligible communications. Receiver sensitivity directly relates to how low a signal can be while still maintaining an acceptable SNR.
+
+---
+
+## Real-World Examples
+
+### ✅ Good Receiver Sensitivity Scenarios:
+- **Weak DX Contact**: Pulling a faint signal from a distant country during marginal propagation conditions
+- **Low-Power Transmission**: Effectively receiving signals from low-power portable or QRP (low-power) stations
+- **Weak Signal Modes**: Successful communication using digital modes like FT8 that require excellent noise rejection
+
+### ❌ Poor Receiver Sensitivity Consequences:
+- **Missed Contacts**: Failing to hear distant or low-power stations
+- **Reduced Communication Range**: Effectively limiting your operational capabilities
+- **Degraded Digital Mode Performance**: Reduced ability to decode weak signal transmissions
+
+---
+
+## Practical Applications
+
+### For Receiver Selection:
+1. **Compare Specifications**: Look for receivers with lower μV ratings for better sensitivity
+2. **Consider Operating Goals**: DX operators need more sensitive receivers than local repeater users
+3. **Test Before Purchasing**: Use published reviews and side-by-side comparisons
+
+### For Signal Detection:
+1. **Understand Your Radio's Limits**: Know the minimum signal strength your receiver can effectively process
+2. **Use Appropriate Antennas**: High-gain antennas can help compensate for moderate receiver sensitivity
+3. **Employ Digital Signal Processing (DSP)**: Modern radios use DSP techniques to improve weak signal detection
+
+### Memory Aid:
+"**L**ower **μV** = **L**ouder Whispers" - The lower the microvolts needed, the better your receiver can hear weak signals.
+
+---
+
+## Key Takeaways
+
+- Receiver sensitivity measures the minimum RF input signal needed to achieve a specified signal-to-noise ratio
+- Lower sensitivity values (in μV) indicate better weak signal performance
+- Sensitivity is not about audio output power or the number of amplifier stages
+- Understanding sensitivity helps operators choose and use receivers more effectively
+- Good sensitivity is crucial for long-distance and weak signal communications
+
+---
+
+## Related Concepts to Explore:
+- **Dynamic Range**: How receivers handle strong and weak signals simultaneously
+- **Noise Figure**: Technical measurement of receiver noise performance
+- **Selectivity**: The receiver's ability to separate closely spaced signals
+
+### Recommended Reading
+- ARRL Handbook: Receiver Design and Sensitivity Measurements
+- "Understanding Your Transceiver" by Joel Hallas
+- QST Magazine articles on receiver performance testing

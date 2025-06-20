@@ -1,0 +1,94 @@
+---
+id: "B-008-005-002"
+question: "A filter attenuates frequencies below its cut-off frequency of 60 MHz. What type of filter is it?"
+answers:
+  - text: "High-pass"
+    correct: true
+    explanation: "A high-pass filter allows frequencies above its cut-off frequency to pass through while attenuating (reducing) frequencies below that point. In this case, with a 60 MHz cut-off frequency, the filter will block all frequencies below 60 MHz and allow frequencies above 60 MHz to pass through. This makes it a classic high-pass filter configuration, which is commonly used in radio frequency circuits to eliminate low-frequency noise or isolate higher-frequency signals."
+  - text: "Low-pass"
+    correct: false
+    explanation: "A low-pass filter does the opposite of this filter's behavior. A low-pass filter allows frequencies below its cut-off frequency to pass through while attenuating frequencies above that point. In this scenario, where the filter blocks frequencies below 60 MHz, the filter cannot be a low-pass filter."
+  - text: "Band-pass"
+    correct: false
+    explanation: "A band-pass filter allows a specific range of frequencies to pass through while attenuating frequencies both below and above that range. This filter's description of blocking frequencies below 60 MHz does not match the characteristics of a band-pass filter, which would allow a specific frequency band to pass through."
+  - text: "Notch"
+    correct: false
+    explanation: "A notch filter is designed to block a very narrow, specific frequency or a very small range of frequencies while allowing all other frequencies to pass through. This filter's description of blocking all frequencies below 60 MHz does not match the characteristics of a notch filter."
+---
+
+# Understanding High-Pass Filters: Blocking Low Frequencies in Electronic Circuits
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The fundamental principles of high-pass filters
+- How high-pass filters differ from other filter types
+- The practical applications of frequency-selective filtering in amateur radio
+- The role of cut-off frequency in filter design
+
+---
+
+## The Concept: High-Pass Filter Fundamentals
+
+A high-pass filter is an electronic circuit that allows high-frequency signals to pass through while attenuating (reducing) low-frequency signals. Think of it like a gate that only opens for signals above a certain frequency threshold - in this case, 60 MHz.
+
+The **cut-off frequency** is the critical point where the filter begins to significantly reduce signal strength. For a high-pass filter, this means frequencies below the cut-off are progressively weakened, while frequencies above the cut-off pass through with minimal loss.
+
+This behavior is crucial in many electronic applications, including amateur radio, where you might want to eliminate low-frequency noise, isolate high-frequency signals, or prevent unwanted signal components from interfering with your communication.
+
+### The Physics Behind Filtering
+
+High-pass filters typically use combinations of capacitors and inductors to create frequency-dependent impedance. As frequency increases, the filter's opposition to signal flow decreases, allowing higher frequencies to pass more easily while blocking lower frequencies.
+
+---
+
+## Real-World Examples
+
+### ✅ Practical High-Pass Filter Applications:
+- **RF Noise Reduction**: Removing low-frequency electrical noise from communication signals
+- **Antenna Systems**: Filtering out unwanted low-frequency interference
+- **Audio Circuits**: Eliminating low-frequency hum in sound systems
+- **Satellite Communications**: Isolating high-frequency transmission signals
+
+### ❌ Situations Where High-Pass Filters Are Inappropriate:
+- **Audio Bass Reproduction**: Where you want to preserve low-frequency sounds
+- **Power Supply Filtering**: Where low-frequency stability is crucial
+- **Seismic Sensor Systems**: Where low-frequency signals carry important information
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Operators:
+1. **Interference Rejection**: Use high-pass filters to remove low-frequency noise from VHF and UHF communications
+2. **Signal Conditioning**: Improve receiver performance by blocking unwanted low-frequency components
+3. **Harmonic Suppression**: Help manage signal purity in transmitter designs
+
+### Filter Design Considerations:
+1. **Determine Required Cut-Off Frequency**: Match filter characteristics to your specific communication needs
+2. **Consider Filter Slope**: How quickly the filter attenuates signals below the cut-off
+3. **Evaluate Insertion Loss**: The signal strength reduction introduced by the filter itself
+
+### Memory Aid:
+"**H**igh **F**requencies **P**ass" - HFP helps remember High-Pass Filter characteristics!
+
+---
+
+## Key Takeaways
+
+- A high-pass filter allows frequencies above its cut-off frequency to pass through while attenuating lower frequencies
+- In this example, a filter with a 60 MHz cut-off will block signals below 60 MHz and allow signals above 60 MHz to pass
+- High-pass filters are essential in managing signal quality and reducing unwanted low-frequency noise
+- Understanding filter types is crucial for effective signal processing in amateur radio
+- Proper filter selection can significantly improve communication system performance
+
+---
+
+## Related Concepts to Explore:
+- **Filter Topology**: Different circuit designs for creating high-pass filters
+- **Impedance Matching**: How filters interact with transmission systems
+- **Frequency Domain Analysis**: Understanding signal behavior across different frequencies
+
+### Recommended Reading
+- ARRL Handbook: Chapter on Filters and Signal Processing
+- "Experimental Methods in RF Design" by Wes Hayward
+- YouTube: Dave Jones EEVblog Electronics Tutorials on Filter Design

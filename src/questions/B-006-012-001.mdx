@@ -1,0 +1,97 @@
+---
+id: "B-006-012-001"
+question: "If you made a half-wavelength dipole antenna for 28.150 MHz, approximately how long would it be?"
+answers:
+  - text: "5.08 metres"
+    correct: true
+    explanation: "A half-wavelength dipole for 28.150 MHz is approximately 5.08 metres long. This length is calculated using the fundamental antenna design formula that takes into account the velocity factor of wire and the speed of radio waves. The calculation involves dividing the speed of light by twice the frequency, then adjusting for the wire's physical properties."
+  - text: "5.33 metres"
+    correct: false
+    explanation: "This length is slightly too long for a half-wavelength dipole at 28.150 MHz. The calculation would result in excessive antenna length and would not provide optimal resonance for the specified frequency."
+  - text: "10.66 metres"
+    correct: false
+    explanation: "This length represents a full wavelength dipole, which is twice the optimal length for a half-wavelength dipole at 28.150 MHz. Using this length would create an inefficient and incorrectly tuned antenna for the specified frequency."
+  - text: "2.53 metres"
+    correct: false
+    explanation: "This length is too short for a half-wavelength dipole at 28.150 MHz. Such a short antenna would not provide the correct radiation characteristics and would result in poor performance on the 10-meter band."
+---
+
+# Dipole Antenna Length Calculation: Understanding Half-Wavelength Design
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How to calculate the physical length of a half-wavelength dipole antenna
+- The relationship between frequency and antenna length
+- The basic principles of antenna resonance
+- Practical considerations in antenna design for amateur radio
+
+---
+
+## The Concept: Antenna Wavelength and Physical Length
+
+A dipole antenna is a fundamental design in amateur radio, consisting of two equal-length conductors positioned end-to-end and fed at the center. The **half-wavelength dipole** is particularly important because it provides an efficient radiation pattern and relatively low radiation resistance.
+
+The length of a half-wavelength dipole is calculated using the fundamental formula:
+
+**Length = (Speed of Light / Frequency) × Velocity Factor ÷ 2**
+
+For radio waves in free space, the speed of light is approximately 300,000,000 meters per second. However, real-world antennas must account for the **velocity factor** of the conductor material, typically around 0.95 for typical wire antennas.
+
+### The Mathematical Breakdown
+For a 28.150 MHz antenna:
+1. Wavelength = 300,000,000 ÷ 28,150,000 ≈ 10.66 meters
+2. Half-wavelength = 10.66 ÷ 2 ≈ 5.33 meters
+3. Accounting for velocity factor: 5.33 × 0.95 ≈ 5.08 meters
+
+---
+
+## Real-World Examples
+
+### ✅ Correct Antenna Implementations:
+- **10-Meter Band Dipole**: Precisely 5.08 metres long, resonant at 28.150 MHz
+- **Stranded Copper Wire Dipole**: Using standard insulated wire with appropriate length calculations
+- **Center-Fed Symmetric Design**: Equally split elements for optimal performance
+
+### ❌ Incorrect Antenna Configurations:
+- **Mismatched Length Dipoles**: Antennas too short or too long will have poor SWR and radiation efficiency
+- **Ignoring Velocity Factor**: Calculating length without considering wire properties
+- **Asymmetrical Element Design**: Unequal element lengths destroy antenna symmetry
+
+---
+
+## Practical Applications
+
+### For Antenna Builders:
+1. **Precise Measurement**: Use a tape measure or laser measurer for accurate length
+2. **Material Selection**: Choose wire with known velocity factor
+3. **Center Insulator Design**: Ensure robust connection at feed point
+
+### For Different Frequency Bands:
+1. **Scaling Principle**: Antenna length is inversely proportional to frequency
+2. **Multiband Considerations**: Different calculation methods for multiple frequency usage
+3. **Environmental Factors**: Consider mounting height and nearby objects
+
+### Memory Aid:
+"**F**requency **D**etermines **L**ength" (FDL) - As frequency increases, antenna length decreases proportionally.
+
+---
+
+## Key Takeaways
+
+- A half-wavelength dipole for 28.150 MHz is approximately 5.08 metres long
+- Antenna length calculation involves speed of light, frequency, and velocity factor
+- Precise measurement is critical for optimal antenna performance
+- The 10-meter band requires specific attention to antenna design details
+- Theoretical calculations must be adjusted for real-world conditions
+
+---
+
+## Related Concepts to Explore:
+- **Antenna Impedance**: How length affects radiation resistance
+- **SWR Measurement**: Tuning techniques for optimal performance
+- **Propagation Characteristics**: How antenna length impacts signal transmission
+
+### Recommended Reading
+- ARRL Antenna Handbook
+- "Antenna Fundamentals" by Joel Hallas
+- YouTube: W2AEW Antenna Design Tutorials

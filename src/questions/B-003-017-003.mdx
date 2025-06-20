@@ -1,0 +1,96 @@
+---
+id: "B-003-017-003"
+question: "When selecting a 13.8 V DC power supply for a transceiver, what design specification is most important?"
+answers:
+  - text: "Output current capability"
+    correct: true
+    explanation: "Output current capability is the most critical specification because amateur radio transceivers draw substantial and variable current during transmission. Selecting a power supply that can consistently deliver the peak current required by your specific transceiver prevents voltage sag, potential damage to equipment, and ensures reliable operation during high-power transmissions or simultaneous receive and transmit cycles."
+  - text: "Undervoltage protection"
+    correct: false
+    explanation: "While undervoltage protection is a useful safety feature, it doesn't directly ensure the power supply can meet the transceiver's operational requirements. A power supply with undervoltage protection but insufficient current capacity would still fail to power the radio effectively during high-demand transmission periods."
+  - text: "Output connection compatibility"
+    correct: false
+    explanation: "Connection compatibility is important but secondary to current capability. While having the correct connector and polarity matters, a power supply that can't deliver sufficient current will cause more significant operational problems than a slightly mismatched connection type."
+  - text: "Voltage and current metering"
+    correct: false
+    explanation: "Metering provides useful monitoring information but doesn't ensure the power supply can actually meet the transceiver's power demands. A meter is a diagnostic tool, not a primary performance specification that determines the power supply's fundamental ability to support radio operations."
+---
+
+# Selecting the Right Power Supply: Current Capability in Amateur Radio
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- Why current capability is the most critical power supply specification
+- How amateur radio transceivers demand variable power
+- The relationship between current, voltage, and radio performance
+- Practical considerations in power supply selection
+
+---
+
+## The Concept: Power Supply Fundamentals for Amateur Radio
+
+Amateur radio transceivers are complex electronic devices that experience significant current fluctuations during operation. Unlike consumer electronics with steady power draws, radios experience dramatic current spikes during transmission, where power consumption can increase tenfold or more compared to receive mode.
+
+A power supply's current capability determines its ability to consistently deliver power without voltage dropout, which can cause distorted audio, reduced transmit power, or even equipment damage. Think of current capability like the water pressure in a pipe - insufficient pressure means weak, unreliable flow.
+
+### The Current Demand Cycle
+
+Typical HF transceivers might draw:
+- 0.5-2A during receive mode
+- 10-20A during SSB voice transmission
+- Up to 25-30A during full-power digital modes or CW transmissions
+
+A power supply must handle these rapid, substantial current changes without significant voltage reduction.
+
+---
+
+## Real-World Examples
+
+### ✅ Proper Power Supply Selection:
+- **100W HF Transceiver**: Select a power supply rated for 20-25A continuous current
+- **Mobile/Portable Radio**: Choose a supply with 15-20A peak current capability
+- **Contest Station**: Consider supplies with 30-40A rating for extended high-power operations
+
+### ❌ Inadequate Power Supply Choices:
+- **Underpowered Supply**: Causes voltage sag, reduced transmit power
+- **Consumer-Grade Power Supplies**: Often lack sufficient current handling
+- **Unregulated Power Sources**: Create unstable voltage output
+
+---
+
+## Practical Applications
+
+### For Transceiver Setup:
+1. **Calculate Peak Current Requirements**: Review your specific radio's specification sheet
+2. **Add 25-30% Overhead**: Select a power supply with rating above maximum expected draw
+3. **Consider Duty Cycle**: Digital modes and contesting require higher continuous current ratings
+
+### For Different Operating Scenarios:
+1. **Base Station**: Prioritize stable, regulated power supplies with high current capacity
+2. **Portable Operations**: Balance current capability with size and weight
+3. **Emergency Communications**: Select power supplies with robust, predictable performance
+
+### Memory Aid:
+"**C**urrent **C**apability **C**onquers Challenges" - Your power supply must handle your radio's peak demands!
+
+---
+
+## Key Takeaways
+
+- Current capability is the most critical power supply specification for amateur radio
+- Transceivers experience dramatic current fluctuations during different operational modes
+- Insufficient current capability causes voltage sag, reduced performance, and potential equipment damage
+- Select a power supply with 25-30% higher rating than your radio's peak current requirements
+- Regulated, high-current power supplies provide the most stable and reliable radio operation
+
+---
+
+## Related Concepts to Explore:
+- **Voltage Regulation**: How power supply design maintains consistent voltage
+- **Power Supply Protection Circuits**: Undervoltage, overcurrent, and thermal protection mechanisms
+- **Battery and Alternative Power Sources**: Comparing performance with traditional AC-powered supplies
+
+### Recommended Reading
+- ARRL Handbook: Power Supply Design and Selection
+- QST Magazine: Articles on Amateur Radio Power Systems
+- YouTube: "Choosing the Right Power Supply for Ham Radio" by DX Engineering

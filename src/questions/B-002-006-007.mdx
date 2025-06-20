@@ -1,0 +1,97 @@
+---
+id: "B-002-006-007"
+question: "Your receiver's S-meter is calibrated to a standard of 6 dB per S-unit per a recommendation by the International Amateur Radio Union (IARU). The S-meter shows S9 when receiving a station transmitting with 100 watts. Neglecting propagation changes, what transmitter power would cause your receiver's S-meter to read S8?"
+answers:
+  - text: "25 watts"
+    correct: true
+    explanation: "When an S-meter shows a decrease of one S-unit (6 dB), the received signal power is reduced by a factor of 1/4. Since the original transmission was 100 watts at S9, reducing the power to 25 watts will result in the S-meter reading S8. This follows the logarithmic nature of decibel (dB) measurements, where a 6 dB reduction represents a 75% power reduction."
+  - text: "75 watts"
+    correct: false
+    explanation: "75 watts would not cause a full S-unit reduction. To drop from S9 to S8, the power must be reduced to 25 watts, which represents a 6 dB or one S-unit decrease from the original 100-watt transmission."
+  - text: "50 watts"
+    correct: false
+    explanation: "50 watts represents a 3 dB reduction, which would place the signal between S8 and S9, not exactly at S8. To achieve a full S-unit (6 dB) reduction, the power must drop to 25 watts."
+  - text: "33 watts"
+    correct: false
+    explanation: "33 watts does not correspond to a standard S-unit reduction. To drop from S9 to S8, the power must be reduced to 25 watts, which represents the required 6 dB or one S-unit decrease."
+---
+
+# Understanding S-Meter Measurements: Power, Decibels, and Signal Strength
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How S-meters measure signal strength in amateur radio
+- The relationship between power reduction and S-unit changes
+- The logarithmic nature of decibel (dB) measurements
+- How the IARU standardizes S-meter calibration
+
+---
+
+## The Concept: S-Meter Measurements and Logarithmic Power Scale
+
+The S-meter is a critical instrument in amateur radio that provides a standardized way of measuring the strength of received signals. Unlike a linear scale, S-meters use a logarithmic measurement system where each S-unit represents a specific power reduction of 6 decibels (dB).
+
+A decibel is a logarithmic unit that expresses the ratio between two values. In radio signal strength, this typically means comparing received signal power. The IARU (International Amateur Radio Union) recommends a standard where:
+- Each S-unit represents a 6 dB change
+- S9 is defined as a reference signal strength
+- Each S-unit below S9 represents a 1/4 (25%) reduction in signal power
+
+### The Mathematics of Signal Strength
+
+When a signal moves from S9 to S8, it undergoes a 6 dB reduction. In power terms, this means:
+- 6 dB = 1/4 power reduction
+- 100 watts at S9 becomes 25 watts at S8
+- This follows the logarithmic power law: Power(dB) = 10 * log10(P1/P2)
+
+---
+
+## Real-World Examples
+
+### ✅ S-Meter Power Reduction Scenarios:
+- **S9 to S8**: 100 watts → 25 watts (6 dB reduction)
+- **S9 to S7**: 100 watts → 6.25 watts (12 dB reduction)
+- **S9 to S6**: 100 watts → 1.56 watts (18 dB reduction)
+
+### ❌ Common Misunderstandings:
+- Believing S-units represent linear, not logarithmic, power changes
+- Assuming a small power change will cause a full S-unit drop
+- Not understanding the mathematical relationship between power and decibels
+
+---
+
+## Practical Applications
+
+### For Signal Reporting:
+1. **Consistent Communication**: Use standardized S-meter readings to describe signal strength
+2. **Propagation Assessment**: Track signal variations during different times and conditions
+3. **Antenna Performance Evaluation**: Compare transmission effectiveness across different setups
+
+### For Transmitter Power Management:
+1. **QRP Operations**: Understand how low-power transmissions translate to S-meter readings
+2. **Contest and DX Communications**: Precisely report and interpret signal strengths
+3. **Emergency Communications**: Accurately assess communication reliability
+
+### Memory Aid:
+"**S**ix **D**B **D**rops **P**ower by **P**quarters" - Remember the 6 dB = 1/4 power rule
+
+---
+
+## Key Takeaways
+
+- S-meters use a logarithmic scale where each S-unit represents a 6 dB power reduction
+- A 6 dB change means the signal power is reduced to 1/4 of its original value
+- From 100 watts at S9, a reduction to 25 watts will result in an S8 reading
+- Understanding this relationship helps in precise signal strength communication
+- The IARU standardization ensures consistent signal strength reporting across amateur radio operators
+
+---
+
+## Related Concepts to Explore:
+- **Decibel Calculations**: Power and voltage ratios in radio communications
+- **Propagation Effects**: How signal strength varies with distance and conditions
+- **Antenna Gain**: Relationship between transmitter power and effective radiated power
+
+### Recommended Reading
+- ARRL Handbook: Chapter on Measurements and Instrumentation
+- "Understanding S-Meters" by ON4UN
+- YouTube: W1AW ARRL Technical Webinars on Signal Measurement

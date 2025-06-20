@@ -1,0 +1,93 @@
+---
+id: "B-003-012-010"
+question: "Your SSB transmitter is set to operate lower sideband at 7100 kHz. With a single 1000 Hz tone as modulation, at which frequency is RF transmitted?"
+answers:
+  - text: "7099 kHz"
+    correct: true
+    explanation: "In lower sideband (LSB) transmission, the modulating audio signal shifts the carrier frequency downward. When a 1000 Hz tone is used, the resulting RF transmission occurs 1000 Hz below the carrier frequency. Since the carrier frequency is 7100 kHz, the actual transmitted frequency will be 7099 kHz. This demonstrates how audio modulation creates frequency sidebands around the carrier frequency in single sideband (SSB) communication."
+  - text: "7101 kHz"
+    correct: false
+    explanation: "This would be the case for upper sideband (USB) transmission, not lower sideband (LSB). In LSB mode, the audio signal shifts the carrier frequency downward, not upward. Choosing 7101 kHz misunderstands the fundamental behavior of lower sideband modulation."
+  - text: "6100 kHz"
+    correct: false
+    explanation: "This frequency is far too low and does not represent the correct sideband relationship. It appears to be an arbitrary subtraction that does not follow the principles of SSB modulation. The transmitted frequency should be very close to the carrier frequency, differing only by the audio modulation tone frequency."
+  - text: "8100 kHz"
+    correct: false
+    explanation: "This frequency is far too high and completely unrelated to the carrier frequency and modulation process. It represents an incorrect understanding of how lower sideband modulation works in SSB transmission."
+---
+
+# Single Sideband Modulation: Understanding Frequency Sidebands in Amateur Radio
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How single sideband (SSB) modulation works
+- The difference between lower sideband (LSB) and upper sideband (USB)
+- How audio tones create frequency sidebands
+- The mathematical relationship between carrier frequency and modulation
+
+---
+
+## The Concept: Single Sideband Modulation
+
+Single Sideband (SSB) is a method of voice communication that efficiently uses radio frequency spectrum by transmitting only one sideband of the modulated signal. Unlike AM (Amplitude Modulation), which transmits both sidebands and a carrier wave, SSB suppresses the carrier and one sideband, dramatically reducing the bandwidth required for communication.
+
+In SSB, the audio signal shifts the carrier frequency up or down, creating sidebands. The direction of this shift depends on whether you're using Lower Sideband (LSB) or Upper Sideband (USB). For HF frequencies below 10 MHz (like 40 meters), amateur radio conventionally uses Lower Sideband, where audio frequencies subtract from the carrier frequency.
+
+### Sideband Mathematics
+
+When you modulate a carrier with an audio tone, the resulting RF signal shifts by the frequency of that tone. A 1000 Hz audio tone on a 7100 kHz carrier will produce:
+- **LSB**: 7100 kHz - 0.001 kHz = 7099 kHz
+- **USB**: 7100 kHz + 0.001 kHz = 7101 kHz
+
+---
+
+## Real-World Examples
+
+### ✅ Correct LSB Transmission Scenarios:
+- **40m Band (7 MHz)**: 1000 Hz tone shifts carrier down to 7099 kHz
+- **Phone Conversations**: Voice frequencies create multiple sidebands around the carrier
+- **Digital Modes**: Even precise digital tones follow the same sideband principles
+
+### ❌ Incorrect Sideband Interpretations:
+- **Confusing LSB and USB**: Applying USB shift rules to LSB transmission
+- **Ignoring Frequency Relationships**: Assuming arbitrary frequency shifts
+- **Misunderstanding Bandwidth**: Thinking all frequencies can be used equally
+
+---
+
+## Practical Applications
+
+### For SSB Operators:
+1. **Frequency Selection**: Always confirm whether you're using LSB or USB for your band
+2. **Audio Processing**: Keep microphone audio within appropriate bandwidth
+3. **Interference Avoidance**: Understanding sidebands helps prevent unintended frequency overlap
+
+### For Different Bands:
+1. **HF Bands Below 10 MHz**: Conventionally use LSB
+2. **HF Bands Above 10 MHz**: Conventionally use USB
+3. **VHF/UHF**: Typically use USB, but local conventions may vary
+
+### Memory Aid:
+"**L**ower **F**requencies **L**ower **S**ideband, **H**igher **F**requencies **U**pper **S**ideband" (LFLHFUS)
+
+---
+
+## Key Takeaways
+
+- Lower sideband (LSB) shifts carrier frequency downward
+- A 1000 Hz tone on 7100 kHz LSB produces a 7099 kHz transmission
+- Sideband selection depends on frequency band and established conventions
+- Understanding sideband behavior is crucial for precise amateur radio communication
+- Sidebands represent the actual information-carrying part of the SSB signal
+
+---
+
+## Related Concepts to Explore:
+- **Carrier Suppression in SSB**
+- **Bandwidth Efficiency of SSB**
+- **Audio Processing for SSB Transmission**
+
+### Recommended Reading
+- ARRL Handbook: SSB Modulation Principles
+- "Understanding Your Transceiver" by Joel Hallas
+- YouTube: W2AEW SSB Modulation Tutorials

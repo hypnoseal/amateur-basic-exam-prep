@@ -1,0 +1,94 @@
+---
+id: "B-003-006-003"
+question: "In a typical single-sideband transmitter, what is the purpose of the filter that follows the balanced modulator?"
+answers:
+  - text: "Remove the unwanted sideband"
+    correct: true
+    explanation: "In SSB (Single Sideband) transmission, the balanced modulator generates both upper and lower sidebands around the suppressed carrier frequency. The post-modulator filter selectively removes one of these sidebands, leaving only the desired sideband for transmission. This process reduces signal bandwidth and increases transmission efficiency by transmitting only one sideband instead of the traditional double-sideband AM signal."
+  - text: "Suppress the RF carrier signal"
+    correct: false
+    explanation: "While carrier suppression occurs in the balanced modulator stage, the filter after the balanced modulator is specifically responsible for sideband selection, not further carrier suppression. The balanced modulator itself already minimizes the carrier signal, so additional carrier suppression is not the filter's primary function."
+  - text: "Shape the audio waveform"
+    correct: false
+    explanation: "Audio waveform shaping typically occurs in earlier stages of the transmitter, such as the microphone audio processing stage. The filter following the balanced modulator is a radio frequency (RF) filter designed to select sidebands, not to shape audio characteristics."
+  - text: "Remove harmonics from the transmitted signal"
+    correct: false
+    explanation: "Harmonic suppression is typically accomplished by low-pass filters placed at the transmitter output, not by the sideband selection filter in the modulation stage. This filter's specific purpose is sideband selection, not harmonic reduction."
+---
+
+# SSB Transmission: Understanding Sideband Selection and Filtering
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The basic principles of Single Sideband (SSB) modulation
+- How balanced modulators generate sidebands
+- The purpose of sideband selection filters
+- Why transmitting only one sideband is more efficient
+
+---
+
+## The Concept: Sideband Generation and Selection
+
+Single Sideband (SSB) is an amplitude modulation technique that maximizes communication efficiency by transmitting only one of the two sidebands generated during modulation. When an audio signal modulates a carrier frequency, it creates two symmetric sidebands—upper and lower—that contain the same information.
+
+The **balanced modulator** is an electronic circuit that generates these sidebands while suppressing the original carrier signal. However, both sidebands are initially present, containing redundant information. The filter following the balanced modulator selectively removes one of these sidebands, leaving only the desired sideband for transmission.
+
+### Why Remove a Sideband?
+
+By transmitting only one sideband, amateur radio operators achieve several benefits:
+- **Reduced Bandwidth**: Transmitting one sideband instead of two cuts the signal's spectrum width in half
+- **Improved Power Efficiency**: More transmitter power goes into the desired sideband
+- **Reduced Interference**: Narrower signals mean less potential for adjacent channel interference
+
+---
+
+## Real-World Examples
+
+### ✅ Effective Sideband Selection:
+- **Upper Sideband (USB)**: Common on frequencies above 10 MHz, preferred for international communications
+- **Lower Sideband (LSB)**: Typically used on 160m, 80m, and 40m amateur bands
+- **Precise Filtering**: Ensures only the intended sideband is transmitted, maintaining signal clarity
+
+### ❌ Problems with Incomplete Sideband Filtering:
+- **Spectral Overlap**: Transmitting both sidebands wastes spectrum and reduces communication efficiency
+- **Increased Noise**: Redundant sideband information can introduce unnecessary noise
+- **Wider Signal Footprint**: Reduces the number of simultaneous communications possible in a given frequency range
+
+---
+
+## Practical Applications
+
+### For SSB Transmitter Design:
+1. **Carrier Suppression**: Balanced modulator minimizes carrier signal
+2. **Sideband Selection**: Post-modulator filter removes unwanted sideband
+3. **Band-Specific Filtering**: Different filters for different amateur radio bands
+
+### For Operating Practices:
+1. **Consistent Sideband Use**: Always use USB or LSB as appropriate for your operating band
+2. **Filter Alignment**: Ensure transmitter filters are correctly aligned for optimal signal quality
+3. **Bandwidth Management**: Understand how sideband selection contributes to efficient spectrum use
+
+### Memory Aid:
+"**S**elect **S**ideband, **S**ave **S**pectrum" - One sideband means clearer, more efficient communication!
+
+---
+
+## Key Takeaways
+
+- The filter following the balanced modulator removes the unwanted sideband in SSB transmission
+- This process reduces signal bandwidth and increases transmission efficiency
+- Sideband selection occurs after carrier suppression in the modulation process
+- Different amateur radio bands use either Upper Sideband (USB) or Lower Sideband (LSB)
+- Understanding sideband filtering is crucial for effective amateur radio communication
+
+---
+
+## Related Concepts to Explore:
+- **Balanced Modulator Operation**: How carrier suppression and sideband generation work
+- **Modulation Techniques**: Comparing SSB with AM, FM, and other modulation methods
+- **Spectrum Management**: How efficient sideband use contributes to better radio communications
+
+### Recommended Reading
+- ARRL Handbook: Chapters on SSB Modulation and Transmission
+- "Understanding Modulation" by RSGB
+- YouTube: W2AEW's Technical Explanations of RF Modulation Techniques

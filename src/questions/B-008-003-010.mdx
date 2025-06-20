@@ -1,0 +1,94 @@
+---
+id: "B-008-003-010"
+question: "What can cause parasitic oscillations in a stage?"
+answers:
+  - text: "Unwanted positive feedback"
+    correct: true
+    explanation: "Unwanted positive feedback occurs when a portion of the output signal is fed back to the input in phase with the original signal, causing unintended amplification and potential self-sustaining oscillation. In electronic circuits, this can happen through stray capacitance, unwanted coupling between components, or poor circuit layout that allows signals to leak back into earlier stages of amplification."
+  - text: "Unwanted negative feedback"
+    correct: false
+    explanation: "Negative feedback actually stabilizes circuits by reducing gain and minimizing distortion. It typically helps prevent oscillations by damping unwanted signal variations, unlike positive feedback which can cause uncontrolled signal generation and circuit instability."
+  - text: "Oscillator drift"
+    correct: false
+    explanation: "Oscillator drift refers to gradual frequency changes in an intentional oscillator circuit due to temperature or component variations. While this can affect circuit performance, it doesn't directly cause parasitic oscillations, which are unintended signal generations in amplification stages."
+  - text: "Power supply instability"
+    correct: false
+    explanation: "While power supply instability can cause signal variations and noise, it doesn't directly create parasitic oscillations. Parasitic oscillations are specifically about signal feedback and circuit interactions, not power supply fluctuations."
+---
+
+# Understanding Parasitic Oscillations: Unintended Electronic Feedback
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What parasitic oscillations are in electronic circuits
+- How positive feedback triggers unintended signal generation
+- The mechanisms that create parasitic oscillations
+- Techniques to prevent unwanted circuit oscillations
+
+---
+
+## The Concept: Parasitic Oscillations in Electronic Circuits
+
+Parasitic oscillations are unintended, self-sustaining electrical signals that occur within an electronic circuit when portions of the output signal are accidentally fed back to the input in a reinforcing manner. Unlike intentional oscillator circuits designed to generate specific frequencies, parasitic oscillations represent an unwanted phenomenon that can cause significant performance degradation.
+
+At the core of parasitic oscillations is the principle of **positive feedback**. In a typical amplification stage, signals should flow in a controlled, unidirectional manner. However, when a portion of the output signal returns to the input in phase with the original signal, it creates a reinforcing loop that can cause the circuit to generate its own signals independently of the intended input.
+
+### The Feedback Mechanism
+
+Imagine a sound system where the microphone is placed too close to the speaker. The microphone picks up the speaker's sound, which is then amplified and played back even louder, creating an ever-increasing feedback loop. Electronic parasitic oscillations work on a similar principle, with stray electrical paths replacing the acoustic pathway.
+
+---
+
+## Real-World Examples
+
+### ✅ Conditions Promoting Parasitic Oscillations:
+- **Poor Circuit Layout**: Proximity of input and output traces on printed circuit boards
+- **High-Gain Amplification Stages**: Circuits with significant amplification potential
+- **Unshielded Interconnections**: Cables and components that allow signal leakage
+- **Long Lead Lengths**: Providing unexpected coupling paths between circuit components
+
+### ❌ Scenarios Preventing Parasitic Oscillations:
+- **Proper Shielding**: Using metal enclosures and ground planes
+- **Careful Component Placement**: Minimizing potential feedback paths
+- **Impedance Matching**: Ensuring signals don't reflect and recirculate
+- **Feedback Suppression Components**: Using resistors and capacitors to block unwanted signal paths
+
+---
+
+## Practical Applications
+
+### For Circuit Design:
+1. **Minimize Stray Capacitance**: Route circuit traces to reduce unexpected signal coupling
+2. **Use Bypass Capacitors**: Provide low-impedance paths for high-frequency noise
+3. **Implement Proper Grounding**: Create solid reference planes that reduce signal wandering
+
+### For Amateur Radio Equipment:
+1. **RF Amplifier Design**: Pay special attention to component layout in high-frequency stages
+2. **Transceiver Modifications**: Be cautious when adding external components that might create unexpected feedback paths
+3. **Troubleshooting**: Use oscilloscopes to detect and analyze potential parasitic oscillation issues
+
+### Memory Aid:
+"**P**revent **O**scillations **W**ith **E**ffective **R**outing" (POWER) - Careful circuit design stops unwanted feedback.
+
+---
+
+## Key Takeaways
+
+- Parasitic oscillations are caused by unwanted positive feedback in electronic circuits
+- They represent unintentional signal generation that can degrade circuit performance
+- Careful circuit design, shielding, and component placement are critical in preventing these oscillations
+- Amateur radio operators must understand these principles when building or modifying equipment
+- Positive feedback creates self-sustaining signals, while negative feedback helps stabilize circuits
+
+---
+
+## Related Concepts to Explore:
+- **RF Feedback Suppression**: Techniques for controlling signal paths in high-frequency circuits
+- **Impedance Matching**: How proper impedance helps prevent signal reflections
+- **Circuit Stability Analysis**: Mathematical and practical approaches to predicting circuit behavior
+
+### Recommended Reading
+
+- ARRL Handbook: Chapter on RF Amplifier Design
+- "High Frequency Techniques" by Joseph F. White
+- YouTube: W2AEW Channel - Tutorials on RF Circuit Behavior and Oscillations

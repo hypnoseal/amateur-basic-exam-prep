@@ -1,0 +1,96 @@
+---
+id: "B-008-004-005"
+question: "If you are told your station was heard on 21.375 MHz but at the time you were operating on 7.125 MHz. What is one reason that could cause this to happen?"
+answers:
+  - text: "Your transmitter radiates harmonic signals"
+    correct: true
+    explanation: "When a transmitter generates harmonic signals, it creates additional frequency signals that are exact multiples of the fundamental frequency. In this case, 21.375 MHz is precisely three times the original 7.125 MHz operating frequency, indicating a third-order harmonic being radiated by the transmitter. These harmonics can be strong enough to be detected by other radio operators, potentially causing interference to other services or bands."
+  - text: "Your transmitter's power-supply filter choke is defective"
+    correct: false
+    explanation: "A defective power-supply filter choke would typically cause power supply noise or instability, but would not directly cause harmonic radiation. Power supply issues might affect transmitter performance, but they don't inherently create harmonic signals at precise mathematical multiples of the operating frequency."
+  - text: "You were sending CW too fast"
+    correct: false
+    explanation: "Transmission speed (such as CW keying rate) has no direct relationship to harmonic generation. The speed of Morse code transmission affects the timing of signals but does not create additional frequencies or harmonics in the transmitted signal."
+  - text: "Your transmitter's power-supply filter capacitor is defective"
+    correct: false
+    explanation: "A defective power-supply filter capacitor might cause power supply ripple or noise, but it would not systematically generate harmonic signals at precise mathematical multiples of the fundamental frequency. Power supply component failures typically result in different types of signal distortion."
+---
+
+# Understanding Harmonic Signals: The Invisible Radio Emissions
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What harmonic signals are and how they are generated
+- Why harmonics can cause unexpected radio interference
+- How to identify and prevent harmonic radiation
+- The mathematical relationship between fundamental and harmonic frequencies
+
+---
+
+## The Concept: Harmonic Signal Generation
+
+Harmonics are additional radio frequency signals that occur at exact mathematical multiples of a fundamental transmission frequency. When you transmit on one frequency, your transmitter can simultaneously generate weaker signals at 2x, 3x, 4x, and higher multiples of that original frequency.
+
+In electronic terms, harmonics result from non-linear behavior in transmitter circuits. Ideally, a transmitter would generate a pure sine wave at a single frequency. In reality, imperfections in electronic components cause the signal to become slightly distorted, creating these additional frequency components.
+
+### The Harmonic Math
+
+If you're transmitting on 7.125 MHz, potential harmonics would appear at:
+- Second Harmonic: 14.250 MHz
+- Third Harmonic: 21.375 MHz
+- Fourth Harmonic: 28.500 MHz
+
+Notice how the third harmonic (21.375 MHz) exactly matches the scenario in the exam question, demonstrating a classic harmonic generation pattern.
+
+---
+
+## Real-World Examples
+
+### ✅ Harmonic Generation Scenarios:
+- **Poorly Tuned Transmitters**: Amplifier stages that aren't correctly neutralized can generate strong harmonics
+- **Older Analog Transmitters**: Tube-based and early solid-state designs often had more prominent harmonic issues
+- **High-Power Operations**: Transmitting at higher power levels can increase harmonic radiation
+
+### ❌ Non-Harmonic Signal Behaviors:
+- **Receiver Image Frequencies**: Different phenomenon, not related to transmitter harmonics
+- **Intermodulation Distortion**: Another signal mixing issue, but not creating pure harmonic multiples
+- **Power Supply Noise**: Electrical noise that doesn't create mathematically precise additional frequencies
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Operators:
+1. **Use Low-Pass Filters**: Install filters that cut off frequencies above your operating band
+2. **Regular Equipment Maintenance**: Keep transmitters properly aligned and tuned
+3. **Monitor Your Signal**: Use spectrum analyzers or have other hams check your signal quality
+
+### Harmonic Suppression Techniques:
+1. **Proper Antenna Tuning**: Well-matched antennas reduce harmonic radiation
+2. **Low-Power Testing**: Start with lower power settings to minimize harmonic generation
+3. **Modern Transmitter Design**: Newer rigs have better harmonic suppression built-in
+
+### Memory Aid:
+"**H**armonics **H**appen **H**igher" - Harmonics appear at mathematically higher frequency multiples of your fundamental transmission.
+
+---
+
+## Key Takeaways
+
+- Harmonics are additional radio signals generated at precise mathematical multiples of your fundamental transmission frequency
+- A third-order harmonic (3x the original frequency) can be strong enough to be detected by other radio operators
+- Proper transmitter design, filtering, and maintenance help minimize harmonic radiation
+- Harmonics can potentially interfere with other radio services and amateur bands
+- Understanding harmonic generation is crucial for responsible spectrum management
+
+---
+
+## Related Concepts to Explore:
+- **Intermodulation Distortion**: Another form of unwanted signal generation
+- **Spectrum Analyzer Usage**: Tools for detecting and measuring harmonics
+- **Transmitter Linearity**: Electronic principles that minimize harmonic generation
+
+### Recommended Reading
+- ARRL Handbook: Sections on Transmitter Design and Harmonic Suppression
+- "Technical Topics in Amateur Radio" by Doug Smith, KD9CK
+- YouTube: W2AEW's channel for in-depth RF signal analysis tutorials

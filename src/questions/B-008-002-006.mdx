@@ -1,0 +1,91 @@
+---
+id: "B-008-002-006"
+question: "An amateur radio transmitter is being heard across the entire dial of a broadcast receiver. The receiver is most probably suffering from:"
+answers:
+  - text: "audio rectification"
+    correct: true
+    explanation: "Audio rectification occurs when the broadcast receiver's front-end circuitry becomes non-linear and effectively acts as an unintended detector or rectifier. This causes the strong radio frequency (RF) signal from the amateur transmitter to be converted directly into audio across multiple frequencies, creating the sensation of hearing the transmission across the entire receiver dial. It typically happens when the receiver's RF amplifier stages become overloaded by a very strong nearby signal."
+  - text: "harmonics interference"
+    correct: false
+    explanation: "While harmonics can cause interference, they typically appear at specific frequencies that are multiples of the fundamental frequency, not across the entire dial. Harmonics would cause discrete interference points rather than a widespread signal across all receiver frequencies."
+  - text: "poor image rejection"
+    correct: false
+    explanation: "Image rejection issues typically result in interference at specific, predictable frequencies related to the receiver's intermediate frequency (IF) design. They do not cause signals to be heard across the entire dial, but rather at specific mirror frequencies."
+  - text: "splatter from the transmitter"
+    correct: false
+    explanation: "Transmitter splatter would cause interference primarily near the transmitted frequency, not across the entire broadcast receiver dial. Splatter represents unwanted signal spreading adjacent to the main transmission frequency, not a uniform signal across all frequencies."
+---
+
+# Understanding Audio Rectification: When Strong Signals Overwhelm Receivers
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What audio rectification is and how it occurs
+- How receiver front-end circuitry can become non-linear
+- The difference between various types of radio frequency interference
+- How to prevent and mitigate audio rectification problems
+
+---
+
+## The Concept: Audio Rectification in Radio Systems
+
+Audio rectification is a phenomenon where a radio receiver's front-end electronics become so overloaded by a strong radio frequency signal that they begin to act like an unintended radio detector or rectifier. Unlike normal receiver operation, the non-linear electronic components start converting RF energy directly into audio signals across multiple frequencies.
+
+Modern radio receivers are designed with multiple amplification stages that are supposed to handle signals linearly. When an extremely strong signal from a nearby transmitter overwhelms these stages, the semiconductor junctions in transistors or diodes can start behaving like crude radio detectors, converting RF energy into audio signals in an unpredictable manner.
+
+### The Physics of Non-Linear Detection
+
+Electronic components like transistors have a designed operating range where they amplify signals uniformly. When pushed beyond this range by extremely strong signals, their internal junctions can create unintended rectification effects. This is similar to how early radio receivers used crystal diodes to convert radio waves directly into audible sounds.
+
+---
+
+## Real-World Examples
+
+### ✅ Audio Rectification Scenarios:
+- **Amateur Radio Near Broadcast Receiver**: A high-power amateur station transmitting close to a home radio
+- **Handheld Radio Near Consumer Electronics**: A mobile amateur radio transmitting near an unshielded radio or stereo
+- **Repeater Station Near Residential Electronics**: A high-power repeater causing interference in nearby homes
+
+### ❌ Scenarios That Are Not Audio Rectification:
+- **Harmonic Interference**: Discrete frequency-specific interference
+- **Normal Receiver Overload**: Temporary signal blocking without widespread audio generation
+- **Intentional Radio Detection**: Proper use of radio receivers and detectors
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Operators:
+1. **Maintain Proper Transmit Power**: Avoid extremely high power levels near sensitive electronics
+2. **Use RF Filtering**: Implement low-pass and band-pass filters to reduce spurious emissions
+3. **Consider Receiver Proximity**: Be aware of potential interference when operating near consumer electronics
+
+### For Interference Mitigation:
+1. **Use RF Chokes**: Install ferrite beads on interconnecting cables
+2. **Implement Proper Grounding**: Reduce common-mode current paths
+3. **Select Low-Power Transmission Modes**: Reduce potential for front-end overload
+
+### Memory Aid:
+"**S**trong **S**ignals **S**cramble Receivers" - Audio rectification happens when signals overwhelm receiver circuits.
+
+---
+
+## Key Takeaways
+
+- Audio rectification occurs when strong RF signals cause non-linear detection in receiver electronics
+- It results in hearing transmissions across the entire receiver dial, not just at specific frequencies
+- The phenomenon is more about receiver limitations than transmitter problems
+- Proper shielding, filtering, and power management can prevent audio rectification
+- Amateur radio operators must be aware of potential interference mechanisms
+
+---
+
+## Related Concepts to Explore:
+- **RF Interference Mechanisms**: Different ways radio signals can create unwanted interactions
+- **Receiver Design Principles**: How modern receivers handle strong signal environments
+- **Electromagnetic Compatibility**: Techniques for reducing unintended electronic interactions
+
+### Recommended Reading
+- ARRL Handbook: Receiver Design and Interference Chapters
+- "Electromagnetic Compatibility Handbook" by Kenneth Kaiser
+- YouTube: W2AEW Channel - Technical explanations of RF interference mechanisms

@@ -1,0 +1,92 @@
+---
+id: "B-002-001-005"
+question: "What is a CTCSS tone?"
+answers:
+  - text: "A sub-audible tone that activates a receiver audio output when present"
+    correct: true
+    explanation: "CTCSS (Continuous Tone-Coded Squelch System) is a sophisticated signaling technique that allows repeaters and radios to selectively open their audio circuits only when a specific low-frequency tone is detected. This sub-audible tone (typically between 67-250 Hz) is imperceptible to human hearing but provides an automated method of squelch control, effectively filtering out unwanted signals and reducing interference on shared repeater frequencies."
+  - text: "A tone used by repeaters to mark the end of a transmission"
+    correct: false
+    explanation: "This description mischaracterizes CTCSS. While CTCSS is used with repeaters, it's not a signaling method to mark transmission end. It's a continuous tone that controls receiver access, not a transmission termination indicator. Repeaters use other methods like courtesy tones or time-out timers to manage transmission endings."
+  - text: "A signal used for telemetry by amateur radio satellites"
+    correct: false
+    explanation: "CTCSS is a ground-based radio communication technique used primarily in terrestrial repeater systems, not a satellite telemetry signal. Satellites typically use different signaling methods for tracking, control, and data transmission, such as specific digital protocols or specialized frequency-shift keying techniques."
+  - text: "A signal used for radio control of model craft"
+    correct: false
+    explanation: "While radio control systems do use signaling techniques, CTCSS is specific to two-way radio communications, particularly repeater systems. Model control typically uses different frequency modulation and signaling methods designed for short-range, low-power control applications."
+---
+
+# CTCSS: The Silent Gatekeeper of Repeater Communications
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What CTCSS tones are and how they function
+- The role of sub-audible tones in amateur radio communications
+- How CTCSS improves repeater efficiency and reduces interference
+- The technical principles behind selective signaling systems
+
+---
+
+## The Concept: Selective Signaling with CTCSS
+
+Continuous Tone-Coded Squelch System (CTCSS) is an ingenious radio communication technology that allows multiple users to share the same frequency while maintaining communication privacy and reducing unwanted noise. Imagine a sophisticated electronic "secret handshake" that happens entirely below human hearing range.
+
+A CTCSS tone is a low-frequency audio signal, typically between 67 and 250 Hz, that is continuously transmitted along with the voice signal. This tone acts like an electronic key, telling repeaters and radios whether they should open their audio circuits or remain silent. Because these tones are below the normal human hearing range (20 Hz - 20 kHz), they're called "sub-audible" tones.
+
+### The Problem CTCSS Solves
+
+In shared radio environments like repeater systems, multiple stations might be operating on the same frequency. Without CTCSS, every transmission would cause every radio to open its squelch, creating constant background noise and potential interference. CTCSS allows radios to selectively ignore signals that don't carry their specific "key" tone.
+
+---
+
+## Real-World Examples
+
+### ✅ Effective CTCSS Applications:
+- **Local Repeater Management**: A repeater set to respond only to users with a specific 100 Hz tone
+- **Reduced Interference**: Urban areas with multiple overlapping repeater systems
+- **Privacy Channels**: Limiting radio traffic to specific user groups within the same frequency
+
+### ❌ Scenarios Where CTCSS Doesn't Apply:
+- **Simplex Communications**: Direct radio-to-radio contacts typically don't use CTCSS
+- **Emergency Communications**: During emergency nets, CTCSS might be disabled to ensure maximum accessibility
+- **Satellite Communications**: Different signaling methods are used in space-based communications
+
+---
+
+## Practical Applications
+
+### For Repeater Users:
+1. **Tone Selection**: Choose a unique CTCSS tone that matches your local repeater's configuration
+2. **Interference Reduction**: Understand how CTCSS helps minimize unintended radio activations
+3. **Privacy Considerations**: Recognize that CTCSS provides minimal security, not true encryption
+
+### For Radio Programming:
+1. **Tone Setting**: Ensure your radio is programmed with the correct receive and transmit CTCSS tones
+2. **Tone Scanning**: Some radios can automatically detect and match repeater tones
+3. **Tone-Squelch vs. Carrier-Squelch**: Understand the difference in signal detection methods
+
+### Memory Aid:
+"**S**ilent **T**ones **O**pen **P**orts" (STOP) - CTCSS tones silently control radio receiver access.
+
+---
+
+## Key Takeaways
+
+- CTCSS is a sub-audible tone system that selectively activates radio receivers
+- Tones typically range between 67-250 Hz and are inaudible to human hearing
+- CTCSS helps manage shared radio frequencies by reducing unwanted noise and interference
+- It provides a basic level of channel access control, not true encryption
+- Amateur radio operators use CTCSS primarily on repeater systems to improve communication efficiency
+
+---
+
+## Related Concepts to Explore:
+- **Digital Signaling**: Modern digital radio technologies like DMR and D-STAR
+- **Interference Mitigation**: Techniques for managing shared radio spectrum
+- **Repeater Technologies**: Advanced repeater access and management systems
+
+### Recommended Reading
+
+- ARRL Handbook - Section on Repeater Technologies
+- "Introduction to Repeater Systems" by W4RT Publications
+- YouTube: "CTCSS Explained" by Ham Radio Crash Course

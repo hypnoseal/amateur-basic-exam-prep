@@ -1,0 +1,95 @@
+---
+id: "B-005-008-005"
+question: "If a signal transmitted with a power of 150 watts is received with an S-meter reading of \"20 dB over S9,\" what would be the new reading if power was reduced to 15 watts?"
+answers:
+  - text: "S9 plus 10 dB"
+    correct: true
+    explanation: "Power reduction follows a logarithmic relationship where each 3 dB reduction represents a 50% power decrease. From 150 watts to 15 watts is approximately a 10 dB reduction. Therefore, the S-meter reading would decrease by 10 dB, from 20 dB over S9 to 10 dB over S9."
+  - text: "S9 plus 5 dB"
+    correct: false
+    explanation: "This answer incorrectly assumes a linear relationship between power and signal strength. The decibel scale is logarithmic, meaning a 5 dB reduction does not precisely match the power reduction from 150 watts to 15 watts."
+  - text: "S9 plus 3 dB"
+    correct: false
+    explanation: "A 3 dB reduction represents a 50% power decrease, which is not consistent with the change from 150 watts to 15 watts. This answer significantly underestimates the signal strength reduction."
+  - text: "S9"
+    correct: false
+    explanation: "This answer fails to account for the logarithmic nature of signal strength measurements. A power reduction from 150 watts to 15 watts would result in a measurable decrease in S-meter reading, not a return to the base S9 level."
+---
+
+# Understanding Signal Strength and Power Reduction: The Logarithmic Nature of RF Signals
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How decibel (dB) measurements relate to power levels
+- The logarithmic relationship between transmitted power and signal strength
+- How to calculate signal strength changes using the decibel scale
+- The practical implications of power reduction in amateur radio communications
+
+---
+
+## The Concept: Decibels and Signal Strength Measurement
+
+The S-meter in amateur radio uses a logarithmic scale to represent signal strength, which means that each step represents a multiplicative change rather than an additive one. The base unit, S9, represents a standard signal strength, with each additional decibel (dB) representing a significant increase in received signal power.
+
+A fundamental principle of radio communications is that signal strength follows a logarithmic relationship with transmitted power. Specifically, every 3 dB change represents approximately a 50% change in power. This means that reducing power is not a linear process - small changes in watts can result in measurable differences in signal strength.
+
+### The Logarithmic Power Calculation
+
+When comparing 150 watts to 15 watts, we can calculate the power ratio:
+- 150 watts ÷ 15 watts = 10
+- 10 as a logarithmic value is 10 * log10(10) = 10 dB
+
+This means a reduction from 150 watts to 15 watts results in a 10 dB decrease in signal strength.
+
+---
+
+## Real-World Examples
+
+### ✅ Power Reduction Scenarios:
+- **150W to 15W**: 10 dB reduction
+- **100W to 10W**: Approximately 10 dB reduction
+- **50W to 5W**: Approximately 10 dB reduction
+
+### ❌ Incorrect Power Reduction Assumptions:
+- Thinking 50% power reduction equals 3 dB (actually correct, but not for this specific scenario)
+- Assuming linear relationship between watts and signal strength
+- Believing small power changes have negligible impact on received signal
+
+---
+
+## Practical Applications
+
+### For Mobile and Portable Operations:
+1. **Battery Conservation**: Understanding power reduction helps operators manage transmit power for maximum battery efficiency
+2. **Signal Management**: Allows precise control of transmitted signal strength in different operating conditions
+3. **Interference Reduction**: Demonstrates how reducing power can minimize potential RFI (Radio Frequency Interference)
+
+### For Different Communication Scenarios:
+1. **Local Contacts**: Lower power often sufficient for nearby stations
+2. **DX (Long Distance) Communication**: Requires careful power management
+3. **Emergency Communications**: Power efficiency becomes critical when resources are limited
+
+### Memory Aid:
+"**P**ower **D**rops **D**ramatically" - Every 10 dB is a 90% power reduction!
+
+---
+
+## Key Takeaways
+
+- Signal strength follows a logarithmic, not linear, relationship with transmitted power
+- Reducing 150 watts to 15 watts results in a 10 dB signal strength reduction
+- S-meter readings use a logarithmic scale where each step represents a significant power change
+- Understanding decibel calculations is crucial for effective amateur radio operation
+- Power reduction has predictable and measurable impacts on received signal strength
+
+---
+
+## Related Concepts to Explore:
+- **Antenna Gain and Signal Strength**: How antenna design affects effective radiated power
+- **Propagation Effects**: How different frequencies and conditions impact signal transmission
+- **Power Regulations**: ISED limits on amateur radio transmitter power output
+
+### Recommended Reading
+- ARRL Handbook: Chapter on RF Fundamentals
+- "The ARRL Antenna Book" - Detailed explanations of signal propagation
+- Online Calculator: Decibel and Power Ratio Conversion Tools

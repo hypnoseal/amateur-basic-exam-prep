@@ -1,0 +1,97 @@
+---
+id: "B-008-005-010"
+question: "Your 2-metre station suffers receiver overload from several land mobile service transmitters on adjacent bands. What type of filter could help?"
+answers:
+  - text: "Band-pass"
+    correct: true
+    explanation: "A band-pass filter is the ideal solution for preventing receiver overload from adjacent band transmitters because it allows only signals within a specific frequency range (in this case, the 2-metre amateur band) to pass through while attenuating signals outside that range. This targeted filtering prevents strong signals from nearby frequency bands from overwhelming the receiver's front-end circuitry, improving selectivity and reducing intermodulation and desensitization issues."
+  - text: "Low-pass"
+    correct: false
+    explanation: "A low-pass filter would only block frequencies above a certain point, which wouldn't effectively address interference from adjacent band transmitters. In a 2-metre station scenario, this type of filter would not provide the precise frequency discrimination needed to reject specific out-of-band signals that are causing receiver overload."
+  - text: "High-pass"
+    correct: false
+    explanation: "High-pass filters block frequencies below a certain point and would not provide the necessary protection against adjacent band interference in a 2-metre station. These filters would allow signals from the problematic nearby transmitters to pass through, potentially continuing to cause receiver overload."
+  - text: "Notch"
+    correct: false
+    explanation: "A notch filter is designed to eliminate a very specific, narrow frequency, whereas the problem described involves broader adjacent band interference. While notch filters are useful for removing single-frequency interference, they would not effectively protect against multiple strong signals from nearby frequency bands that are causing receiver overload."
+---
+
+# Receiver Protection: Understanding Band-Pass Filters in VHF Communications
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The purpose and function of different types of radio filters
+- How band-pass filters protect amateur radio receivers
+- The challenges of interference in dense radio frequency environments
+- Practical strategies for improving receiver performance
+
+---
+
+## The Concept: Selective Signal Filtering
+
+A **band-pass filter** is an electronic device that allows signals within a specific frequency range to pass through while attenuating (reducing the strength of) signals outside that range. In amateur radio, these filters act like precision gates, carefully controlling which electromagnetic signals can enter your receiver.
+
+For 2-metre amateur radio operations (typically 144-148 MHz), the surrounding frequency spectrum is often crowded with other radio services like land mobile radio, public safety communications, and commercial two-way radio systems. These adjacent band transmitters can generate strong signals that overwhelm or "overload" a receiver's front-end circuitry, causing performance degradation.
+
+### The Science of Receiver Overload
+
+When a receiver experiences overload, strong out-of-band signals can:
+- Compress the receiver's dynamic range
+- Create spurious responses
+- Generate intermodulation products
+- Reduce overall receiver sensitivity
+
+A band-pass filter strategically placed at the receiver's input can prevent these issues by providing frequency-specific protection.
+
+---
+
+## Real-World Examples
+
+### ✅ Effective Band-Pass Filter Applications:
+- **Urban Repeater Sites**: Filtering out commercial radio signals that might interfere with amateur communications
+- **Fixed Station Installations**: Protecting sensitive receivers in areas with multiple radio services
+- **Portable/Mobile Operations**: Improving receiver performance in RF-dense environments
+
+### ❌ Ineffective Filtering Approaches:
+- **Broad-Spectrum Filtering**: Using filters that are too wide or too narrow
+- **No Filtering**: Leaving the receiver completely exposed to adjacent band signals
+- **Inappropriate Filter Types**: Using filters that don't match the specific interference characteristics
+
+---
+
+## Practical Applications
+
+### For 2-Metre Station Setup:
+1. **Filter Selection**: Choose a band-pass filter specifically designed for the 2-metre amateur band
+2. **Placement**: Install the filter between the antenna and receiver for maximum protection
+3. **Performance Verification**: Use a spectrum analyzer or signal generator to test filter effectiveness
+
+### For Different Operating Scenarios:
+1. **Repeater Sites**: Use more sophisticated multi-stage band-pass filtering
+2. **Mobile Operations**: Select compact, rugged band-pass filters
+3. **Portable Contests**: Employ switchable or adjustable band-pass filters
+
+### Memory Aid:
+"**B**and **P**ass **P**rotects **P**erfectly" - Band-pass filters preserve your receiver's performance!
+
+---
+
+## Key Takeaways
+
+- Band-pass filters provide targeted protection against adjacent band interference
+- These filters allow only signals within a specific frequency range to enter the receiver
+- Proper filtering prevents receiver overload, intermodulation, and desensitization
+- Different filter types serve different purposes in radio communications
+- Careful filter selection is critical for maintaining receiver performance in complex RF environments
+
+---
+
+## Related Concepts to Explore:
+- **Receiver Dynamic Range**: How filtering improves overall receiver performance
+- **Intermodulation Distortion**: Mechanisms of signal interference
+- **RF Front-End Design**: Principles of receiver input stage protection
+
+### Recommended Reading
+- ARRL Handbook: Receiver Design and Filtering Techniques
+- "Understanding Modern Antennas and Filters" by Richard Q. Marris
+- YouTube: W2AEW Channel - Advanced RF Filtering Techniques

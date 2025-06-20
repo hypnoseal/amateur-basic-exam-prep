@@ -1,0 +1,91 @@
+---
+id: "B-003-008-001"
+question: "If a linear power supply provides overvoltage protection, where is the voltage monitored?"
+answers:
+  - text: "At the output of the regulator"
+    correct: true
+    explanation: "Voltage monitoring at the output of the regulator allows the most precise and responsive overvoltage protection mechanism. The voltage regulator is the final active component that controls the power supply's output, so monitoring here enables immediate detection and correction of voltage variations before they can potentially damage connected equipment. This location provides the most direct and accurate representation of the actual voltage being supplied to the load."
+  - text: "At the output of the filter"
+    correct: false
+    explanation: "Monitoring at the filter output would be too late in the power supply circuit to provide effective overvoltage protection. By this point, any voltage spike or excess voltage would have already passed through the filtering stage, potentially causing damage to downstream components. The filter is a passive component designed to smooth out ripples, not to provide active voltage regulation or protection."
+  - text: "At the input of the rectifier"
+    correct: false
+    explanation: "Monitoring voltage at the rectifier input would occur at the transformer secondary stage, which is too early in the power supply circuit to provide meaningful overvoltage protection. At this point, the voltage is still alternating current (AC) and has not yet been converted to the regulated direct current (DC) required by electronic devices. Any protection mechanism here would be ineffective for protecting the final DC output."
+  - text: "At the input of the transformer"
+    correct: false
+    explanation: "Monitoring voltage at the transformer input is far too early in the power supply circuit to provide any meaningful overvoltage protection for the output. This location is before the power conversion process begins and would not give any indication of the actual voltage being supplied to the final load. Additionally, any protection mechanism here would not prevent voltage variations that occur during the power conversion process."
+---
+
+# Linear Power Supply Overvoltage Protection: Understanding Voltage Monitoring
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The basic architecture of a linear power supply
+- How overvoltage protection works in electronic circuits
+- The critical importance of monitoring voltage at the right point in a power supply
+- The role of voltage regulators in maintaining stable output
+
+---
+
+## The Concept: Linear Power Supply Voltage Regulation
+
+A linear power supply is an electronic circuit that converts alternating current (AC) from a wall outlet into stable, regulated direct current (DC) suitable for powering electronic devices. The process involves several key stages: transformer, rectification, filtering, and voltage regulation.
+
+**Voltage regulation** is the process of maintaining a constant output voltage despite variations in input voltage or load conditions. In a linear power supply, the **voltage regulator** is the critical component responsible for maintaining a stable, precise output voltage. This component actively adjusts its internal resistance to keep the output voltage constant, acting like a sophisticated electronic valve that controls electrical flow.
+
+### The Protection Mechanism
+
+Overvoltage protection is a safety feature designed to prevent damage to electronic equipment by detecting and responding to voltage levels that exceed the intended operating range. Just like a pressure relief valve on a steam engine, the overvoltage protection circuit must be positioned where it can most effectively detect and respond to dangerous voltage conditions.
+
+---
+
+## Real-World Examples
+
+### ✅ Effective Overvoltage Protection Strategies:
+- **Precision Voltage Monitoring**: Monitoring directly at the regulator output provides immediate detection of voltage variations
+- **Rapid Response Circuits**: Modern voltage regulators can instantly disconnect or limit power if voltage exceeds safe thresholds
+- **Integrated Protection**: Many modern voltage regulators have built-in overvoltage and overcurrent protection mechanisms
+
+### ❌ Ineffective Voltage Monitoring Locations:
+- **Transformer Input**: Too early to detect actual output voltage variations
+- **Rectifier Stage**: Voltage is still in AC form, making protection meaningless
+- **Filter Output**: Changes have already propagated through the circuit
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Equipment:
+1. **Power Supply Protection**: Ensures your expensive transceivers and amplifiers are protected from voltage spikes
+2. **Consistent Performance**: Maintains stable voltage critical for sensitive RF circuits
+3. **Longevity of Equipment**: Prevents damage from unexpected voltage fluctuations
+
+### For Electronic Design:
+1. **Real-Time Monitoring**: Place protection circuits where they can most quickly respond to changes
+2. **Cascaded Protection**: Use multiple monitoring points for redundant safety
+3. **Component Selection**: Choose regulators with built-in protection features
+
+### Memory Aid:
+"**R**egulator **R**ules" - At the Regulator's output, voltage monitoring provides the most **R**eliable **R**egulation.
+
+---
+
+## Key Takeaways
+
+- Overvoltage protection in a linear power supply is most effective when monitoring occurs at the output of the voltage regulator
+- The voltage regulator is the final active component that controls the power supply's output voltage
+- Monitoring too early in the power supply circuit (transformer, rectifier, filter) fails to provide meaningful protection
+- Precise voltage monitoring enables rapid detection and correction of potentially damaging voltage variations
+- Understanding power supply architecture is crucial for maintaining the reliability of electronic equipment
+
+---
+
+## Related Concepts to Explore:
+- **Voltage Regulation Techniques**: Different approaches to maintaining stable voltage
+- **Switching vs. Linear Power Supplies**: Comparative protection mechanisms
+- **Thermal Management in Power Supplies**: How temperature affects voltage regulation
+
+### Recommended Reading
+- ARRL Handbook: Power Supply Design Chapter
+- "Practical Electronics for Inventors" by Scherz and Monk
+- Online Course: Basic Electronics - Power Supply Design on EdX

@@ -1,0 +1,92 @@
+---
+id: "B-005-009-005"
+question: "You are constructing an air-core inductor using a coil of wire. What parameters determine its inductance?"
+answers:
+  - text: "Coil diameter, coil length and number of turns of wire"
+    correct: true
+    explanation: "These three parameters directly influence the inductance of an air-core inductor through fundamental electromagnetic principles. The coil diameter affects the magnetic field strength, the coil length determines the magnetic flux path, and the number of turns determines how many times the magnetic field is reinforced, collectively determining the inductor's ability to store and transfer magnetic energy."
+  - text: "Coil diameter, coil length and operating frequency"
+    correct: false
+    explanation: "While operating frequency affects an inductor's reactance, it does not determine the inductor's base inductance. The base inductance is established by the physical parameters of diameter, length, and number of turns. Frequency impacts how the inductor behaves in a circuit, but is not a parameter of its inherent inductance."
+  - text: "Type of wire, coil length and number of turns of wire"
+    correct: false
+    explanation: "While wire type can affect resistance and other electrical characteristics, it is not a primary determinant of inductance. The wire's diameter and material properties might marginally influence inductance, but the key parameters remain coil diameter, length, and number of turns."
+  - text: "Coil diameter, coil orientation and number of turns of wire"
+    correct: false
+    explanation: "Coil orientation does not significantly impact inductance. While proper orientation can minimize external magnetic interference, the fundamental inductance is determined by coil diameter, length, and number of turns. Orientation might affect coupling with nearby components but does not change the inductor's inherent inductance."
+---
+
+# Air-Core Inductors: Understanding Electromagnetic Design Parameters
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How physical geometry determines an inductor's electrical characteristics
+- The relationship between coil dimensions and magnetic field strength
+- The fundamental principles of electromagnetic induction in air-core coils
+- Practical considerations for designing inductors in amateur radio circuits
+
+---
+
+## The Concept: Inductor Geometry and Magnetic Fields
+
+An inductor is an electrical component that stores energy in a magnetic field when electric current flows through it. In an air-core inductor, the coil is wound around a non-magnetic form, allowing the magnetic field to develop primarily within the wire windings themselves.
+
+The inductance of such a coil depends on three critical geometric parameters: **coil diameter**, **coil length**, and **number of turns**. These parameters interact to create a magnetic field with specific energy storage and transfer characteristics. Imagine the inductor as a sort of "magnetic amplifier" where each turn of wire contributes to building and concentrating the magnetic field.
+
+### The Physics Behind Inductance
+
+When electric current flows through a wire, it creates a circular magnetic field around that wire. By coiling the wire, these individual magnetic fields align and reinforce each other, creating a stronger, more concentrated magnetic field. The geometry of this coil directly determines how effectively these magnetic fields combine.
+
+---
+
+## Real-World Examples
+
+### ✅ Inductor Design Principles:
+- **Small Diameter, Many Turns**: Creates a compact, high-inductance coil with concentrated magnetic field
+- **Large Diameter, Few Turns**: Creates a lower-inductance coil with more dispersed magnetic field
+- **Longer Coil**: Increases magnetic flux path, potentially increasing inductance
+
+### ❌ Misconceptions About Inductor Design:
+- **Frequency Doesn't Determine Base Inductance**: Operating frequency affects circuit behavior, not the fundamental inductance
+- **Wire Type is Secondary**: While important for resistance, wire type minimally impacts pure inductance
+- **Orientation Matters Little**: Coil orientation doesn't significantly change inherent inductance
+
+---
+
+## Practical Applications
+
+### For Circuit Design:
+1. **Calculating Inductance**: Use standard formulas that incorporate diameter, length, and turns
+2. **Selecting Coil Parameters**: Match inductor design to specific circuit requirements
+3. **Minimizing Unwanted Effects**: Understand how coil geometry impacts circuit performance
+
+### For Amateur Radio Construction:
+1. **Impedance Matching**: Design inductors to provide specific impedance transformations
+2. **Filter Design**: Create precise inductors for RF filtering applications
+3. **Antenna Matching Networks**: Build custom inductors for optimal antenna performance
+
+### Memory Aid:
+"**D-L-T**: **D**iameter, **L**ength, **T**urns - The Magic Triangle of Inductance!"
+
+---
+
+## Key Takeaways
+
+- Inductance is primarily determined by coil diameter, length, and number of turns
+- Increasing turns increases inductance proportionally
+- Larger diameter generally increases inductance
+- Longer coils can increase magnetic flux and therefore inductance
+- Understanding inductor geometry helps design more effective radio frequency circuits
+
+---
+
+## Related Concepts to Explore:
+- **Magnetic Permeability**: How core materials affect inductor characteristics
+- **Skin Effect**: How high-frequency currents distribute in inductor windings
+- **Q Factor**: Measuring inductor quality and efficiency
+
+### Recommended Reading
+
+- ARRL Handbook: Chapter on Inductors and Transformers
+- "Electromagnetic Induction in Circuit Design" by Paul Horowitz
+- Online Calculator: Inductor Design and Calculation Tools

@@ -1,0 +1,95 @@
+---
+id: "B-003-019-008"
+question: "You are using an HF off-centre-fed (OCF) unbalanced antenna. When you transmit on SSB, distorted audio and noise are heard from an outboard amplified speaker. What device could you install in the transmission line to mitigate this problem?"
+answers:
+  - text: "A common-mode choke"
+    correct: true
+    explanation: "A common-mode choke is specifically designed to suppress unwanted common-mode currents that travel along the outside of coaxial cable shields. In an unbalanced antenna like an OCF, these currents can cause RF to couple into station equipment, resulting in audio distortion, noise, and potential interference. By blocking these currents, the common-mode choke prevents RF from entering audio systems and other sensitive electronics."
+  - text: "A low-pass filter"
+    correct: false
+    explanation: "While low-pass filters are excellent for blocking high-frequency harmonics, they do not address the specific problem of common-mode RF currents causing audio system interference. Low-pass filters work by attenuating frequencies above a certain threshold, but they cannot stop RF currents flowing on the outside of coaxial cable shields."
+  - text: "A surge suppressor"
+    correct: false
+    explanation: "Surge suppressors are designed to protect equipment from voltage spikes and electrical storms, not to mitigate RF interference. They cannot block common-mode currents that are causing audio distortion in this scenario. While important for electrical safety, they do not solve RF coupling issues in radio systems."
+  - text: "An antenna tuner"
+    correct: false
+    explanation: "An antenna tuner matches impedance between the transmitter and antenna to maximize power transfer, but it does not prevent common-mode currents from traveling along the coaxial cable shield. While important for efficient transmission, an antenna tuner cannot stop RF from coupling into audio equipment and causing distortion."
+---
+
+# Common-Mode Chokes: Taming Unwanted RF in Amateur Radio Stations
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What common-mode currents are and how they cause interference
+- How common-mode chokes suppress unwanted RF in transmission lines
+- The difference between common-mode and differential-mode signals
+- Practical techniques for reducing RF interference in amateur radio stations
+
+---
+
+## The Concept: Understanding Common-Mode Currents
+
+In radio frequency transmission, signals typically travel along a transmission line with two distinct paths: the **differential mode** (the intended signal path between center conductor and return path) and the **common-mode** (unwanted currents flowing on the outside of the cable shield).
+
+An unbalanced antenna like an Off-Centre-Fed (OCF) dipole is particularly susceptible to common-mode currents. These currents can act like an additional, unintended antenna, radiating RF energy into your station's equipment. When this happens, RF can couple into audio systems, computer interfaces, and other sensitive electronics, causing noise, distortion, and potential damage.
+
+### The Physics of RF Coupling
+
+Common-mode currents occur when the cable shield becomes an unintended conductor, carrying RF energy away from its designed path. This happens due to:
+- Antenna system imbalance
+- Improper grounding
+- Asymmetrical feed arrangements
+- Unintended ground current paths
+
+---
+
+## Real-World Examples
+
+### ✅ Successful Common-Mode Current Mitigation:
+- **Choke Installation**: Adding a common-mode choke near the antenna feedpoint reduces RF on the cable shield
+- **Balanced Feed Techniques**: Using current baluns to create symmetrical signal paths
+- **Proper Grounding**: Establishing a single, low-impedance ground point for station equipment
+
+### ❌ Common Interference Scenarios:
+- **Audio Distortion**: RF entering audio amplifier causing buzzing and noise
+- **Computer Interface Problems**: USB interfaces experiencing erratic behavior
+- **Microphone Instability**: Unexpected RF pickup causing microphone malfunction
+
+---
+
+## Practical Applications
+
+### For HF Station Setup:
+1. **Choke Construction**: Create a common-mode choke by winding coaxial cable in multiple turns through a ferrite toroid
+2. **Placement Strategy**: Install chokes near antenna feedpoint and at station entry points
+3. **Multiple Choke Approach**: Use several chokes at different points in the transmission line for maximum suppression
+
+### For Different Antenna Types:
+1. **Unbalanced Antennas**: Critical to use common-mode chokes to prevent shield currents
+2. **Balanced Antennas**: Still benefit from common-mode choke, but require less aggressive implementation
+3. **Multiband Installations**: Choose ferrite cores with wide frequency response
+
+### Memory Aid:
+"**C**hoke **C**uts **C**haos" - Common-mode chokes control unwanted RF currents.
+
+---
+
+## Key Takeaways
+
+- Common-mode currents are unwanted RF signals traveling on cable shields
+- Unbalanced antennas like OCF dipoles are particularly susceptible to these currents
+- Common-mode chokes suppress these currents by creating high impedance for shield-flowing signals
+- Proper choke installation can dramatically reduce station interference and audio distortion
+- Understanding and managing common-mode currents is crucial for clean, interference-free amateur radio operations
+
+---
+
+## Related Concepts to Explore:
+- **Baluns and Transmission Line Theory**: How signal balance affects RF propagation
+- **Ferrite Material Selection**: Choosing the right cores for different frequency ranges
+- **Station Grounding Techniques**: Comprehensive approaches to minimizing RF interference
+
+### Recommended Reading
+- ARRL Antenna Book - Chapter on Transmission Line Techniques
+- "Understanding RF Interference" by Joel Hallas, W1ZR
+- DX Engineering Technical Resources on Common-Mode Chokes

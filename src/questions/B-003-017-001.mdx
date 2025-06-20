@@ -1,0 +1,93 @@
+---
+id: "B-003-017-001"
+question: "You construct a simple DC power supply using a transformer, rectifier and filter capacitor. If you use the supply to power a CW transmitter, what problem with signal quality could it cause?"
+answers:
+  - text: "Chirp"
+    correct: true
+    explanation: "Chirp occurs when the transmitter's frequency shifts slightly during a CW transmission due to power supply voltage variations. In a simple, poorly filtered DC power supply, the voltage can fluctuate as the filter capacitor discharges between rectifier cycles, causing small but detectable frequency variations in the transmitted signal. These rapid frequency shifts create an audible 'chirp' sound when the signal is received, indicating instability in the transmitter's oscillator circuit."
+  - text: "Key clicks"
+    correct: false
+    explanation: "Key clicks are caused by abrupt switching of the transmitter's RF output, typically resulting from too-sharp rise and fall times when keying the transmitter. They are a result of rapid signal transitions, not power supply voltage fluctuations. Key clicks create spurious signals in adjacent frequencies and are typically addressed through keying circuit design and rise-time shaping."
+  - text: "Harmonics"
+    correct: false
+    explanation: "Harmonics are additional frequency components that are integer multiples of the fundamental transmission frequency. While power supply issues can contribute to harmonic generation, they are not directly caused by the type of voltage fluctuations described in this scenario. Harmonics are more related to non-linear amplification and circuit design rather than power supply filtering."
+  - text: "Overmodulation"
+    correct: false
+    explanation: "Overmodulation occurs when the amplitude of a modulated signal exceeds its designed limits, typically in voice or AM modes. This is not related to the power supply issues described in a CW transmitter, which operates with on-off keying rather than amplitude modulation. Overmodulation causes signal distortion in voice modes but is not applicable to CW transmission."
+---
+
+# Understanding Power Supply Stability and CW Transmission: The Chirp Phenomenon
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What causes frequency variations in CW transmissions
+- The relationship between power supply design and signal stability
+- How filter capacitors impact electronic circuit performance
+- The importance of clean power in amateur radio transmission
+
+---
+
+## The Concept: Power Supply Stability and Signal Quality
+
+A **chirp** in amateur radio represents an unwanted frequency variation during continuous wave (CW) transmission. This occurs when the transmitter's oscillator experiences slight frequency shifts due to unstable power supply voltage. In essence, the power supply becomes more than just an electrical source—it becomes a potential source of signal distortion.
+
+In a simple DC power supply, the process involves multiple stages: transformer step-down, rectification, and filtering. The filter capacitor plays a crucial role in smoothing voltage variations. However, in basic designs, this capacitor can discharge between rectifier cycles, causing momentary voltage drops that destabilize the transmitter's oscillator frequency.
+
+### The Physics of Voltage and Frequency
+
+Think of the transmitter's oscillator like a musical instrument string. Just as a string's vibration depends on its tension, an oscillator's frequency depends on its operating voltage. When voltage fluctuates, the oscillator's "tension" changes slightly, producing minute frequency shifts—the chirp.
+
+---
+
+## Real-World Examples
+
+### ✅ Scenarios Demonstrating Chirp:
+- **Simple Transformer Rectifier**: Using a basic bridge rectifier with minimal filtering
+- **Low-Capacity Filter Capacitor**: When the capacitor cannot maintain stable voltage between rectification cycles
+- **Older Vintage Transmitters**: Many classic amateur radio designs were prone to chirp before advanced voltage regulation
+
+### ❌ Designs That Minimize Chirp:
+- **Regulated Power Supplies**: Using voltage regulator circuits to maintain constant voltage
+- **Switching Power Supplies**: Modern designs with rapid, stable voltage conversion
+- **High-Capacitance Filtering**: Using larger capacitors to smooth voltage variations
+
+---
+
+## Practical Applications
+
+### For CW Transmitter Design:
+1. **Use Larger Filter Capacitors**: Increase capacitance to reduce voltage ripple
+2. **Implement Voltage Regulation**: Add voltage regulator ICs for stable output
+3. **Consider Switching Power Supplies**: Modern designs offer superior stability
+4. **Use Separate Oscillator Regulation**: Provide dedicated, stable voltage to critical circuits
+
+### For Signal Quality Improvement:
+1. **Measure Chirp**: Use receiver beat frequency or spectrum analyzer
+2. **Compare Power Supply Designs**: Evaluate different filtering approaches
+3. **Monitor Voltage Stability**: Use oscilloscope to visualize power supply performance
+
+### Memory Aid:
+"**C**apacitor **H**elps **I**solate **R**ipple **P**ower" - CHIRP explained!
+
+---
+
+## Key Takeaways
+
+- Chirp results from frequency variations caused by unstable power supply voltage
+- Simple DC power supplies with minimal filtering are most prone to chirp
+- Filter capacitor discharge between rectification cycles causes voltage instability
+- Modern power supply designs use regulation and switching techniques to minimize chirp
+- Signal stability is critical in amateur radio, especially for precise modes like CW
+- Understanding power supply design helps create cleaner, more reliable transmissions
+
+---
+
+## Related Concepts to Explore:
+- **Voltage Regulation Techniques**: Advanced power supply design
+- **Oscillator Stability**: Circuit design for frequency precision
+- **RF Signal Purity**: Factors affecting transmission quality
+
+### Recommended Reading
+- ARRL Handbook: Power Supply Design Chapter
+- "Experimental Methods in RF Design" by Wes Hayward
+- YouTube: Dave Casler's Power Supply Design Series

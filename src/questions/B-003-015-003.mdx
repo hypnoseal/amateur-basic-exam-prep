@@ -1,0 +1,91 @@
+---
+id: "B-003-015-003"
+question: "What is the function of a digipeater?"
+answers:
+  - text: "To receive digital data and retransmit data marked for retransmission"
+    correct: true
+    explanation: "A digipeater acts as a digital repeater in packet radio networks, specifically designed to receive digital data packets and forward (retransmit) those packets that are explicitly addressed or 'marked' for further transmission. This allows packet radio messages to extend beyond the direct communication range of the original transmitting station by creating a network of relay points."
+  - text: "To receive digital data and export to the internet"
+    correct: false
+    explanation: "While some modern packet radio systems can interface with internet networks, a basic digipeater's primary function is to retransmit digital radio packets within the amateur radio network, not to directly export data to the internet. Internet gateways are a separate function from basic digipeater operations."
+  - text: "To receive analog FM, convert to digital data and retransmit"
+    correct: false
+    explanation: "This description reverses the typical digipeater function. Digipeaters are designed to work with already-digital packet radio signals, not to convert analog FM signals to digital data. Signal conversion would require additional complex processing that is not the standard digipeater function."
+  - text: "To receive digital data, convert to analog FM and retransmit"
+    correct: false
+    explanation: "This description is incorrect. Digipeaters work exclusively with digital data packets in packet radio networks. Converting digital data back to analog FM would defeat the purpose of digital packet radio communication and is not a standard digipeater function."
+---
+
+# Digipeaters: Digital Packet Radio Relay Stations
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The fundamental role of digipeaters in amateur radio networks
+- How digital packet radio communication extends communication range
+- The technical principles behind packet radio routing
+- The importance of digipeaters in emergency and long-distance communication
+
+---
+
+## The Concept: Digital Packet Radio Networking
+
+A **digipeater** (digital packet repeater) is a specialized radio station that receives digital data packets and retransmits them to extend the communication range of amateur radio networks. Unlike traditional voice repeaters, digipeaters work exclusively with digital data, allowing complex routing of messages across wide geographic areas.
+
+Packet radio uses digital communication protocols where information is broken into small "packets" with addressing information. These packets can be passed through multiple digipeaters, creating a network where messages can travel far beyond the direct transmission range of the original radio station.
+
+### How Digipeaters Work
+
+When a packet radio station sends a message, it includes a list of digipeater callsigns in the packet's transmission path. Each digipeater in the list receives the packet, checks if it's addressed to relay that specific packet, and then retransmits it to the next station or digipeater in the sequence.
+
+---
+
+## Real-World Examples
+
+### ✅ Effective Digipeater Scenarios:
+- **Emergency Communication**: Sending health and location data from a remote wilderness area through multiple relay points
+- **Amateur Radio Messaging**: Transmitting text messages across regions with limited direct radio contact
+- **Event Coordination**: Providing communication infrastructure for large outdoor events with complex communication needs
+
+### ❌ Inappropriate Digipeater Uses:
+- **Voice Transmission**: Digipeaters are not designed for analog voice communication
+- **Direct Internet Export**: Basic digipeaters don't automatically connect to internet networks
+- **Unaddressed Packet Forwarding**: Packets must be specifically marked for retransmission
+
+---
+
+## Practical Applications
+
+### For Packet Radio Operators:
+1. **Path Planning**: Carefully design packet routes using known digipeater locations
+2. **Callsign Management**: Understand how to properly address packets for multi-hop transmission
+3. **Network Topology**: Map available digipeater networks in your region
+
+### For Network Design:
+1. **Range Extension**: Create communication networks spanning hundreds of kilometers
+2. **Redundancy**: Design routes with multiple potential paths
+3. **Low-Bandwidth Communication**: Enable messaging in bandwidth-constrained environments
+
+### Memory Aid:
+"**D**igital **P**ackets **P**ass **P**roperly" - Digipeaters Pass Packets Precisely!
+
+---
+
+## Key Takeaways
+
+- Digipeaters receive digital data packets and retransmit those marked for further transmission
+- They enable long-distance communication in amateur radio packet networks
+- Packets include specific routing information to guide their transmission path
+- Digipeaters work exclusively with digital data, not analog signals
+- They are critical for extending communication range beyond direct radio contact
+
+---
+
+## Related Concepts to Explore:
+- **APRS (Automatic Packet Reporting System)**: Advanced digital packet radio networking
+- **Packet Radio Protocols**: AX.25 and other digital communication standards
+- **Emergency Communication Networks**: How digipeaters support disaster response
+
+### Recommended Reading
+- ARRL Handbook: Packet Radio and Digital Modes section
+- "Packet Radio: What Is It?" by TAPR (Tucson Amateur Packet Radio)
+- YouTube: "Introduction to Packet Radio" by various amateur radio educators

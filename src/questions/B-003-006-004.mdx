@@ -1,0 +1,95 @@
+---
+id: "B-003-006-004"
+question: "In a typical single-sideband transmitter, at what frequency is the sideband filter tuned?"
+answers:
+  - text: "Near the fixed RF oscillator frequency"
+    correct: true
+    explanation: "In a single-sideband (SSB) transmitter, the sideband filter is typically tuned near the fixed RF oscillator frequency to provide precise frequency selection and suppress the unwanted sideband. This fixed RF frequency serves as a stable reference point for generating the single sideband signal, allowing for precise filtering and signal generation in the radio frequency (RF) stage of the transmitter."
+  - text: "At the VFO frequency"
+    correct: false
+    explanation: "The Variable Frequency Oscillator (VFO) provides the tuning range for the transmitter, but it is not the primary frequency used for sideband filtering. The VFO frequency changes with operator selection, whereas the sideband filter requires a more stable reference point for consistent signal generation."
+  - text: "Near the operating frequency"
+    correct: false
+    explanation: "While the operating frequency is important, the sideband filter is specifically tuned to a fixed RF oscillator frequency, not the broad operating frequency. Tuning near the operating frequency would be too imprecise for the precise filtering required in SSB transmission."
+  - text: "At audio frequencies"
+    correct: false
+    explanation: "Sideband filtering occurs in the RF stage of the transmitter, not at audio frequencies. Audio processing happens before the RF conversion, but the actual sideband selection and filtering takes place at radio frequencies using a fixed RF oscillator as the reference point."
+---
+
+# Single-Sideband Transmitter: Understanding Sideband Filter Tuning
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The role of the sideband filter in SSB transmitters
+- How fixed RF oscillators provide frequency stability
+- The difference between VFO, operating frequency, and filter tuning
+- The technical principles behind single-sideband signal generation
+
+---
+
+## The Concept: Sideband Filter Frequency Selection
+
+Single-sideband (SSB) transmission is a sophisticated method of voice communication that maximizes spectral efficiency by transmitting only one side of the traditional amplitude-modulated (AM) signal. Unlike AM, which transmits a carrier wave and both upper and lower sidebands, SSB eliminates the carrier and one of the sidebands, reducing bandwidth and improving transmission efficiency.
+
+In a typical SSB transmitter, the sideband filter plays a critical role in selecting and shaping the transmitted signal. This filter is strategically tuned near the fixed RF oscillator frequency to provide a stable, precise reference point for signal generation. The fixed RF oscillator acts as a stable frequency anchor, ensuring consistent and accurate sideband selection across different operating frequencies.
+
+### The Signal Generation Process
+
+The SSB signal generation involves multiple stages:
+1. Audio input is processed and converted to a frequency-shifted signal
+2. A fixed RF oscillator provides a stable reference frequency
+3. The sideband filter selects and shapes the desired sideband
+4. The signal is then mixed and converted to the final transmission frequency
+
+---
+
+## Real-World Examples
+
+### ✅ Proper Sideband Filter Tuning:
+- **Fixed Frequency Stability**: Using a fixed RF oscillator ensures consistent sideband selection
+- **Precise Signal Shaping**: The filter removes the unwanted sideband with minimal distortion
+- **Frequency Conversion**: Allows accurate translation of audio to radio frequencies
+
+### ❌ Incorrect Filtering Approaches:
+- **VFO-Based Filtering**: Would introduce frequency instability
+- **Broad Operating Frequency Filtering**: Lacks the precision required for clean SSB transmission
+- **Audio Frequency Filtering**: Cannot effectively shape the RF signal
+
+---
+
+## Practical Applications
+
+### For SSB Transmitter Design:
+1. **Oscillator Selection**: Choose a stable, low-drift fixed RF oscillator
+2. **Filter Characteristics**: Select filters with sharp cutoff and minimal phase distortion
+3. **Frequency Stability**: Ensure consistent performance across temperature and operating conditions
+
+### For Amateur Radio Operations:
+1. **Signal Clarity**: Understand how precise filtering improves audio quality
+2. **Bandwidth Management**: Appreciate how SSB reduces spectrum usage compared to AM
+3. **Technical Design**: Recognize the importance of stable frequency references
+
+### Memory Aid:
+"**F**ixed **O**scillator **F**ilters" (FOFF) - Remember that sideband filters are tuned near the fixed oscillator frequency.
+
+---
+
+## Key Takeaways
+
+- Sideband filters in SSB transmitters are typically tuned near the fixed RF oscillator frequency
+- The fixed RF oscillator provides a stable reference point for precise signal generation
+- Filtering occurs in the RF stage, not at audio or VFO frequencies
+- Proper sideband filter tuning is critical for clean, efficient signal transmission
+- Understanding this concept helps appreciate the technical sophistication of modern radio communication
+
+---
+
+## Related Concepts to Explore:
+- **RF Mixing Techniques**: How signals are converted between frequencies
+- **Oscillator Stability**: Factors affecting frequency reference precision
+- **Sideband Suppression**: Measuring and improving unwanted sideband rejection
+
+### Recommended Reading
+- ARRL Handbook: Chapters on SSB Transmitter Design
+- "Understanding Practical Radio Frequency Circuits" by Allan Siddons
+- Online Course: "Advanced Amateur Radio Transmitter Technologies"

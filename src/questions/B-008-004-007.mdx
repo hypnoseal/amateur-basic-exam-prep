@@ -1,0 +1,94 @@
+---
+id: "B-008-004-007"
+question: "A television tuned to channel 3 (60 MHz - 66 MHz) experiences interference when you are transmitting on the 15-metre band. Other channels are not affected. What is the most likely cause?"
+answers:
+  - text: "Harmonic emission from your transmitter"
+    correct: true
+    explanation: "The 15-metre amateur band (21.0-21.45 MHz) is close enough to generate a harmonic that falls precisely within the TV channel 3 frequency range. Specifically, the second harmonic of a 21 MHz transmission would be around 42 MHz, and the third harmonic would be around 63 MHz, which directly overlaps with the 60-66 MHz TV channel 3 band. This harmonic emission can directly interfere with the television's reception, causing noise, picture distortion, or complete signal loss."
+  - text: "No high-pass filter on the TV"
+    correct: false
+    explanation: "A high-pass filter on the TV would not prevent harmonic interference from an amateur radio transmitter. High-pass filters block low-frequency signals, whereas the issue here is a high-frequency harmonic entering the TV's front end. The problem originates from the transmitter's harmonic emissions, not the TV's filtering capabilities."
+  - text: "No high-pass filter at your transmitter"
+    correct: false
+    explanation: "While a low-pass filter at the transmitter is crucial for preventing harmonic emissions, this answer doesn't specifically address the mechanism of interference. The correct solution is to use a low-pass filter (not a high-pass filter) to suppress harmonics at the transmitter's output, preventing them from being radiated in the first place."
+  - text: "Front-end overload of the TV"
+    correct: false
+    explanation: "Front-end overload typically occurs when a strong signal overwhelms the TV's input amplifier across a broad frequency range. In this case, the interference is specific to channel 3, which points to a harmonic emission rather than a broad signal overload. Front-end overload would usually affect multiple channels, not just a single specific channel."
+---
+
+# Harmonics and Television Interference: Understanding Radio Frequency Interactions
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What harmonics are and how they are generated in radio transmissions
+- How amateur radio transmissions can interfere with television reception
+- The relationship between fundamental frequencies and their harmonic multiples
+- Techniques for preventing radio frequency interference (RFI)
+
+---
+
+## The Concept: Harmonics in Radio Transmission
+
+Harmonics are additional frequency signals that are whole-number multiples of a fundamental frequency. When you transmit on an amateur radio frequency, your signal doesn't just produce a single, pure frequency—it also generates weaker signals at 2x, 3x, 4x, and higher multiples of that original frequency.
+
+In the context of the 15-metre band (21.0-21.45 MHz), your transmission can create harmonics at 42 MHz (2nd harmonic), 63 MHz (3rd harmonic), and so on. These harmonics can inadvertently fall within the reception bands of other electronic devices, causing interference.
+
+### The Physics of Harmonic Generation
+
+Every non-linear electronic system—including radio transmitters—can generate harmonics. When an amplifying circuit processes a signal, it can create these additional frequencies through various mechanisms like:
+- Transistor or tube non-linearities
+- Impedance mismatches
+- Intentional or unintentional signal amplification characteristics
+
+---
+
+## Real-World Examples
+
+### ✅ Harmonic Interference Scenarios:
+- **15m Band Transmission**: Transmitting at 21.2 MHz generates a 63 MHz third harmonic that directly interferes with TV channel 3
+- **40m Band Transmission**: A 7.1 MHz signal could create harmonics affecting FM broadcast or television reception
+- **Amplifier Distortion**: Poor quality or improperly tuned transmitting equipment increases harmonic generation
+
+### ❌ Misunderstood Interference Causes:
+- **Blaming TV Equipment**: Assuming the TV is faulty when the problem originates from the transmitter
+- **Ignoring Harmonic Suppression**: Failing to use low-pass filters or proper transmitter tuning
+- **Transmitting at Maximum Power**: Higher power levels can increase harmonic emissions
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Operators:
+1. **Use Low-Pass Filters**: Install filters at the transmitter output to suppress harmonics
+2. **Check Transmitter Alignment**: Ensure your equipment is properly tuned to minimize harmonic generation
+3. **Understand Frequency Relationships**: Know how your transmission frequencies can create problematic harmonics
+
+### For RFI Prevention:
+1. **Measure Harmonic Levels**: Use a spectrum analyzer to check your transmitter's harmonic output
+2. **Collaborate with Neighbors**: Work with local TV and radio users to identify and mitigate interference
+3. **Use Balanced Antenna Systems**: Well-designed antennas can help reduce harmonic radiation
+
+### Memory Aid:
+"**H**armonics **A**lways **M**ake Interference" - HAM operators must manage their harmonics!
+
+---
+
+## Key Takeaways
+
+- Harmonics are additional frequency signals generated at whole-number multiples of the fundamental transmission frequency
+- The 15-metre band (21 MHz) can generate harmonics that directly interfere with TV channel 3 (60-66 MHz)
+- Proper transmitter design, low-pass filtering, and careful equipment maintenance prevent harmonic interference
+- Amateur radio operators have a responsibility to minimize their potential for causing RFI
+- Understanding the physics of harmonic generation helps prevent unintentional interference
+
+---
+
+## Related Concepts to Explore:
+- **Low-Pass Filter Design**: How filters suppress unwanted harmonics
+- **Transmitter Linearity**: Techniques for reducing harmonic generation
+- **RFI Mitigation Strategies**: Comprehensive approaches to preventing radio interference
+
+### Recommended Reading
+- ARRL Handbook: Sections on Harmonics and Radio Frequency Interference
+- "Practical RF Design" by Wes Hayward
+- YouTube: W2AEW Channel - Harmonic Analysis Tutorials

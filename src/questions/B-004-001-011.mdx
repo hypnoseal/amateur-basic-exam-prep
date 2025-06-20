@@ -1,0 +1,91 @@
+---
+id: "B-004-001-011"
+question: "What is the result of excessive positive feedback in an amplifier stage?"
+answers:
+  - text: "Oscillations appear"
+    correct: true
+    explanation: "When positive feedback exceeds a critical threshold, the amplifier begins to generate self-sustaining electrical oscillations. This occurs because the output signal is fed back to the input in a way that reinforces and amplifies itself, creating a continuous, uncontrolled signal generation that is not part of the original input. Instead of amplifying an external signal, the circuit begins to generate its own signal autonomously."
+  - text: "Distortion is minimized"
+    correct: false
+    explanation: "Excessive positive feedback actually increases signal distortion. As the feedback loop becomes more pronounced, the amplifier's linear response breaks down, causing significant non-linear changes to the original signal shape, amplitude, and frequency characteristics."
+  - text: "Frequency response is flattened"
+    correct: false
+    explanation: "Contrary to this statement, excessive positive feedback dramatically destabilizes the frequency response. Instead of creating a flat, consistent response, it causes wild variations in gain and can lead to frequency-specific oscillations that deviate significantly from the desired linear amplification."
+  - text: "Voltage gain is reduced"
+    correct: false
+    explanation: "Excessive positive feedback initially increases voltage gain before causing complete circuit instability. Rather than reducing gain, it first amplifies the signal beyond control, ultimately leading to uncontrolled oscillations that render the amplifier non-functional."
+---
+
+# Amplifier Feedback Dynamics: Understanding Oscillation Mechanisms
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- The fundamental concept of feedback in electronic amplifier circuits
+- How positive feedback differs from negative feedback
+- The conditions that lead to oscillation in amplifier stages
+- The practical implications of feedback in electronic design
+
+---
+
+## The Concept: Feedback in Electronic Amplification
+
+Feedback is a critical mechanism in electronic circuits where a portion of the output signal is returned to the input. This returned signal can either stabilize (negative feedback) or destabilize (positive feedback) the amplifier's performance.
+
+In an amplifier circuit, positive feedback occurs when the returned signal reinforces the original input signal. Imagine a circular process where each cycle of the signal grows larger and larger, like a snowball rolling down a hill and accumulating more mass. When this positive feedback exceeds a critical threshold, the amplifier transitions from controlled amplification to autonomous signal generation—a phenomenon known as oscillation.
+
+### The Physics of Oscillation
+
+Oscillation happens when the gain in the feedback loop becomes greater than 1 (unity gain) and the phase shift of the returned signal is 360 degrees. At this point, the amplifier becomes a signal generator rather than an amplifier, continuously producing a signal without an external input source.
+
+---
+
+## Real-World Examples
+
+### ✅ Controlled Feedback Applications:
+- **Audio Microphone Circuits**: Carefully managed feedback can enhance signal characteristics
+- **Operational Amplifier Design**: Precise feedback used to establish predictable gain and bandwidth
+- **Radio Frequency Oscillators**: Intentional positive feedback creates stable signal generation
+
+### ❌ Uncontrolled Feedback Scenarios:
+- **Acoustic Feedback in Sound Systems**: When a microphone picks up its own speaker output
+- **Unstable RF Amplifiers**: High-frequency circuits prone to spontaneous oscillation
+- **Poorly Designed Electronic Instrumentation**: Circuits that generate unwanted self-sustaining signals
+
+---
+
+## Practical Applications
+
+### For Electronic Design:
+1. **Feedback Measurement**: Use oscilloscopes to detect and characterize feedback behaviors
+2. **Stability Analysis**: Implement phase margin and gain margin techniques to prevent oscillation
+3. **Component Selection**: Choose components with appropriate gain and phase characteristics
+
+### For Amateur Radio Equipment:
+1. **Transceiver Stability**: Understand how feedback can affect receiver and transmitter performance
+2. **Amplifier Design**: Recognize and mitigate potential oscillation risks
+3. **Interference Prevention**: Manage feedback to reduce unwanted signal generation
+
+### Memory Aid:
+"**P**ositive **F**eedback **P**roduces **P**erpetual Waves" - Positive Feedback Produces Perpetual Waves of uncontrolled oscillation.
+
+---
+
+## Key Takeaways
+
+- Excessive positive feedback causes amplifier circuits to generate autonomous oscillations
+- Oscillations occur when feedback gain exceeds unity and phase shift reaches 360 degrees
+- Positive feedback transforms an amplifier from a signal enhancer to a signal generator
+- Understanding feedback mechanisms is crucial for designing stable electronic circuits
+- Amateur radio operators must recognize potential feedback-induced instabilities in their equipment
+
+---
+
+## Related Concepts to Explore:
+- **Negative Feedback**: How controlled signal return can stabilize amplifier performance
+- **Nyquist Stability Criterion**: Mathematical approach to analyzing feedback system stability
+- **RF Amplifier Design**: Techniques for managing feedback in high-frequency circuits
+
+### Recommended Reading
+- ARRL Handbook: Chapters on Electronic Fundamentals and Amplifier Design
+- "The Art of Electronics" by Horowitz and Hill - Comprehensive feedback theory
+- Online Course: "Fundamentals of Electronic Circuit Design" on EdX

@@ -253,7 +253,7 @@ export default function QuizCard({ id, question, answers, onShowLesson }) {
         <div className="flex items-center">
           {id && (
             <a 
-              href={getGitHubQuestionEditUrl(id)} 
+              href={getGitHubQuestionEditUrl(id) ?? undefined} 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gray-600 transition-colors flex items-center group mr-2"

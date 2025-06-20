@@ -1,0 +1,99 @@
+---
+id: "B-003-014-008"
+question: "In a receiver, what noise management circuit recognizes high-amplitude short-duration pulses and removes them?"
+answers:
+  - text: "Noise blanker"
+    correct: true
+    explanation: "A noise blanker is an advanced receiver circuit specifically designed to detect and eliminate high-amplitude, short-duration noise pulses that would otherwise create annoying interference. These pulses, often caused by electrical equipment, vehicle ignition systems, or atmospheric static, are recognized by their distinct spike-like characteristics and are essentially 'blanked out' or momentarily suppressed before they can create audio distortion."
+  - text: "Noise limiter"
+    correct: false
+    explanation: "While a noise limiter does reduce interference, it works differently from a noise blanker. A noise limiter clips or reduces the amplitude of signals above a certain threshold, effectively reducing overall noise energy, but it doesn't specifically target short-duration high-amplitude pulses like a noise blanker does. Noise limiters provide more general signal conditioning rather than precise pulse removal."
+  - text: "Automatic level control"
+    correct: false
+    explanation: "Automatic level control (ALC) manages the overall signal amplitude and prevents overmodulation in transmitters or excessive audio levels in receivers. It does not specifically detect or remove short-duration noise pulses. ALC is a gain management circuit that maintains consistent signal levels, which is fundamentally different from pulse noise reduction."
+  - text: "Narrowband filter"
+    correct: false
+    explanation: "A narrowband filter reduces noise by limiting the receiver's frequency passband, which can help reduce some types of interference. However, it does not specifically recognize or remove high-amplitude, short-duration noise pulses. Narrowband filters work by frequency selection, not by detecting and blanking individual noise events."
+---
+
+# Noise Blankers: Precision Interference Management in Radio Reception
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- What noise blankers are and how they function
+- The difference between noise blankers and other noise reduction circuits
+- How noise blankers improve radio reception quality
+- The types of noise sources that noise blankers can effectively manage
+
+---
+
+## The Concept: Noise Pulse Management in Radio Receivers
+
+Radio reception is constantly challenged by various noise sources that can create unwanted interference. A **noise blanker** is a sophisticated electronic circuit designed to detect and neutralize specific types of noise that would otherwise degrade signal quality.
+
+These circuits work by recognizing very brief, high-amplitude electrical pulses that occur outside the normal audio or signal spectrum. Think of a noise blanker like a lightning-fast security guard who can instantly detect and block a sudden, unexpected intrusion. When a noise pulse is detected—which might last only microseconds—the noise blanker momentarily "blanks" or suppresses that portion of the received signal, preventing the noise from reaching the audio output.
+
+### Noise Pulse Characteristics
+
+Typical noise pulses that noise blankers target include:
+- Electrical sparking from motors
+- Vehicle ignition system interference
+- Switching power supply noise
+- Atmospheric static discharges
+- Industrial electrical equipment emissions
+
+These pulses are characterized by their extremely short duration (often nanoseconds) and high amplitude relative to the desired signal.
+
+---
+
+## Real-World Examples
+
+### ✅ Effective Noise Blanker Applications:
+- **Mobile Operations**: Eliminating ignition system noise in vehicle-mounted radios
+- **Urban Environments**: Reducing electrical interference from numerous electronic devices
+- **Industrial Settings**: Managing noise from machinery and electrical equipment
+- **Near Power Lines**: Mitigating interference from electrical distribution systems
+
+### ❌ Situations Where Noise Blankers Are Less Effective:
+- **Continuous Noise Sources**: Steady background hum or white noise
+- **Low-Amplitude Interference**: Signals too weak to trigger the blanking circuit
+- **Extremely Broadband Noise**: Noise spanning multiple frequency ranges simultaneously
+
+---
+
+## Practical Applications
+
+### For Amateur Radio Operators:
+1. **Mobile Installations**: Critical for reducing vehicle electrical system noise
+2. **Home Station Setup**: Improve reception in electrically noisy environments
+3. **Contesting and DX Communication**: Maintain signal clarity during weak signal operations
+
+### Technical Configuration:
+1. **Threshold Adjustment**: Most noise blankers allow sensitivity calibration
+2. **Bandwidth Matching**: Configure to match your specific receiver's characteristics
+3. **Signal-to-Noise Ratio Optimization**: Carefully balance noise reduction with signal preservation
+
+### Memory Aid:
+"**B**rief **N**oise **B**locked" - Noise Blankers stop quick, sharp interference spikes!
+
+---
+
+## Key Takeaways
+
+- Noise blankers are specialized circuits that detect and remove high-amplitude, short-duration noise pulses
+- They work by momentarily suppressing specific noise events rather than broad filtering
+- Different from noise limiters, ALC, and narrowband filters in their precise interference management
+- Effective in mobile, urban, and industrial radio communication environments
+- Proper configuration is key to maintaining signal quality while reducing interference
+
+---
+
+## Related Concepts to Explore:
+- **Signal Processing Techniques**: Advanced noise reduction methods
+- **RF Interference Sources**: Identifying and mitigating noise generators
+- **Receiver Design Principles**: How modern receivers manage signal quality
+
+### Recommended Reading
+- ARRL Handbook: Receiver Design and Noise Reduction Techniques
+- "Experimental Methods in RF Design" by Wes Hayward
+- YouTube: W2AEW's Technical Tutorials on Receiver Noise Management

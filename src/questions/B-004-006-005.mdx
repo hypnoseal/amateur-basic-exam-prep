@@ -1,0 +1,109 @@
+---
+id: "B-004-006-005"
+question: "On resistors with four colour bands, which colour band differentiates two resistors rated at 33 ohms and 39 ohms respectively?"
+answers:
+ - text: "Second"
+   correct: true
+   explanation: "The second band determines the difference between 33 ohms and 39 ohms. For a 33-ohm resistor, the bands are Orange-Orange-Black-[tolerance], while for a 39-ohm resistor, the bands are Orange-White-Black-[tolerance]. The first band is Orange (3) for both resistors, but the second band changes from Orange (3) for 33 ohms to White (9) for 39 ohms. The third band (multiplier) remains Black (×1) for both values."
+ - text: "Third"
+   correct: false
+   explanation: "The third band is the multiplier and would be Black (×1) for both 33-ohm and 39-ohm resistors since both values are two-digit numbers with no additional zeros. The third band doesn't differentiate between these two resistor values - it's identical for both."
+ - text: "Fourth"
+   correct: false
+   explanation: "The fourth band indicates tolerance (typically Gold for ±5% or Silver for ±10%) and has nothing to do with the actual resistance value. Both 33-ohm and 39-ohm resistors could have the same tolerance rating, so the fourth band wouldn't necessarily differentiate between them."
+ - text: "First"
+   correct: false
+   explanation: "The first band would be Orange (representing 3) for both 33-ohm and 39-ohm resistors since both values start with the digit 3. The first band is identical for both resistor values and therefore doesn't differentiate between them."
+---
+
+# Reading Resistor Color Codes: Decoding the Rainbow of Electronic Components
+
+## Learning Objectives
+By the end of this lesson, you will understand:
+- How the four-band resistor color code system works to indicate resistance values
+- The specific role each color band plays in determining resistance
+- How to distinguish between similar resistor values by identifying which band differs
+- The practical importance of accurate resistor identification in amateur radio circuits
+
+---
+
+## The Concept: The Four-Band Resistor Color Code System
+
+Resistors are fundamental components in amateur radio circuits, controlling current flow and setting operating points for amplifiers, filters, and other circuits. Because resistors are often too small for printed numbers, manufacturers use a standardized color code system to indicate their resistance values.
+
+The **four-band color code** works like a simple mathematical formula where each colored band represents a specific digit or function. Reading from left to right, the bands represent:
+- **First Band**: First significant digit (1-9)
+- **Second Band**: Second significant digit (0-9)
+- **Third Band**: Multiplier (how many zeros to add, or decimal placement)
+- **Fourth Band**: Tolerance (how accurate the resistor is)
+
+Think of it like writing a number: if you want to write "47,000," you'd write "4" (first digit), "7" (second digit), then add "000" (three zeros). The color code works the same way - the first two bands give you the basic number, the third band tells you how many zeros to add.
+
+### The Color-to-Number Translation
+
+The standard color code follows a logical sequence that many technicians memorize:
+- **Black = 0, Brown = 1, Red = 2, Orange = 3, Yellow = 4**
+- **Green = 5, Blue = 6, Violet = 7, Gray = 8, White = 9**
+
+For the multiplier (third band), these colors represent powers of 10:
+- **Black = ×1, Brown = ×10, Red = ×100, Orange = ×1,000**, and so on
+
+---
+
+## Real-World Examples
+
+### ✅ Comparing 33-Ohm and 39-Ohm Resistors:
+- **33-Ohm Resistor**: Orange(3)-Orange(3)-Black(×1)-Gold(±5%) = 33 × 1 = 33 ohms
+- **39-Ohm Resistor**: Orange(3)-White(9)-Black(×1)-Gold(±5%) = 39 × 1 = 39 ohms
+- **Key Difference**: The second band changes from Orange to White
+
+### ✅ Other Common Amateur Radio Resistor Values:
+- **47-Ohm**: Yellow(4)-Violet(7)-Black(×1) = 47 ohms (common for RF circuits)
+- **470-Ohm**: Yellow(4)-Violet(7)-Brown(×10) = 470 ohms (LED current limiting)
+- **4.7K-Ohm**: Yellow(4)-Violet(7)-Red(×100) = 4,700 ohms (bias resistors)
+
+### ❌ Common Misreading Mistakes:
+- **Confusing Orange and Red**: Can lead to reading 23 ohms instead of 33 ohms
+- **Reading Backwards**: Starting from the wrong end can give completely wrong values
+- **Ignoring the Multiplier**: Reading 33 ohms as 330 ohms due to missing the Black multiplier band
+
+---
+
+## Practical Applications
+
+### For Circuit Analysis and Repair:
+1. **Component Identification**: When troubleshooting amateur radio equipment, correctly identifying resistor values helps determine if components are within specification
+2. **Circuit Modification**: When building or modifying circuits, understanding color codes ensures you install the correct resistance values
+3. **Quality Control**: Verifying that resistors match schematic values prevents circuit malfunction
+
+### For Common Amateur Radio Applications:
+1. **RF Circuits**: 50-ohm and 75-ohm resistors (for impedance matching) are easily identified by their color codes
+2. **Audio Circuits**: Volume controls and tone shaping circuits often use specific resistor values that must be correctly identified
+3. **Power Supply Circuits**: Voltage dividers and current limiting resistors require precise values for safe operation
+
+### Memory Aid:
+**"Big Boys Race Our Young Girls, But Violet Generally Wins"** - Black(0), Brown(1), Red(2), Orange(3), Yellow(4), Green(5), Blue(6), Violet(7), Gray(8), White(9)
+
+---
+
+## Key Takeaways
+
+- The second color band differentiates between 33-ohm and 39-ohm resistors because it changes from Orange (3) to White (9)
+- Both resistors share the same first band (Orange = 3) and third band (Black = ×1), making the second band the distinguishing factor
+- The four-band color code system uses the first two bands for significant digits, the third for the multiplier, and the fourth for tolerance
+- Accurate resistor identification is crucial in amateur radio for proper circuit operation, troubleshooting, and modifications
+- Understanding which specific band differs between similar values helps quickly identify the correct component during construction or repair
+- The color code system is standardized worldwide, making it a universal language for electronic components
+
+---
+
+## Related Concepts to Explore:
+- **Five and Six-Band Resistor Codes**: More precise resistor marking systems used in critical applications
+- **Resistor Tolerance and Temperature Coefficients**: How environmental factors affect resistor performance in amateur radio equipment
+- **Standard Resistor Values**: Why certain resistance values are commonly available and others are not (E12, E24 series)
+
+### Recommended Reading
+
+- ARRL Handbook Chapter on "Electrical Fundamentals" - Comprehensive coverage of resistor types and applications
+- "Electronics for Dummies" by Cathleen Shamieh - Beginner-friendly explanation of color codes with practice exercises
+- YouTube: "Resistor Color Code Made Easy" by EEVblog - Visual demonstration of color code reading techniques
