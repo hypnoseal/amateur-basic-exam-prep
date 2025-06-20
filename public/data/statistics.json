@@ -1,0 +1,45 @@
+{
+  "totalQuestions": 0,
+  "categories": [
+    {
+      "code": "001",
+      "title": "Regulations and Policies",
+      "questionCount": 0
+    },
+    {
+      "code": "002",
+      "title": "Operating and Procedures",
+      "questionCount": 0
+    },
+    {
+      "code": "003",
+      "title": "Station Assembly, Practice and Safety",
+      "questionCount": 0
+    },
+    {
+      "code": "004",
+      "title": "Circuit Components",
+      "questionCount": 0
+    },
+    {
+      "code": "005",
+      "title": "Basic Electronics and Theory",
+      "questionCount": 0
+    },
+    {
+      "code": "006",
+      "title": "Feedlines and Antenna Systems",
+      "questionCount": 0
+    },
+    {
+      "code": "007",
+      "title": "Radio Wave Propagation",
+      "questionCount": 0
+    },
+    {
+      "code": "008",
+      "title": "Interference and Suppression",
+      "questionCount": 0
+    }
+  ]
+}

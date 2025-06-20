@@ -4,10 +4,11 @@ import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 import questionListIntegration from './integrations/question-list.js';
+import statisticsDataIntegration from './integrations/statistics-data.js';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), mdx(), questionListIntegration()],
+  integrations: [tailwind(), react(), mdx(), questionListIntegration(), statisticsDataIntegration()],
   // Add metadata for better SEO and search indexing
   site: 'https://radio.frasernolet.com',
   markdown: {
