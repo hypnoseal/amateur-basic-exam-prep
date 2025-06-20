@@ -2,14 +2,10 @@
 // This page now uses client-side navigation to a random question
 import Layout from '../components/Layout.astro';
 import TopNav from '../components/TopNav.astro';
-import { getAllQuestions } from '../utils/questions';
-
-// For TopNav, we need all questions
-const allQuestions = getAllQuestions();
 ---
 
 <Layout title="Quiz - Amateur Radio Exam Prep">
-  <TopNav questions={allQuestions} />
+  <TopNav />
 
   <div class="flex justify-center items-center min-h-[50vh]">
     <div class="text-center p-8 max-w-md">

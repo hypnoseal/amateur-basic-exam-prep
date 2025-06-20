@@ -2,17 +2,15 @@
 import SearchBar from './SearchBar.astro';
 import ResetConfirmationModal from './ResetConfirmationModal.astro';
 import { getAllQuestions } from '../utils/questions';
-import { parseQuestionId, createCategoryMenu, groupQuestionsByCategory } from '../utils/questionIdParser';
+import { createCategoryMenu, groupQuestionsByCategory } from '../utils/questionIdParser';
 import type { Category } from '../types/categories';
 import categoriesData from '../data/categories.json';
 import StatsContainer from './StatsContainer.jsx';
 
 interface Props {
-  questions?: Record<string, any>[];
 }
 
-// Get the questions from props
-const { questions = [] } = Astro.props;
+// No props needed
 
 // Get all questions and organize them by category
 const allQuestions = getAllQuestions();
@@ -313,7 +311,7 @@ const categoryMenu = createCategoryMenu(categories, questionGroups);
     const searchInputs = document.querySelectorAll('input[type="search"]');
     searchInputs.forEach(searchInput => {
       searchInput.addEventListener('input', () => {
-        const searchTerm = searchInput.value.toLowerCase();
+        const searchTerm = (searchInput as HTMLInputElement).value.toLowerCase();
         const questionItems = document.querySelectorAll('.mobile-question-item, .desktop-question-item');
 
         questionItems.forEach(item => {

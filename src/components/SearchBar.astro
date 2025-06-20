@@ -70,10 +70,10 @@
     });
 
     // Debounce function to limit how often the search is performed
-    const debounce = (func, delay) => {
-      let timeoutId;
-      return function(...args) {
-        clearTimeout(timeoutId);
+    const debounce = (func: Function, delay: number) => {
+      let timeoutId: ReturnType<typeof setTimeout> | undefined;
+      return function(this: any, ...args: any[]) {
+        if (timeoutId) clearTimeout(timeoutId);
         timeoutId = setTimeout(() => func.apply(this, args), delay);
       };
     };

@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import useLessonStore from '../stores/lessonStore';
 
 // A client-side component for displaying lesson content below the quiz card
-export default function LessonContent({ isOpen: initialIsOpen = false, onClose: initialOnClose = () => {}, content: initialContent = null }) {
+export default function LessonContent({ content: initialContent = null }) {
   // Get state and actions from lesson store
   const { isVisible: isOpen, content, hideLesson, setContent } = useLessonStore();
-  const contentRef = useRef(null);
+  const contentRef = useRef(/** @type {HTMLDivElement | null} */ (null));
 
   // Function to close the content
   const onClose = () => {
@@ -23,8 +23,11 @@ export default function LessonContent({ isOpen: initialIsOpen = false, onClose: 
 
   // Listen for custom events for backward compatibility
   useEffect(() => {
+    /** @type {(event: Event) => void} */
     const handleOpenLesson = (event) => {
-      const { content: newContent } = event.detail || {};
+      // Type assertion for CustomEvent
+      const customEvent = /** @type {CustomEvent} */ (event);
+      const { content: newContent } = customEvent.detail || {};
       setContent(newContent);
     };
 

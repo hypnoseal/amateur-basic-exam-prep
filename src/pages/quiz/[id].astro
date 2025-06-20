@@ -3,7 +3,7 @@ import Layout from '../../components/Layout.astro';
 import TopNav from '../../components/TopNav.astro';
 import LessonContent from '../../components/LessonContent.jsx';
 import QuizCard from '../../components/QuizCard.jsx';
-import { questionFiles, getAllQuestions, getQuestionById } from '../../utils/questions';
+import { questionFiles, getQuestionById } from '../../utils/questions';
 
 // Generate paths for all questions
 export async function getStaticPaths() {
@@ -26,12 +26,11 @@ if (!questionData) {
 
 const { id, question, answers, Content } = questionData;
 
-// For TopNav, we need all questions
-const allQuestions = getAllQuestions();
+// No longer need allQuestions for TopNav
 ---
 
 <Layout title="Quiz - Amateur Radio Exam Prep">
-  <TopNav questions={allQuestions} />
+  <TopNav />
 
   <div id="quizContainer" class="flex justify-center">
     <div class="w-full max-w-2xl">
@@ -40,7 +39,7 @@ const allQuestions = getAllQuestions();
         id={id}
         question={question}
         answers={answers}
-        onShowLesson={(questionId) => {
+        onShowLesson={() => {
           // This function will be called from the React component
           // but we need to use client:only to make it work
         }}
@@ -49,8 +48,6 @@ const allQuestions = getAllQuestions();
       <!-- LessonContent component will be client-side hydrated -->
       <LessonContent 
         client:only="react"
-        isOpen={false}
-        onClose={() => {}}
         content={null}
       />
     </div>

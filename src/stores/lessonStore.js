@@ -7,7 +7,7 @@ const useLessonStore = create((set) => ({
   questionId: null,
 
   // Actions
-  showLesson: (questionId, content) => {
+  showLesson: (/** @type {string} */ questionId, /** @type {any} */ content) => {
     set({
       isVisible: true,
       content,
@@ -21,7 +21,7 @@ const useLessonStore = create((set) => ({
     });
   },
 
-  setContent: (content) => {
+  setContent: (/** @type {any} */ content) => {
     set({
       content,
     });

@@ -22,7 +22,7 @@ const useQuizStore = create(
       isCurrentQuestionCorrect: false,
 
       // Actions
-      setCurrentQuestion: (questionId, answers) => {
+      setCurrentQuestion: (/** @type {string} */ questionId, /** @type {Array<any>} */ answers) => {
         const { attemptedQuestions, correctlyAnsweredQuestions } = get();
 
         // Calculate derived state values
@@ -42,7 +42,7 @@ const useQuizStore = create(
         });
       },
 
-      selectAnswer: (index) => {
+      selectAnswer: (/** @type {number} */ index) => {
         const { randomizedAnswers, currentQuestionId, attemptedQuestions, correctlyAnsweredQuestions } = get();
 
         if (!currentQuestionId || get().hasAnswered) return;
@@ -135,7 +135,7 @@ const useQuizStore = create(
 );
 
 // Helper function to shuffle answers
-function shuffleAnswers(answers) {
+function shuffleAnswers(/** @type {Array<any>} */ answers) {
   if (!answers || !Array.isArray(answers)) return [];
 
   // Create a copy of the answers array to avoid mutating the original

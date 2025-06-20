@@ -1,16 +1,10 @@
 ---
 import Layout from '../components/Layout.astro';
 import TopNav from '../components/TopNav.astro';
-import { getAllQuestions } from '../utils/questions';
-import { parseQuestionId, findCategoryByCode, findSubcategoryByCode } from '../utils/questionIdParser';
-import categories from '../data/categories.json';
-
-// For TopNav, we need all questions
-const allQuestions = getAllQuestions();
 ---
 
 <Layout title="Statistics Dashboard - Amateur Radio Exam Prep">
-	<TopNav questions={allQuestions} />
+	<TopNav />
 
 	<div class="max-w-6xl mx-auto px-4 py-8">
 		<div class="flex justify-between items-center mb-6">
@@ -85,6 +79,18 @@ const allQuestions = getAllQuestions();
 	import categories from '../data/categories.json';
 	import { getAllQuestions } from '../utils/questions';
 
+	// Define types for our statistics
+	interface CategoryStats {
+		title: string;
+		attempted: number;
+		correct: number;
+		total: number;
+	}
+
+	type CategoryStatsMap = {
+		[key: string]: CategoryStats;
+	};
+
 	document.addEventListener('DOMContentLoaded', () => {
 		// Set up back button functionality
 		const backButton = document.getElementById('backButton');
@@ -114,20 +120,28 @@ const allQuestions = getAllQuestions();
 		const totalCorrect = correctlyAnsweredQuestions.length;
 		const successRateValue = totalAttempted > 0 ? Math.round((totalCorrect / totalAttempted) * 100) : 0;
 
-		document.getElementById('totalAttempted').textContent = totalAttempted.toString();
-		document.getElementById('totalAttemptedPercent').textContent = 
+		const totalAttemptedEl = document.getElementById('totalAttempted');
+		const totalAttemptedPercentEl = document.getElementById('totalAttemptedPercent');
+		const totalCorrectEl = document.getElementById('totalCorrect');
+		const totalCorrectPercentEl = document.getElementById('totalCorrectPercent');
+		const successRateEl = document.getElementById('successRate');
+		const successRateBarEl = document.getElementById('successRateBar');
+
+		if (totalAttemptedEl) totalAttemptedEl.textContent = totalAttempted.toString();
+		if (totalAttemptedPercentEl) totalAttemptedPercentEl.textContent = 
 			`${Math.round((totalAttempted / totalQuestions) * 100)}% of all questions`;
 
-		document.getElementById('totalCorrect').textContent = totalCorrect.toString();
-		document.getElementById('totalCorrectPercent').textContent = 
+		if (totalCorrectEl) totalCorrectEl.textContent = totalCorrect.toString();
+		if (totalCorrectPercentEl) totalCorrectPercentEl.textContent = 
 			`${Math.round((totalCorrect / totalQuestions) * 100)}% of all questions`;
 
-		document.getElementById('successRate').textContent = `${successRateValue}%`;
-		document.getElementById('successRateBar').style.width = `${successRateValue}%`;
+		if (successRateEl) successRateEl.textContent = `${successRateValue}%`;
+		if (successRateBarEl) successRateBarEl.style.width = `${successRateValue}%`;
 
 		// Calculate stats by category
-		const categoryStats = {};
-		const categoryQuestionCounts = {};
+		const categoryStats: CategoryStatsMap = {};
+		// This variable is not used, so we can remove it
+		// const categoryQuestionCounts = {};
 
 		// Initialize category stats
 		categories.forEach(category => {
@@ -151,21 +165,21 @@ const allQuestions = getAllQuestions();
 		});
 
 		// Process attempted and correct questions
-		attemptedQuestions.forEach(questionId => {
+		attemptedQuestions.forEach((questionId: string) => {
 			const parsed = parseQuestionId(questionId);
 			if (parsed) {
 				const { categoryCode } = parsed;
-				if (categoryStats[categoryCode]) {
+				if (categoryCode && categoryStats[categoryCode]) {
 					categoryStats[categoryCode].attempted++;
 				}
 			}
 		});
 
-		correctlyAnsweredQuestions.forEach(questionId => {
+		correctlyAnsweredQuestions.forEach((questionId: string) => {
 			const parsed = parseQuestionId(questionId);
 			if (parsed) {
 				const { categoryCode } = parsed;
-				if (categoryStats[categoryCode]) {
+				if (categoryCode && categoryStats[categoryCode]) {
 					categoryStats[categoryCode].correct++;
 				}
 			}
@@ -176,7 +190,7 @@ const allQuestions = getAllQuestions();
 		if (categoryStatsElement) {
 			categoryStatsElement.innerHTML = '';
 
-			Object.entries(categoryStats).forEach(([code, stats]) => {
+			Object.entries(categoryStats).forEach(([code, stats]: [string, CategoryStats]) => {
 				const successRate = stats.attempted > 0 ? Math.round((stats.correct / stats.attempted) * 100) : 0;
 				const progressPercent = Math.round((stats.attempted / stats.total) * 100);
 
@@ -217,11 +231,11 @@ const allQuestions = getAllQuestions();
 			// Find categories with below-average success rates
 			const averageSuccessRate = successRateValue;
 			const weakCategories = Object.entries(categoryStats)
-				.filter(([_, stats]) => stats.attempted > 0 && (stats.correct / stats.attempted) * 100 < averageSuccessRate)
-				.sort((a, b) => (a[1].correct / a[1].attempted) - (b[1].correct / b[1].attempted));
+				.filter(([_, stats]: [string, CategoryStats]) => stats.attempted > 0 && (stats.correct / stats.attempted) * 100 < averageSuccessRate)
+				.sort((a: [string, CategoryStats], b: [string, CategoryStats]) => (a[1].correct / a[1].attempted) - (b[1].correct / b[1].attempted));
 
 			if (weakCategories.length > 0) {
-				weakCategories.slice(0, 3).forEach(([code, stats]) => {
+				weakCategories.slice(0, 3).forEach(([code, stats]: [string, CategoryStats]) => {
 					const categorySuccessRate = stats.attempted > 0 ? Math.round((stats.correct / stats.attempted) * 100) : 0;
 
 					const category = categories.find(c => c.code === code);
