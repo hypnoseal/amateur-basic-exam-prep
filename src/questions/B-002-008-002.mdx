@@ -4,96 +4,102 @@ question: "You need to summon help while stranded in a remote location, but with
 answers:
   - text: "Urgent"
     correct: true
-    explanation: "In amateur radio emergency communication protocols, 'Urgent' is the appropriate message priority when you need assistance but are not facing an immediate life-threatening situation. This priority level indicates a serious problem that requires help, but does not constitute the highest level of emergency (which would be 'Distress'). An urgent message signals significant risk or need for intervention, but without the imminent life-or-death circumstances that would trigger a distress call."
+    explanation: "Urgent (Urgency) priority is the correct classification for situations where you need assistance but are not facing immediate threat to life. According to ISED RIC-22, urgency communications concern 'the safety of an aircraft or other vehicle, or of someone on board or within sight, but which does not require immediate assistance.' Being stranded in a remote location without immediate life threat fits this definition perfectly - you need help but it's not a life-or-death emergency requiring immediate response."
   - text: "Distress"
     correct: false
-    explanation: "Distress is the highest priority message in amateur radio communication, reserved exclusively for situations with immediate, life-threatening danger. Being stranded without an immediate risk to life does not meet the strict criteria for a distress call. Misusing the distress priority can create unnecessary panic and potentially divert critical resources from genuine life-or-death emergencies."
+    explanation: "Distress priority is reserved exclusively for situations involving 'grave and/or imminent danger requiring immediate assistance' according to ISED regulations. Since the question specifically states there is no immediate risk to life, distress priority would be inappropriate and could result in emergency resources being unnecessarily diverted from actual life-threatening situations. Distress should only be used when someone's life is actually in immediate danger."
   - text: "Safety"
     correct: false
-    explanation: "Safety messages are typically used for broadcasting critical safety information to a wide area, such as severe weather warnings or navigation hazards. In this scenario of being stranded, the personal nature of the situation and the need for direct assistance make 'Urgent' a more appropriate message priority than a general safety broadcast."
+    explanation: "Safety priority is used for transmitting 'messages concerning the safety of navigation or important meteorological warnings' such as storm warnings, navigation hazards, or safety information affecting other stations. This priority is for broadcasting safety information to others, not for requesting assistance when you're stranded. Your situation requires help, which makes it an urgency matter, not a safety message."
   - text: "Welfare"
     correct: false
-    explanation: "Welfare messages are the lowest priority communication type, usually used for non-critical personal communications like checking on family members or sending routine status updates. Being stranded in a remote location represents a more serious situation that requires more immediate attention than a standard welfare message."
+    explanation: "Welfare is not an official message priority classification in Canadian amateur radio regulations. ISED RIC-22 only recognizes three priority levels: Distress, Urgency, and Safety. This option appears to be a distractor based on terminology used in other countries or services, but it has no standing in Canadian radiocommunication procedures."
 ---
 
-# Emergency Communication Priorities in Amateur Radio: Understanding Message Levels
+# Canadian Amateur Radio Message Priorities: Understanding the Three-Tier Emergency System
 
 ## Learning Objectives
 By the end of this lesson, you will understand:
-- The different priority levels in amateur radio emergency communication
-- How to correctly classify and communicate emergency situations
-- The critical importance of using appropriate communication protocols
-- The potential consequences of misusing emergency message priorities
+- The three official message priority levels recognized by ISED in Canadian amateur radio
+- How to properly assess emergency situations and choose the correct priority classification
+- The specific definitions and use cases for Distress, Urgency, and Safety priorities
+- Why proper priority classification is essential for effective emergency communications
 
 ---
 
-## The Concept: Amateur Radio Emergency Communication Hierarchy
+## The Concept: Canada's Three-Tier Priority System
 
-Amateur radio emergency communication follows a structured priority system designed to ensure that the most critical messages receive immediate attention. This hierarchy helps radio operators and emergency coordinators quickly understand the severity and urgency of a situation, allowing for appropriate and efficient response.
+Canadian amateur radio emergency communications follow a structured **three-tier priority system** established by ISED (Innovation, Science and Economic Development Canada) in RIC-22 (General Radio Operating Procedures). This system ensures that the most critical communications receive appropriate handling while preventing the misuse of emergency frequencies.
 
-The priority levels range from routine communications to life-threatening emergencies, each with specific characteristics and protocols. These levels are not just administrative categories but critical tools for managing limited communication resources during emergency situations.
+Unlike some other countries or radio services that may use additional priority levels, Canada officially recognizes only three message priorities:
 
-### The Priority Spectrum
+1. **DISTRESS** - Grave and/or imminent danger requiring immediate assistance
+2. **URGENCY** - Safety concerns that don't require immediate assistance
+3. **SAFETY** - Navigation safety or meteorological warning messages
 
-Amateur radio communication priorities are typically organized from lowest to highest:
-1. **Welfare**: Routine, non-urgent personal communications
-2. **Safety**: General safety information affecting a broad area
-3. **Urgent**: Serious situations requiring assistance, but not immediately life-threatening
-4. **Distress**: Immediate, life-threatening emergencies requiring immediate intervention
+Understanding these three priorities is crucial because they determine not just how your message is handled, but also which frequencies you can use and what procedures you must follow. The system is designed to escalate response based on the actual level of danger present.
+
+### The Key Decision Point: Immediate vs. Non-Immediate Assistance
+
+The critical distinction between DISTRESS and URGENCY lies in whether **immediate assistance** is required. DISTRESS means someone will die or suffer grave harm if help doesn't arrive very soon. URGENCY means assistance is needed, but the situation isn't immediately life-threatening. Being stranded without immediate risk to life clearly falls into the URGENCY category - you need help, but you're not about to die if that help takes some time to arrive.
 
 ---
 
 ## Real-World Examples
 
-### ✅ Appropriate Use of Urgent Priority:
-- **Vehicle Breakdown**: Stranded in a remote location with limited resources
-- **Medical Concern**: Need for medical assistance, but condition is stable
-- **Environmental Risk**: Potential hypothermia or exposure, but not immediate life-threat
-- **Communication Equipment Failure**: Requiring assistance to restore critical communication links
+### ✅ URGENCY Priority Situations:
+- **Vehicle Breakdown in Remote Area**: Stranded but have supplies and shelter - assistance needed but not immediately life-threatening
+- **Equipment Failure During Expedition**: Radio fails during planned trip, but weather is good and you're otherwise safe
+- **Overdue Person**: Someone is late returning from a hike, but conditions are reasonable and they're experienced
 
-### ❌ Misapplied Priority Levels:
-- **Calling Distress for a Flat Tire**: Inappropriately escalating a manageable situation
-- **Sending a Welfare Message for a Serious Injury**: Failing to communicate the true severity of a situation
-- **Broadcasting a Safety Message for a Personal Emergency**: Using the wrong communication channel
+### ❌ Situations Requiring Different Priorities:
+- **DISTRESS**: Serious injury with heavy bleeding requiring immediate medical attention - life is in immediate danger
+- **SAFETY**: Weather warning about incoming severe storm affecting navigation in your area - information for others' safety
+- **"WELFARE"**: This is not a recognized priority in Canadian amateur radio regulations
 
 ---
 
 ## Practical Applications
 
-### For Emergency Preparedness:
-1. **Assess the Situation**: Quickly evaluate the true level of risk before transmitting
-2. **Use Precise Language**: Clearly communicate the nature and extent of the emergency
-3. **Follow Standard Protocols**: Use recognized communication procedures and phonetics
-4. **Provide Specific Location**: Include precise geographical details to facilitate rescue
+### For Emergency Assessment:
+1. **Immediate Life Threat Test**: Ask yourself "Will someone die or be seriously harmed if help doesn't arrive very soon?" If yes = DISTRESS, if no = URGENCY
+2. **Assistance vs. Information**: Are you requesting help (URGENCY) or providing safety information to others (SAFETY)?
+3. **Use Clear Priority Indicators**: State your priority clearly: "This is VE7ABC with an URGENCY message"
 
-### For Different Emergency Scenarios:
-1. **Remote Hiking**: Know when to escalate from welfare to urgent communication
-2. **Expedition Communications**: Understand how to effectively request assistance
-3. **Community Emergency Response**: Use appropriate priority levels during coordinated response efforts
+### For Message Content:
+1. **URGENCY Messages Include**: Your location, nature of problem, type of assistance needed, number of people involved, and any safety considerations
+2. **Proper Procedure**: Use "PAN PAN" (pronounced "pon pon") three times to indicate urgency priority
+3. **Frequency Selection**: Start on your current frequency, then move to emergency frequencies if needed
+
+### For Net Operations:
+1. **Priority Handling**: Emergency nets handle DISTRESS first, then URGENCY, then SAFETY, then routine traffic
+2. **Resource Coordination**: URGENCY priority ensures appropriate emergency management response without over-mobilizing resources
+3. **Documentation**: Proper classification helps emergency coordinators allocate the right level of assistance
 
 ### Memory Aid:
-"**U**rgent **U**nder **U**nder Control" - Urgent means serious, but not immediately life-threatening.
+**"D-U-S"** = **"D**ying **U**rgently? **S**afety info?" - DISTRESS for immediate life threat, URGENCY for needing help, SAFETY for warnings to others.
 
 ---
 
 ## Key Takeaways
 
-- Urgent priority is for serious situations requiring assistance, but without immediate life-threatening risk
-- Distress is reserved only for genuine life-or-death emergencies
-- Misusing emergency communication priorities can divert critical resources and create confusion
-- Proper communication protocol can significantly impact emergency response effectiveness
-- Amateur radio operators have a responsibility to use communication priorities responsibly and accurately
+- Canada officially recognizes only three message priorities: Distress, Urgency, and Safety - "Welfare" is not a recognized Canadian amateur radio priority
+- URGENCY is the correct priority for being stranded without immediate risk to life - you need assistance but aren't facing immediate danger
+- DISTRESS priority is reserved exclusively for situations involving grave and imminent danger requiring immediate assistance
+- SAFETY priority is for transmitting warnings or navigation information to other stations, not for requesting assistance
+- The distinction between DISTRESS and URGENCY depends on whether immediate assistance is required to prevent loss of life or serious harm
+- Proper priority classification ensures emergency resources are used effectively and prevents the degradation of emergency communication systems
+- This three-tier system is specifically Canadian - other countries may use different priority classifications
 
 ---
 
 ## Related Concepts to Explore:
-- **Emergency Communication Protocols**: Detailed procedures for different emergency scenarios
-- **International Radio Emergency Communication Standards**: How different countries manage emergency communication
-- **Amateur Radio Emergency Service (ARES) Procedures**: Structured approach to emergency communications
+- **Emergency Procedures**: Detailed MAYDAY and PAN PAN calling procedures as specified in ISED RIC-22
+- **Frequency Coordination**: Which frequencies are appropriate for different priority levels in Canadian amateur radio
+- **Search and Rescue Integration**: How amateur radio emergency priorities integrate with official SAR operations in Canada
 
 ### Recommended Reading
 
-- ARRL Emergency Communication Handbook
-- "Practical Emergency Communications for Amateur Radio Operators" by John Ott
-- ISED Amateur Radio Emergency Communication Guidelines
-- YouTube: "Amateur Radio Emergency Communication Protocols" series by experienced emergency coordinators
+- ISED RIC-22 (General Radio Operating Procedures) - Section 5: Emergency Communications - The definitive source for Canadian emergency communication procedures
+- ARRL Emergency Coordinator Manual - Comparative information on emergency communication systems (noting Canadian differences)
+- RAC Emergency Measures Guide - Canadian amateur radio emergency communication protocols and integration with government agencies
