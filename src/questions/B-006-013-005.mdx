@@ -35,13 +35,62 @@ The fundamental principle of antenna design involves creating an antenna with a 
 
 ### Wavelength Calculation Basics
 
-The wavelength (λ) calculation follows the formula: 
-**λ = Speed of Light (c) ÷ Frequency (f)**
+To calculate the **approximate length** of a **delta loop antenna** for a given frequency like **28.7 MHz**, we follow these steps:
 
-For 28.7 MHz:
-- Speed of light ≈ 300,000,000 meters/second
-- Wavelength = 300,000,000 ÷ 28,700,000 ≈ 10.45 meters
-- Full loop perimeter ≈ 10.66 meters
+---
+
+### 🔧 **Step 1: Determine the Wavelength**
+
+The wavelength $\lambda$ in meters is given by:
+
+$$
+\lambda = \frac{300}{f}
+$$
+
+Where:
+
+* $\lambda$ is the wavelength in meters
+* $f$ is the frequency in MHz
+* We use **300** as the speed of light approximation in MHz·m
+
+So for **28.7 MHz**:
+
+$$
+\lambda = \frac{300}{28.7} \approx 10.45 \text{ meters}
+$$
+
+---
+
+### 🔧 **Step 2: Use the Loop Length Formula**
+
+For a **full-wave loop antenna**, the total length $L$ is approximately equal to **one full wavelength**, but we often use a **correction factor** due to the geometry and real-world effects.
+
+For a **delta loop**, a common formula is:
+
+$$
+L = 1.02 \times \lambda
+$$
+
+$$
+L = 1.02 \times 10.45 \approx 10.66 \text{ meters}
+$$
+
+This gives the **total length of wire** needed for the delta loop.
+
+---
+
+### ✅ **Final Answer:**
+
+$$
+\boxed{10.66 \text{ meters (approx.)}}
+$$
+
+This is the **total perimeter** of the triangle-shaped (delta) loop. Each side would be roughly one-third of that if it's an equilateral triangle:
+
+$$
+\frac{10.66}{3} \approx 3.55 \text{ meters per side}
+$$
+
 
 ---
 
