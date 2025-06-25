@@ -41,6 +41,64 @@ Logarithmic scaling allows radio engineers to work with extremely wide ranges of
 
 ---
 
+## Calculation Steps
+
+To calculate the **power output** of the combination (a 2-watt handheld radio with a 9 dB gain amplifier), follow these steps:
+
+---
+
+### **Step 1: Understand the problem**
+
+We are given:
+
+* **Initial power (P₁):** 2 watts
+* **Amplifier gain (G):** 9 dB
+
+We need to calculate the final output power **after the gain is applied**.
+
+---
+
+### **Step 2: Use the dB gain formula**
+
+The general formula to convert **gain in decibels (dB)** to a **power ratio** is:
+
+$$
+G_{\text{dB}} = 10 \cdot \log_{10}\left(\frac{P_2}{P_1}\right)
+$$
+
+Where:
+
+* $P_1$ = input power (2 watts)
+* $P_2$ = output power (what we want to find)
+* $G_{\text{dB}}$ = 9
+
+---
+
+### **Step 3: Solve for $P_2$**
+
+Rearrange the formula to solve for $P_2$:
+
+$$
+\frac{P_2}{P_1} = 10^{\frac{G_{\text{dB}}}{10}} = 10^{\frac{9}{10}} = 10^{0.9} \approx 7.943
+$$
+
+Now multiply this ratio by the original power:
+
+$$
+P_2 = P_1 \cdot 10^{0.9} = 2 \cdot 7.943 \approx 15.886 \text{ watts}
+$$
+
+---
+
+### **✅ Final Answer:**
+
+$$
+\boxed{15.89 \text{ watts (approximately)}}
+$$
+
+
+---
+
 ## Real-World Examples
 
 ### ✅ Practical Power Gain Scenarios:
